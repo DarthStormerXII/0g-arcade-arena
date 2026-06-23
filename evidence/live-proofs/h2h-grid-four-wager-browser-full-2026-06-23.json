@@ -1,0 +1,122 @@
+{
+  "date": "2026-06-23",
+  "mode": "localhost-real-0g-galileo-h2h-wager-browser-only",
+  "status": "passed",
+  "localUrl": "http://localhost:3021",
+  "runId": "wager-full-mqqv7z33",
+  "roomId": "gr-zqvy",
+  "matchId": "match-gr-zqvy",
+  "gameId": "grid-four",
+  "wagerWeiPerPlayer": "100000000000000",
+  "requiredEscrowWei": "200000000000000",
+  "escrowWeiAfterBothFunds": "200000000000000",
+  "escrowWeiAfterSettlement": "0",
+  "chain": {
+    "name": "0G Galileo Testnet",
+    "chainId": 16602,
+    "rpcUrl": "https://evmrpc-testnet.0g.ai",
+    "explorer": "https://chainscan-galileo.0g.ai"
+  },
+  "contract": {
+    "name": "ArcadeWagerEscrow",
+    "address": "0xd58960a15e1036efde2ca873716396c0f47031d4"
+  },
+  "players": [
+    {
+      "label": "accountA",
+      "email": "test-1032@privy.io",
+      "wallet": "0x23761115c5f38ca51f0d425d00DE6E34029239EC"
+    },
+    {
+      "label": "accountB",
+      "email": "test-2632@privy.io",
+      "wallet": "0xD5F264Ee35815Af73510150302cc52FE686E5f81"
+    }
+  ],
+  "steps": [
+    "Both Privy test accounts logged in on localhost.",
+    "Account A created Grid Four wager room gr-zqvy with 0.0001 0G per player.",
+    "Account A funded through the app and Privy approval modal.",
+    "Account B joined by room code and funded through the app and Privy approval modal.",
+    "Worker escrow gate allowed start only after escrow reached 200000000000000 wei.",
+    "All seven moves were clicked in the two authenticated browser contexts without using API continuation.",
+    "Account A won with four connected cells.",
+    "Account A approved settlement through Privy; settlement mined on Galileo and escrow returned to 0."
+  ],
+  "roomResult": {
+    "status": "finished",
+    "winnerIds": [
+      "0x23761115c5f38ca51f0d425d00de6e34029239ec"
+    ],
+    "loserIds": [
+      "0xd5f264ee35815af73510150302cc52fe686e5f81"
+    ],
+    "reason": "four connected cells",
+    "turn": 7,
+    "replayHash": "0x589c7a3b",
+    "resultHash": "0xe7bf6f52",
+    "score": {
+      "0x23761115c5f38ca51f0d425d00de6e34029239ec": 4,
+      "0xd5f264ee35815af73510150302cc52fe686e5f81": 3
+    }
+  },
+  "transactions": [
+    {
+      "type": "fund",
+      "player": "accountA",
+      "from": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0x0a8d4bd73427f6791dac4b01b4b262f48a83ed205e2b28cb95c0979b60f7b13f",
+      "blockNumber": "0x2677cc3",
+      "status": "0x1",
+      "gasUsed": "0xb06e",
+      "amountWei": "100000000000000"
+    },
+    {
+      "type": "fund",
+      "player": "accountB",
+      "from": "0xd5f264ee35815af73510150302cc52fe686e5f81",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0x30753a1fa6bee924d5830d41293e83de8d31734435582f4a8231fc28aced4627",
+      "blockNumber": "0x2677cf3",
+      "status": "0x1",
+      "gasUsed": "0x6da2",
+      "amountWei": "100000000000000"
+    },
+    {
+      "type": "settle",
+      "player": "accountA",
+      "winner": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "from": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0xe34b656a4541a38d18ea6943cb5c9c8a1d250a6990c14446a276701bbf664969",
+      "blockNumber": "0x2677d4f",
+      "status": "0x1",
+      "gasUsed": "0x8ee5",
+      "payoutWei": "196000000000000",
+      "feeWei": "4000000000000"
+    }
+  ],
+  "screenshots": [
+    "evidence/live-proofs/wager-full-mqqv7z33-account-a-login.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-account-b-login.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-account-a-fund-approval.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-account-a-funded.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-account-b-fund-approval.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-account-b-funded.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-a-col1-mqqv9tzd.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-b-col2-mqqv9wj2.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-a-col1-mqqv9z2i.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-b-col2-mqqva1ln.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-a-col1-mqqva44w.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-b-col2-mqqva6ob.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-a-col1-mqqva97j.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-finished-before-settle.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-settle-approval.png",
+    "evidence/live-proofs/wager-full-mqqv7z33-after-settle.png"
+  ],
+  "notes": [
+    "Privy still sometimes displays a transient viem receipt-not-found modal even when Galileo receipts are mined; this evidence uses chain receipts and escrow state as authoritative.",
+    "The test intentionally used 0.0001 0G per player to minimize testnet spend."
+  ]
+}

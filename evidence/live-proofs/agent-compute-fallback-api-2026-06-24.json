@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-06-24T00:14:00+07:00",
+  "mode": "local-agent-compute-fallback-api",
+  "status": "passed",
+  "roomId": "compute-fallback-qwlq6t",
+  "endpoint": "POST /api/rooms/:roomId/agent-move",
+  "result": {
+    "roomStatus": "active",
+    "computeMode": "deterministic-fallback",
+    "fallbackReason": "ZEROG_ROUTER_API_KEY is not configured in the Worker environment.",
+    "move": {
+      "column": 3
+    },
+    "proofs": [
+      {
+        "turn": 1,
+        "playerId": "agent-test",
+        "mode": "deterministic-fallback",
+        "provider": null,
+        "requestId": null,
+        "verified": false,
+        "model": null,
+        "contentHash": null,
+        "fallbackReason": "ZEROG_ROUTER_API_KEY is not configured in the Worker environment."
+      }
+    ]
+  },
+  "truthBoundary": "Worker agent-move now attempts live 0G Compute when ZEROG_ROUTER_API_KEY is bound. This localhost smoke used the default local Worker env, so it correctly persisted deterministic fallback proof metadata instead of claiming 0G Compute."
+}

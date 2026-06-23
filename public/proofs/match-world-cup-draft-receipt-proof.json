@@ -1,0 +1,22 @@
+{
+  "matchId": "match-world-cup-draft-receipt",
+  "gameId": "world-cup-draft",
+  "generatedAt": "2026-06-23T19:59:54.352Z",
+  "manifestHash": "0x7812649775c34b6764de38c15d1ed58b18d941a310ea16f84b3d062306e838ae",
+  "rulesHash": "0x51c4935c91f238ee7ab3facfbbb1aabc91bb2eadffab89dbb0e3d5a1f85abc3e",
+  "replayHash": "0x09e7f91ccceb975d225df272dc859ad853ebb00ab82bee86daf2574c6e7c5060",
+  "resultHash": "0x74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "storageUri": "/proofs/match-world-cup-draft-receipt-replay.json",
+  "chainTx": "local-mock:no-contract-deployment",
+  "daCommitment": "DA fallback/not configured",
+  "computeMode": "deterministic-fallback",
+  "storageMode": "local-fallback",
+  "chainMode": "local-mock",
+  "daMode": "not-configured",
+  "files": {
+    "manifest": "games/world-cup-draft/manifest.json",
+    "rules": "games/world-cup-draft/rules.ts",
+    "agent": "games/world-cup-draft/agent.md",
+    "replay": "games/world-cup-draft/fixtures/demo-replay.json"
+  }
+}

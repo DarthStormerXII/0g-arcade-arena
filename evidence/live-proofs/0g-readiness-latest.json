@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-06-23T19:30:14.528Z",
+  "envFile": "/Users/gabrielantonyxaviour/.codex/secrets/0g-arcade-arena/0g-live.env",
+  "chain": {
+    "rpcUrl": "https://evmrpc-testnet.0g.ai",
+    "chainId": 16602,
+    "ok": true
+  },
+  "operator": {
+    "address": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586",
+    "balance0g": "0.701770",
+    "privateKeyPresent": true
+  },
+  "privyWallets": {
+    "0x23761115c5f38ca51f0d425d00DE6E34029239EC": "0.036769"
+  },
+  "compute": {
+    "routerHost": "router-api.0g.ai",
+    "modelsStatus": 200,
+    "modelsCount": 15,
+    "configuredModel": "glm-5.1",
+    "configuredModelProbe": {
+      "ok": false,
+      "status": 402,
+      "elapsedMs": 526,
+      "responseKeyPresent": false,
+      "responseSignaturePresent": false,
+      "traceProviderPresent": false,
+      "traceRequestIdPresent": false,
+      "teeVerifiedField": null,
+      "contentHash": null,
+      "errorCode": "insufficient_balance",
+      "errorMessage": "Insufficient balance"
+    },
+    "glm52Probe": {
+      "ok": false,
+      "status": 402,
+      "elapsedMs": 273,
+      "responseKeyPresent": false,
+      "responseSignaturePresent": false,
+      "traceProviderPresent": false,
+      "traceRequestIdPresent": false,
+      "teeVerifiedField": null,
+      "contentHash": null,
+      "errorCode": "insufficient_balance",
+      "errorMessage": "Insufficient balance"
+    }
+  },
+  "storage": {
+    "indexerHost": "indexer-storage-testnet-turbo.0g.ai",
+    "endpointReachable": true,
+    "status": 404
+  },
+  "ready": {
+    "chain": true,
+    "compute": false,
+    "storageConfig": true,
+    "storageEndpoint": true
+  }
+}

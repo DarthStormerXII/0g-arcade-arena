@@ -1,0 +1,57 @@
+{
+  "mode": "local-human-automatch-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T18:45:45.763Z",
+  "baseUrl": "http://localhost:3021",
+  "wagerWei": "100000000000000",
+  "free": {
+    "first": {
+      "status": 200,
+      "matchmaking": "waiting",
+      "roomId": "auto-24f637e1",
+      "roomStatus": "waiting",
+      "playerCount": 1
+    },
+    "second": {
+      "status": 200,
+      "matchmaking": "started",
+      "roomId": "auto-24f637e1",
+      "roomStatus": "active",
+      "playerCount": 2
+    },
+    "third": {
+      "status": 200,
+      "matchmaking": "waiting",
+      "roomId": "auto-24c9ae96",
+      "roomStatus": "waiting",
+      "playerCount": 1
+    }
+  },
+  "wager": {
+    "first": {
+      "status": 200,
+      "matchmaking": "waiting",
+      "roomId": "auto-ee22f094",
+      "roomStatus": "waiting",
+      "playerCount": 1,
+      "wagerWei": "100000000000000"
+    },
+    "second": {
+      "status": 200,
+      "matchmaking": "joined",
+      "roomId": "auto-ee22f094",
+      "roomStatus": "ready",
+      "playerCount": 2,
+      "wagerWei": "100000000000000"
+    }
+  },
+  "verified": {
+    "freeFirstWaits": true,
+    "freeSecondPairsSameRoom": true,
+    "freeMatchAutoStarts": true,
+    "freeQueueClearsAfterPair": true,
+    "wagerFirstWaits": true,
+    "wagerSecondPairsSameRoom": true,
+    "wagerMatchRequiresFundingBeforeStart": true
+  }
+}

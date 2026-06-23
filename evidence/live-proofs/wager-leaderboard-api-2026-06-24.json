@@ -1,0 +1,219 @@
+{
+  "mode": "local-wager-leaderboard-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T19:25:14.193Z",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "lbw-mqr19ztg",
+  "matchId": "796316402",
+  "wagerWei": "100000000000000",
+  "players": [
+    {
+      "id": "lbw-a-mqr19ztg",
+      "displayName": "Wager Leaderboard A"
+    },
+    {
+      "id": "lbw-b-mqr19ztg",
+      "displayName": "Wager Leaderboard B"
+    }
+  ],
+  "winnerId": "lbw-a-mqr19ztg",
+  "loserId": "lbw-b-mqr19ztg",
+  "transactions": {
+    "fundA": {
+      "transactionHash": "0x2ee3a4f4f474e61ba47cdd735ded0d1f6356fe1ce639a39e9e5363e5f93cfcdb",
+      "status": "0x1",
+      "blockNumber": "0x267cc14"
+    },
+    "fundB": {
+      "transactionHash": "0xf76b7138c37a4768545d76b248059854485647c2d33cbae8cf47a2a814cc13bc",
+      "status": "0x1",
+      "blockNumber": "0x267cc29"
+    },
+    "settlement": {
+      "transactionHash": "0x0f200f7191d4de51fd7daa882270c5dbc1a15cb17d74aec3214dda61d2f16262",
+      "status": "0x1",
+      "blockNumber": "0x267cc3e"
+    }
+  },
+  "api": {
+    "created": {
+      "status": 200,
+      "roomStatus": "waiting"
+    },
+    "joined": {
+      "status": 200,
+      "roomStatus": "ready"
+    },
+    "started": {
+      "status": 200,
+      "roomStatus": "active"
+    },
+    "moveResults": [
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      {
+        "status": 200,
+        "roomStatus": "finished"
+      }
+    ]
+  },
+  "leaderboards": {
+    "global": [
+      {
+        "scope": "global",
+        "gameId": null,
+        "mode": "all",
+        "participantId": "lbw-a-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard A",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "wagerWins": 1,
+        "score": 1018,
+        "updatedAt": "2026-06-23 19:25:03"
+      },
+      {
+        "scope": "global",
+        "gameId": null,
+        "mode": "all",
+        "participantId": "lbw-b-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard B",
+        "wins": 0,
+        "losses": 1,
+        "draws": 0,
+        "wagerWins": 0,
+        "score": 994,
+        "updatedAt": "2026-06-23 19:25:03"
+      }
+    ],
+    "game": [
+      {
+        "scope": "game",
+        "gameId": "grid-four",
+        "mode": "all",
+        "participantId": "lbw-a-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard A",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "wagerWins": 1,
+        "score": 1018,
+        "updatedAt": "2026-06-23 19:25:03"
+      },
+      {
+        "scope": "game",
+        "gameId": "grid-four",
+        "mode": "all",
+        "participantId": "lbw-b-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard B",
+        "wins": 0,
+        "losses": 1,
+        "draws": 0,
+        "wagerWins": 0,
+        "score": 994,
+        "updatedAt": "2026-06-23 19:25:03"
+      }
+    ],
+    "wagerMode": [
+      {
+        "scope": "mode",
+        "gameId": null,
+        "mode": "wager",
+        "participantId": "lbw-a-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard A",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "wagerWins": 1,
+        "score": 1018,
+        "updatedAt": "2026-06-23 19:25:03"
+      },
+      {
+        "scope": "mode",
+        "gameId": null,
+        "mode": "wager",
+        "participantId": "lbw-b-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard B",
+        "wins": 0,
+        "losses": 1,
+        "draws": 0,
+        "wagerWins": 0,
+        "score": 994,
+        "updatedAt": "2026-06-23 19:25:03"
+      }
+    ],
+    "wagerGameMode": [
+      {
+        "scope": "game-mode",
+        "gameId": "grid-four",
+        "mode": "wager",
+        "participantId": "lbw-a-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard A",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "wagerWins": 1,
+        "score": 1018,
+        "updatedAt": "2026-06-23 19:25:03"
+      },
+      {
+        "scope": "game-mode",
+        "gameId": "grid-four",
+        "mode": "wager",
+        "participantId": "lbw-b-mqr19ztg",
+        "participantKind": "human",
+        "displayName": "Wager Leaderboard B",
+        "wins": 0,
+        "losses": 1,
+        "draws": 0,
+        "wagerWins": 0,
+        "score": 994,
+        "updatedAt": "2026-06-23 19:25:03"
+      }
+    ],
+    "freeMode": []
+  },
+  "verified": {
+    "roomCreated": true,
+    "roomJoined": true,
+    "fundedTwice": true,
+    "roomStartedAfterFunding": true,
+    "matchFinished": true,
+    "settlementMined": true,
+    "globalIncludesWinner": true,
+    "gameIncludesWinner": true,
+    "wagerModeIncludesWinner": true,
+    "wagerGameModeIncludesWinner": true,
+    "freeModeDoesNotIncludeWagerWinner": true,
+    "loserIndexedInWagerMode": true
+  }
+}

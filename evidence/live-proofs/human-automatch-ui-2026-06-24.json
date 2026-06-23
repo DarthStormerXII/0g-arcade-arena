@@ -1,0 +1,13 @@
+{
+  "mode": "local-human-automatch-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-23T18:48:03.314Z",
+  "url": "http://localhost:3021/match/match-auto-24c9ae96?room=auto-24c9ae96",
+  "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/human-automatch-ui-2026-06-24.png",
+  "verified": {
+    "navigatedToActiveMatch": true,
+    "renderedSharedRoomMatch": true,
+    "renderedActiveStatus": true,
+    "preservedPrimaryNavigation": true
+  }
+}

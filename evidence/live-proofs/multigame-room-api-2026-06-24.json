@@ -1,0 +1,421 @@
+{
+  "mode": "local-multigame-room-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T19:59:37.140Z",
+  "baseUrl": "http://localhost:3021",
+  "games": [
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "humanRooms": [
+    {
+      "gameId": "fleet-duel",
+      "roomId": "mg-fleet-duel-mqr2itd0",
+      "kind": "human",
+      "created": {
+        "status": 200,
+        "roomGameId": "fleet-duel"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 59,
+      "final": {
+        "status": "finished",
+        "replayHash": "0x24bf08f1",
+        "resultHash": "0x8be0d30e",
+        "winnerIds": [
+          "human-a-fleet-duel-mqr2itd0"
+        ],
+        "reason": "all opposing ships found"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mg-fleet-duel-mqr2itd0",
+        "gameId": "fleet-duel"
+      }
+    },
+    {
+      "gameId": "tile-race",
+      "roomId": "mg-tile-race-mqr2itd0",
+      "kind": "human",
+      "created": {
+        "status": 200,
+        "roomGameId": "tile-race"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 24,
+      "final": {
+        "status": "finished",
+        "replayHash": "0x7f8d7333",
+        "resultHash": "0x7b27de04",
+        "winnerIds": [
+          "human-a-tile-race-mqr2itd0",
+          "human-b-tile-race-mqr2itd0"
+        ],
+        "reason": "fixed move budget reached"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mg-tile-race-mqr2itd0",
+        "gameId": "tile-race"
+      }
+    },
+    {
+      "gameId": "world-cup-draft",
+      "roomId": "mg-world-cup-draft-mqr2itd0",
+      "kind": "human",
+      "created": {
+        "status": 200,
+        "roomGameId": "world-cup-draft"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 8,
+      "final": {
+        "status": "finished",
+        "replayHash": "0xda41365c",
+        "resultHash": "0xf9e12002",
+        "winnerIds": [
+          "human-a-world-cup-draft-mqr2itd0"
+        ],
+        "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mg-world-cup-draft-mqr2itd0",
+        "gameId": "world-cup-draft"
+      }
+    }
+  ],
+  "agentRooms": [
+    {
+      "gameId": "fleet-duel",
+      "roomId": "mga-fleet-duel-mqr2itd0",
+      "kind": "agent",
+      "registered": {
+        "status": 201,
+        "agentId": "agent-fleet-duel-mqr2itd0"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "fleet-duel"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 43,
+      "agentMoves": [
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x9bbd65e9",
+        "resultHash": "0x134bac31",
+        "winnerIds": [
+          "human-agent-fleet-duel-mqr2itd0"
+        ],
+        "reason": "all opposing ships found"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mga-fleet-duel-mqr2itd0",
+        "gameId": "fleet-duel",
+        "computeMode": "deterministic-fallback"
+      }
+    },
+    {
+      "gameId": "tile-race",
+      "roomId": "mga-tile-race-mqr2itd0",
+      "kind": "agent",
+      "registered": {
+        "status": 201,
+        "agentId": "agent-tile-race-mqr2itd0"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "tile-race"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 24,
+      "agentMoves": [
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x3f4430e8",
+        "resultHash": "0xc63fc626",
+        "winnerIds": [
+          "agent-tile-race-mqr2itd0"
+        ],
+        "reason": "fixed move budget reached"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mga-tile-race-mqr2itd0",
+        "gameId": "tile-race",
+        "computeMode": "deterministic-fallback"
+      }
+    },
+    {
+      "gameId": "world-cup-draft",
+      "roomId": "mga-world-cup-draft-mqr2itd0",
+      "kind": "agent",
+      "registered": {
+        "status": 201,
+        "agentId": "agent-world-cup-draft-mqr2itd0"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "world-cup-draft"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "moves": 8,
+      "agentMoves": [
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x5858a9b1",
+        "resultHash": "0x2597bf1f",
+        "winnerIds": [
+          "human-agent-world-cup-draft-mqr2itd0"
+        ],
+        "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mga-world-cup-draft-mqr2itd0",
+        "gameId": "world-cup-draft",
+        "computeMode": "deterministic-fallback"
+      }
+    }
+  ],
+  "verified": {
+    "humanRoomsFinished": true,
+    "agentRoomsFinished": true,
+    "agentRoomsRegistered": true,
+    "agentMovesFallbackDisclosed": true,
+    "allProofsIndexed": true
+  }
+}

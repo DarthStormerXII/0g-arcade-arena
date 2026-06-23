@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  color: #f8fffb;
+  background: #080b0e;
+  font-family:
+    "Archivo", "Aptos", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --arena-bg: #080b0e;
+  --arena-panel: rgba(12, 18, 22, 0.9);
+  --arena-panel-strong: rgba(19, 29, 34, 0.95);
+  --arena-line: rgba(155, 255, 211, 0.22);
+  --arena-green: #46ff9f;
+  --arena-cyan: #57e2ff;
+  --arena-yellow: #ffe66d;
+  --arena-red: #ff5c7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--arena-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(70, 255, 159, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 226, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 15% 10%, rgba(70, 255, 159, 0.18), transparent 28rem),
+    radial-gradient(circle at 85% 8%, rgba(255, 230, 109, 0.12), transparent 24rem),
+    #080b0e;
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto,
+    auto,
+    auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.scanline {
+  position: relative;
+}
+
+.scanline::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+  mix-blend-mode: overlay;
+}

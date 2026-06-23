@@ -1,0 +1,26 @@
+{
+  "date": "2026-06-23",
+  "localUrl": "http://localhost:3021",
+  "roomId": "e2e-mqqt4n0v",
+  "gameId": "grid-four",
+  "mode": "human-vs-human",
+  "wagerWei": "100000000000000",
+  "wager0g": "0.0001",
+  "commands": [
+    "POST /api/rooms",
+    "POST /api/rooms/:roomId/join",
+    "POST /api/rooms/:roomId/start",
+    "POST /api/rooms/:roomId/move",
+    "GET /api/rooms/:roomId"
+  ],
+  "checks": {
+    "createRoom": "200 waiting",
+    "joinRoom": "200 ready wallet-a,wallet-b",
+    "startRoom": "200 active wallet-a",
+    "wrongTurnRejected": "400 not current player",
+    "terminalResult": "200 finished wallet-a",
+    "replayHash": "0xe704de6b",
+    "resultHash": "0x5bf6d8a5"
+  },
+  "scope": "Local Worker/Durable Object room runtime proof. This does not claim browser-auth synchronization, escrow settlement, 0G Storage upload, or live 0G Compute agent moves."
+}

@@ -1,0 +1,75 @@
+{
+  "name": "0g-arcade-arena",
+  "private": true,
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DarthStormerXII/0g-arcade-arena.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "game:create": "node scripts/game-tool.mjs create",
+    "game:validate": "node scripts/game-tool.mjs validate",
+    "game:test": "node scripts/game-tool.mjs test",
+    "game:simulate": "node scripts/game-tool.mjs simulate",
+    "game:agent-test": "node scripts/game-tool.mjs agent-test",
+    "game:pack": "node scripts/game-tool.mjs pack",
+    "game:publish": "node scripts/game-tool.mjs publish",
+    "game:hash": "node scripts/game-tool.mjs hash",
+    "proof:export": "node scripts/proof-export.mjs",
+    "infra:check": "node scripts/infra-check.mjs",
+    "0g:copy-scribezero-env": "node scripts/internal-copy-scribezero-env.mjs",
+    "0g:sync-worker-dev-vars": "node scripts/internal-sync-worker-dev-vars.mjs",
+    "0g:readiness": "node scripts/verify-live-0g.mjs",
+    "0g:upload-room-replay": "node scripts/upload-room-replay-0g.mjs",
+    "0g:upload-game-pack": "node scripts/upload-game-pack-0g.mjs",
+    "agent:skill-check": "node scripts/verify-agent-skill.mjs",
+    "agent:wager-match-check": "node scripts/verify-agent-wager-match-api.mjs",
+    "agent:wager-policy-check": "node scripts/verify-agent-wager-policy.mjs",
+    "human:automatch-check": "node scripts/verify-human-automatch-api.mjs",
+    "room:multigame-check": "node scripts/verify-multigame-room-api.mjs",
+    "wager:start-gate-check": "node scripts/verify-wager-start-gate-api.mjs",
+    "leaderboard:wager-check": "node scripts/verify-wager-leaderboard-api.mjs",
+    "chain:live-check": "node scripts/live-chain-check.mjs",
+    "chain:commit-actual-match": "node scripts/commit-live-match-result.mjs",
+    "audit:check": "node scripts/audit-check.mjs",
+    "submission:check": "node scripts/submission-check.mjs",
+    "test:contracts": "forge test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "jsdom": "^29.1.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@0gfoundation/0g-storage-ts-sdk": "^1.2.10",
+    "@privy-io/react-auth": "^3.32.1",
+    "@tailwindcss/vite": "^4.3.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "ethers": "^6.17.0",
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.0",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.1",
+    "zod": "^4.4.3"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "es5-ext"
+    ]
+  }
+}

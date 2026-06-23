@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-06-23T16:57:53.000Z",
+  "mode": "local-agent-registry-room-api",
+  "agent": {
+    "agentId": "agent-grid-warden-live",
+    "ownerWallet": "0x23761115c5f38ca51f0d425d00DE6E34029239EC",
+    "displayName": "Grid Warden Live",
+    "supportedGames": ["grid-four"],
+    "status": "qualified",
+    "freeEnabled": true,
+    "wagerEnabled": true,
+    "maxWagerWei": "100000000000000"
+  },
+  "qualifiedCount": 1,
+  "roomId": "agent-qw15vk",
+  "matchId": "match-agent-qw15vk",
+  "gameId": "grid-four",
+  "opponentMode": "agent",
+  "wagerWei": "0",
+  "status": "finished",
+  "winner": "human-agent-smoke",
+  "moves": 7,
+  "replayHash": "0x6d1103e2",
+  "resultHash": "0x92dba7a4",
+  "computeMode": "deterministic-fallback",
+  "computeBlocker": "Latest 0G Compute readiness returned insufficient_balance, so no live Compute move is claimed.",
+  "verified": {
+    "agentRegistration": true,
+    "qualifiedAgentList": true,
+    "agentJoinedRoom": true,
+    "serverSideAgentMoveEndpoint": true,
+    "matchProofRow": true,
+    "agentLeaderboardEntry": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "gameId": "grid-four",
+  "version": "1.0.0",
+  "seed": "demo-grid",
+  "players": [
+    {
+      "id": "human-1",
+      "kind": "human",
+      "displayName": "Gabriel"
+    },
+    {
+      "id": "agent-grid-warden",
+      "kind": "agent",
+      "displayName": "Grid Warden"
+    }
+  ],
+  "moves": [],
+  "result": null,
+  "finalStateHash": "0xdemo"
+}

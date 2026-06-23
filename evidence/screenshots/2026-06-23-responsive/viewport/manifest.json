@@ -1,0 +1,290 @@
+{
+  "capturedAt": "2026-06-23T10:05:40.091Z",
+  "baseUrl": "http://localhost:3021",
+  "mode": "viewport",
+  "widths": [
+    375,
+    768,
+    1440
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "route": "home"
+    },
+    {
+      "path": "/games",
+      "route": "games"
+    },
+    {
+      "path": "/agents",
+      "route": "agents"
+    },
+    {
+      "path": "/leaderboard",
+      "route": "leaderboard"
+    },
+    {
+      "path": "/explorer",
+      "route": "explorer"
+    },
+    {
+      "path": "/submit-game",
+      "route": "submit-game"
+    }
+  ],
+  "results": [
+    {
+      "route": "home",
+      "path": "/",
+      "width": 375,
+      "height": 812,
+      "file": "375-home-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 10,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "width": 768,
+      "height": 1024,
+      "file": "768-home-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 10,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-home-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 10,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "games",
+      "path": "/games",
+      "width": 375,
+      "height": 812,
+      "file": "375-games-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 9,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "games",
+      "path": "/games",
+      "width": 768,
+      "height": 1024,
+      "file": "768-games-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 9,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "games",
+      "path": "/games",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-games-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 9,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "agents",
+      "path": "/agents",
+      "width": 375,
+      "height": 812,
+      "file": "375-agents-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 3,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "agents",
+      "path": "/agents",
+      "width": 768,
+      "height": 1024,
+      "file": "768-agents-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 3,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "agents",
+      "path": "/agents",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-agents-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 3,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "leaderboard",
+      "path": "/leaderboard",
+      "width": 375,
+      "height": 812,
+      "file": "375-leaderboard-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "leaderboard",
+      "path": "/leaderboard",
+      "width": 768,
+      "height": 1024,
+      "file": "768-leaderboard-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "leaderboard",
+      "path": "/leaderboard",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-leaderboard-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "explorer",
+      "path": "/explorer",
+      "width": 375,
+      "height": 812,
+      "file": "375-explorer-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 7,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "explorer",
+      "path": "/explorer",
+      "width": 768,
+      "height": 1024,
+      "file": "768-explorer-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 7,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "explorer",
+      "path": "/explorer",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-explorer-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 7,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "submit-game",
+      "path": "/submit-game",
+      "width": 375,
+      "height": 812,
+      "file": "375-submit-game-viewport.png",
+      "clientWidth": 375,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 375,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "submit-game",
+      "path": "/submit-game",
+      "width": 768,
+      "height": 1024,
+      "file": "768-submit-game-viewport.png",
+      "clientWidth": 768,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 768,
+      "title": "0G Arcade Arena"
+    },
+    {
+      "route": "submit-game",
+      "path": "/submit-game",
+      "width": 1440,
+      "height": 900,
+      "file": "1440-submit-game-viewport.png",
+      "clientWidth": 1440,
+      "hasExplorerTechnical": false,
+      "homeHasTechnicalBoard": false,
+      "horizontalOverflow": false,
+      "imageCount": 1,
+      "scrollWidth": 1440,
+      "title": "0G Arcade Arena"
+    }
+  ]
+}

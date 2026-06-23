@@ -1,0 +1,36 @@
+{
+  "mode": "local-wager-start-gate-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T19:16:52.306Z",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "gate-mqr0zvjn",
+  "wagerWei": "100000000000000",
+  "created": {
+    "status": 200,
+    "roomStatus": "waiting"
+  },
+  "joined": {
+    "status": 200,
+    "roomStatus": "ready"
+  },
+  "unfundedStart": {
+    "status": 409,
+    "error": "wager escrow not fully funded: 0 of 200000000000000 wei"
+  },
+  "unfundedMove": {
+    "status": 409,
+    "error": "wager escrow not fully funded: 0 of 200000000000000 wei"
+  },
+  "afterMoveAttempt": {
+    "status": 200,
+    "roomStatus": "ready",
+    "hasState": false
+  },
+  "verified": {
+    "roomCreated": true,
+    "roomReady": true,
+    "unfundedStartRejected": true,
+    "unfundedMoveRejected": true,
+    "roomDidNotAutoStart": true
+  }
+}

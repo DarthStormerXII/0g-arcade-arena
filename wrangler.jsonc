@@ -1,0 +1,50 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "0g-arcade-arena",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-05-11",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "OG_GALILEO_CHAIN_ID": "16602",
+    "OG_CHAIN_STATUS": "live-galileo-smoke",
+    "OG_STORAGE_STATUS": "local-fallback",
+    "OG_COMPUTE_STATUS": "deterministic-fallback",
+    "OG_DA_STATUS": "not-configured"
+  },
+  "d1_databases": [
+    {
+      "binding": "ARCADE_DB",
+      "database_name": "0g-arcade-arena",
+      "database_id": "05b5871d-1882-420b-b978-1cc2af63d6c2"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "ACTIVE_GAME_REGISTRY",
+      "id": "94812c4413e842a48907e79de6b20f4a"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "GAME_PACK_BUCKET",
+      "bucket_name": "0g-arcade-game-packs"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LIVE_ROOMS",
+        "class_name": "ArcadeRoom"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["ArcadeRoom"]
+    }
+  ]
+}

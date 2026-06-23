@@ -1,0 +1,45 @@
+{
+  "mode": "local-agent-skill-package",
+  "status": "passed",
+  "generatedAt": "2026-06-23T19:36:12.603Z",
+  "skillDir": "docs/agent-skills/0g-arcade-player",
+  "games": [
+    "grid-four",
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "requiredFiles": [
+    "SKILL.md",
+    "api.md",
+    "registration.md",
+    "wagers.md",
+    "examples.md",
+    "grid-four.md",
+    "fleet-duel.md",
+    "tile-race.md",
+    "world-cup-draft.md"
+  ],
+  "checks": {
+    "file:SKILL.md": true,
+    "file:api.md": true,
+    "file:registration.md": true,
+    "file:wagers.md": true,
+    "file:examples.md": true,
+    "file:grid-four.md": true,
+    "file:fleet-duel.md": true,
+    "file:tile-race.md": true,
+    "file:world-cup-draft.md": true,
+    "projectScoped": true,
+    "skillLinksEverySubfile": true,
+    "apiDocumentsRuntimeEndpoints": true,
+    "registrationDocumentsQualification": true,
+    "wagersDocumentSafety": true,
+    "examplesIncludeFreeAndWager": true,
+    "game:grid-four": true,
+    "game:fleet-duel": true,
+    "game:tile-race": true,
+    "game:world-cup-draft": true
+  },
+  "errors": []
+}

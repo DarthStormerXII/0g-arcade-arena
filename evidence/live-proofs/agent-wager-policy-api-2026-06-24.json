@@ -1,0 +1,150 @@
+{
+  "mode": "local-agent-wager-policy-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T18:05:01.135Z",
+  "baseUrl": "http://localhost:3021",
+  "wagerWei": "100000000000000",
+  "registrations": [
+    {
+      "status": 201,
+      "agentId": "policy-pending-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-free-disabled-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-free-ok-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-unsupported-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-wager-disabled-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-cap-low-20260623180500"
+    },
+    {
+      "status": 201,
+      "agentId": "policy-cap-ok-20260623180500"
+    }
+  ],
+  "cases": [
+    {
+      "label": "unregistered",
+      "roomId": "pol-unregister-1-mqqyfhjt",
+      "agentId": "policy-missing-20260623180500",
+      "wagerWei": "0",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "ok": true,
+      "error": "agent is not registered",
+      "roomStatus": null
+    },
+    {
+      "label": "pending agent",
+      "roomId": "pol-pending-ag-2-mqqyfhjt",
+      "agentId": "policy-pending-20260623180500",
+      "wagerWei": "0",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "ok": true,
+      "error": "agent is not qualified",
+      "roomStatus": null
+    },
+    {
+      "label": "free disabled agent",
+      "roomId": "pol-free-disab-3-mqqyfhjt",
+      "agentId": "policy-free-disabled-20260623180500",
+      "wagerWei": "0",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "ok": true,
+      "error": "agent is not enabled for free matches",
+      "roomStatus": null
+    },
+    {
+      "label": "free qualified agent",
+      "roomId": "pol-free-quali-4-mqqyfhjt",
+      "agentId": "policy-free-ok-20260623180500",
+      "wagerWei": "0",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "ok": true,
+      "error": null,
+      "roomStatus": "ready"
+    },
+    {
+      "label": "unsupported game agent",
+      "roomId": "pol-unsupporte-5-mqqyfhjt",
+      "agentId": "policy-unsupported-20260623180500",
+      "wagerWei": "0",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "ok": true,
+      "error": "agent is not qualified for this game",
+      "roomStatus": null
+    },
+    {
+      "label": "wager disabled agent",
+      "roomId": "pol-wager-disa-6-mqqyfhjt",
+      "agentId": "policy-wager-disabled-20260623180500",
+      "wagerWei": "100000000000000",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "ok": true,
+      "error": "agent is not enabled for wager matches",
+      "roomStatus": null
+    },
+    {
+      "label": "wager cap below room",
+      "roomId": "pol-wager-cap--7-mqqyfhjt",
+      "agentId": "policy-cap-low-20260623180500",
+      "wagerWei": "100000000000000",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "ok": true,
+      "error": "agent max wager is below this room wager",
+      "roomStatus": null
+    },
+    {
+      "label": "wager cap equal room",
+      "roomId": "pol-wager-cap--8-mqqyfhjt",
+      "agentId": "policy-cap-ok-20260623180500",
+      "wagerWei": "100000000000000",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "ok": true,
+      "error": null,
+      "roomStatus": "ready"
+    }
+  ],
+  "listing": {
+    "status": 200,
+    "listedIds": [
+      "policy-free-disabled-20260623180500",
+      "policy-cap-ok-20260623180500",
+      "policy-free-disabled-20260623180445",
+      "policy-cap-ok-20260623180445",
+      "policy-free-disabled-20260623180430",
+      "policy-cap-ok-20260623180430",
+      "agent-grid-warden-live"
+    ]
+  },
+  "verified": {
+    "rejectedUnregistered": true,
+    "rejectedPending": true,
+    "rejectedFreeDisabled": true,
+    "acceptedFreeQualified": true,
+    "rejectedUnsupportedGame": true,
+    "rejectedWagerDisabled": true,
+    "rejectedWagerCapBelow": true,
+    "acceptedWagerCapEqual": true,
+    "qualifiedListingFiltersByWager": true
+  }
+}

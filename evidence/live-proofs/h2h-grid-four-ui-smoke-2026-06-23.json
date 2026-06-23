@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-23",
+  "localUrl": "http://localhost:3021",
+  "roomId": "ui-browser-mqqtbrjd",
+  "matchUrl": "http://localhost:3021/match/match-ui-browser-mqqtbrjd?room=ui-browser-mqqtbrjd",
+  "mode": "human-vs-human browser UI smoke",
+  "wagerWei": "100000000000000",
+  "checks": {
+    "precreatedRoom": "POST /api/rooms + join + start",
+    "pageRendered": "Shared room match visible",
+    "currentPlayerBeforeClick": "browser-player",
+    "clicked": "Drop in column 1",
+    "turnAfterClick": 1,
+    "currentPlayerAfterClick": "wallet-b",
+    "roomStatus": "active"
+  },
+  "screenshot": "evidence/live-proofs/ui-browser-mqqtbrjd-match-ui.png",
+  "scope": "Headless Chrome UI smoke using the bundled Playwright runtime. This proves the rebuilt match page can read and mutate the real Durable Object room state. It does not replace the pending two-authenticated-Privy-browser E2E."
+}

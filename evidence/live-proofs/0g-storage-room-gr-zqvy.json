@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-06-23T16:41:58.966Z",
+  "mode": "live-0g-storage-room-replay",
+  "roomId": "gr-zqvy",
+  "matchId": "match-gr-zqvy",
+  "gameId": "grid-four",
+  "replayHash": "0x589c7a3b",
+  "resultHash": "0xe7bf6f52",
+  "payloadSha256": "sha256:7328a9b94e946521d1cd52222de09ccd3f2bc6f2f5ebc31f2b401e00ba30d1fe",
+  "rootHash": "0xe22ca7771560aca78982bcc16d00c01683f28ffb9e8f18c7aaa01a2a9221c8c7",
+  "txHash": "0xc94541253faea6fe444ca4543aec8c553f1b909c84edfc3ee587957d54a5251d",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

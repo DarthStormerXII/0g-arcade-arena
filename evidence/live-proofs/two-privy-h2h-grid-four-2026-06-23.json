@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-23",
+  "localUrl": "http://localhost:3021",
+  "roomId": "gr-9rzz",
+  "matchUrl": "http://localhost:3021/match/match-gr-9rzz?room=gr-9rzz",
+  "mode": "human-vs-human free match",
+  "accounts": [
+    {
+      "email": "test-1032@privy.io",
+      "wallet": "0x23761115c5f38ca51f0d425d00DE6E34029239EC",
+      "playerId": "0x23761115c5f38ca51f0d425d00de6e34029239ec"
+    },
+    {
+      "email": "test-2632@privy.io",
+      "wallet": "0xD5F264Ee35815Af73510150302cc52FE686E5f81",
+      "playerId": "0xd5f264ee35815af73510150302cc52fe686e5f81"
+    }
+  ],
+  "checks": {
+    "privyLoginAccountA": "wallet rendered in app header",
+    "privyLoginAccountB": "wallet rendered in app header",
+    "createRoom": "account A created room from UI",
+    "joinRoom": "account B joined room from UI",
+    "startRoom": "account A started room from UI",
+    "moves": 7,
+    "status": "finished",
+    "winnerId": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+    "reason": "four connected cells",
+    "replayHash": "0xd7e80012",
+    "resultHash": "0xe7bf6f52"
+  },
+  "screenshots": [
+    "evidence/live-proofs/privy-1032-logged-in.png",
+    "evidence/live-proofs/privy-2632-logged-in.png",
+    "evidence/live-proofs/two-privy-h2h-gr-9rzz-inspect-a.png",
+    "evidence/live-proofs/two-privy-h2h-gr-9rzz-neutral-final.png"
+  ],
+  "scope": "Real localhost two-authenticated-Privy-browser human-vs-human Grid Four free match. This does not claim wager escrow settlement, 0G Storage replay upload, or 0G Compute agent play."
+}

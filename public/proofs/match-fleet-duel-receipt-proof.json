@@ -1,0 +1,22 @@
+{
+  "matchId": "match-fleet-duel-receipt",
+  "gameId": "fleet-duel",
+  "generatedAt": "2026-06-23T19:59:54.348Z",
+  "manifestHash": "0xba8285862e02c18d0e0f4f5a053b36621e4237946865b16017b270956c680674",
+  "rulesHash": "0xc4c193e41df8dbd908a726ccd73d82a2c2b0cf91702fc1bfb59384c40db4c93e",
+  "replayHash": "0xcc43893c741108fc0bb71c7b8a2aabdbd62f3016d59f66f609543c2b3acad926",
+  "resultHash": "0x74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "storageUri": "/proofs/match-fleet-duel-receipt-replay.json",
+  "chainTx": "local-mock:no-contract-deployment",
+  "daCommitment": "DA fallback/not configured",
+  "computeMode": "deterministic-fallback",
+  "storageMode": "local-fallback",
+  "chainMode": "local-mock",
+  "daMode": "not-configured",
+  "files": {
+    "manifest": "games/fleet-duel/manifest.json",
+    "rules": "games/fleet-duel/rules.ts",
+    "agent": "games/fleet-duel/agent.md",
+    "replay": "games/fleet-duel/fixtures/demo-replay.json"
+  }
+}

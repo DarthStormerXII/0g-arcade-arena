@@ -1,0 +1,1 @@
+{"gameId":"world-cup-draft","version":"1.0.0","seed":"demo-draft","players":[{"id":"human-1","kind":"human","displayName":"Gabriel"},{"id":"agent-draft-oracle","kind":"agent","displayName":"Draft Oracle"}],"moves":[],"result":null,"finalStateHash":"0xdemo"}

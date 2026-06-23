@@ -1,0 +1,22 @@
+{
+  "matchId": "match-tile-race-receipt",
+  "gameId": "tile-race",
+  "generatedAt": "2026-06-23T19:59:54.351Z",
+  "manifestHash": "0x5b2e8c1a4550c255978c81d8b9eec2de30d5ef31507ce0b113be13c1bbb11881",
+  "rulesHash": "0xcba754ae84f7f491a5ed51b09fa832d8430ebbbaaed7b671d50bdedc9a582b50",
+  "replayHash": "0x68c1bf7852fc7f063ea6d1165c08410c5f341f8caa85d36f1b1669a018d8fad9",
+  "resultHash": "0x74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "storageUri": "/proofs/match-tile-race-receipt-replay.json",
+  "chainTx": "local-mock:no-contract-deployment",
+  "daCommitment": "DA fallback/not configured",
+  "computeMode": "deterministic-fallback",
+  "storageMode": "local-fallback",
+  "chainMode": "local-mock",
+  "daMode": "not-configured",
+  "files": {
+    "manifest": "games/tile-race/manifest.json",
+    "rules": "games/tile-race/rules.ts",
+    "agent": "games/tile-race/agent.md",
+    "replay": "games/tile-race/fixtures/demo-replay.json"
+  }
+}

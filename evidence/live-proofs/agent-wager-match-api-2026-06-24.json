@@ -1,0 +1,175 @@
+{
+  "mode": "local-agent-wager-match-api",
+  "status": "passed",
+  "checkedAt": "2026-06-23T19:43:45.348Z",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "h2a-wager-mqr1xs1b",
+  "matchId": "1236853805",
+  "wagerWei": "100000000000000",
+  "human": {
+    "id": "h2a-human-mqr1xs1b",
+    "displayName": "H2A Wager Human"
+  },
+  "agent": {
+    "id": "agent-wager-warden-mqr1xs1b",
+    "displayName": "H2A Wager Grid Warden"
+  },
+  "winnerId": "h2a-human-mqr1xs1b",
+  "loserId": "agent-wager-warden-mqr1xs1b",
+  "transactions": {
+    "fundHuman": {
+      "transactionHash": "0x217da42c626ebf073e3e576d499dec78f42982aa5514f6de2069177abb9f895d",
+      "status": "0x1",
+      "blockNumber": "0x267d4d7"
+    },
+    "fundAgent": {
+      "transactionHash": "0x2a9c9105800452d4459ff8da33a489eb49c0b4263bb91c289cea91d019a559a2",
+      "status": "0x1",
+      "blockNumber": "0x267d4ec"
+    },
+    "settlement": {
+      "transactionHash": "0x854f31a91e92f1231e4054e25d42959511a4fb47c1910c0d6b82941a73d1997c",
+      "status": "0x1",
+      "blockNumber": "0x267d503"
+    }
+  },
+  "api": {
+    "registered": {
+      "status": 201
+    },
+    "listed": {
+      "status": 200,
+      "listedIds": [
+        "agent-wager-warden-mqr1xs1b",
+        "agent-wager-warden-mqr1vspx",
+        "agent-browser-proof-grid-warden",
+        "policy-free-disabled-20260623180500",
+        "policy-cap-ok-20260623180500",
+        "policy-free-disabled-20260623180445",
+        "policy-cap-ok-20260623180445",
+        "policy-free-disabled-20260623180430",
+        "policy-cap-ok-20260623180430",
+        "agent-grid-warden-live"
+      ]
+    },
+    "created": {
+      "status": 200,
+      "roomStatus": "waiting"
+    },
+    "joined": {
+      "status": 200,
+      "roomStatus": "ready"
+    },
+    "started": {
+      "status": 200,
+      "roomStatus": "active"
+    },
+    "moveResults": [
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqr1xs1b"
+        ],
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqr1xs1b"
+        ],
+        "agentMove": {
+          "move": {
+            "column": 3
+          },
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Insufficient balance"
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqr1xs1b"
+        ],
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqr1xs1b"
+        ],
+        "agentMove": {
+          "move": {
+            "column": 3
+          },
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Insufficient balance"
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqr1xs1b"
+        ],
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqr1xs1b"
+        ],
+        "agentMove": {
+          "move": {
+            "column": 3
+          },
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Insufficient balance"
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "finished",
+        "currentPlayerIds": [],
+        "agentMove": null
+      }
+    ],
+    "proof": {
+      "status": 200,
+      "matchId": "match-h2a-wager-mqr1xs1b",
+      "roomId": "h2a-wager-mqr1xs1b",
+      "roomStatus": "finished",
+      "computeMode": "deterministic-fallback"
+    }
+  },
+  "verified": {
+    "agentRegistered": true,
+    "agentListedForWager": true,
+    "roomCreated": true,
+    "agentJoined": true,
+    "fundedTwice": true,
+    "roomStartedAfterFunding": true,
+    "agentMovedThreeTimes": true,
+    "agentMovesUseFallbackWhileComputeBlocked": true,
+    "matchFinishedWithHumanWinner": true,
+    "settlementMined": true,
+    "proofIndexed": true,
+    "proofDisclosesFallbackCompute": true,
+    "globalIncludesHumanWinner": true,
+    "wagerIncludesHumanWinner": true,
+    "gameWagerIncludesHumanWinner": true,
+    "wagerIncludesAgentLoss": true,
+    "freeModeDoesNotIncludeWagerWinner": true
+  }
+}

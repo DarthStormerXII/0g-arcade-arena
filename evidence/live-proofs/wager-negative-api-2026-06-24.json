@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-06-23T17:05:06.164Z",
+  "mode": "local-wager-negative-api",
+  "status": "passed",
+  "scope": "Worker HTTP API negative cases for room cancellation, unfunded wager start, wrong turn, illegal move, and duplicate move after finish. Contract-level zero wager and double-settle are covered by Foundry tests.",
+  "rooms": {
+    "unfundedStart": "neg-wager-wafsk",
+    "cancel": "neg-cancel-wagcw",
+    "play": "neg-play-wagdn"
+  },
+  "failures": [
+    {
+      "label": "unfunded wager start",
+      "status": 409,
+      "error": "wager escrow not fully funded: 0 of 200000000000000 wei"
+    },
+    {
+      "label": "non-host cancel",
+      "status": 403,
+      "error": "only the host can cancel this room"
+    },
+    {
+      "label": "join cancelled room",
+      "status": 409,
+      "error": "room is cancelled"
+    },
+    {
+      "label": "start cancelled room",
+      "status": 409,
+      "error": "room is cancelled"
+    },
+    {
+      "label": "wrong turn",
+      "status": 400,
+      "error": "not current player"
+    },
+    {
+      "label": "illegal column",
+      "status": 400,
+      "error": "column out of range"
+    },
+    {
+      "label": "duplicate move after finish",
+      "status": 409,
+      "error": "match already finished"
+    }
+  ],
+  "terminal": {
+    "matchId": "match-neg-play-wagdn",
+    "status": "finished",
+    "winner": "neg-a",
+    "replayHash": "0x704c0e3b",
+    "resultHash": "0x21eb49f3"
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "mode": "local-browser-proof-surfaces",
+  "status": "passed",
+  "generatedAt": "2026-06-23T19:35:35.183Z",
+  "baseUrl": "http://localhost:3021",
+  "seededAgent": {
+    "agentId": "agent-browser-proof-grid-warden",
+    "displayName": "Browser Proof Grid Warden",
+    "status": "qualified"
+  },
+  "routes": {
+    "gameDetail": {
+      "buttons": [
+        "Logout",
+        "Play with 0G agent",
+        "Play with humans",
+        "Free match",
+        "Testnet wager",
+        "Browser Proof Grid Warden",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Grid Warden Live",
+        "Play selected 0G agent"
+      ],
+      "headings": [
+        "Grid Four",
+        "Grid Four",
+        "Choose how you want to play",
+        "Game Details"
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "0G Arcade Arena"
+        },
+        {
+          "href": "/games",
+          "text": "Games"
+        },
+        {
+          "href": "/agents",
+          "text": "Agents"
+        },
+        {
+          "href": "/submit-game",
+          "text": "Submit"
+        },
+        {
+          "href": "/leaderboard",
+          "text": "Leaderboard"
+        },
+        {
+          "href": "/explorer",
+          "text": "Explorer"
+        }
+      ],
+      "title": "0G Arcade Arena",
+      "url": "http://localhost:3021/games/grid-four",
+      "verified": {
+        "showsAgentCta": true,
+        "showsGameHero": true,
+        "showsHumanCta": true,
+        "showsPlaySelectedAgent": true,
+        "showsQualifiedAgent": true
+      },
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/browser-proof-game-detail-agents-2026-06-24.png"
+    },
+    "leaderboard": {
+      "buttons": [
+        "Logout"
+      ],
+      "headings": [
+        "Leaderboard",
+        "Global",
+        "Grid Four",
+        "Free",
+        "Wager"
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "0G Arcade Arena"
+        },
+        {
+          "href": "/games",
+          "text": "Games"
+        },
+        {
+          "href": "/agents",
+          "text": "Agents"
+        },
+        {
+          "href": "/submit-game",
+          "text": "Submit"
+        },
+        {
+          "href": "/leaderboard",
+          "text": "Leaderboard"
+        },
+        {
+          "href": "/explorer",
+          "text": "Explorer"
+        }
+      ],
+      "title": "0G Arcade Arena",
+      "url": "http://localhost:3021/leaderboard",
+      "verified": {
+        "showsFree": true,
+        "showsGlobal": true,
+        "showsGridFourTable": true,
+        "showsLeaderboard": true,
+        "showsWager": true
+      },
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/browser-proof-leaderboard-2026-06-24.png"
+    },
+    "explorer": {
+      "buttons": [
+        "Logout"
+      ],
+      "headings": [
+        "Explorer",
+        "Games, agents, results, contracts, and chain writes.",
+        "Verified on 0G Chain",
+        "Contracts",
+        "Write Transactions",
+        "Live Match Proofs",
+        "Game Pack Storage",
+        "Game Explorer",
+        "Result Explorer",
+        "Agent Explorer",
+        "Contract Index"
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "0G Arcade Arena"
+        },
+        {
+          "href": "/games",
+          "text": "Games"
+        },
+        {
+          "href": "/agents",
+          "text": "Agents"
+        },
+        {
+          "href": "/submit-game",
+          "text": "Submit"
+        },
+        {
+          "href": "/leaderboard",
+          "text": "Leaderboard"
+        },
+        {
+          "href": "/explorer",
+          "text": "Explorer"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd6734280cb3d702f5beba6c1ba3bcc6912b4872c",
+          "text": "Game Registry0xd6734280cb3d702f5beba6c1ba3bcc6912b4872cblock 40270428"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xbfbe80a1907e3cbfc2c2598c8d9fb9665ff0d2a7",
+          "text": "Match Registry0xbfbe80a1907e3cbfc2c2598c8d9fb9665ff0d2a7block 40270451"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd58960a15e1036efde2ca873716396c0f47031d4",
+          "text": "Wager Escrow0xd58960a15e1036efde2ca873716396c0f47031d4block 40270474"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd8524b7699c37775221d53c0de8c0d74ef93ce0c",
+          "text": "Future Tournament Registry0xd8524b7699c37775221d53c0de8c0d74ef93ce0cblock 40270498"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0x130d276aa665dfeb10df3aee81be73b1e55495b2",
+          "text": "Agent Registry0x130d276aa665dfeb10df3aee81be73b1e55495b2block 40270522"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xf0cd6539f1677b4c141484509a194fe6635e3a9a",
+          "text": "Contributor Registry0xf0cd6539f1677b4c141484509a194fe6635e3a9ablock 40270543"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xa6b46a8ca6f22462e48207909bd40411bc68edbe9a72615060a001d81b1209e7",
+          "text": "Register game version0xa6b46a8c...1209e7block 40270565"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x8e00d4f57367aa161e3f8c6599a98c5f3997b4e46e2c6e04f2ac6787ec7d65fc",
+          "text": "Create match0x8e00d4f5...7d65fcblock 40270583"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x0fe84002b909342f58ad01fbddb4e277aa92e5ed7b2ae3711ee82f71dceee247",
+          "text": "Commit result0x0fe84002...eee247block 40270603"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xb2e48f9a411c449123a0056b0c04833692175b217550b6899c13a62d4b7b8cfe",
+          "text": "Create wager0xb2e48f9a...7b8cfeblock 40270622"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x784267699293ec4fd690cb0ea396478a17adb1a226b81081a6b14927335f27cf",
+          "text": "Settle winner0x78426769...5f27cfblock 40270645"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xbb1d1ead37391f1b08b52200ab69b12ad186d48240ff103ffbe1210be8729b85",
+          "text": "Record future tournament result0xbb1d1ead...729b85block 40270663"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x1a339c3e2b6e61df002d6a786386933d08c58b0e1e4bd0d49103e934b4408912",
+          "text": "Register agent0x1a339c3e...408912block 40270684"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xa43b0dac7ca56cf8e62e485869d81f8268521ff467db94be1a5dccf43e6fbbd5",
+          "text": "Update rating0xa43b0dac...6fbbd5block 40270701"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x3ce622842df959f86ab455de9d2f29a80606f16ad8cd1d5a9712f47fc8683a47",
+          "text": "Record contributor credit0x3ce62284...683a47block 40270723"
+        },
+        {
+          "href": "/proof/match-lbw-mqr19ztg",
+          "text": "match-lbw-mqr19ztglocal-fallbackgame grid-fourresult 0x20fbfa97...fbfa97storage local://ro...replaystorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-lbw-mqr198sc",
+          "text": "match-lbw-mqr198sclocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-lbw-mqr180p1",
+          "text": "match-lbw-mqr180p1local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-lbw-mqr17jsw",
+          "text": "match-lbw-mqr17jswlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-lbw-mqr16yrp",
+          "text": "match-lbw-mqr16yrplocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-gate-mqr0zvjn",
+          "text": "match-gate-mqr0zvjnlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-auto-ee22f094",
+          "text": "match-auto-ee22f094local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-auto-24c9ae96",
+          "text": "match-auto-24c9ae96local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-auto-24f637e1",
+          "text": "match-auto-24f637e1local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-wager-cap--8-mqqyfhjt",
+          "text": "match-pol-wager-cap--8-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-wager-cap--7-mqqyfhjt",
+          "text": "match-pol-wager-cap--7-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-wager-disa-6-mqqyfhjt",
+          "text": "match-pol-wager-disa-6-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-unsupporte-5-mqqyfhjt",
+          "text": "match-pol-unsupporte-5-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-free-quali-4-mqqyfhjt",
+          "text": "match-pol-free-quali-4-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-free-disab-3-mqqyfhjt",
+          "text": "match-pol-free-disab-3-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-pending-ag-2-mqqyfhjt",
+          "text": "match-pol-pending-ag-2-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-pol-unregister-1-mqqyfhjt",
+          "text": "match-pol-unregister-1-mqqyfhjtlocal-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-policy-wager-cap-equal-room-2026",
+          "text": "match-policy-wager-cap-equal-room-2026local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        },
+        {
+          "href": "/proof/match-policy-wager-cap-below-room-2026",
+          "text": "match-policy-wager-cap-below-room-2026local-fallbackgame grid-fourresult pending...endingstorage pending...endingstorage tx pending...endingchain local-mock...l-mock"
+        }
+      ],
+      "title": "0G Arcade Arena",
+      "url": "http://localhost:3021/explorer",
+      "verified": {
+        "showsCompute": true,
+        "showsContracts": true,
+        "showsExplorer": true,
+        "showsLiveMatchProofs": true,
+        "showsStorage": true
+      },
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/browser-proof-explorer-2026-06-24.png"
+    },
+    "proof": {
+      "buttons": [
+        "Logout"
+      ],
+      "headings": [
+        "Proof Receipt",
+        "Replay Receipt",
+        "Verified on 0G Chain",
+        "Contracts",
+        "Write Transactions"
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "0G Arcade Arena"
+        },
+        {
+          "href": "/games",
+          "text": "Games"
+        },
+        {
+          "href": "/agents",
+          "text": "Agents"
+        },
+        {
+          "href": "/submit-game",
+          "text": "Submit"
+        },
+        {
+          "href": "/leaderboard",
+          "text": "Leaderboard"
+        },
+        {
+          "href": "/explorer",
+          "text": "Explorer"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd6734280cb3d702f5beba6c1ba3bcc6912b4872c",
+          "text": "Game Registry0xd6734280cb3d702f5beba6c1ba3bcc6912b4872cblock 40270428"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xbfbe80a1907e3cbfc2c2598c8d9fb9665ff0d2a7",
+          "text": "Match Registry0xbfbe80a1907e3cbfc2c2598c8d9fb9665ff0d2a7block 40270451"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd58960a15e1036efde2ca873716396c0f47031d4",
+          "text": "Wager Escrow0xd58960a15e1036efde2ca873716396c0f47031d4block 40270474"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xd8524b7699c37775221d53c0de8c0d74ef93ce0c",
+          "text": "Future Tournament Registry0xd8524b7699c37775221d53c0de8c0d74ef93ce0cblock 40270498"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0x130d276aa665dfeb10df3aee81be73b1e55495b2",
+          "text": "Agent Registry0x130d276aa665dfeb10df3aee81be73b1e55495b2block 40270522"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/address/0xf0cd6539f1677b4c141484509a194fe6635e3a9a",
+          "text": "Contributor Registry0xf0cd6539f1677b4c141484509a194fe6635e3a9ablock 40270543"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xa6b46a8ca6f22462e48207909bd40411bc68edbe9a72615060a001d81b1209e7",
+          "text": "Register game version0xa6b46a8c...1209e7block 40270565"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x8e00d4f57367aa161e3f8c6599a98c5f3997b4e46e2c6e04f2ac6787ec7d65fc",
+          "text": "Create match0x8e00d4f5...7d65fcblock 40270583"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x0fe84002b909342f58ad01fbddb4e277aa92e5ed7b2ae3711ee82f71dceee247",
+          "text": "Commit result0x0fe84002...eee247block 40270603"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0xb2e48f9a411c449123a0056b0c04833692175b217550b6899c13a62d4b7b8cfe",
+          "text": "Create wager0xb2e48f9a...7b8cfeblock 40270622"
+        },
+        {
+          "href": "https://chainscan-galileo.0g.ai/tx/0x784267699293ec4fd690cb0ea396478a17adb1a226b81081a6b14927335f27cf",
+          "text": "Settle winner0x78426769...5f27cfblock 40270645"
+        }
+      ],
+      "title": "0G Arcade Arena",
+      "url": "http://localhost:3021/proof/match-grid-four-agent-free-smoke",
+      "verified": {
+        "showsChainPanel": true,
+        "showsDaTruth": true,
+        "showsFallbackTruth": true,
+        "showsProofReceipt": true,
+        "showsReplayReceipt": true
+      },
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/browser-proof-proof-page-2026-06-24.png"
+    }
+  }
+}

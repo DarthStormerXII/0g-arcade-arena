@@ -1,0 +1,108 @@
+{
+  "date": "2026-06-23",
+  "mode": "localhost-real-0g-galileo-h2h-wager",
+  "status": "settled_on_chain_with_partial_browser_move_sequence",
+  "localUrl": "http://localhost:3021",
+  "roomId": "gr-b7ov",
+  "matchId": "match-gr-b7ov",
+  "gameId": "grid-four",
+  "wagerWeiPerPlayer": "100000000000000",
+  "requiredEscrowWei": "200000000000000",
+  "escrowWeiBeforeSettlement": "200000000000000",
+  "escrowWeiAfterSettlement": "0",
+  "chain": {
+    "name": "0G Galileo Testnet",
+    "chainId": 16602,
+    "rpcUrl": "https://evmrpc-testnet.0g.ai",
+    "explorer": "https://chainscan-galileo.0g.ai"
+  },
+  "contract": {
+    "name": "ArcadeWagerEscrow",
+    "address": "0xd58960a15e1036efde2ca873716396c0f47031d4"
+  },
+  "players": [
+    {
+      "label": "accountA",
+      "email": "test-1032@privy.io",
+      "wallet": "0x23761115c5f38ca51f0d425d00DE6E34029239EC"
+    },
+    {
+      "label": "accountB",
+      "email": "test-2632@privy.io",
+      "wallet": "0xD5F264Ee35815Af73510150302cc52FE686E5f81"
+    }
+  ],
+  "roomResult": {
+    "status": "finished",
+    "winnerIds": [
+      "0x23761115c5f38ca51f0d425d00de6e34029239ec"
+    ],
+    "reason": "four connected cells",
+    "turn": 7,
+    "replayHash": "0x7bb92851",
+    "resultHash": "0xe7bf6f52",
+    "score": {
+      "0x23761115c5f38ca51f0d425d00de6e34029239ec": 4,
+      "0xd5f264ee35815af73510150302cc52fe686e5f81": 3
+    }
+  },
+  "transactions": [
+    {
+      "type": "fund",
+      "player": "accountA",
+      "from": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0x3a55b331738e9670c662d5641247e95a824554a7c35c7215b5a31b990b0de0a5",
+      "blockNumber": "0x2676f19",
+      "status": "0x1",
+      "gasUsed": "0xb06e",
+      "amountWei": "100000000000000"
+    },
+    {
+      "type": "fund",
+      "player": "accountB",
+      "from": "0xd5f264ee35815af73510150302cc52fe686e5f81",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0x3d6096c90e185117568f5c5e5392a708068b241285ec2adc12969442095b01cd",
+      "blockNumber": "0x2676f44",
+      "status": "0x1",
+      "gasUsed": "0x6da2",
+      "amountWei": "100000000000000"
+    },
+    {
+      "type": "settle",
+      "player": "accountA",
+      "winner": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "from": "0x23761115c5f38ca51f0d425d00de6e34029239ec",
+      "to": "0xd58960a15e1036efde2ca873716396c0f47031d4",
+      "transactionHash": "0xd8ab7e44d4176d29ef737e9c1c6e229df068bd8cf0527251ca0504d8f2025980",
+      "blockNumber": "0x2677992",
+      "status": "0x1",
+      "gasUsed": "0x8ee5",
+      "payoutWei": "196000000000000",
+      "feeWei": "4000000000000"
+    }
+  ],
+  "executionNotes": [
+    "Both Privy browser wallets funded the wager through the app UI and Privy approval modal.",
+    "The Worker now rejects starting a wager room until eth_call escrowed(matchId) is at least wagerWei * playerCount.",
+    "The room started only after escrow reached 200000000000000 wei.",
+    "The first three game moves were made through authenticated browser contexts; the remaining four moves were applied through the room API after the second browser context intermittently lost the hydrated match board on reload.",
+    "Settlement was approved through the winning Privy browser wallet and mined successfully on 0G Galileo.",
+    "Privy sometimes displayed a transient viem receipt-not-found modal even when Galileo receipts were already mined; chain receipts and escrow state are treated as authoritative."
+  ],
+  "screenshots": [
+    "evidence/live-proofs/wager-mqqu6nhs-account-a-fund-approval.png",
+    "evidence/live-proofs/wager-mqqu6nhs-account-a-funded.png",
+    "evidence/live-proofs/wager-mqqu6nhs-account-b-fund-approval.png",
+    "evidence/live-proofs/wager-mqqu6nhs-account-b-funded.png",
+    "evidence/live-proofs/wager-cont2-mqqude9i-account-a-login.png",
+    "evidence/live-proofs/wager-cont2-mqqude9i-account-b-login.png",
+    "evidence/live-proofs/wager-cont2-mqqude9i-b-col2-mqque5yf.png",
+    "evidence/live-proofs/wager-cont2-mqqude9i-a-col1-mqque8wt.png",
+    "evidence/live-proofs/wager-settle-mqquzlu7-before-settle.png",
+    "evidence/live-proofs/wager-settle-mqquzlu7-settle-approval.png",
+    "evidence/live-proofs/wager-settle-mqquzlu7-after-settle.png"
+  ],
+  "remainingGap": "A completely browser-only two-context move loop still needs fixing; wager funding, escrow-gated start, deterministic room completion, and winning-wallet settlement are proven."
+}

@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-06-24T00:24:00+07:00",
+  "mode": "local-agent-compute-router-bound-api",
+  "status": "passed",
+  "roomId": "compute-bound-qwvqr2",
+  "endpoint": "POST /api/rooms/:roomId/agent-move",
+  "workerEnv": {
+    "routerKeyBound": true,
+    "computeRouterBound": true,
+    "computeModelBound": true
+  },
+  "result": {
+    "roomStatus": "active",
+    "computeMode": "deterministic-fallback",
+    "fallbackReason": "Insufficient balance",
+    "move": {
+      "column": 3
+    },
+    "proof": {
+      "turn": 1,
+      "playerId": "agent-compute-bound",
+      "mode": "deterministic-fallback",
+      "provider": null,
+      "requestId": null,
+      "verified": false,
+      "model": null,
+      "contentHash": null,
+      "fallbackReason": "Insufficient balance"
+    }
+  },
+  "truthBoundary": "Local Wrangler loaded project-only router credentials from ignored .dev.vars. The Worker attempted 0G Compute and persisted deterministic fallback proof metadata after the router returned insufficient balance. This does not prove live 0G Compute execution."
+}

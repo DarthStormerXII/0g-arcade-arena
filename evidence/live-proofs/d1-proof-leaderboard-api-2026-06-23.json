@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-06-23T16:54:39.000Z",
+  "mode": "local-d1-proof-leaderboard-api",
+  "roomId": "e2e-qvx07g",
+  "matchId": "match-e2e-qvx07g",
+  "gameId": "grid-four",
+  "opponentMode": "human",
+  "wagerWei": "0",
+  "status": "finished",
+  "winner": "browser-a-live-proof",
+  "replayHash": "0x7e614e9a",
+  "resultHash": "0x613b30c5",
+  "proofApi": "/api/proofs/match-e2e-qvx07g",
+  "leaderboardApis": [
+    "/api/leaderboard?scope=global&mode=all",
+    "/api/leaderboard?scope=game&mode=all&gameId=grid-four",
+    "/api/leaderboard?scope=mode&mode=free"
+  ],
+  "verified": {
+    "matchProofRow": true,
+    "globalLeaderboard": true,
+    "gameLeaderboard": true,
+    "freeLeaderboard": true
+  }
+}
