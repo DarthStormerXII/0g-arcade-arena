@@ -35,7 +35,7 @@ if (missing.length) {
 const output = {
   ZEROG_ROUTER_API_KEY: source.ZEROG_ROUTER_API_KEY,
   ZEROG_COMPUTE_ROUTER: source.ZEROG_COMPUTE_ROUTER,
-  ZEROG_COMPUTE_MODEL: source.ZEROG_COMPUTE_MODEL || "glm-5.1",
+  ZEROG_COMPUTE_MODEL: source.ZEROG_COMPUTE_MODEL || "qwen2.5-omni",
 };
 
 writeFileSync(

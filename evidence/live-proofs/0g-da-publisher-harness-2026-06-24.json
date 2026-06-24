@@ -1,0 +1,37 @@
+{
+  "mode": "0g-da-publisher-harness",
+  "status": "passed",
+  "checkedAt": "2026-06-24T12:41:23.136Z",
+  "schema": "0g-arcade-da-publisher-harness@1",
+  "publisher": {
+    "script": "scripts/publish-da-batch-0g.mjs",
+    "clientTool": "node-http2",
+    "tempPublicationFile": "/var/folders/vn/tl96vjs57z9cw273hk8q56hm0000gn/T/0g-arcade-da-publication-harness-1782304883013.json"
+  },
+  "fakeDisperser": {
+    "endpoint": "grpc://127.0.0.1:53488",
+    "streamCalls": 2,
+    "disperseCalls": 1,
+    "statusCalls": 1,
+    "observedPayloadSha256": "sha256:7662efb303bb52394dc4e690c3361b2fc9a316e7aa3eba4613ad86c1d19223e9"
+  },
+  "publication": {
+    "status": "confirmed",
+    "daMode": "live-0g-da",
+    "requestId": "0x6172636164652d64612d6861726e6573732d72657175657374",
+    "storageRoot": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "epoch": 7,
+    "quorumId": 1,
+    "candidatePayloadSha256": "sha256:7662efb303bb52394dc4e690c3361b2fc9a316e7aa3eba4613ad86c1d19223e9"
+  },
+  "verified": {
+    "usedNodeHttp2Client": true,
+    "candidateHashMatches": true,
+    "requestAccepted": true,
+    "terminalConfirmed": true,
+    "statusConfirmed": true,
+    "daModeLive": true,
+    "storageRootDecoded": true,
+    "fakeDisperserReceivedCandidatePayload": true
+  }
+}

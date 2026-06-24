@@ -1,0 +1,859 @@
+{
+  "mode": "multigame-router-compute-api",
+  "status": "passed",
+  "checkedAt": "2026-06-24T10:25:22.622Z",
+  "baseUrl": "http://localhost:3021",
+  "games": [
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "rooms": [
+    {
+      "gameId": "fleet-duel",
+      "roomId": "mgr-fleet-duel-mqrxg2lh",
+      "matchId": "match-mgr-fleet-duel-mqrxg2lh",
+      "registered": {
+        "status": 201,
+        "agentId": "router-agent-fleet-duel-mqrxg2lh"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "fleet-duel"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "routerAgentMove": {
+        "status": 200,
+        "move": {
+          "x": 0,
+          "y": 1
+        },
+        "computeMode": "0g-compute",
+        "fallbackReason": null
+      },
+      "moves": [
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": "0g-compute"
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-fleet-duel-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-fleet-duel-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "finished",
+          "computeMode": null
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x018d4db1",
+        "resultHash": "0x9e13a3ab",
+        "winnerIds": [
+          "human-fleet-duel-mqrxg2lh"
+        ],
+        "computeMode": "0g-compute",
+        "computeProofCount": 1
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mgr-fleet-duel-mqrxg2lh",
+        "gameId": "fleet-duel",
+        "computeMode": "0g-compute",
+        "roomStatus": "finished"
+      }
+    },
+    {
+      "gameId": "tile-race",
+      "roomId": "mgr-tile-race-mqrxg2lh",
+      "matchId": "match-mgr-tile-race-mqrxg2lh",
+      "registered": {
+        "status": 201,
+        "agentId": "router-agent-tile-race-mqrxg2lh"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "tile-race"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "routerAgentMove": {
+        "status": 200,
+        "move": {
+          "direction": "right"
+        },
+        "computeMode": "0g-compute",
+        "fallbackReason": null
+      },
+      "moves": [
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": "0g-compute"
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-tile-race-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-tile-race-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "finished",
+          "computeMode": null
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x6cf20ed4",
+        "resultHash": "0x9f53f1ec",
+        "winnerIds": [
+          "human-tile-race-mqrxg2lh"
+        ],
+        "computeMode": "0g-compute",
+        "computeProofCount": 1
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mgr-tile-race-mqrxg2lh",
+        "gameId": "tile-race",
+        "computeMode": "0g-compute",
+        "roomStatus": "finished"
+      }
+    },
+    {
+      "gameId": "world-cup-draft",
+      "roomId": "mgr-world-cup-draft-mqrxg2lh",
+      "matchId": "match-mgr-world-cup-draft-mqrxg2lh",
+      "registered": {
+        "status": 201,
+        "agentId": "router-agent-world-cup-draft-mqrxg2lh"
+      },
+      "created": {
+        "status": 200,
+        "roomGameId": "world-cup-draft"
+      },
+      "joined": {
+        "status": 200,
+        "roomStatus": "ready"
+      },
+      "started": {
+        "status": 200,
+        "roomStatus": "active"
+      },
+      "routerAgentMove": {
+        "status": 200,
+        "move": {
+          "pickId": "arg-10"
+        },
+        "computeMode": "0g-compute",
+        "fallbackReason": null
+      },
+      "moves": [
+        {
+          "status": 200,
+          "playerId": "human-world-cup-draft-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-world-cup-draft-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": "0g-compute"
+        },
+        {
+          "status": 200,
+          "playerId": "human-world-cup-draft-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-world-cup-draft-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-world-cup-draft-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-world-cup-draft-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "human-world-cup-draft-mqrxg2lh",
+          "playerKind": "human",
+          "roomStatus": "active",
+          "computeMode": null
+        },
+        {
+          "status": 200,
+          "playerId": "router-agent-world-cup-draft-mqrxg2lh",
+          "playerKind": "agent",
+          "roomStatus": "finished",
+          "computeMode": null
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0xfcb33529",
+        "resultHash": "0x5a466525",
+        "winnerIds": [
+          "human-world-cup-draft-mqrxg2lh"
+        ],
+        "computeMode": "0g-compute",
+        "computeProofCount": 1
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-mgr-world-cup-draft-mqrxg2lh",
+        "gameId": "world-cup-draft",
+        "computeMode": "0g-compute",
+        "roomStatus": "finished"
+      }
+    }
+  ],
+  "verified": {
+    "allGamesCovered": true,
+    "allAgentsRegistered": true,
+    "allRoomsFinished": true,
+    "allRouterMovesAccepted": true,
+    "allProofsIndexedCompute": true,
+    "allRoomsPassed": true
+  }
+}

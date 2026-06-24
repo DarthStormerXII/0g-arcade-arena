@@ -1,0 +1,72 @@
+{
+  "mode": "e2e-local-gate",
+  "status": "passed",
+  "checkedAt": "2026-06-24T13:30:58.953Z",
+  "baseUrl": "http://localhost:3021",
+  "spendingRerun": false,
+  "checks": [
+    {
+      "file": "evidence/live-proofs/home-product-flow-2026-06-24.json",
+      "label": "home product flow browser proof",
+      "passed": true,
+      "mode": "local-home-product-flow-browser-ui",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/home-start-actions-2026-06-24.json",
+      "label": "home start actions browser proof",
+      "passed": true,
+      "mode": "local-home-start-actions-browser-ui",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/game-detail-start-actions-2026-06-24.json",
+      "label": "all game detail start actions browser proof",
+      "passed": true,
+      "mode": "local-game-detail-start-actions-browser-ui",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/all-game-h2h-browser-2026-06-24.json",
+      "label": "all-game two-browser human-vs-human proof",
+      "passed": true,
+      "mode": "local-all-game-h2h-browser-ui",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/human-automatch-api-2026-06-24.json",
+      "label": "human auto-match proof",
+      "passed": true,
+      "mode": "local-human-automatch-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/multigame-room-api-2026-06-24.json",
+      "label": "multi-game room API proof",
+      "passed": true,
+      "mode": "local-multigame-room-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/agent-avatar-api-2026-06-24.json",
+      "label": "agent avatar/PFP proof",
+      "passed": true,
+      "mode": "local-agent-avatar-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/agent-skill-package-2026-06-24.json",
+      "label": "external agent skill package proof",
+      "passed": true,
+      "mode": "local-agent-skill-package",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/game-submission-workflow-2026-06-24.json",
+      "label": "PR-based game submission proof",
+      "passed": true,
+      "mode": "local-game-submission-workflow",
+      "status": "passed"
+    }
+  ]
+}

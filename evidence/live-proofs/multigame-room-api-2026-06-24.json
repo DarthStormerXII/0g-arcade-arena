@@ -1,7 +1,7 @@
 {
   "mode": "local-multigame-room-api",
   "status": "passed",
-  "checkedAt": "2026-06-24T06:55:24.463Z",
+  "checkedAt": "2026-06-24T13:30:57.083Z",
   "baseUrl": "http://localhost:3021",
   "games": [
     "fleet-duel",
@@ -11,7 +11,7 @@
   "humanRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mg-fleet-duel-mqrpxwab",
+      "roomId": "mg-fleet-duel-mqs42kj0",
       "kind": "human",
       "created": {
         "status": 200,
@@ -25,25 +25,25 @@
         "status": 200,
         "roomStatus": "active"
       },
-      "moves": 69,
+      "moves": 57,
       "final": {
         "status": "finished",
-        "replayHash": "0xfc2397d0",
-        "resultHash": "0xc695baf6",
+        "replayHash": "0x04e259cf",
+        "resultHash": "0x842ac566",
         "winnerIds": [
-          "human-a-fleet-duel-mqrpxwab"
+          "human-a-fleet-duel-mqs42kj0"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-fleet-duel-mqrpxwab",
+        "matchId": "match-mg-fleet-duel-mqs42kj0",
         "gameId": "fleet-duel"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mg-tile-race-mqrpxwab",
+      "roomId": "mg-tile-race-mqs42kj0",
       "kind": "human",
       "created": {
         "status": 200,
@@ -60,23 +60,22 @@
       "moves": 24,
       "final": {
         "status": "finished",
-        "replayHash": "0x3e80c1d7",
-        "resultHash": "0xf77401ae",
+        "replayHash": "0x3d4b96bb",
+        "resultHash": "0x04e019ff",
         "winnerIds": [
-          "human-a-tile-race-mqrpxwab",
-          "human-b-tile-race-mqrpxwab"
+          "human-b-tile-race-mqs42kj0"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-tile-race-mqrpxwab",
+        "matchId": "match-mg-tile-race-mqs42kj0",
         "gameId": "tile-race"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mg-world-cup-draft-mqrpxwab",
+      "roomId": "mg-world-cup-draft-mqs42kj0",
       "kind": "human",
       "created": {
         "status": 200,
@@ -93,16 +92,16 @@
       "moves": 8,
       "final": {
         "status": "finished",
-        "replayHash": "0x0109aa1d",
-        "resultHash": "0x29decb46",
+        "replayHash": "0xed88643a",
+        "resultHash": "0x0fde0a56",
         "winnerIds": [
-          "human-a-world-cup-draft-mqrpxwab"
+          "human-a-world-cup-draft-mqs42kj0"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-world-cup-draft-mqrpxwab",
+        "matchId": "match-mg-world-cup-draft-mqs42kj0",
         "gameId": "world-cup-draft"
       }
     }
@@ -110,11 +109,11 @@
   "agentRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mga-fleet-duel-mqrpxwab",
+      "roomId": "mga-fleet-duel-mqs42kj0",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-fleet-duel-mqrpxwab"
+        "agentId": "agent-fleet-duel-mqs42kj0"
       },
       "created": {
         "status": 200,
@@ -133,31 +132,6 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
           "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
@@ -168,77 +142,7 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
           "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
@@ -258,32 +162,127 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xff4c3852",
-        "resultHash": "0x9c0a0591",
+        "replayHash": "0xfc8d5967",
+        "resultHash": "0x7c86cb3d",
         "winnerIds": [
-          "human-agent-fleet-duel-mqrpxwab"
+          "human-agent-fleet-duel-mqs42kj0"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-fleet-duel-mqrpxwab",
+        "matchId": "match-mga-fleet-duel-mqs42kj0",
         "gameId": "fleet-duel",
         "computeMode": "deterministic-fallback"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mga-tile-race-mqrpxwab",
+      "roomId": "mga-tile-race-mqs42kj0",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-tile-race-mqrpxwab"
+        "agentId": "agent-tile-race-mqs42kj0"
       },
       "created": {
         "status": 200,
@@ -302,57 +301,57 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
@@ -362,27 +361,27 @@
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xa6a1eb64",
-        "resultHash": "0x48d274d2",
+        "replayHash": "0x1ade7d4f",
+        "resultHash": "0xa644eae6",
         "winnerIds": [
-          "agent-tile-race-mqrpxwab"
+          "agent-tile-race-mqs42kj0"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-tile-race-mqrpxwab",
+        "matchId": "match-mga-tile-race-mqs42kj0",
         "gameId": "tile-race",
         "computeMode": "deterministic-fallback"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mga-world-cup-draft-mqrpxwab",
+      "roomId": "mga-world-cup-draft-mqs42kj0",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-world-cup-draft-mqrpxwab"
+        "agentId": "agent-world-cup-draft-mqs42kj0"
       },
       "created": {
         "status": 200,
@@ -411,7 +410,7 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Insufficient balance"
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
@@ -421,16 +420,16 @@
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x30c3142e",
-        "resultHash": "0x2637ba0b",
+        "replayHash": "0x222c5b76",
+        "resultHash": "0x526514b7",
         "winnerIds": [
-          "human-agent-world-cup-draft-mqrpxwab"
+          "human-agent-world-cup-draft-mqs42kj0"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-world-cup-draft-mqrpxwab",
+        "matchId": "match-mga-world-cup-draft-mqs42kj0",
         "gameId": "world-cup-draft",
         "computeMode": "deterministic-fallback"
       }
@@ -440,7 +439,8 @@
     "humanRoomsFinished": true,
     "agentRoomsFinished": true,
     "agentRoomsRegistered": true,
-    "agentMovesFallbackDisclosed": true,
+    "agentMovesComputeModeDisclosed": true,
+    "agentProofsDiscloseComputeMode": true,
     "allProofsIndexed": true
   }
 }

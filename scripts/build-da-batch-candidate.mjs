@@ -1,17 +1,29 @@
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const outFile = "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json";
 const checkedAt = "2026-06-24T07:48:30.335Z";
+const routerWagerProofFile = "evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json";
+const routerWagerRoomId = existsSync(routerWagerProofFile) ? readJson(routerWagerProofFile).roomId : null;
+const multigameRouterProofFile = "evidence/live-proofs/multigame-router-compute-api-2026-06-24.json";
+const multigameRouterRoomIds = existsSync(multigameRouterProofFile)
+  ? readJson(multigameRouterProofFile).rooms?.map((room) => room.roomId) ?? []
+  : [];
 const roomStorageFiles = [
   "evidence/live-proofs/0g-storage-room-gr-zqvy.json",
   "evidence/live-proofs/0g-storage-room-h2a-wager-mqr1xs1b.json",
-];
+  "evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json",
+  routerWagerRoomId ? `evidence/live-proofs/0g-storage-room-${routerWagerRoomId}.json` : null,
+  ...multigameRouterRoomIds.map((roomId) => `evidence/live-proofs/0g-storage-room-${roomId}.json`),
+].filter(Boolean);
 const chainFiles = [
   "evidence/live-proofs/chain-actual-match-gr-zqvy.json",
   "evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json",
-];
+  "evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json",
+  routerWagerRoomId ? `evidence/live-proofs/chain-actual-match-${routerWagerRoomId}.json` : null,
+  ...multigameRouterRoomIds.map((roomId) => `evidence/live-proofs/chain-actual-match-${roomId}.json`),
+].filter(Boolean);
 const gamePackFiles = [
   "evidence/live-proofs/0g-storage-game-pack-grid-four.json",
   "evidence/live-proofs/0g-storage-game-pack-fleet-duel.json",

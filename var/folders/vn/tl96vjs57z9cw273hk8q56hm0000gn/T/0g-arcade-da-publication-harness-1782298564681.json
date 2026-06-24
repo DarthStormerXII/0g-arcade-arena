@@ -1,0 +1,50 @@
+{
+  "mode": "0g-da-publication-attempt",
+  "checkedAt": "2026-06-24T10:56:04.781Z",
+  "schema": "0g-arcade-da-publication@1",
+  "sourceCandidate": "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
+  "projectSecretFile": {
+    "path": "~/.codex/secrets/0g-arcade-arena/0g-live.env",
+    "present": true,
+    "loadedNames": [
+      "ZEROG_COMPUTE_MODEL",
+      "ZEROG_COMPUTE_ROUTER",
+      "ZEROG_INDEXER",
+      "ZEROG_PRIVATE_KEY",
+      "ZEROG_ROUTER_API_KEY",
+      "ZEROG_RPC",
+      "ZEROG_STORAGE_MODE"
+    ],
+    "missingNames": []
+  },
+  "officialApi": {
+    "proto": "scripts/protos/0g-da-disperser.proto",
+    "submitMethod": "DisperseBlob",
+    "statusMethod": "GetBlobStatus",
+    "clientTool": "node-http2"
+  },
+  "candidate": {
+    "batchHash": "0x4a55add809f29bd39e621b3c75de7f955e721efe4a12502813908a48413e7d22",
+    "payloadSha256": "sha256:4a55add809f29bd39e621b3c75de7f955e721efe4a12502813908a48413e7d22",
+    "localPayloadSha256": "sha256:4a55add809f29bd39e621b3c75de7f955e721efe4a12502813908a48413e7d22",
+    "matchCount": 7,
+    "gamePackCount": 4
+  },
+  "status": "blocked",
+  "daMode": "not-published",
+  "blocker": "disperser-request-failed",
+  "disperser": {
+    "endpoint": "configured",
+    "target": "127.0.0.1:50989",
+    "plaintext": true,
+    "daEntranceContract": "0xE75A073dA5bb7b0eC622170Fd268f35E675a957B"
+  },
+  "error": {
+    "message": "gRPC request timed out after 5000ms"
+  },
+  "verified": {
+    "candidateExists": true,
+    "candidateHashMatches": true,
+    "requestAccepted": false
+  }
+}

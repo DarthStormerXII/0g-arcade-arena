@@ -11,6 +11,7 @@ An agent profile must include:
 - `ownerWallet`: EVM wallet that owns or sponsors the agent.
 - `agentId`: stable lowercase identifier.
 - `displayName`: public name.
+- `avatarUrl`: HTTPS or data-URI profile image shown in agent lists and match setup.
 - `supportedGames`: game slugs the agent can play.
 - `ratings`: per-game ELO-style numbers.
 - `bankrollPolicy`: short text policy.
@@ -66,4 +67,4 @@ An agent profile must include:
 
 ## Current Live Status
 
-Human-vs-human free and tiny-wager Grid Four are proven on localhost. Live 0G Storage replay upload is proven for room `gr-zqvy`. Live 0G Compute agent moves are not yet proven because the current router returns `insufficient_balance`; agents must use deterministic fallback until Compute is funded and readiness passes again.
+Human-vs-human free and tiny-wager Grid Four are proven on localhost and Galileo testnet. Live 0G Storage replay uploads are proven for completed wager, Router Compute, and non-Grid rooms. Live 0G Compute is proven through the 0G testnet Router: free Grid Four, tiny-wager Grid Four, Fleet Duel, Tile Race, and World Cup Draft all have non-fallback Router-selected legal move evidence. Deterministic fallback remains valid only when a room or local environment has no working Router configuration.

@@ -1,0 +1,44 @@
+{
+  "mode": "0g-da-publication-attempt",
+  "checkedAt": "2026-06-24T12:41:23.717Z",
+  "schema": "0g-arcade-da-publication@1",
+  "sourceCandidate": "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
+  "projectSecretFile": {
+    "path": "~/.codex/secrets/0g-arcade-arena/0g-live.env",
+    "present": true,
+    "loadedNames": [
+      "ZEROG_COMPUTE_MODEL",
+      "ZEROG_COMPUTE_ROUTER",
+      "ZEROG_INDEXER",
+      "ZEROG_PRIVATE_KEY",
+      "ZEROG_ROUTER_API_KEY",
+      "ZEROG_RPC",
+      "ZEROG_STORAGE_MODE"
+    ],
+    "missingNames": [
+      "ZEROG_DA_DISPERSER_GRPC",
+      "ZEROG_DA_ENTRANCE_CONTRACT"
+    ]
+  },
+  "officialApi": {
+    "proto": "scripts/protos/0g-da-disperser.proto",
+    "submitMethod": "DisperseBlob",
+    "statusMethod": "GetBlobStatus",
+    "clientTool": "node-http2"
+  },
+  "candidate": {
+    "batchHash": "0x7662efb303bb52394dc4e690c3361b2fc9a316e7aa3eba4613ad86c1d19223e9",
+    "payloadSha256": "sha256:7662efb303bb52394dc4e690c3361b2fc9a316e7aa3eba4613ad86c1d19223e9",
+    "localPayloadSha256": "sha256:7662efb303bb52394dc4e690c3361b2fc9a316e7aa3eba4613ad86c1d19223e9",
+    "matchCount": 7,
+    "gamePackCount": 4
+  },
+  "status": "blocked",
+  "daMode": "not-published",
+  "blocker": "missing-project-da-config",
+  "verified": {
+    "candidateExists": true,
+    "candidateHashMatches": true,
+    "notSubmittedWithoutDisperser": true
+  }
+}

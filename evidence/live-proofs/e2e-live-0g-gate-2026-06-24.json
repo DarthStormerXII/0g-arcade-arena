@@ -1,0 +1,87 @@
+{
+  "mode": "e2e-live-0g-gate",
+  "status": "passed",
+  "checkedAt": "2026-06-24T14:16:13.975Z",
+  "baseUrl": "http://localhost:3021",
+  "spendingRerun": false,
+  "checks": [
+    {
+      "file": "evidence/live-proofs/0g-readiness-latest.json",
+      "label": "live 0G readiness proof",
+      "passed": true,
+      "mode": null,
+      "status": null,
+      "commandStatus": 0
+    },
+    {
+      "file": "evidence/live-proofs/two-privy-h2h-grid-four-2026-06-23.json",
+      "label": "authenticated two-Privy human-vs-human free proof",
+      "passed": true,
+      "mode": "human-vs-human free match",
+      "status": null
+    },
+    {
+      "file": "evidence/live-proofs/h2h-grid-four-wager-browser-full-2026-06-23.json",
+      "label": "browser human-vs-human tiny-wager proof",
+      "passed": true,
+      "mode": "localhost-real-0g-galileo-h2h-wager-browser-only",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/router-compute-agent-match-2026-06-24.json",
+      "label": "live Router Compute free human-vs-agent proof",
+      "passed": true,
+      "mode": "router-compute-agent-match",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json",
+      "label": "live Router Compute wager human-vs-agent proof",
+      "passed": true,
+      "mode": "local-agent-wager-match-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/0g-storage-room-h2a-router-wager-mqs1kt45.json",
+      "label": "current Router wager 0G Storage replay proof",
+      "passed": true,
+      "mode": "live-0g-storage-room-replay",
+      "status": null
+    },
+    {
+      "file": "evidence/live-proofs/chain-actual-match-h2a-router-wager-mqs1kt45.json",
+      "label": "current Router wager Galileo chain commit proof",
+      "passed": true,
+      "mode": "live-0g-galileo-actual-match-result",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/multigame-router-compute-api-2026-06-24.json",
+      "label": "non-Grid live Router Compute proof",
+      "passed": true,
+      "mode": "multigame-router-compute-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/wager-leaderboard-api-2026-06-24.json",
+      "label": "wager leaderboard proof",
+      "passed": true,
+      "mode": "local-wager-leaderboard-api",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/browser-proof-surfaces-2026-06-24.json",
+      "label": "proof, leaderboard, and explorer browser surfaces",
+      "passed": true,
+      "mode": "local-browser-proof-surfaces",
+      "status": "passed"
+    },
+    {
+      "file": "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
+      "label": "DA candidate truth boundary",
+      "passed": true,
+      "mode": "0g-da-batch-candidate",
+      "status": "not-published"
+    }
+  ]
+}

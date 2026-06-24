@@ -75,6 +75,8 @@ const uploadPayload = {
   replayHash: room.replayHash,
   resultHash: room.resultHash,
   wagerWei: room.wagerWei,
+  computeMode: room.computeMode ?? "deterministic-fallback",
+  computeProofs: room.computeProofs ?? [],
 };
 
 const bytes = new TextEncoder().encode(JSON.stringify(uploadPayload));
@@ -100,6 +102,9 @@ const evidence = {
   gameId: room.gameId,
   replayHash: room.replayHash,
   resultHash: room.resultHash,
+  wagerWei: room.wagerWei,
+  computeMode: uploadPayload.computeMode,
+  computeProofCount: uploadPayload.computeProofs.length,
   payloadSha256: `sha256:${createHash("sha256").update(bytes).digest("hex")}`,
   rootHash,
   txHash,

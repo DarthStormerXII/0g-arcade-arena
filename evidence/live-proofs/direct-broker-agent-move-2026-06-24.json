@@ -1,0 +1,58 @@
+{
+  "mode": "direct-broker-agent-move",
+  "status": "blocked",
+  "checkedAt": "2026-06-24T09:47:53.805Z",
+  "baseUrl": "http://localhost:3021",
+  "envFile": "/Users/gabrielantonyxaviour/.codex/secrets/0g-arcade-arena/0g-live.env",
+  "autofundEnabled": false,
+  "minimumLedgerOg": 3,
+  "wallet": {
+    "configured": true,
+    "address": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586",
+    "nativeBalanceOg": "0.686589407791837432",
+    "canFundMinimumLedger": false
+  },
+  "broker": {
+    "initialized": true,
+    "servicesListed": true,
+    "serviceCount": 2,
+    "preferredService": {
+      "provider": "0xa48f01287233509FD694a22Bf840225062E67836",
+      "serviceType": "chatbot",
+      "model": "qwen/qwen2.5-omni-7b",
+      "verifiability": "TeeML"
+    },
+    "metadata": {
+      "endpoint": "https://compute-network-6.integratenetwork.work/v1/proxy",
+      "model": "qwen/qwen2.5-omni-7b"
+    }
+  },
+  "ledger": {
+    "readable": false,
+    "createdThisRun": false,
+    "error": "Account does not exist. Please create an account first using \"add-account\". (Address: 0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586)"
+  },
+  "compute": {
+    "requested": false,
+    "provider": null,
+    "endpointHost": null,
+    "model": null,
+    "requestId": null,
+    "requestHash": null,
+    "responseHash": null,
+    "teeVerified": null,
+    "move": null,
+    "error": null
+  },
+  "app": null,
+  "verified": {
+    "brokerInitialized": true,
+    "servicesListed": true,
+    "ledgerReady": false,
+    "liveComputeResponse": false,
+    "legalMove": false,
+    "appAcceptedComputedMove": false,
+    "matchFinishedAndIndexed": false
+  },
+  "reason": "Direct broker ledger is not ready. Set OG_COMPUTE_BROKER_AUTOFUND=1 only after funding the project wallet and approving ledger creation."
+}

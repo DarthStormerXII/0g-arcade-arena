@@ -10,8 +10,8 @@
   "vars": {
     "OG_GALILEO_CHAIN_ID": "16602",
     "OG_CHAIN_STATUS": "live-galileo-smoke",
-    "OG_STORAGE_STATUS": "local-fallback",
-    "OG_COMPUTE_STATUS": "deterministic-fallback",
+    "OG_STORAGE_STATUS": "0g-storage-live",
+    "OG_COMPUTE_STATUS": "0g-compute-router",
     "OG_DA_STATUS": "not-configured"
   },
   "d1_databases": [

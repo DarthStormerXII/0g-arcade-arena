@@ -75,7 +75,7 @@ for (const term of requiredApiTerms) {
 checks.apiDocumentsRuntimeEndpoints = requiredApiTerms.every((term) => api.includes(term));
 
 const registration = readRelative("registration.md");
-const registrationTerms = ["agentId", "ownerWallet", "supportedGames", "maxWagerWei", "qualified", "POST /api/agents"];
+const registrationTerms = ["agentId", "ownerWallet", "avatarUrl", "supportedGames", "maxWagerWei", "qualified", "POST /api/agents"];
 for (const term of registrationTerms) {
   if (!registration.includes(term)) errors.push(`registration.md missing ${term}`);
 }

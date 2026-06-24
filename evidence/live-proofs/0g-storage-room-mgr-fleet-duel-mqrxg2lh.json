@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-06-24T10:29:57.014Z",
+  "mode": "live-0g-storage-room-replay",
+  "roomId": "mgr-fleet-duel-mqrxg2lh",
+  "matchId": "match-mgr-fleet-duel-mqrxg2lh",
+  "gameId": "fleet-duel",
+  "replayHash": "0x018d4db1",
+  "resultHash": "0x9e13a3ab",
+  "wagerWei": "0",
+  "computeMode": "0g-compute",
+  "computeProofCount": 1,
+  "payloadSha256": "sha256:e78e5f1abce25a1fec90ceaf279d832ac1f316cfa5478c3b37c9c59f120f0955",
+  "rootHash": "0xfdc8cef344cf0b929509163ab641e17dd2c76c43a724e458cf97eea57cdba786",
+  "txHash": "0xe320c48c39e1e00c84abeab7c61ed1386ede3cc93a33f2c0c46ecc38bc913dbf",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

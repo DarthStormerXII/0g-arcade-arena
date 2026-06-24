@@ -1,0 +1,899 @@
+{
+  "mode": "local-all-game-h2h-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T13:30:41.002Z",
+  "url": "http://localhost:3021",
+  "games": [
+    "grid-four",
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "rooms": [
+    {
+      "gameId": "grid-four",
+      "roomId": "gr-rixw",
+      "matchId": "match-gr-rixw",
+      "roomCode": "GR-RIXW",
+      "hostGuest": {
+        "id": "guest-5c0cbf",
+        "displayName": "Guest 5C0CBF"
+      },
+      "guestGuest": {
+        "id": "guest-7bd57d",
+        "displayName": "Guest 7BD57D"
+      },
+      "players": [
+        {
+          "id": "guest-5c0cbf",
+          "kind": "human",
+          "displayName": "Guest 5C0CBF"
+        },
+        {
+          "id": "guest-7bd57d",
+          "kind": "human",
+          "displayName": "Guest 7BD57D"
+        }
+      ],
+      "clickedMoves": [
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 1
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 2
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 3
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 4
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 5
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 6
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 7
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 8
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 9
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 10
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 11
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 12
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 13
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 14
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 15
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 16
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 17
+        },
+        {
+          "playerId": "guest-7bd57d",
+          "label": "Drop in column 3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 18
+        },
+        {
+          "playerId": "guest-5c0cbf",
+          "label": "Drop in column 4",
+          "statusAfterMove": "finished",
+          "turnAfterMove": 19
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0xce53774b",
+        "resultHash": "0x127398a6",
+        "winnerIds": [
+          "guest-5c0cbf"
+        ],
+        "reason": "four connected cells"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-gr-rixw",
+        "gameId": "grid-four"
+      },
+      "screenshots": {
+        "hostFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-grid-four-host-finished-2026-06-24.png",
+        "guestFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-grid-four-guest-finished-2026-06-24.png"
+      },
+      "verified": {
+        "guestIdentitiesDistinct": true,
+        "roomCreatedFromUi": true,
+        "guestJoinedFromUi": true,
+        "matchStartedFromUi": true,
+        "browserMovesClicked": true,
+        "matchFinished": true,
+        "replayAndResultHashesPresent": true,
+        "proofIndexed": true,
+        "screenshotsPresent": true
+      }
+    },
+    {
+      "gameId": "fleet-duel",
+      "roomId": "fl-xdhg",
+      "matchId": "match-fl-xdhg",
+      "roomCode": "FL-XDHG",
+      "hostGuest": {
+        "id": "guest-c051a4",
+        "displayName": "Guest C051A4"
+      },
+      "guestGuest": {
+        "id": "guest-816303",
+        "displayName": "Guest 816303"
+      },
+      "players": [
+        {
+          "id": "guest-c051a4",
+          "kind": "human",
+          "displayName": "Guest C051A4"
+        },
+        {
+          "id": "guest-816303",
+          "kind": "human",
+          "displayName": "Guest 816303"
+        }
+      ],
+      "clickedMoves": [
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 0,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 1
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 0,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 2
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 1,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 3
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 1,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 4
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 2,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 5
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 2,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 6
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 3,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 7
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 3,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 8
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 4,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 9
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 4,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 10
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 5,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 11
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 5,0",
+          "statusAfterMove": "active",
+          "turnAfterMove": 12
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 0,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 13
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 0,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 14
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 1,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 15
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 1,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 16
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 2,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 17
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 2,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 18
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 3,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 19
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 3,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 20
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 4,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 21
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 4,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 22
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 5,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 23
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 5,1",
+          "statusAfterMove": "active",
+          "turnAfterMove": 24
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 0,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 25
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 0,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 26
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 1,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 27
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 1,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 28
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 2,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 29
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 2,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 30
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 3,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 31
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 3,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 32
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 4,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 33
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 4,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 34
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 5,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 35
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 5,2",
+          "statusAfterMove": "active",
+          "turnAfterMove": 36
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 0,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 37
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 0,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 38
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 1,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 39
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 1,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 40
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 2,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 41
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 2,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 42
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 3,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 43
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 3,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 44
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 4,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 45
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 4,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 46
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 5,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 47
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 5,3",
+          "statusAfterMove": "active",
+          "turnAfterMove": 48
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 0,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 49
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 0,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 50
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 1,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 51
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 1,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 52
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 2,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 53
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 2,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 54
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 3,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 55
+        },
+        {
+          "playerId": "guest-816303",
+          "label": "Fire 3,4",
+          "statusAfterMove": "active",
+          "turnAfterMove": 56
+        },
+        {
+          "playerId": "guest-c051a4",
+          "label": "Fire 4,4",
+          "statusAfterMove": "finished",
+          "turnAfterMove": 57
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0xb75a4783",
+        "resultHash": "0x1d9ff5ba",
+        "winnerIds": [
+          "guest-c051a4"
+        ],
+        "reason": "all opposing ships found"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-fl-xdhg",
+        "gameId": "fleet-duel"
+      },
+      "screenshots": {
+        "hostFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-fleet-duel-host-finished-2026-06-24.png",
+        "guestFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-fleet-duel-guest-finished-2026-06-24.png"
+      },
+      "verified": {
+        "guestIdentitiesDistinct": true,
+        "roomCreatedFromUi": true,
+        "guestJoinedFromUi": true,
+        "matchStartedFromUi": true,
+        "browserMovesClicked": true,
+        "matchFinished": true,
+        "replayAndResultHashesPresent": true,
+        "proofIndexed": true,
+        "screenshotsPresent": true
+      }
+    },
+    {
+      "gameId": "tile-race",
+      "roomId": "ti-jo48",
+      "matchId": "match-ti-jo48",
+      "roomCode": "TI-JO48",
+      "hostGuest": {
+        "id": "guest-bed49b",
+        "displayName": "Guest BED49B"
+      },
+      "guestGuest": {
+        "id": "guest-9b5c2f",
+        "displayName": "Guest 9B5C2F"
+      },
+      "players": [
+        {
+          "id": "guest-bed49b",
+          "kind": "human",
+          "displayName": "Guest BED49B"
+        },
+        {
+          "id": "guest-9b5c2f",
+          "kind": "human",
+          "displayName": "Guest 9B5C2F"
+        }
+      ],
+      "clickedMoves": [
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 1
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 2
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 3
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 4
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 5
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 6
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 7
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 8
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "down",
+          "statusAfterMove": "active",
+          "turnAfterMove": 9
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "down",
+          "statusAfterMove": "active",
+          "turnAfterMove": 10
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 11
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 12
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 13
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 14
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 15
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 16
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 17
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "down",
+          "statusAfterMove": "active",
+          "turnAfterMove": 18
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 19
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 20
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 21
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 22
+        },
+        {
+          "playerId": "guest-bed49b",
+          "label": "up",
+          "statusAfterMove": "active",
+          "turnAfterMove": 23
+        },
+        {
+          "playerId": "guest-9b5c2f",
+          "label": "up",
+          "statusAfterMove": "finished",
+          "turnAfterMove": 24
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0x2c2e3ede",
+        "resultHash": "0x385d51c1",
+        "winnerIds": [
+          "guest-bed49b"
+        ],
+        "reason": "fixed move budget reached"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-ti-jo48",
+        "gameId": "tile-race"
+      },
+      "screenshots": {
+        "hostFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-tile-race-host-finished-2026-06-24.png",
+        "guestFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-tile-race-guest-finished-2026-06-24.png"
+      },
+      "verified": {
+        "guestIdentitiesDistinct": true,
+        "roomCreatedFromUi": true,
+        "guestJoinedFromUi": true,
+        "matchStartedFromUi": true,
+        "browserMovesClicked": true,
+        "matchFinished": true,
+        "replayAndResultHashesPresent": true,
+        "proofIndexed": true,
+        "screenshotsPresent": true
+      }
+    },
+    {
+      "gameId": "world-cup-draft",
+      "roomId": "wo-g6zj",
+      "matchId": "match-wo-g6zj",
+      "roomCode": "WO-G6ZJ",
+      "hostGuest": {
+        "id": "guest-e9bfbd",
+        "displayName": "Guest E9BFBD"
+      },
+      "guestGuest": {
+        "id": "guest-d95bb0",
+        "displayName": "Guest D95BB0"
+      },
+      "players": [
+        {
+          "id": "guest-e9bfbd",
+          "kind": "human",
+          "displayName": "Guest E9BFBD"
+        },
+        {
+          "id": "guest-d95bb0",
+          "kind": "human",
+          "displayName": "Guest D95BB0"
+        }
+      ],
+      "clickedMoves": [
+        {
+          "playerId": "guest-e9bfbd",
+          "label": "Draft arg-10",
+          "statusAfterMove": "active",
+          "turnAfterMove": 1
+        },
+        {
+          "playerId": "guest-d95bb0",
+          "label": "Draft bra-11",
+          "statusAfterMove": "active",
+          "turnAfterMove": 2
+        },
+        {
+          "playerId": "guest-e9bfbd",
+          "label": "Draft jpn-14",
+          "statusAfterMove": "active",
+          "turnAfterMove": 3
+        },
+        {
+          "playerId": "guest-d95bb0",
+          "label": "Draft kor-18",
+          "statusAfterMove": "active",
+          "turnAfterMove": 4
+        },
+        {
+          "playerId": "guest-e9bfbd",
+          "label": "Draft fra-9",
+          "statusAfterMove": "active",
+          "turnAfterMove": 5
+        },
+        {
+          "playerId": "guest-d95bb0",
+          "label": "Draft eng-7",
+          "statusAfterMove": "active",
+          "turnAfterMove": 6
+        },
+        {
+          "playerId": "guest-e9bfbd",
+          "label": "Draft esp-6",
+          "statusAfterMove": "active",
+          "turnAfterMove": 7
+        },
+        {
+          "playerId": "guest-d95bb0",
+          "label": "Draft ger-1",
+          "statusAfterMove": "finished",
+          "turnAfterMove": 8
+        }
+      ],
+      "final": {
+        "status": "finished",
+        "replayHash": "0xd271ae1f",
+        "resultHash": "0x9725960d",
+        "winnerIds": [
+          "guest-e9bfbd"
+        ],
+        "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
+      },
+      "proof": {
+        "status": 200,
+        "matchId": "match-wo-g6zj",
+        "gameId": "world-cup-draft"
+      },
+      "screenshots": {
+        "hostFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-world-cup-draft-host-finished-2026-06-24.png",
+        "guestFinished": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/all-game-h2h-world-cup-draft-guest-finished-2026-06-24.png"
+      },
+      "verified": {
+        "guestIdentitiesDistinct": true,
+        "roomCreatedFromUi": true,
+        "guestJoinedFromUi": true,
+        "matchStartedFromUi": true,
+        "browserMovesClicked": true,
+        "matchFinished": true,
+        "replayAndResultHashesPresent": true,
+        "proofIndexed": true,
+        "screenshotsPresent": true
+      }
+    }
+  ],
+  "verified": {
+    "allGamesCovered": true,
+    "allGuestIdentitiesDistinct": true,
+    "allRoomsCreatedJoinedStartedFromUi": true,
+    "allMatchesFinishedByBrowserMoves": true,
+    "allProofsIndexed": true,
+    "allScreenshotsPresent": true
+  },
+  "conclusion": "Every game can be created, joined, started, played to completion, and proof-indexed from two independent guest browser contexts using visible human-vs-human UI controls."
+}

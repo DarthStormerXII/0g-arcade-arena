@@ -1,0 +1,27 @@
+{
+  "mode": "local-agent-avatar-api",
+  "status": "passed",
+  "checkedAt": "2026-06-24T13:30:57.802Z",
+  "baseUrl": "http://localhost:3021",
+  "agents": {
+    "explicitId": "avatar-explicit-mqs42wjc",
+    "generatedId": "avatar-generated-mqs42wjc"
+  },
+  "responses": {
+    "explicitRegistrationStatus": 201,
+    "generatedRegistrationStatus": 201,
+    "explicitGetStatus": 200,
+    "generatedGetStatus": 200,
+    "listingStatus": 200
+  },
+  "verified": {
+    "explicitRegistrationAccepted": true,
+    "generatedRegistrationAccepted": true,
+    "explicitRegistrationPreservedAvatar": true,
+    "explicitGetPreservedAvatar": true,
+    "explicitListingPreservedAvatar": true,
+    "generatedRegistrationHasAvatar": true,
+    "generatedGetHasAvatar": true,
+    "generatedListingHasAvatar": true
+  }
+}

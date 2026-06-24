@@ -1,0 +1,48 @@
+{
+  "mode": "direct-broker-live-pipeline",
+  "status": "blocked",
+  "checkedAt": "2026-06-24T09:47:50.958Z",
+  "autofundEnabled": false,
+  "steps": [
+    {
+      "label": "compute broker diagnostic",
+      "command": "pnpm 0g:compute-broker-diagnostic",
+      "status": 0,
+      "ok": true,
+      "stdoutTail": [
+        "Detected testnet (chain ID: 16602)",
+        "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json: blocked"
+      ],
+      "stderrTail": [
+        "$ node scripts/diagnose-compute-broker.mjs"
+      ]
+    },
+    {
+      "label": "direct broker agent move",
+      "command": "pnpm 0g:direct-broker-agent-move",
+      "status": 0,
+      "ok": true,
+      "stdoutTail": [
+        "Detected testnet (chain ID: 16602)",
+        "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/direct-broker-agent-move-2026-06-24.json: blocked"
+      ],
+      "stderrTail": [
+        "$ node scripts/verify-direct-broker-agent-move.mjs"
+      ]
+    }
+  ],
+  "roomId": null,
+  "evidence": {
+    "diagnostic": "evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json",
+    "directMove": "evidence/live-proofs/direct-broker-agent-move-2026-06-24.json",
+    "storage": null,
+    "chain": null
+  },
+  "verified": {
+    "diagnosticsRan": true,
+    "directBrokerMatchPassed": false,
+    "storageUploaded": false,
+    "chainCommitted": false
+  },
+  "reason": "Direct broker ledger is not ready. Set OG_COMPUTE_BROKER_AUTOFUND=1 only after funding the project wallet and approving ledger creation."
+}

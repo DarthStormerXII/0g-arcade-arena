@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-06-24T10:30:20.630Z",
+  "mode": "live-0g-storage-room-replay",
+  "roomId": "mgr-world-cup-draft-mqrxg2lh",
+  "matchId": "match-mgr-world-cup-draft-mqrxg2lh",
+  "gameId": "world-cup-draft",
+  "replayHash": "0xfcb33529",
+  "resultHash": "0x5a466525",
+  "wagerWei": "0",
+  "computeMode": "0g-compute",
+  "computeProofCount": 1,
+  "payloadSha256": "sha256:20a61513ca29cdeb5c817a80980b75dca87672bdc421cf7a70d5cada6cf5fc04",
+  "rootHash": "0x7399a314f84b1f9f5d516d9c6f13417b4bfc76c0d37ad64d319c50d82ef7c72a",
+  "txHash": "0x546cd06d893a3b113b824e00fc5d0b6319dec4c605f17dd06d19ada2375b901c",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

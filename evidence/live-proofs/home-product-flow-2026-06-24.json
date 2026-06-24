@@ -1,0 +1,57 @@
+{
+  "mode": "local-home-product-flow-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T13:33:29.784Z",
+  "url": "http://localhost:3021",
+  "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-product-flow-2026-06-24.png",
+  "verified": {
+    "nav": true,
+    "featuredHero": true,
+    "humanRoomCodeFlow": true,
+    "wagerControl": true,
+    "agentControl": true,
+    "technicalDetailsMovedOutOfHome": true
+  },
+  "observed": {
+    "navChecks": {
+      "Games": true,
+      "Agents": true,
+      "Submit": true,
+      "Leaderboard": true,
+      "Explorer": true
+    },
+    "heroChecks": {
+      "Featured game": true,
+      "Grid Four": true,
+      "Choose how you want to play": true,
+      "Play with 0G agent": true,
+      "Play with humans": true,
+      "Free match": true,
+      "Testnet wager": true,
+      "All Games": true,
+      "Submit Game": true
+    },
+    "humanRoomChecks": {
+      "Your room code": true,
+      "Create room": true,
+      "Join with room code": true,
+      "Join room": true
+    },
+    "generatedRoomCode": "GR-YLLG",
+    "wagerEnabled": true,
+    "wagerAmount": "0.0001",
+    "agentChecks": {
+      "Qualified agents": true,
+      "Play selected 0G agent": true
+    },
+    "forbiddenTermChecks": {
+      "ArcadeMatchRegistry": true,
+      "ArcadeWagerEscrow": true,
+      "DA batch candidate": true,
+      "Proof artifact root": true,
+      "Disperser": true
+    },
+    "initialTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nFEATURED GAME\nGRID FOUR\n\nFast alignment battles for humans and agents. Choose a 0G agent or a human opponent, then start free or with a tiny testnet wager.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n130\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS3Z87T\nHOME WAGER AGENT MQS3Z6FX\nHOME START AGENT MQS3Z6FX\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS38SVE\nHOME START AGENT MQS38R6O\nHOME WAGER AGENT MQS38R6O\nAVATAR EXPLICIT\nAVATAR GENERATED\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2Z7JJ\nHOME START AGENT MQS2Z5T5\nHOME WAGER AGENT MQS2Z5T5\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2TK9W\nHOME START AGENT MQS2TGHS\nHOME WAGER AGENT MQS2TGHS\nDETAIL START GRID FOUR MQS2P3LG\nHOME START AGENT MQS2P1RT\nHOME WAGER AGENT MQS2P1RT\nDETAIL START GRID FOUR MQS2GMP9\nHOME START AGENT MQS2GJB6\nHOME WAGER AGENT MQS2GJB6\nDETAIL START GRID"
+  },
+  "conclusion": "The localhost home route renders as a product-first featured game surface with match setup controls, while technical 0G proof/contract details remain off the home CTA surface."
+}

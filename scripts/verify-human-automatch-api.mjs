@@ -5,6 +5,8 @@ const runId = new Date().toISOString().replace(/[-:T.Z]/g, "").slice(0, 14);
 const evidencePath = "evidence/live-proofs/human-automatch-api-2026-06-24.json";
 const ownerWallet = "0x000000000000000000000000000000000000a11c";
 const wagerWei = "100000000000000";
+const freeMatchGroup = `free-${runId}`;
+const wagerMatchGroup = `wager-${runId}`;
 
 function player(label) {
   return {
@@ -37,10 +39,11 @@ function postJson(path, body) {
   return request(path, { method: "POST", body: JSON.stringify(body) });
 }
 
-async function autoMatch(label, wager = "0") {
+async function autoMatch(label, wager = "0", matchGroup = freeMatchGroup) {
   return postJson("/api/matchmaking/human", {
     gameId: "grid-four",
     wagerWei: wager,
+    matchGroup,
     player: player(label),
   });
 }
@@ -55,8 +58,8 @@ const freeRoomId = freeFirst.body?.room?.roomId;
 const freeRoomAfterPair = freeRoomId ? await getRoom(freeRoomId) : { status: 0, body: null };
 const freeThird = await autoMatch("free-c");
 
-const wagerFirst = await autoMatch("wager-a", wagerWei);
-const wagerSecond = await autoMatch("wager-b", wagerWei);
+const wagerFirst = await autoMatch("wager-a", wagerWei, wagerMatchGroup);
+const wagerSecond = await autoMatch("wager-b", wagerWei, wagerMatchGroup);
 const wagerRoomId = wagerFirst.body?.room?.roomId;
 const wagerRoomAfterPair = wagerRoomId ? await getRoom(wagerRoomId) : { status: 0, body: null };
 
@@ -102,6 +105,10 @@ const evidence = {
   checkedAt: new Date().toISOString(),
   baseUrl,
   wagerWei,
+  matchGroups: {
+    free: freeMatchGroup,
+    wager: wagerMatchGroup,
+  },
   free: {
     first: {
       status: freeFirst.status,

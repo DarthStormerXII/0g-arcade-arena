@@ -115,6 +115,77 @@ function storagePayloadHash(storageProof) {
   return `0x${hash}`;
 }
 
+function sourceRoomId(proof) {
+  return proof.roomId ?? proof.app?.roomId ?? proof.acceptedRoom?.roomId ?? null;
+}
+
+function sourceProofForRoom(proof, targetRoomId) {
+  if (sourceRoomId(proof) === targetRoomId) return proof;
+  const room = proof.rooms?.find?.((item) => item.roomId === targetRoomId);
+  if (!room) return null;
+  return {
+    mode: `${proof.mode}-room`,
+    status: proof.status,
+    checkedAt: proof.checkedAt,
+    roomId: room.roomId,
+    matchId: room.matchId,
+    gameId: room.gameId,
+    wagerWei: "0",
+    completion: {
+      finalStatus: room.final?.status ?? null,
+      winnerIds: room.final?.winnerIds ?? [],
+      replayHash: room.final?.replayHash ?? null,
+      resultHash: room.final?.resultHash ?? null,
+      computeMode: room.final?.computeMode ?? null,
+      computeProofCount: room.final?.computeProofCount ?? 0,
+    },
+    routerAgentMove: room.routerAgentMove ?? null,
+    proof: room.proof ?? null,
+    parentEvidence: {
+      mode: proof.mode,
+      checkedAt: proof.checkedAt,
+      status: proof.status,
+    },
+  };
+}
+
+function sourceMatchId(proof) {
+  return proof.matchId ?? proof.app?.matchId ?? (sourceRoomId(proof) ? `match-${sourceRoomId(proof)}` : null);
+}
+
+function sourceGameId(proof, storageProof) {
+  return proof.gameId ?? proof.app?.gameId ?? proof.acceptedRoom?.gameId ?? storageProof.gameId ?? "grid-four";
+}
+
+function sourceWagered(proof, storageProof) {
+  const wagerWei = proof.wagerWei ?? proof.app?.wagerWei ?? proof.acceptedRoom?.wagerWei ?? storageProof.wagerWei ?? "0";
+  return String(wagerWei) !== "0";
+}
+
+function sourceComputeClaim(proof) {
+  if (proof.mode === "router-compute-agent-match" && proof.status === "passed") {
+    return "The completed match includes at least one 0G testnet Router-selected agent move, and the app proof index recorded computeMode=0g-compute.";
+  }
+  if (proof.mode === "direct-broker-agent-move" && proof.status === "passed") {
+    return "The completed match includes at least one direct 0G Compute broker-selected agent move, and the app proof index recorded computeMode=0g-compute.";
+  }
+  if (proof.expectedComputeMode === "0g-compute" && proof.verified?.agentMovesUseRouterCompute === true) {
+    return "The completed wager match includes live 0G testnet Router-selected agent moves, and the app proof index recorded computeMode=0g-compute.";
+  }
+  if (proof.mode === "multigame-router-compute-api-room" && proof.routerAgentMove?.computeMode === "0g-compute") {
+    return "The completed non-Grid match includes a live 0G testnet Router-selected legal agent move, and the app proof index recorded computeMode=0g-compute.";
+  }
+  return "No live 0G Compute execution is claimed by this proof.";
+}
+
+function sourceEvidenceKey(proof) {
+  if (proof.mode === "router-compute-agent-match") return "routerCompute";
+  if (proof.mode === "multigame-router-compute-api-room") return "multigameRouterCompute";
+  if (proof.mode === "direct-broker-agent-move") return "directBroker";
+  if (proof.mode?.includes?.("agent")) return "agentWager";
+  return "wager";
+}
+
 const chainProofPath = join(root, "evidence/live-proofs/chain-check-latest.json");
 const storageProofPath = join(root, `evidence/live-proofs/0g-storage-room-${roomId}.json`);
 
@@ -125,48 +196,62 @@ for (const file of [chainProofPath, storageProofPath]) {
 const sourceProofCandidates = [
   join(root, "evidence/live-proofs/h2h-grid-four-wager-browser-full-2026-06-23.json"),
   join(root, "evidence/live-proofs/agent-wager-match-api-2026-06-24.json"),
+  join(root, "evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json"),
+  join(root, "evidence/live-proofs/direct-broker-agent-move-2026-06-24.json"),
+  join(root, "evidence/live-proofs/router-compute-agent-match-2026-06-24.json"),
+  join(root, "evidence/live-proofs/multigame-router-compute-api-2026-06-24.json"),
 ];
 const sourceProofPath = sourceProofCandidates.find((file) => {
   if (!existsSync(file)) return false;
   try {
-    return readJson(file).roomId === roomId;
+    return sourceProofForRoom(readJson(file), roomId) !== null;
   } catch {
     return false;
   }
 });
-if (!sourceProofPath) throw new Error(`missing source wager evidence for room ${roomId}`);
+if (!sourceProofPath) throw new Error(`missing source match evidence for room ${roomId}`);
 
 const chainProof = readJson(chainProofPath);
-const sourceProof = readJson(sourceProofPath);
+const sourceProof = sourceProofForRoom(readJson(sourceProofPath), roomId);
 const storageProof = readJson(storageProofPath);
 const matchRegistry = chainProof.deployments?.ArcadeMatchRegistry?.address;
 if (!/^0x[a-fA-F0-9]{40}$/.test(matchRegistry || "")) throw new Error("chain proof is missing ArcadeMatchRegistry address");
-if (sourceProof.roomId !== roomId || storageProof.roomId !== roomId) throw new Error(`evidence does not match room ${roomId}`);
+if (!sourceProof || sourceRoomId(sourceProof) !== roomId || storageProof.roomId !== roomId) {
+  throw new Error(`evidence does not match room ${roomId}`);
+}
 if (storageProof.reachable !== true) throw new Error(`storage root is not reachable for room ${roomId}`);
 
 const chainId = cast(["chain-id"]);
 if (chainId !== "16602") throw new Error(`expected chain id 16602, got ${chainId}`);
 
 const nextMatchId = cast(["call", matchRegistry, "nextMatchId()(uint256)"]);
-const gameId = bytes32Text(sourceProof.gameId ?? storageProof.gameId ?? "grid-four");
+const gameId = bytes32Text(sourceGameId(sourceProof, storageProof));
+const wagered = sourceWagered(sourceProof, storageProof);
 const settlementTx =
   sourceProof.transactions?.settlement?.transactionHash ??
   sourceProof.transactions?.find?.((tx) => tx.type === "settle")?.transactionHash ??
   null;
 const sourceResult =
   sourceProof.roomResult ?? {
-    status: sourceProof.api?.proof?.roomStatus ?? "finished",
-    winnerIds: sourceProof.winnerId ? [sourceProof.winnerId] : [],
+    status:
+      sourceProof.api?.proof?.roomStatus ??
+      sourceProof.app?.completion?.finalStatus ??
+      sourceProof.completion?.finalStatus ??
+      "finished",
+    winnerIds: sourceProof.winnerId
+      ? [sourceProof.winnerId]
+      : (sourceProof.app?.completion?.winnerIds ?? sourceProof.completion?.winnerIds ?? []),
     loserIds: sourceProof.loserId ? [sourceProof.loserId] : [],
     replayHash: storageProof.replayHash,
     resultHash: storageProof.resultHash,
+    computeMode: storageProof.computeMode ?? sourceProof.app?.completion?.computeMode ?? sourceProof.completion?.computeMode ?? null,
   };
 const appMatchId =
   typeof sourceProof.matchId === "string" && sourceProof.matchId.startsWith("match-")
     ? sourceProof.matchId
-    : sourceProof.api?.proof?.matchId ?? storageProof.matchId;
+    : sourceProof.api?.proof?.matchId ?? sourceMatchId(sourceProof) ?? storageProof.matchId;
 const resultHash = sha256Json({
-  roomId: sourceProof.roomId,
+  roomId: sourceRoomId(sourceProof),
   matchId: appMatchId,
   result: sourceResult,
   settlementTx,
@@ -176,7 +261,7 @@ const storageUri = `0g://storage/${storageProof.rootHash}`;
 const storageUriHash = sha256Text(storageUri);
 
 const transactions = {
-  createMatch: send(matchRegistry, "createMatch(bytes32,bool)", [gameId, "true"]),
+  createMatch: send(matchRegistry, "createMatch(bytes32,bool)", [gameId, String(wagered)]),
   commitResult: send(matchRegistry, "commitResult(uint256,bytes32,bytes32,string)", [
     nextMatchId,
     resultHash,
@@ -196,7 +281,7 @@ const verified = {
   commitResultMined: transactions.commitResult.status === "0x1",
   storedGameId: stored.includes(gameId),
   storedCreator: stored.toLowerCase().includes(operator.toLowerCase()),
-  storedWagered: /\btrue\b/.test(stored),
+  storedWagered: wagered ? /\btrue\b/.test(stored) : /\bfalse\b/.test(stored),
   storedResultHash: stored.includes(resultHash),
   storedReplayHash: stored.includes(replayHash),
   storedStorageUri: stored.includes(storageUri),
@@ -218,7 +303,7 @@ const proof = {
     address: matchRegistry,
   },
   sourceEvidence: {
-    wager: sourceProofPath.replace(`${root}/`, ""),
+    [sourceEvidenceKey(sourceProof)]: sourceProofPath.replace(`${root}/`, ""),
     storage: `evidence/live-proofs/0g-storage-room-${roomId}.json`,
     chainDeployments: "evidence/live-proofs/chain-check-latest.json",
   },
@@ -231,14 +316,16 @@ const proof = {
     storageRoot: storageProof.rootHash,
     storageUri,
     storageUriHash,
+    wagered,
+    computeMode: sourceResult.computeMode,
   },
   transactions,
   stored,
   verified,
   claims: {
-    chain: "The completed browser wager match result and reachable 0G Storage replay root were committed to the live Galileo ArcadeMatchRegistry.",
+    chain: `The completed ${wagered ? "wager" : "free"} match result and reachable 0G Storage replay root were committed to the live Galileo ArcadeMatchRegistry.`,
     storage: "The committed replayHash is the sha256 payload hash from the reachable 0G Storage room replay evidence.",
-    compute: "No live 0G Compute execution is claimed by this proof.",
+    compute: sourceComputeClaim(sourceProof),
     da: "No 0G DA publication is claimed by this proof.",
   },
 };

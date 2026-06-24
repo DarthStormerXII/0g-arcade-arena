@@ -1,0 +1,744 @@
+{
+  "mode": "router-compute-agent-match",
+  "status": "passed",
+  "checkedAt": "2026-06-24T09:55:21.159Z",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "router-compute-mqrwdmmf",
+  "matchId": "match-router-compute-mqrwdmmf",
+  "gameId": "grid-four",
+  "wagerWei": "0",
+  "steps": {
+    "register": {
+      "status": 201,
+      "body": {
+        "ok": true,
+        "agent": {
+          "agentId": "agent-router-compute-mqrwdmmf",
+          "ownerWallet": "0x0000000000000000000000000000000000000002",
+          "displayName": "Router Compute Agent",
+          "supportedGames": [
+            "grid-four"
+          ],
+          "bankrollPolicy": "free live 0G Router verification only",
+          "status": "qualified",
+          "freeEnabled": true,
+          "wagerEnabled": false,
+          "maxWagerWei": "0",
+          "endpointUrl": null
+        }
+      }
+    },
+    "create": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "room": {
+          "roomId": "router-compute-mqrwdmmf",
+          "matchId": "match-router-compute-mqrwdmmf",
+          "gameId": "grid-four",
+          "seed": "0x21ea9f57",
+          "opponentMode": "agent",
+          "wagerWei": "0",
+          "players": [
+            {
+              "id": "human-router-mqrwdmmf",
+              "kind": "human",
+              "displayName": "Router Compute Human",
+              "ownerWallet": "0x0000000000000000000000000000000000000001"
+            }
+          ],
+          "status": "waiting",
+          "state": null,
+          "replay": null,
+          "result": null,
+          "score": null,
+          "createdAt": "2026-06-24T09:55:21.209Z",
+          "updatedAt": "2026-06-24T09:55:21.209Z",
+          "currentPlayerIds": [],
+          "legalMoves": [],
+          "replayHash": null,
+          "resultHash": null
+        }
+      }
+    },
+    "join": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "room": {
+          "roomId": "router-compute-mqrwdmmf",
+          "matchId": "match-router-compute-mqrwdmmf",
+          "gameId": "grid-four",
+          "seed": "0x21ea9f57",
+          "opponentMode": "agent",
+          "wagerWei": "0",
+          "players": [
+            {
+              "id": "human-router-mqrwdmmf",
+              "kind": "human",
+              "displayName": "Router Compute Human",
+              "ownerWallet": "0x0000000000000000000000000000000000000001"
+            },
+            {
+              "id": "agent-router-compute-mqrwdmmf",
+              "kind": "agent",
+              "agentId": "agent-router-compute-mqrwdmmf",
+              "displayName": "Router Compute Agent",
+              "ownerWallet": "0x0000000000000000000000000000000000000002"
+            }
+          ],
+          "status": "ready",
+          "state": null,
+          "replay": null,
+          "result": null,
+          "score": null,
+          "createdAt": "2026-06-24T09:55:21.209Z",
+          "updatedAt": "2026-06-24T09:55:21.215Z",
+          "currentPlayerIds": [],
+          "legalMoves": [],
+          "replayHash": null,
+          "resultHash": null
+        }
+      }
+    },
+    "start": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "room": {
+          "roomId": "router-compute-mqrwdmmf",
+          "matchId": "match-router-compute-mqrwdmmf",
+          "gameId": "grid-four",
+          "seed": "0x21ea9f57",
+          "opponentMode": "agent",
+          "wagerWei": "0",
+          "players": [
+            {
+              "id": "human-router-mqrwdmmf",
+              "kind": "human",
+              "displayName": "Router Compute Human",
+              "ownerWallet": "0x0000000000000000000000000000000000000001"
+            },
+            {
+              "id": "agent-router-compute-mqrwdmmf",
+              "kind": "agent",
+              "agentId": "agent-router-compute-mqrwdmmf",
+              "displayName": "Router Compute Agent",
+              "ownerWallet": "0x0000000000000000000000000000000000000002"
+            }
+          ],
+          "status": "active",
+          "state": {
+            "gameId": "grid-four",
+            "version": "1.0.0",
+            "seed": "0x21ea9f57",
+            "players": [
+              {
+                "id": "human-router-mqrwdmmf",
+                "kind": "human",
+                "displayName": "Router Compute Human",
+                "ownerWallet": "0x0000000000000000000000000000000000000001"
+              },
+              {
+                "id": "agent-router-compute-mqrwdmmf",
+                "kind": "agent",
+                "agentId": "agent-router-compute-mqrwdmmf",
+                "displayName": "Router Compute Agent",
+                "ownerWallet": "0x0000000000000000000000000000000000000002"
+              }
+            ],
+            "board": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "turn": 0,
+            "moves": [],
+            "result": null
+          },
+          "replay": null,
+          "result": null,
+          "score": null,
+          "createdAt": "2026-06-24T09:55:21.209Z",
+          "updatedAt": "2026-06-24T09:55:21.219Z",
+          "currentPlayerIds": [
+            "human-router-mqrwdmmf"
+          ],
+          "legalMoves": [
+            {
+              "column": 0
+            },
+            {
+              "column": 1
+            },
+            {
+              "column": 2
+            },
+            {
+              "column": 3
+            },
+            {
+              "column": 4
+            },
+            {
+              "column": 5
+            },
+            {
+              "column": 6
+            }
+          ],
+          "replayHash": null,
+          "resultHash": null
+        }
+      }
+    },
+    "firstHumanMove": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "room": {
+          "roomId": "router-compute-mqrwdmmf",
+          "matchId": "match-router-compute-mqrwdmmf",
+          "gameId": "grid-four",
+          "seed": "0x21ea9f57",
+          "opponentMode": "agent",
+          "wagerWei": "0",
+          "players": [
+            {
+              "id": "human-router-mqrwdmmf",
+              "kind": "human",
+              "displayName": "Router Compute Human",
+              "ownerWallet": "0x0000000000000000000000000000000000000001"
+            },
+            {
+              "id": "agent-router-compute-mqrwdmmf",
+              "kind": "agent",
+              "agentId": "agent-router-compute-mqrwdmmf",
+              "displayName": "Router Compute Agent",
+              "ownerWallet": "0x0000000000000000000000000000000000000002"
+            }
+          ],
+          "status": "active",
+          "state": {
+            "gameId": "grid-four",
+            "version": "1.0.0",
+            "seed": "0x21ea9f57",
+            "players": [
+              {
+                "id": "human-router-mqrwdmmf",
+                "kind": "human",
+                "displayName": "Router Compute Human",
+                "ownerWallet": "0x0000000000000000000000000000000000000001"
+              },
+              {
+                "id": "agent-router-compute-mqrwdmmf",
+                "kind": "agent",
+                "agentId": "agent-router-compute-mqrwdmmf",
+                "displayName": "Router Compute Agent",
+                "ownerWallet": "0x0000000000000000000000000000000000000002"
+              }
+            ],
+            "board": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "human-router-mqrwdmmf",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "turn": 1,
+            "moves": [
+              {
+                "turn": 0,
+                "playerId": "human-router-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x1fe043b9"
+              }
+            ],
+            "result": null
+          },
+          "replay": {
+            "gameId": "grid-four",
+            "version": "1.0.0",
+            "seed": "0x21ea9f57",
+            "players": [
+              {
+                "id": "human-router-mqrwdmmf",
+                "kind": "human",
+                "displayName": "Router Compute Human",
+                "ownerWallet": "0x0000000000000000000000000000000000000001"
+              },
+              {
+                "id": "agent-router-compute-mqrwdmmf",
+                "kind": "agent",
+                "agentId": "agent-router-compute-mqrwdmmf",
+                "displayName": "Router Compute Agent",
+                "ownerWallet": "0x0000000000000000000000000000000000000002"
+              }
+            ],
+            "moves": [
+              {
+                "turn": 0,
+                "playerId": "human-router-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x1fe043b9"
+              }
+            ],
+            "result": null,
+            "finalStateHash": "0x1fe043b9"
+          },
+          "result": null,
+          "score": {
+            "leaders": [],
+            "scores": {
+              "human-router-mqrwdmmf": 1,
+              "agent-router-compute-mqrwdmmf": 0
+            },
+            "turn": 1
+          },
+          "createdAt": "2026-06-24T09:55:21.209Z",
+          "updatedAt": "2026-06-24T09:55:21.224Z",
+          "currentPlayerIds": [
+            "agent-router-compute-mqrwdmmf"
+          ],
+          "legalMoves": [
+            {
+              "column": 0
+            },
+            {
+              "column": 1
+            },
+            {
+              "column": 2
+            },
+            {
+              "column": 3
+            },
+            {
+              "column": 4
+            },
+            {
+              "column": 5
+            },
+            {
+              "column": 6
+            }
+          ],
+          "replayHash": "0xaf992aa6",
+          "resultHash": null
+        }
+      }
+    },
+    "routerAgentMove": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "room": {
+          "roomId": "router-compute-mqrwdmmf",
+          "matchId": "match-router-compute-mqrwdmmf",
+          "gameId": "grid-four",
+          "seed": "0x21ea9f57",
+          "opponentMode": "agent",
+          "wagerWei": "0",
+          "players": [
+            {
+              "id": "human-router-mqrwdmmf",
+              "kind": "human",
+              "displayName": "Router Compute Human",
+              "ownerWallet": "0x0000000000000000000000000000000000000001"
+            },
+            {
+              "id": "agent-router-compute-mqrwdmmf",
+              "kind": "agent",
+              "agentId": "agent-router-compute-mqrwdmmf",
+              "displayName": "Router Compute Agent",
+              "ownerWallet": "0x0000000000000000000000000000000000000002"
+            }
+          ],
+          "status": "active",
+          "state": {
+            "gameId": "grid-four",
+            "version": "1.0.0",
+            "seed": "0x21ea9f57",
+            "players": [
+              {
+                "id": "human-router-mqrwdmmf",
+                "kind": "human",
+                "displayName": "Router Compute Human",
+                "ownerWallet": "0x0000000000000000000000000000000000000001"
+              },
+              {
+                "id": "agent-router-compute-mqrwdmmf",
+                "kind": "agent",
+                "agentId": "agent-router-compute-mqrwdmmf",
+                "displayName": "Router Compute Agent",
+                "ownerWallet": "0x0000000000000000000000000000000000000002"
+              }
+            ],
+            "board": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "agent-router-compute-mqrwdmmf",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "human-router-mqrwdmmf",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "turn": 2,
+            "moves": [
+              {
+                "turn": 0,
+                "playerId": "human-router-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x1fe043b9"
+              },
+              {
+                "turn": 1,
+                "playerId": "agent-router-compute-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x3dfafe89"
+              }
+            ],
+            "result": null
+          },
+          "replay": {
+            "gameId": "grid-four",
+            "version": "1.0.0",
+            "seed": "0x21ea9f57",
+            "players": [
+              {
+                "id": "human-router-mqrwdmmf",
+                "kind": "human",
+                "displayName": "Router Compute Human",
+                "ownerWallet": "0x0000000000000000000000000000000000000001"
+              },
+              {
+                "id": "agent-router-compute-mqrwdmmf",
+                "kind": "agent",
+                "agentId": "agent-router-compute-mqrwdmmf",
+                "displayName": "Router Compute Agent",
+                "ownerWallet": "0x0000000000000000000000000000000000000002"
+              }
+            ],
+            "moves": [
+              {
+                "turn": 0,
+                "playerId": "human-router-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x1fe043b9"
+              },
+              {
+                "turn": 1,
+                "playerId": "agent-router-compute-mqrwdmmf",
+                "move": {
+                  "column": 0
+                },
+                "stateHash": "0x3dfafe89"
+              }
+            ],
+            "result": null,
+            "finalStateHash": "0x3dfafe89"
+          },
+          "result": null,
+          "score": {
+            "leaders": [],
+            "scores": {
+              "human-router-mqrwdmmf": 1,
+              "agent-router-compute-mqrwdmmf": 1
+            },
+            "turn": 2
+          },
+          "createdAt": "2026-06-24T09:55:21.209Z",
+          "updatedAt": "2026-06-24T09:55:24.714Z",
+          "computeMode": "0g-compute",
+          "computeProofs": [
+            {
+              "turn": 1,
+              "playerId": "agent-router-compute-mqrwdmmf",
+              "mode": "0g-compute",
+              "provider": "0xa48f01287233509FD694a22Bf840225062E67836",
+              "requestId": "853441bb-88ef-41d2-b8af-5d98a080d53f",
+              "verified": true,
+              "model": "qwen/qwen2.5-omni-7b",
+              "contentHash": "0xb8e67fe1",
+              "fallbackReason": null
+            }
+          ],
+          "currentPlayerIds": [
+            "human-router-mqrwdmmf"
+          ],
+          "legalMoves": [
+            {
+              "column": 0
+            },
+            {
+              "column": 1
+            },
+            {
+              "column": 2
+            },
+            {
+              "column": 3
+            },
+            {
+              "column": 4
+            },
+            {
+              "column": 5
+            },
+            {
+              "column": 6
+            }
+          ],
+          "replayHash": "0x4663e717",
+          "resultHash": null
+        },
+        "agentMove": {
+          "move": {
+            "column": 0
+          },
+          "confidence": 0.7,
+          "reasoningSummary": "Selecting column 0 as it is currently empty and aligns with the goal of placing tokens.",
+          "risk": "low",
+          "computeMode": "0g-compute",
+          "provider": "0xa48f01287233509FD694a22Bf840225062E67836",
+          "requestId": "853441bb-88ef-41d2-b8af-5d98a080d53f",
+          "fallbackReason": null
+        }
+      }
+    }
+  },
+  "agentMove": {
+    "move": {
+      "column": 0
+    },
+    "confidence": 0.7,
+    "reasoningSummary": "Selecting column 0 as it is currently empty and aligns with the goal of placing tokens.",
+    "risk": "low",
+    "computeMode": "0g-compute",
+    "provider": "0xa48f01287233509FD694a22Bf840225062E67836",
+    "requestId": "853441bb-88ef-41d2-b8af-5d98a080d53f",
+    "fallbackReason": null
+  },
+  "completion": {
+    "humanColumn": 1,
+    "manualAgentColumn": 6,
+    "moves": [
+      {
+        "kind": "human",
+        "status": 200,
+        "column": 1
+      },
+      {
+        "kind": "agent-manual",
+        "status": 200,
+        "column": 6
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "column": 1
+      },
+      {
+        "kind": "agent-manual",
+        "status": 200,
+        "column": 6
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "column": 1
+      },
+      {
+        "kind": "agent-manual",
+        "status": 200,
+        "column": 6
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "column": 1
+      }
+    ],
+    "finalStatus": "finished",
+    "winnerIds": [
+      "human-router-mqrwdmmf"
+    ],
+    "replayHash": "0xb3803544",
+    "resultHash": "0xacdc37d4",
+    "computeMode": "0g-compute",
+    "computeProofCount": 1
+  },
+  "proof": {
+    "status": 200,
+    "matchId": "match-router-compute-mqrwdmmf",
+    "roomStatus": "finished",
+    "computeMode": "0g-compute",
+    "computeProofMode": "0g-compute"
+  },
+  "verified": {
+    "agentRegistered": true,
+    "roomStarted": true,
+    "routerMoveAccepted": true,
+    "routerMoveWasLiveCompute": true,
+    "matchFinished": true,
+    "proofIndexedCompute": true
+  },
+  "reason": "0G testnet Router selected a legal Grid Four agent move; the app completed the room and indexed the proof as 0g-compute."
+}

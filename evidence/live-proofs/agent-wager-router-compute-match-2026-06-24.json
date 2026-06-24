@@ -1,0 +1,229 @@
+{
+  "mode": "local-agent-wager-match-api",
+  "status": "passed",
+  "checkedAt": "2026-06-24T12:21:32.967Z",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "h2a-router-wager-mqs1kt45",
+  "matchId": "3891799592",
+  "wagerWei": "100000000000000",
+  "expectedComputeMode": "0g-compute",
+  "human": {
+    "id": "h2a-human-mqs1kt45",
+    "displayName": "H2A Wager Human"
+  },
+  "agent": {
+    "id": "agent-wager-warden-mqs1kt45",
+    "displayName": "H2A Wager Grid Warden"
+  },
+  "winnerId": "h2a-human-mqs1kt45",
+  "loserId": "agent-wager-warden-mqs1kt45",
+  "transactions": {
+    "fundHuman": {
+      "transactionHash": "0x05cda9815bdce601483e9feb07d9fe3f1e7b4d1e4d616e3d5a1545e820a8640f",
+      "status": "0x1",
+      "blockNumber": "0x269aeec"
+    },
+    "fundAgent": {
+      "transactionHash": "0x84e7de7e6d831ab66ca5389d0e205027671845a96cb36cc8b329c3af63257050",
+      "status": "0x1",
+      "blockNumber": "0x269af00"
+    },
+    "settlement": {
+      "transactionHash": "0x8c96abf86a7f4fac55e8e201574487be66e7eb7f3b711e2063886543931e1de0",
+      "status": "0x1",
+      "blockNumber": "0x269af27"
+    }
+  },
+  "api": {
+    "registered": {
+      "status": 201
+    },
+    "listed": {
+      "status": 200,
+      "listedIds": [
+        "agent-wager-warden-mqs1kt45",
+        "agent-wager-warden-mqs1gvol",
+        "home-wager-agent-mqs19emt",
+        "home-wager-agent-mqs16r7m",
+        "home-wager-agent-mqs15qlg",
+        "home-wager-agent-mqs14pf4",
+        "home-wager-agent-mqs0hih8",
+        "home-wager-agent-mqs00qlm",
+        "home-wager-agent-mqrzzvhn",
+        "home-wager-agent-mqrzyln2",
+        "policy-free-disabled-20260624111109",
+        "policy-cap-ok-20260624111109",
+        "agent-wager-warden-mqrx23nu",
+        "policy-free-disabled-20260624094731",
+        "policy-cap-ok-20260624094731",
+        "agent-ui-grid-four-pickmqrqjway",
+        "agent-wager-warden-mqr1xs1b",
+        "agent-wager-warden-mqr1vspx",
+        "agent-browser-proof-grid-warden",
+        "policy-free-disabled-20260623180500",
+        "policy-cap-ok-20260623180500",
+        "policy-free-disabled-20260623180445",
+        "policy-cap-ok-20260623180445",
+        "policy-free-disabled-20260623180430",
+        "policy-cap-ok-20260623180430",
+        "agent-grid-warden-live"
+      ]
+    },
+    "created": {
+      "status": 200,
+      "roomStatus": "waiting"
+    },
+    "joined": {
+      "status": 200,
+      "roomStatus": "ready"
+    },
+    "started": {
+      "status": 200,
+      "roomStatus": "active"
+    },
+    "moveResults": [
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqs1kt45"
+        ],
+        "move": {
+          "column": 0
+        },
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqs1kt45"
+        ],
+        "move": null,
+        "agentMove": {
+          "move": {
+            "column": 1
+          },
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqs1kt45"
+        ],
+        "move": {
+          "column": 0
+        },
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqs1kt45"
+        ],
+        "move": null,
+        "agentMove": {
+          "move": {
+            "column": 2
+          },
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "agent-wager-warden-mqs1kt45"
+        ],
+        "move": {
+          "column": 0
+        },
+        "agentMove": null
+      },
+      {
+        "kind": "agent",
+        "status": 200,
+        "roomStatus": "active",
+        "currentPlayerIds": [
+          "h2a-human-mqs1kt45"
+        ],
+        "move": null,
+        "agentMove": {
+          "move": {
+            "column": 3
+          },
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        }
+      },
+      {
+        "kind": "human",
+        "status": 200,
+        "roomStatus": "finished",
+        "currentPlayerIds": [],
+        "move": {
+          "column": 0
+        },
+        "agentMove": null
+      }
+    ],
+    "finalRoomStatus": "finished",
+    "finalResult": {
+      "winnerIds": [
+        "h2a-human-mqs1kt45"
+      ],
+      "loserIds": [
+        "agent-wager-warden-mqs1kt45"
+      ],
+      "draw": false,
+      "reason": "four connected cells"
+    },
+    "proof": {
+      "status": 200,
+      "matchId": "match-h2a-router-wager-mqs1kt45",
+      "roomId": "h2a-router-wager-mqs1kt45",
+      "roomStatus": "finished",
+      "computeMode": "0g-compute"
+    }
+  },
+  "verified": {
+    "agentRegistered": true,
+    "agentListedForWager": true,
+    "roomCreated": true,
+    "agentJoined": true,
+    "fundedTwice": true,
+    "roomStartedAfterFunding": true,
+    "agentMovedAtLeastOnce": true,
+    "agentMovedThreeTimes": true,
+    "agentMovesUseExpectedCompute": true,
+    "matchFinishedWithWinner": true,
+    "winnerIsKnownParticipant": true,
+    "loserIsKnownParticipant": true,
+    "matchFinishedWithHumanWinner": true,
+    "settlementMined": true,
+    "proofIndexed": true,
+    "proofDisclosesExpectedCompute": true,
+    "globalIncludesWinner": true,
+    "wagerIncludesWinner": true,
+    "gameWagerIncludesWinner": true,
+    "wagerIncludesLoserLoss": true,
+    "humanAndAgentIndexedInWagerMode": true,
+    "freeModeDoesNotIncludeWagerWinner": true,
+    "globalIncludesHumanWinner": true,
+    "wagerIncludesHumanWinner": true,
+    "gameWagerIncludesHumanWinner": true,
+    "wagerIncludesAgentLoss": true,
+    "agentMovesUseRouterCompute": true,
+    "proofDisclosesRouterCompute": true
+  }
+}

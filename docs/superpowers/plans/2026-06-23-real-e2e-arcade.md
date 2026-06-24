@@ -6,7 +6,7 @@
 
 **Architecture:** Implement the real runtime in vertical slices. First establish a project-local live 0G readiness layer, then replace static/local match behavior with a Durable Object room/match API, then wire chain/storage/compute proofs into matches, then add browser E2E proof for two Privy users and one qualified 0G agent. Tournaments are out of active scope.
 
-**Tech Stack:** Vite + React + TypeScript, Cloudflare Worker + Durable Objects + D1/KV/R2, Solidity/Foundry, 0G Galileo RPC, 0G Storage SDK, 0G Compute Router `glm-5.1`, Privy test accounts, Playwright/Chromium browser automation.
+**Tech Stack:** Vite + React + TypeScript, Cloudflare Worker + Durable Objects + D1/KV/R2, Solidity/Foundry, 0G Galileo RPC, 0G Storage SDK, 0G testnet Compute Router model `qwen2.5-omni`, Privy test accounts, Playwright/Chromium browser automation.
 
 ---
 
@@ -57,8 +57,8 @@ ZEROG_PRIVATE_KEY=<copied from scribezero>
 ZEROG_ROUTER_API_KEY=<copied from scribezero>
 ZEROG_RPC=https://evmrpc-testnet.0g.ai
 ZEROG_INDEXER=https://indexer-storage-testnet-turbo.0g.ai
-ZEROG_COMPUTE_ROUTER=https://router-api.0g.ai/v1
-ZEROG_COMPUTE_MODEL=glm-5.1
+ZEROG_COMPUTE_ROUTER=https://router-api-testnet.integratenetwork.work/v1
+ZEROG_COMPUTE_MODEL=qwen2.5-omni
 ZEROG_STORAGE_MODE=live
 ```
 
@@ -69,7 +69,7 @@ ZEROG_STORAGE_MODE=live
 - verify `ZEROG_PRIVATE_KEY` shape without printing it;
 - verify the derived operator address and balance;
 - call 0G Router `/models`;
-- run a tiny `glm-5.1` TEE chat request and confirm `ZG-Res-Key` or trace provider exists;
+- run a tiny `qwen2.5-omni` testnet Router chat request and confirm `ZG-Res-Key` or trace provider exists;
 - verify `glm-5.2` status separately and mark it unavailable if provider selection fails;
 - check known Privy wallets:
   - `0x23761115c5f38ca51f0d425d00DE6E34029239EC`
@@ -94,7 +94,7 @@ Update `AGENTS.md` with:
 ```markdown
 - Live 0G env for this project is local-only at `~/.codex/secrets/0g-arcade-arena/0g-live.env`.
 - Load with `set -a; source ~/.codex/secrets/0g-arcade-arena/0g-live.env; set +a`.
-- Use `ZEROG_COMPUTE_MODEL=glm-5.1`; `glm-5.2` is not assumed available until the readiness verifier proves it.
+- Use `ZEROG_COMPUTE_MODEL=qwen2.5-omni` on the 0G testnet Router; do not reuse mainnet Router defaults for this project.
 ```
 
 - [ ] **Step 5: Verify no secrets leaked**
@@ -205,7 +205,7 @@ no matches
 - Modify: `worker/index.ts`
 - Create: `tests/e2e/human-vs-agent.spec.ts`
 
-- [ ] Use `glm-5.1` 0G Router with structured JSON response format.
+- [ ] Use `qwen2.5-omni` on the 0G testnet Router with structured JSON response format.
 - [ ] Prompt includes game rules, current player view, legal moves, and required JSON schema.
 - [ ] Server rejects malformed JSON, illegal moves, and timeouts.
 - [ ] Test human-vs-agent free match.
@@ -255,8 +255,8 @@ no matches
 - Modify: `package.json`
 - Modify: `scripts/submission-check.mjs`
 
-- [ ] Add `pnpm e2e:local`.
-- [ ] Add `pnpm e2e:live-0g`.
+- [x] Add `pnpm e2e:local`.
+- [x] Add `pnpm e2e:live-0g`.
 - [ ] E2E must cover:
   - auth account A
   - auth account B
@@ -267,7 +267,7 @@ no matches
   - result/proof
   - leaderboard
   - explorer
-- [ ] Completion requires `pnpm e2e:live-0g` to pass on localhost.
+- [x] Completion requires `pnpm e2e:live-0g` to pass on localhost.
 
 ---
 
@@ -292,5 +292,5 @@ no matches
 
 - Scope coverage: The plan covers real 0G credentials, human-vs-human, human-vs-agent, free/wager, agent registration/skill docs, PR-based game submission, leaderboards, explorer/proof, and localhost-first E2E.
 - Intentional exclusions: Tournaments are removed from active scope per user instruction.
-- Known high-risk dependency: `glm-5.2` is unavailable in current verification; use `glm-5.1` until readiness proves otherwise.
+- Known high-risk dependency: use the verified 0G testnet Router model `qwen2.5-omni`; do not assume mainnet Router models are available for this Galileo testnet app.
 - No placeholders: Each task names concrete files, endpoints, commands, and expected evidence.

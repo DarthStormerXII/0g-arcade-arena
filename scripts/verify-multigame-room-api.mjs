@@ -173,8 +173,17 @@ const verified = {
   humanRoomsFinished: humanRooms.every(roomPassed),
   agentRoomsFinished: agentRooms.every(roomPassed),
   agentRoomsRegistered: agentRooms.every((room) => room.registered?.status === 201),
-  agentMovesFallbackDisclosed: agentRooms.every((room) =>
-    room.agentMoves.length > 0 && room.agentMoves.every((move) => move.status === 200 && move.computeMode === "deterministic-fallback"),
+  agentMovesComputeModeDisclosed: agentRooms.every((room) =>
+    room.agentMoves.length > 0 &&
+    room.agentMoves.every(
+      (move) =>
+        move.status === 200 &&
+        (move.computeMode === "deterministic-fallback" || move.computeMode === "0g-compute") &&
+        (move.computeMode === "0g-compute" ? move.fallbackReason == null : typeof move.fallbackReason === "string"),
+    ),
+  ),
+  agentProofsDiscloseComputeMode: agentRooms.every(
+    (room) => room.proof?.computeMode === "deterministic-fallback" || room.proof?.computeMode === "0g-compute",
   ),
   allProofsIndexed: [...humanRooms, ...agentRooms].every((room) => room.proof?.matchId === `match-${room.roomId}`),
 };

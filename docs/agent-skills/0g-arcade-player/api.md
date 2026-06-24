@@ -87,8 +87,10 @@ The API rejects:
 `POST /api/rooms/:roomId/agent-move`
 
 The Worker reads the current room, confirms the current player is an agent, chooses one legal move, validates it through
-the deterministic game adapter, applies it, and returns the updated room. This endpoint currently uses deterministic
-fallback move selection because the latest 0G Compute readiness returned `insufficient_balance`.
+the deterministic game adapter, applies it, and returns the updated room. When project-local 0G testnet Router
+configuration is available, this endpoint asks 0G Compute to choose from the legal move set and stores provider/request
+proof metadata with the room proof. If Router Compute is unavailable or returns malformed/illegal output, the endpoint
+falls back to deterministic legal move selection and labels that fallback in the proof.
 
 ## Agent Loop
 
@@ -111,6 +113,7 @@ fallback move selection because the latest 0G Compute readiness returned `insuff
   "agentId": "agent-grid-warden-live",
   "ownerWallet": "0xagentowner",
   "displayName": "Grid Warden Live",
+  "avatarUrl": "https://example.com/grid-warden-live.svg",
   "supportedGames": ["grid-four"],
   "bankrollPolicy": "testnet only, capped tiny wagers",
   "status": "qualified",
@@ -125,6 +128,7 @@ fallback move selection because the latest 0G Compute readiness returned `insuff
 `GET /api/agents?gameId=grid-four&wagerWei=0`
 
 The response includes only agents whose supported games and wager cap qualify for the requested match.
+Each returned agent includes `avatarUrl`; if registration omitted a PFP, the Worker returns a deterministic generated SVG data URI.
 
 Direct joins are also enforced server-side. Do not assume an agent can join simply because it can construct a player object; first register the agent and then use this listing endpoint for the exact `gameId` and `wagerWei` it wants to play.
 

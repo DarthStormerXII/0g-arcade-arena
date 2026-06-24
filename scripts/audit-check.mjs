@@ -68,9 +68,20 @@ const requiredAppFiles = [
   ".github/workflows/game-pack-ci.yml",
   "scripts/verify-game-submission-workflow.mjs",
   "scripts/verify-hosted-privy-origin.mjs",
+  "scripts/verify-home-product-flow.mjs",
+  "scripts/verify-home-start-actions.mjs",
+  "scripts/verify-game-detail-start-actions.mjs",
+  "scripts/verify-all-game-h2h-browser.mjs",
+  "scripts/e2e-gate.mjs",
   "scripts/upload-proof-artifacts-0g.mjs",
   "scripts/build-da-batch-candidate.mjs",
   "scripts/diagnose-compute-broker.mjs",
+  "scripts/verify-direct-broker-agent-move.mjs",
+  "scripts/run-direct-broker-live-pipeline.mjs",
+  "scripts/verify-router-compute-agent-match.mjs",
+  "scripts/verify-multigame-router-compute.mjs",
+  "scripts/verify-external-compute-proof-api.mjs",
+  "scripts/verify-agent-avatar-api.mjs",
   "wrangler.jsonc",
   "worker/index.ts",
   "cloudflare/schema.sql",
@@ -87,6 +98,19 @@ const requiredAppFiles = [
   "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json",
   "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
   "evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json",
+  "evidence/live-proofs/direct-broker-agent-move-2026-06-24.json",
+  "evidence/live-proofs/direct-broker-live-pipeline-2026-06-24.json",
+  "evidence/live-proofs/router-compute-agent-match-2026-06-24.json",
+  "evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json",
+  "evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json",
+  "evidence/live-proofs/external-compute-proof-api-2026-06-24.json",
+  "evidence/live-proofs/multigame-router-compute-api-2026-06-24.json",
+  "evidence/live-proofs/0g-storage-room-mgr-fleet-duel-mqrxg2lh.json",
+  "evidence/live-proofs/chain-actual-match-mgr-fleet-duel-mqrxg2lh.json",
+  "evidence/live-proofs/0g-storage-room-mgr-tile-race-mqrxg2lh.json",
+  "evidence/live-proofs/chain-actual-match-mgr-tile-race-mqrxg2lh.json",
+  "evidence/live-proofs/0g-storage-room-mgr-world-cup-draft-mqrxg2lh.json",
+  "evidence/live-proofs/chain-actual-match-mgr-world-cup-draft-mqrxg2lh.json",
   "evidence/live-proofs/d1-proof-leaderboard-api-2026-06-23.json",
   "evidence/live-proofs/agent-registry-room-api-2026-06-23.json",
   "evidence/live-proofs/wager-negative-api-2026-06-24.json",
@@ -94,11 +118,42 @@ const requiredAppFiles = [
   "evidence/live-proofs/wager-leaderboard-api-2026-06-24.json",
   "evidence/live-proofs/agent-compute-router-bound-api-2026-06-24.json",
   "evidence/live-proofs/agent-wager-policy-api-2026-06-24.json",
+  "evidence/live-proofs/agent-avatar-api-2026-06-24.json",
   "evidence/live-proofs/agent-wager-match-api-2026-06-24.json",
+  "evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json",
+  "evidence/live-proofs/0g-storage-room-h2a-router-wager-mqs1kt45.json",
+  "evidence/live-proofs/chain-actual-match-h2a-router-wager-mqs1kt45.json",
   "evidence/live-proofs/agent-skill-package-2026-06-24.json",
   "evidence/live-proofs/multigame-room-api-2026-06-24.json",
   "evidence/live-proofs/human-automatch-api-2026-06-24.json",
   "evidence/live-proofs/human-automatch-ui-2026-06-24.json",
+  "evidence/live-proofs/home-product-flow-2026-06-24.json",
+  "evidence/live-proofs/home-product-flow-2026-06-24.png",
+  "evidence/live-proofs/home-start-actions-2026-06-24.json",
+  "evidence/live-proofs/home-start-human-room-2026-06-24.png",
+  "evidence/live-proofs/home-start-agent-match-2026-06-24.png",
+  "evidence/live-proofs/home-start-human-wager-room-2026-06-24.png",
+  "evidence/live-proofs/home-start-agent-wager-room-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-actions-2026-06-24.json",
+  "evidence/live-proofs/game-detail-start-grid-four-human-room-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-grid-four-agent-match-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-fleet-duel-human-room-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-fleet-duel-agent-match-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-tile-race-human-room-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-tile-race-agent-match-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-world-cup-draft-human-room-2026-06-24.png",
+  "evidence/live-proofs/game-detail-start-world-cup-draft-agent-match-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-browser-2026-06-24.json",
+  "evidence/live-proofs/e2e-local-gate-2026-06-24.json",
+  "evidence/live-proofs/e2e-live-0g-gate-2026-06-24.json",
+  "evidence/live-proofs/all-game-h2h-grid-four-host-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-grid-four-guest-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-fleet-duel-host-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-fleet-duel-guest-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-tile-race-host-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-tile-race-guest-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-world-cup-draft-host-finished-2026-06-24.png",
+  "evidence/live-proofs/all-game-h2h-world-cup-draft-guest-finished-2026-06-24.png",
   "evidence/live-proofs/browser-proof-surfaces-2026-06-24.json",
   "evidence/live-proofs/browser-proof-game-detail-agents-2026-06-24.png",
   "evidence/live-proofs/browser-proof-leaderboard-2026-06-24.png",
@@ -157,6 +212,13 @@ const appRoutes = [
   "/developers",
   "/leaderboard",
   "/explorer",
+];
+const requiredNavItems = [
+  ['"/games"', '"Games"'],
+  ['"/agents"', '"Agents"'],
+  ['"/submit-game"', '"Submit"'],
+  ['"/leaderboard"', '"Leaderboard"'],
+  ['"/explorer"', '"Explorer"'],
 ];
 const visualRoutes = ["home", "games", "agents", "leaderboard", "explorer", "submit-game"];
 const visualWidths = [375, 768, 1440];
@@ -259,6 +321,26 @@ if (existsSync("src/App.tsx")) {
   for (const route of appRoutes) {
     if (!app.includes(`path="${route}"`)) errors.push(`missing app route ${route}`);
   }
+  for (const [href, label] of requiredNavItems) {
+    if (!app.includes(`[${href}, ${label}]`)) errors.push(`missing requested top-nav item ${href} ${label}`);
+  }
+  if (/["']\/pitch["']|PitchPage|Demo video|demo paths/i.test(app)) {
+    errors.push("top-level app navigation must not expose pitch/demo framing");
+  }
+}
+
+if (existsSync("src/pages/ArenaPages.tsx")) {
+  const arenaPages = readFileSync("src/pages/ArenaPages.tsx", "utf8");
+  for (const term of ["Featured game", "PlaySetup", "All Games", "Submit Game"]) {
+    if (!arenaPages.includes(term)) errors.push(`home route missing product start surface term ${term}`);
+  }
+}
+
+if (existsSync("src/pages/GameDetailPage.tsx")) {
+  const gameDetail = readFileSync("src/pages/GameDetailPage.tsx", "utf8");
+  for (const term of ["Play with 0G agent", "Play with humans", "Free match", "Testnet wager", "Auto-match", "Room code"]) {
+    if (!gameDetail.includes(term)) errors.push(`match setup missing required control ${term}`);
+  }
 }
 
 if (existsSync("evidence/live-proofs/0g-readiness-latest.json")) {
@@ -270,19 +352,22 @@ if (existsSync("evidence/live-proofs/0g-readiness-latest.json")) {
     if (readiness.ready?.storageConfig !== true || readiness.ready?.storageEndpoint !== true) {
       errors.push("0G readiness evidence does not prove storage config and endpoint readiness");
     }
+    if (readiness.ready?.compute !== true || readiness.compute?.configuredModelProbe?.ok !== true) {
+      errors.push("0G readiness evidence does not prove live testnet Router Compute readiness");
+    }
     if (readiness.compute?.networkDiagnostic) {
       const diagnostic = readiness.compute.networkDiagnostic;
       if (diagnostic.chainNetwork !== "galileo-testnet" || diagnostic.storageNetwork !== "testnet") {
         errors.push("0G readiness network diagnostic must identify the app as testnet-targeted");
       }
-      if (diagnostic.configuredRouterLooksMainnet !== true) {
-        errors.push("0G readiness network diagnostic must record the configured mainnet Router host");
+      if (diagnostic.configuredRouterLooksMainnet !== false) {
+        errors.push("0G readiness network diagnostic must record the configured testnet Router host");
       }
-      if (diagnostic.mainnetRouterProbe?.errorCode !== "insufficient_balance") {
-        errors.push("0G readiness network diagnostic must record mainnet Router insufficient balance");
+      if (readiness.compute?.configuredModelProbe?.ok !== true) {
+        errors.push("0G readiness must record a successful configured testnet Router chat probe");
       }
-      if (diagnostic.testnetRouterProbe?.errorCode !== "invalid_api_key") {
-        errors.push("0G readiness network diagnostic must record testnet Router invalid API key");
+      if (!String(diagnostic.conclusion ?? "").includes("configured for the 0G testnet Router")) {
+        errors.push("0G readiness network diagnostic must describe the successful testnet Router configuration");
       }
     } else {
       errors.push("0G readiness evidence missing compute network diagnostic");
@@ -402,6 +487,99 @@ if (existsSync("evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json"
   }
 }
 
+if (existsSync("evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json")) {
+  const routerStorage = readJson("evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json");
+  if (routerStorage) {
+    if (routerStorage.mode !== "live-0g-storage-room-replay" || routerStorage.roomId !== "router-compute-mqrwdmmf") {
+      errors.push("router Compute 0G Storage room proof has wrong mode or room");
+    }
+    if (routerStorage.reachable !== true || routerStorage.computeMode !== "0g-compute" || routerStorage.computeProofCount < 1) {
+      errors.push("router Compute 0G Storage room proof must be reachable and carry compute proof metadata");
+    }
+    if (routerStorage.rootHash !== "0xa27dceac2040f491db0993daa24e3823b247e7b666c1e1e7877f6031faa9e3de") {
+      errors.push("router Compute 0G Storage room proof did not preserve the known root");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json")) {
+  const routerChain = readJson("evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json");
+  if (routerChain) {
+    if (routerChain.mode !== "live-0g-galileo-actual-match-result" || routerChain.status !== "passed") {
+      errors.push("router Compute actual match chain proof did not pass");
+    }
+    if (routerChain.chainId !== 16602 || routerChain.roomId !== "router-compute-mqrwdmmf") {
+      errors.push("router Compute actual match chain proof is not on Galileo for the expected room");
+    }
+    if (routerChain.sourceEvidence?.routerCompute !== "evidence/live-proofs/router-compute-agent-match-2026-06-24.json") {
+      errors.push("router Compute actual match chain proof does not source the router Compute evidence");
+    }
+    if (routerChain.committed?.storageRoot !== "0xa27dceac2040f491db0993daa24e3823b247e7b666c1e1e7877f6031faa9e3de") {
+      errors.push("router Compute actual match chain proof did not commit the known 0G Storage replay root");
+    }
+    if (routerChain.committed?.wagered !== false || routerChain.committed?.computeMode !== "0g-compute") {
+      errors.push("router Compute actual match chain proof must commit a free 0g-compute match");
+    }
+    if (routerChain.transactions?.createMatch?.status !== "0x1" || routerChain.transactions?.commitResult?.status !== "0x1") {
+      errors.push("router Compute actual match chain proof does not include successful create/commit txs");
+    }
+    for (const [key, value] of Object.entries(routerChain.verified ?? {})) {
+      if (value !== true) errors.push(`router Compute actual match chain proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-storage-room-h2a-router-wager-mqrx23nu.json")) {
+  const routerWagerStorage = readJson("evidence/live-proofs/0g-storage-room-h2a-router-wager-mqrx23nu.json");
+  if (routerWagerStorage) {
+    if (
+      routerWagerStorage.mode !== "live-0g-storage-room-replay" ||
+      routerWagerStorage.roomId !== "h2a-router-wager-mqrx23nu" ||
+      routerWagerStorage.gameId !== "grid-four"
+    ) {
+      errors.push("Router H2A wager 0G Storage proof has wrong mode, room, or game");
+    }
+    if (
+      routerWagerStorage.reachable !== true ||
+      routerWagerStorage.computeMode !== "0g-compute" ||
+      routerWagerStorage.computeProofCount !== 3 ||
+      routerWagerStorage.wagerWei !== "100000000000000"
+    ) {
+      errors.push("Router H2A wager 0G Storage proof must be reachable, wagered, and carry three Compute proofs");
+    }
+    if (routerWagerStorage.rootHash !== "0xd2257f3360af245910fe9b916832506daec60a629a2a03739f08198db18900cf") {
+      errors.push("Router H2A wager 0G Storage proof did not preserve the known root");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/chain-actual-match-h2a-router-wager-mqrx23nu.json")) {
+  const routerWagerChain = readJson("evidence/live-proofs/chain-actual-match-h2a-router-wager-mqrx23nu.json");
+  if (routerWagerChain) {
+    if (routerWagerChain.mode !== "live-0g-galileo-actual-match-result" || routerWagerChain.status !== "passed") {
+      errors.push("Router H2A wager actual match chain proof did not pass");
+    }
+    if (routerWagerChain.chainId !== 16602 || routerWagerChain.roomId !== "h2a-router-wager-mqrx23nu") {
+      errors.push("Router H2A wager actual match chain proof is not on Galileo for the expected room");
+    }
+    if (routerWagerChain.sourceEvidence?.agentWager !== "evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json") {
+      errors.push("Router H2A wager actual match chain proof does not source the Router wager evidence");
+    }
+    if (routerWagerChain.committed?.storageRoot !== "0xd2257f3360af245910fe9b916832506daec60a629a2a03739f08198db18900cf") {
+      errors.push("Router H2A wager actual match chain proof did not commit the known 0G Storage replay root");
+    }
+    if (routerWagerChain.committed?.wagered !== true || routerWagerChain.committed?.computeMode !== "0g-compute") {
+      errors.push("Router H2A wager actual match chain proof must commit a wagered 0g-compute match");
+    }
+    if (routerWagerChain.transactions?.createMatch?.status !== "0x1" || routerWagerChain.transactions?.commitResult?.status !== "0x1") {
+      errors.push("Router H2A wager actual match chain proof does not include successful create/commit txs");
+    }
+    for (const [key, value] of Object.entries(routerWagerChain.verified ?? {})) {
+      if (value !== true) errors.push(`Router H2A wager actual match chain proof did not verify ${key}`);
+    }
+  }
+}
+
 for (const game of games) {
   const gamePackStoragePath = `evidence/live-proofs/0g-storage-game-pack-${game}.json`;
   if (existsSync(gamePackStoragePath)) {
@@ -467,6 +645,10 @@ if (existsSync("evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json"
 if (existsSync("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json")) {
   const daCandidate = readJson("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json");
   if (daCandidate) {
+    const routerWagerProof = readJson("evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json");
+    const routerWagerRoomId = routerWagerProof?.roomId;
+    const routerWagerStorageSource = routerWagerRoomId ? `evidence/live-proofs/0g-storage-room-${routerWagerRoomId}.json` : null;
+    const routerWagerChainSource = routerWagerRoomId ? `evidence/live-proofs/chain-actual-match-${routerWagerRoomId}.json` : null;
     if (daCandidate.mode !== "0g-da-batch-candidate") {
       errors.push("0G DA batch candidate has wrong mode");
     }
@@ -482,8 +664,8 @@ if (existsSync("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json")) {
     if (!/^sha256:[a-fA-F0-9]{64}$/.test(daCandidate.payloadSha256 ?? "")) {
       errors.push("0G DA batch candidate has invalid payload hash");
     }
-    if (daCandidate.payload?.matches?.length !== 2) {
-      errors.push("0G DA batch candidate must include the two live committed wager match payloads");
+    if (daCandidate.payload?.matches?.length !== 7) {
+      errors.push("0G DA batch candidate must include the seven live committed match payloads");
     }
     if (daCandidate.payload?.gamePacks?.length !== games.length) {
       errors.push("0G DA batch candidate must include all four game-pack storage roots");
@@ -491,16 +673,303 @@ if (existsSync("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json")) {
     for (const requiredSource of [
       "evidence/live-proofs/0g-storage-room-gr-zqvy.json",
       "evidence/live-proofs/0g-storage-room-h2a-wager-mqr1xs1b.json",
+      "evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json",
+      routerWagerStorageSource,
+      "evidence/live-proofs/0g-storage-room-mgr-fleet-duel-mqrxg2lh.json",
+      "evidence/live-proofs/0g-storage-room-mgr-tile-race-mqrxg2lh.json",
+      "evidence/live-proofs/0g-storage-room-mgr-world-cup-draft-mqrxg2lh.json",
       "evidence/live-proofs/chain-actual-match-gr-zqvy.json",
       "evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json",
+      "evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json",
+      routerWagerChainSource,
+      "evidence/live-proofs/chain-actual-match-mgr-fleet-duel-mqrxg2lh.json",
+      "evidence/live-proofs/chain-actual-match-mgr-tile-race-mqrxg2lh.json",
+      "evidence/live-proofs/chain-actual-match-mgr-world-cup-draft-mqrxg2lh.json",
       "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json",
-    ]) {
+    ].filter(Boolean)) {
       if (!daCandidate.sourceEvidence?.includes(requiredSource)) {
         errors.push(`0G DA batch candidate missing source ${requiredSource}`);
       }
     }
     for (const [key, value] of Object.entries(daCandidate.verified ?? {})) {
       if (value !== true) errors.push(`0G DA batch candidate did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-da-readiness-2026-06-24.json")) {
+  const daReadiness = readJson("evidence/live-proofs/0g-da-readiness-2026-06-24.json");
+  if (daReadiness) {
+    if (daReadiness.mode !== "0g-da-readiness" || daReadiness.schema !== "0g-arcade-da-readiness@1") {
+      errors.push("0G DA readiness evidence has wrong mode or schema");
+    }
+    if (!["blocked", "endpoint-configured-unpublished"].includes(daReadiness.status)) {
+      errors.push("0G DA readiness evidence has invalid status");
+    }
+    if (daReadiness.verified?.officialDocsRequireDaClientNode !== true) {
+      errors.push("0G DA readiness must cite the DA Client node requirement");
+    }
+    if (daReadiness.verified?.candidateExists !== true || daReadiness.verified?.candidateDoesNotClaimPublication !== true) {
+      errors.push("0G DA readiness must verify the candidate-only DA artifact");
+    }
+    if (!daReadiness.requiredProjectConfig?.includes("ZEROG_DA_DISPERSER_GRPC")) {
+      errors.push("0G DA readiness must list the Disperser gRPC endpoint requirement");
+    }
+    if (daReadiness.verified?.daPublisherHarnessPresent !== true) {
+      errors.push("0G DA readiness must verify the DA publisher harness exists");
+    }
+    if (daReadiness.status === "blocked" && daReadiness.projectSecretFile?.missingNames?.length < 1) {
+      errors.push("blocked 0G DA readiness must record missing project-local DA config");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-da-publication-2026-06-24.json")) {
+  const daPublication = readJson("evidence/live-proofs/0g-da-publication-2026-06-24.json");
+  if (daPublication) {
+    if (daPublication.mode !== "0g-da-publication-attempt" || daPublication.schema !== "0g-arcade-da-publication@1") {
+      errors.push("0G DA publication evidence has wrong mode or schema");
+    }
+    if (!daPublication.officialApi?.proto || daPublication.officialApi?.submitMethod !== "DisperseBlob") {
+      errors.push("0G DA publication evidence must use the Disperser API");
+    }
+    if (daPublication.officialApi?.clientTool !== "node-http2") {
+      errors.push("0G DA publication evidence must use the self-contained Node HTTP/2 client");
+    }
+    if (daPublication.verified?.candidateExists !== true || daPublication.verified?.candidateHashMatches !== true) {
+      errors.push("0G DA publication evidence must verify the candidate payload hash");
+    }
+    if (daPublication.status === "blocked") {
+      if (!["missing-project-da-config", "disperser-request-failed", "missing-da-candidate"].includes(daPublication.blocker)) {
+        errors.push("blocked 0G DA publication evidence has invalid blocker");
+      }
+      if (daPublication.blocker === "missing-project-da-config" && !daPublication.projectSecretFile?.missingNames?.includes("ZEROG_DA_DISPERSER_GRPC")) {
+        errors.push("blocked 0G DA publication evidence must record missing Disperser config");
+      }
+    } else if (["confirmed", "finalized"].includes(daPublication.status)) {
+      if (daPublication.daMode !== "live-0g-da") errors.push("confirmed DA publication must claim live-0g-da mode");
+      if (!/^0x[a-fA-F0-9]+$/.test(daPublication.request?.id ?? "")) errors.push("confirmed DA publication needs request id");
+      if (!/^0x[a-fA-F0-9]{64}$/.test(daPublication.blob?.storageRoot ?? "")) errors.push("confirmed DA publication needs blob storage root");
+      if (daPublication.verified?.terminalConfirmed !== true) errors.push("confirmed DA publication must verify terminal confirmation");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-da-publisher-harness-2026-06-24.json")) {
+  const daHarness = readJson("evidence/live-proofs/0g-da-publisher-harness-2026-06-24.json");
+  if (daHarness) {
+    if (daHarness.mode !== "0g-da-publisher-harness" || daHarness.schema !== "0g-arcade-da-publisher-harness@1") {
+      errors.push("0G DA publisher harness evidence has wrong mode or schema");
+    }
+    if (daHarness.status !== "passed") {
+      errors.push("0G DA publisher harness must pass");
+    }
+    if (daHarness.publisher?.clientTool !== "node-http2") {
+      errors.push("0G DA publisher harness must exercise the self-contained Node HTTP/2 client");
+    }
+    for (const [key, value] of Object.entries(daHarness.verified ?? {})) {
+      if (value !== true) errors.push(`0G DA publisher harness did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json")) {
+  const computeBroker = readJson("evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json");
+  if (computeBroker) {
+    if (computeBroker.mode !== "direct-0g-compute-broker") {
+      errors.push("0G Compute broker diagnostic has wrong mode");
+    }
+    if (computeBroker.sdk?.installed !== true || computeBroker.sdk?.package !== "@0gfoundation/0g-compute-ts-sdk") {
+      errors.push("0G Compute broker diagnostic must prove the direct broker SDK is installed");
+    }
+    if (computeBroker.wallet?.configured !== true || !/^0x[a-fA-F0-9]{40}$/.test(computeBroker.wallet?.address ?? "")) {
+      errors.push("0G Compute broker diagnostic must prove a project wallet is configured");
+    }
+    if (computeBroker.checks?.brokerInitialized !== true) {
+      errors.push("0G Compute broker diagnostic must initialize the broker");
+    }
+    if (computeBroker.checks?.servicesListed !== true || computeBroker.broker?.serviceCount < 1) {
+      errors.push("0G Compute broker diagnostic must list direct Compute providers");
+    }
+    if (!/^0x[a-fA-F0-9]{40}$/.test(computeBroker.broker?.preferredService?.provider ?? "")) {
+      errors.push("0G Compute broker diagnostic must identify a preferred provider");
+    }
+    if (computeBroker.status === "ready") {
+      if (computeBroker.checks?.ledgerReadable !== true) {
+        errors.push("ready 0G Compute broker diagnostic must prove ledger readability");
+      }
+    } else if (computeBroker.status === "blocked") {
+      if (computeBroker.wallet?.canFundMinimumLedger !== false) {
+        errors.push("blocked 0G Compute broker diagnostic must explain the current ledger funding limit");
+      }
+      if (!String(computeBroker.reason ?? "").includes("3 0G ledger minimum")) {
+        errors.push("blocked 0G Compute broker diagnostic must cite the ledger minimum blocker");
+      }
+    } else {
+      errors.push("0G Compute broker diagnostic has unknown status");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/direct-broker-agent-move-2026-06-24.json")) {
+  const directMove = readJson("evidence/live-proofs/direct-broker-agent-move-2026-06-24.json");
+  if (directMove) {
+    if (directMove.mode !== "direct-broker-agent-move") {
+      errors.push("direct broker agent-move proof has wrong mode");
+    }
+    if (directMove.verified?.brokerInitialized !== true || directMove.verified?.servicesListed !== true) {
+      errors.push("direct broker agent-move proof must initialize broker and list providers");
+    }
+    if (directMove.status === "passed") {
+      const requiredChecks = [
+        "ledgerReady",
+        "liveComputeResponse",
+        "legalMove",
+        "appAcceptedComputedMove",
+        "matchFinishedAndIndexed",
+      ];
+      for (const key of requiredChecks) {
+        if (directMove.verified?.[key] !== true) {
+          errors.push(`passed direct broker agent-move proof did not verify ${key}`);
+        }
+      }
+      if (directMove.compute?.move?.column === undefined) {
+        errors.push("passed direct broker agent-move proof must include the selected legal move");
+      }
+      if (
+        directMove.app?.agentMove?.status !== 200 ||
+        directMove.app?.agentMove?.computeMode !== "0g-compute" ||
+        directMove.app?.proof?.computeMode !== "0g-compute" ||
+        directMove.app?.completion?.finalStatus !== "finished" ||
+        directMove.app?.proof?.roomStatus !== "finished"
+      ) {
+        errors.push("passed direct broker agent-move proof must include app move acceptance, completion, and indexed compute mode");
+      }
+    } else if (directMove.status === "blocked") {
+      if (directMove.autofundEnabled !== false) {
+        errors.push("blocked direct broker agent-move proof should be a non-autofund proof");
+      }
+      if (!String(directMove.reason ?? "").match(/ledger|fund|autofund|Compute/i)) {
+        errors.push("blocked direct broker agent-move proof must state the live Compute blocker");
+      }
+    } else {
+      errors.push("direct broker agent-move proof has unknown status");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/direct-broker-live-pipeline-2026-06-24.json")) {
+  const pipeline = readJson("evidence/live-proofs/direct-broker-live-pipeline-2026-06-24.json");
+  if (pipeline) {
+    if (pipeline.mode !== "direct-broker-live-pipeline") {
+      errors.push("direct broker live pipeline proof has wrong mode");
+    }
+    if (pipeline.verified?.diagnosticsRan !== true) {
+      errors.push("direct broker live pipeline proof must run diagnostics");
+    }
+    if (pipeline.status === "passed") {
+      for (const key of ["directBrokerMatchPassed", "storageUploaded", "chainCommitted"]) {
+        if (pipeline.verified?.[key] !== true) {
+          errors.push(`passed direct broker live pipeline did not verify ${key}`);
+        }
+      }
+      if (!pipeline.evidence?.storage || !pipeline.evidence?.chain || !pipeline.roomId) {
+        errors.push("passed direct broker live pipeline must include room/storage/chain evidence");
+      }
+    } else if (pipeline.status === "blocked") {
+      if (pipeline.autofundEnabled !== false) {
+        errors.push("blocked direct broker live pipeline should be a non-autofund proof");
+      }
+      if (!String(pipeline.reason ?? "").match(/ledger|fund|autofund|Compute/i)) {
+        errors.push("blocked direct broker live pipeline must state the live Compute blocker");
+      }
+      if (pipeline.verified?.storageUploaded === true || pipeline.verified?.chainCommitted === true) {
+        errors.push("blocked direct broker live pipeline must not claim storage or chain completion");
+      }
+    } else {
+      errors.push("direct broker live pipeline proof has unknown status");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/router-compute-agent-match-2026-06-24.json")) {
+  const routerCompute = readJson("evidence/live-proofs/router-compute-agent-match-2026-06-24.json");
+  if (routerCompute) {
+    if (routerCompute.mode !== "router-compute-agent-match" || routerCompute.status !== "passed") {
+      errors.push("router Compute agent match evidence did not pass");
+    }
+    const requiredChecks = [
+      "agentRegistered",
+      "roomStarted",
+      "routerMoveAccepted",
+      "routerMoveWasLiveCompute",
+      "matchFinished",
+      "proofIndexedCompute",
+    ];
+    for (const key of requiredChecks) {
+      if (routerCompute.verified?.[key] !== true) {
+        errors.push(`router Compute agent match did not verify ${key}`);
+      }
+    }
+    if (routerCompute.agentMove?.computeMode !== "0g-compute" || routerCompute.agentMove?.fallbackReason != null) {
+      errors.push("router Compute agent match must include a non-fallback 0g-compute agent move");
+    }
+    if (routerCompute.completion?.computeMode !== "0g-compute" || routerCompute.completion?.computeProofCount < 1) {
+      errors.push("router Compute agent match must finish with persisted 0g-compute proof metadata");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json")) {
+  const routerStorage = readJson("evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json");
+  if (routerStorage) {
+    if (routerStorage.mode !== "live-0g-storage-room-replay" || routerStorage.reachable !== true) {
+      errors.push("router Compute room Storage proof must be a reachable live 0G Storage replay");
+    }
+    if (routerStorage.computeMode !== "0g-compute" || routerStorage.computeProofCount < 1) {
+      errors.push("router Compute room Storage proof must include compute proof metadata");
+    }
+    if (!/^0x[a-fA-F0-9]{64}$/.test(routerStorage.rootHash ?? "")) {
+      errors.push("router Compute room Storage proof has invalid root hash");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json")) {
+  const routerChain = readJson("evidence/live-proofs/chain-actual-match-router-compute-mqrwdmmf.json");
+  if (routerChain) {
+    if (routerChain.mode !== "live-0g-galileo-actual-match-result" || routerChain.status !== "passed") {
+      errors.push("router Compute chain commit evidence did not pass");
+    }
+    if (routerChain.committed?.wagered !== false || routerChain.committed?.computeMode !== "0g-compute") {
+      errors.push("router Compute chain commit must record a free match with computeMode=0g-compute");
+    }
+    for (const [key, value] of Object.entries(routerChain.verified ?? {})) {
+      if (value !== true) errors.push(`router Compute chain commit did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/external-compute-proof-api-2026-06-24.json")) {
+  const externalProof = readJson("evidence/live-proofs/external-compute-proof-api-2026-06-24.json");
+  if (externalProof) {
+    if (externalProof.mode !== "local-external-compute-proof-api" || externalProof.status !== "passed") {
+      errors.push("external compute proof API evidence did not pass");
+    }
+    const requiredChecks = [
+      "agentRegistered",
+      "roomStarted",
+      "humanMoveAccepted",
+      "agentMoveAccepted",
+      "roomMarkedCompute",
+      "computeProofPersisted",
+      "proofIndexedCompute",
+      "humanProofRejected",
+    ];
+    for (const key of requiredChecks) {
+      if (externalProof.verified?.[key] !== true) {
+        errors.push(`external compute proof API evidence did not verify ${key}`);
+      }
     }
   }
 }
@@ -675,6 +1144,18 @@ if (existsSync("evidence/live-proofs/agent-wager-policy-api-2026-06-24.json")) {
   }
 }
 
+if (existsSync("evidence/live-proofs/agent-avatar-api-2026-06-24.json")) {
+  const avatarProof = readJson("evidence/live-proofs/agent-avatar-api-2026-06-24.json");
+  if (avatarProof) {
+    if (avatarProof.mode !== "local-agent-avatar-api" || avatarProof.status !== "passed") {
+      errors.push("agent avatar API proof did not pass");
+    }
+    for (const [key, value] of Object.entries(avatarProof.verified ?? {})) {
+      if (value !== true) errors.push(`agent avatar API proof did not verify ${key}`);
+    }
+  }
+}
+
 if (existsSync("evidence/live-proofs/agent-wager-match-api-2026-06-24.json")) {
   const agentWagerProof = readJson("evidence/live-proofs/agent-wager-match-api-2026-06-24.json");
   if (agentWagerProof) {
@@ -707,6 +1188,109 @@ if (existsSync("evidence/live-proofs/agent-wager-match-api-2026-06-24.json")) {
     }
     if (!agentWagerProof.transactions?.settlement?.transactionHash || agentWagerProof.transactions?.settlement?.status !== "0x1") {
       errors.push("agent wager match proof does not include a successful settlement tx");
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json")) {
+  const routerWagerProof = readJson("evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json");
+  if (routerWagerProof) {
+    if (routerWagerProof.mode !== "local-agent-wager-match-api" || routerWagerProof.status !== "passed") {
+      errors.push("Router Compute agent wager match API proof did not pass");
+    }
+    if (
+      !/^h2a-router-wager-[a-z0-9]+$/.test(routerWagerProof.roomId ?? "") ||
+      routerWagerProof.expectedComputeMode !== "0g-compute" ||
+      routerWagerProof.wagerWei !== "100000000000000"
+    ) {
+      errors.push("Router Compute agent wager match API proof has wrong room prefix, wager, or expected Compute mode");
+    }
+    const requiredChecks = [
+      "agentRegistered",
+      "agentListedForWager",
+      "roomCreated",
+      "agentJoined",
+      "fundedTwice",
+      "roomStartedAfterFunding",
+      "agentMovedAtLeastOnce",
+      "agentMovesUseExpectedCompute",
+      "agentMovesUseRouterCompute",
+      "matchFinishedWithWinner",
+      "winnerIsKnownParticipant",
+      "loserIsKnownParticipant",
+      "settlementMined",
+      "proofIndexed",
+      "proofDisclosesExpectedCompute",
+      "proofDisclosesRouterCompute",
+      "globalIncludesWinner",
+      "wagerIncludesWinner",
+      "gameWagerIncludesWinner",
+      "wagerIncludesLoserLoss",
+      "humanAndAgentIndexedInWagerMode",
+      "freeModeDoesNotIncludeWagerWinner",
+    ];
+    for (const key of requiredChecks) {
+      if (routerWagerProof.verified?.[key] !== true) {
+        errors.push(`Router Compute agent wager match proof did not verify ${key}`);
+      }
+    }
+    if (
+      !routerWagerProof.human?.id ||
+      !routerWagerProof.agent?.id ||
+      ![routerWagerProof.human.id, routerWagerProof.agent.id].includes(routerWagerProof.winnerId) ||
+      ![routerWagerProof.human.id, routerWagerProof.agent.id].includes(routerWagerProof.loserId) ||
+      routerWagerProof.winnerId === routerWagerProof.loserId
+    ) {
+      errors.push("Router Compute agent wager match proof must record a distinct human/agent winner and loser");
+    }
+    if (!routerWagerProof.transactions?.settlement?.transactionHash || routerWagerProof.transactions?.settlement?.status !== "0x1") {
+      errors.push("Router Compute agent wager match proof does not include a successful settlement tx");
+    }
+    const agentMoves = routerWagerProof.api?.moveResults?.filter((move) => move.kind === "agent") ?? [];
+    if (agentMoves.length < 1 || !agentMoves.every((move) => move.agentMove?.computeMode === "0g-compute" && move.agentMove?.fallbackReason === null)) {
+      errors.push("Router Compute agent wager match proof must include non-fallback 0g-compute agent moves");
+    }
+
+    const currentStoragePath = `evidence/live-proofs/0g-storage-room-${routerWagerProof.roomId}.json`;
+    const currentChainPath = `evidence/live-proofs/chain-actual-match-${routerWagerProof.roomId}.json`;
+    const currentStorage = existsSync(currentStoragePath) ? readJson(currentStoragePath) : null;
+    const currentChain = existsSync(currentChainPath) ? readJson(currentChainPath) : null;
+    if (!currentStorage) {
+      errors.push(`Router Compute agent wager match proof missing current Storage carry-through ${currentStoragePath}`);
+    } else if (
+      currentStorage.mode !== "live-0g-storage-room-replay" ||
+      currentStorage.roomId !== routerWagerProof.roomId ||
+      currentStorage.reachable !== true ||
+      currentStorage.computeMode !== "0g-compute" ||
+      currentStorage.wagerWei !== "100000000000000"
+    ) {
+      errors.push("Router Compute agent wager current Storage proof has wrong mode, room, reachability, wager, or Compute mode");
+    }
+    if (!currentChain) {
+      errors.push(`Router Compute agent wager match proof missing current Chain carry-through ${currentChainPath}`);
+    } else {
+      if (
+        currentChain.mode !== "live-0g-galileo-actual-match-result" ||
+        currentChain.status !== "passed" ||
+        currentChain.chainId !== 16602 ||
+        currentChain.roomId !== routerWagerProof.roomId
+      ) {
+        errors.push("Router Compute agent wager current Chain proof did not pass for the current room on Galileo");
+      }
+      if (
+        currentStorage &&
+        (currentChain.committed?.storageRoot !== currentStorage.rootHash ||
+          currentChain.committed?.wagered !== true ||
+          currentChain.committed?.computeMode !== "0g-compute")
+      ) {
+        errors.push("Router Compute agent wager current Chain proof must commit the current Storage root as a wagered 0g-compute match");
+      }
+      if (currentChain.transactions?.createMatch?.status !== "0x1" || currentChain.transactions?.commitResult?.status !== "0x1") {
+        errors.push("Router Compute agent wager current Chain proof does not include successful create/commit txs");
+      }
+      for (const [key, value] of Object.entries(currentChain.verified ?? {})) {
+        if (value !== true) errors.push(`Router Compute agent wager current Chain proof did not verify ${key}`);
+      }
     }
   }
 }
@@ -775,13 +1359,93 @@ if (existsSync("evidence/live-proofs/multigame-room-api-2026-06-24.json")) {
       "humanRoomsFinished",
       "agentRoomsFinished",
       "agentRoomsRegistered",
-      "agentMovesFallbackDisclosed",
+      "agentMovesComputeModeDisclosed",
+      "agentProofsDiscloseComputeMode",
       "allProofsIndexed",
     ];
     for (const key of requiredChecks) {
       if (multigameProof.verified?.[key] !== true) {
         errors.push(`multigame room API proof did not verify ${key}`);
       }
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/multigame-router-compute-api-2026-06-24.json")) {
+  const multigameRouterProof = readJson("evidence/live-proofs/multigame-router-compute-api-2026-06-24.json");
+  if (multigameRouterProof) {
+    if (multigameRouterProof.mode !== "multigame-router-compute-api" || multigameRouterProof.status !== "passed") {
+      errors.push("multigame Router Compute proof did not pass");
+    }
+    const expectedGames = ["fleet-duel", "tile-race", "world-cup-draft"];
+    for (const game of expectedGames) {
+      const room = multigameRouterProof.rooms?.find((item) => item.gameId === game);
+      if (!room) {
+        errors.push(`multigame Router Compute proof missing ${game}`);
+        continue;
+      }
+      if (
+        room.registered?.status !== 201 ||
+        room.created?.status !== 200 ||
+        room.joined?.status !== 200 ||
+        room.started?.status !== 200 ||
+        room.final?.status !== "finished"
+      ) {
+        errors.push(`multigame Router Compute proof did not complete ${game}`);
+      }
+      if (
+        room.routerAgentMove?.status !== 200 ||
+        room.routerAgentMove?.computeMode !== "0g-compute" ||
+        room.routerAgentMove?.fallbackReason !== null ||
+        !room.routerAgentMove?.move
+      ) {
+        errors.push(`multigame Router Compute proof did not record a live Router move for ${game}`);
+      }
+      if (room.final?.computeMode !== "0g-compute" || room.final?.computeProofCount < 1) {
+        errors.push(`multigame Router Compute proof did not persist Compute metadata for ${game}`);
+      }
+      if (
+        room.proof?.status !== 200 ||
+        room.proof?.gameId !== game ||
+        room.proof?.matchId !== room.matchId ||
+        room.proof?.computeMode !== "0g-compute"
+      ) {
+        errors.push(`multigame Router Compute proof did not index proof compute mode for ${game}`);
+      }
+      const storageFile = `evidence/live-proofs/0g-storage-room-${room.roomId}.json`;
+      const chainFile = `evidence/live-proofs/chain-actual-match-${room.roomId}.json`;
+      if (!existsSync(storageFile) || !existsSync(chainFile)) {
+        errors.push(`multigame Router Compute proof missing Storage/Chain carry-through for ${game}`);
+        continue;
+      }
+      const storageProof = readJson(storageFile);
+      const chainProof = readJson(chainFile);
+      if (
+        storageProof?.mode !== "live-0g-storage-room-replay" ||
+        storageProof.roomId !== room.roomId ||
+        storageProof.gameId !== game ||
+        storageProof.reachable !== true ||
+        storageProof.computeMode !== "0g-compute" ||
+        storageProof.computeProofCount < 1
+      ) {
+        errors.push(`multigame Router Compute Storage proof is incomplete for ${game}`);
+      }
+      if (
+        chainProof?.mode !== "live-0g-galileo-actual-match-result" ||
+        chainProof.status !== "passed" ||
+        chainProof.roomId !== room.roomId ||
+        chainProof.chainId !== 16602 ||
+        chainProof.committed?.storageRoot !== storageProof?.rootHash ||
+        chainProof.committed?.computeMode !== "0g-compute" ||
+        chainProof.committed?.wagered !== false ||
+        chainProof.transactions?.createMatch?.status !== "0x1" ||
+        chainProof.transactions?.commitResult?.status !== "0x1"
+      ) {
+        errors.push(`multigame Router Compute Chain proof is incomplete for ${game}`);
+      }
+    }
+    for (const [key, value] of Object.entries(multigameRouterProof.verified ?? {})) {
+      if (value !== true) errors.push(`multigame Router Compute proof did not verify ${key}`);
     }
   }
 }
@@ -820,6 +1484,131 @@ if (existsSync("evidence/live-proofs/human-automatch-ui-2026-06-24.json")) {
     }
     for (const [key, value] of Object.entries(autoMatchUiProof.verified ?? {})) {
       if (value !== true) errors.push(`human auto-match browser UI proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/home-product-flow-2026-06-24.json")) {
+  const homeProof = readJson("evidence/live-proofs/home-product-flow-2026-06-24.json");
+  if (homeProof) {
+    if (homeProof.mode !== "local-home-product-flow-browser-ui" || homeProof.status !== "passed") {
+      errors.push("home product-flow browser proof did not pass");
+    }
+    if (!existsSync(homeProof.screenshot ?? "")) {
+      errors.push("home product-flow browser proof screenshot is missing");
+    }
+    for (const [key, value] of Object.entries(homeProof.verified ?? {})) {
+      if (value !== true) errors.push(`home product-flow browser proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/home-start-actions-2026-06-24.json")) {
+  const homeStartProof = readJson("evidence/live-proofs/home-start-actions-2026-06-24.json");
+  if (homeStartProof) {
+    if (homeStartProof.mode !== "local-home-start-actions-browser-ui" || homeStartProof.status !== "passed") {
+      errors.push("home start-actions browser proof did not pass");
+    }
+    for (const screenshot of Object.values(homeStartProof.screenshots ?? {})) {
+      if (!existsSync(screenshot)) errors.push(`home start-actions browser proof screenshot is missing: ${screenshot}`);
+    }
+    for (const [key, value] of Object.entries(homeStartProof.verified ?? {})) {
+      if (value !== true) errors.push(`home start-actions browser proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/game-detail-start-actions-2026-06-24.json")) {
+  const gameDetailStartProof = readJson("evidence/live-proofs/game-detail-start-actions-2026-06-24.json");
+  if (gameDetailStartProof) {
+    if (gameDetailStartProof.mode !== "local-game-detail-start-actions-browser-ui" || gameDetailStartProof.status !== "passed") {
+      errors.push("game detail start-actions browser proof did not pass");
+    }
+    const expectedGames = ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"];
+    for (const game of expectedGames) {
+      if (!gameDetailStartProof.games?.includes(game)) {
+        errors.push(`game detail start-actions proof missing ${game}`);
+      }
+      const route = gameDetailStartProof.routes?.find((item) => item.gameId === game);
+      if (!route) {
+        errors.push(`game detail start-actions proof missing route for ${game}`);
+        continue;
+      }
+      if (!route.route?.endsWith(`/games/${game}`) || !route.humanUrl?.includes("/room/") || !route.agentUrl?.includes("/match/")) {
+        errors.push(`game detail start-actions proof has incomplete route data for ${game}`);
+      }
+      for (const screenshot of Object.values(route.screenshots ?? {})) {
+        if (!existsSync(screenshot)) errors.push(`game detail start-actions proof screenshot is missing for ${game}: ${screenshot}`);
+      }
+      for (const [key, value] of Object.entries(route.verified ?? {})) {
+        if (value !== true) errors.push(`game detail start-actions proof ${game} did not verify ${key}`);
+      }
+    }
+    for (const [key, value] of Object.entries(gameDetailStartProof.verified ?? {})) {
+      if (value !== true) errors.push(`game detail start-actions proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/all-game-h2h-browser-2026-06-24.json")) {
+  const allGameH2hProof = readJson("evidence/live-proofs/all-game-h2h-browser-2026-06-24.json");
+  if (allGameH2hProof) {
+    if (allGameH2hProof.mode !== "local-all-game-h2h-browser-ui" || allGameH2hProof.status !== "passed") {
+      errors.push("all-game H2H browser proof did not pass");
+    }
+    const expectedGames = ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"];
+    for (const game of expectedGames) {
+      if (!allGameH2hProof.games?.includes(game)) {
+        errors.push(`all-game H2H browser proof missing ${game}`);
+      }
+      const room = allGameH2hProof.rooms?.find((item) => item.gameId === game);
+      if (!room) {
+        errors.push(`all-game H2H browser proof missing room for ${game}`);
+        continue;
+      }
+      if (!room.roomId || room.matchId !== `match-${room.roomId}`) {
+        errors.push(`all-game H2H browser proof has incomplete room data for ${game}`);
+      }
+      if (!Array.isArray(room.clickedMoves) || room.clickedMoves.length < 1) {
+        errors.push(`all-game H2H browser proof has no clicked browser moves for ${game}`);
+      }
+      if (room.final?.status !== "finished" || !/^0x/.test(room.final?.replayHash ?? "") || !/^0x/.test(room.final?.resultHash ?? "")) {
+        errors.push(`all-game H2H browser proof did not finish with replay/result hashes for ${game}`);
+      }
+      if (room.proof?.status !== 200 || room.proof?.matchId !== `match-${room.roomId}` || room.proof?.gameId !== game) {
+        errors.push(`all-game H2H browser proof did not index proof for ${game}`);
+      }
+      for (const screenshot of Object.values(room.screenshots ?? {})) {
+        if (!existsSync(screenshot)) errors.push(`all-game H2H browser proof screenshot is missing for ${game}: ${screenshot}`);
+      }
+      for (const [key, value] of Object.entries(room.verified ?? {})) {
+        if (value !== true) errors.push(`all-game H2H browser proof ${game} did not verify ${key}`);
+      }
+    }
+    for (const [key, value] of Object.entries(allGameH2hProof.verified ?? {})) {
+      if (value !== true) errors.push(`all-game H2H browser proof did not verify ${key}`);
+    }
+  }
+}
+
+for (const [file, expectedMode] of [
+  ["evidence/live-proofs/e2e-local-gate-2026-06-24.json", "e2e-local-gate"],
+  ["evidence/live-proofs/e2e-live-0g-gate-2026-06-24.json", "e2e-live-0g-gate"],
+]) {
+  if (existsSync(file)) {
+    const e2eGate = readJson(file);
+    if (e2eGate) {
+      if (e2eGate.mode !== expectedMode || e2eGate.status !== "passed") {
+        errors.push(`${expectedMode} did not pass`);
+      }
+      if (!Array.isArray(e2eGate.checks) || e2eGate.checks.length < 1) {
+        errors.push(`${expectedMode} must record checked evidence`);
+      }
+      for (const check of e2eGate.checks ?? []) {
+        if (check.passed !== true) {
+          errors.push(`${expectedMode} check failed: ${check.label ?? check.file ?? "unknown"}`);
+        }
+      }
     }
   }
 }

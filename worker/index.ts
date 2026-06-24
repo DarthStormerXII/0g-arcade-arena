@@ -152,12 +152,21 @@ export class ArcadeRoom {
           await ensureWagerEscrowFunded(room);
         }
         const input = await readJson<Record<string, unknown>>(request);
-        const next = applyRoomMove(room, {
-          playerId: String(input.playerId ?? ""),
+        const playerId = String(input.playerId ?? "");
+        const moved = applyRoomMove(room, {
+          playerId,
           move: input.move as never,
         });
+        const proof = parseExternalComputeProof(room, moved, playerId, input.computeProof);
+        const next: ArcadeRoomState = proof
+          ? {
+              ...moved,
+              computeMode: "0g-compute",
+              computeProofs: [...(room.computeProofs ?? []), proof],
+            }
+          : moved;
         await this.putRoom(next);
-        await persistRoomMove(this.env, room, next);
+        await persistRoomMove(this.env, room, next, proof);
         if (!room.result && next.result) {
           await persistTerminalRoom(this.env, next);
         } else {
@@ -273,8 +282,8 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
 
   if (!env.ZEROG_ROUTER_API_KEY) return fallback("ZEROG_ROUTER_API_KEY is not configured in the Worker environment.");
 
-  const router = env.ZEROG_COMPUTE_ROUTER || "https://router-api.0g.ai/v1";
-  const model = env.ZEROG_COMPUTE_MODEL || "glm-5.1";
+  const router = env.ZEROG_COMPUTE_ROUTER || "https://router-api-testnet.integratenetwork.work/v1";
+  const model = env.ZEROG_COMPUTE_MODEL || "qwen2.5-omni";
   const view = getRoomView(room);
   const currentPlayerId = view.currentPlayerIds[0] ?? "";
   const playerView = room.state ? adapter.getPlayerView(room.state, currentPlayerId) : null;
@@ -384,6 +393,53 @@ function chooseDeterministicAgentMove(room: ArcadeRoomState, adapter = adapterFo
   return [...legalMoves].sort((a, b) => JSON.stringify(b).length - JSON.stringify(a).length)[0];
 }
 
+export function parseExternalComputeProof(
+  room: ArcadeRoomState,
+  moved: ArcadeRoomState,
+  playerId: string,
+  proofInput: unknown,
+): AgentMoveProof | undefined {
+  if (!proofInput || typeof proofInput !== "object") return undefined;
+  const player = room.players.find((candidate) => candidate.id === playerId);
+  if (player?.kind !== "agent") {
+    throw new RoomRuntimeError("external compute proof can only be attached to agent moves", 400);
+  }
+
+  const proof = proofInput as Record<string, unknown>;
+  if (proof.mode !== "0g-compute") {
+    throw new RoomRuntimeError("external compute proof mode must be 0g-compute", 400);
+  }
+
+  const provider = stringOrNull(proof.provider);
+  const model = stringOrNull(proof.model);
+  const contentHash = stringOrNull(proof.contentHash);
+  if (!provider || !model || !contentHash) {
+    throw new RoomRuntimeError("external compute proof requires provider, model, and contentHash", 400);
+  }
+  if (!/^0x[a-fA-F0-9]{40}$/.test(provider)) {
+    throw new RoomRuntimeError("external compute proof provider must be an address", 400);
+  }
+  if (!/^sha256:[a-fA-F0-9]{64}$/.test(contentHash) && !/^0x[a-fA-F0-9]{8,64}$/.test(contentHash)) {
+    throw new RoomRuntimeError("external compute proof contentHash has invalid format", 400);
+  }
+
+  return {
+    turn: moved.replay?.moves.at(-1)?.turn ?? (room.replay?.moves.length ?? 0),
+    playerId,
+    mode: "0g-compute",
+    provider,
+    requestId: stringOrNull(proof.requestId),
+    verified: proof.verified === true,
+    model,
+    contentHash,
+    fallbackReason: null,
+  };
+}
+
+function stringOrNull(value: unknown) {
+  return typeof value === "string" && value.trim() ? value : null;
+}
+
 function adapterFor(gameId: string) {
   const adapter = gameAdapters.find((candidate) => candidate.id === gameId);
   if (!adapter) throw new RoomRuntimeError(`unsupported game: ${gameId}`, 400);
@@ -456,15 +512,17 @@ export default {
       try {
         const input = await readJson<Record<string, unknown>>(request);
         const agent = normalizeAgentRegistration(input);
+        await ensureAgentAvatarColumn(env);
         await env.ARCADE_DB.prepare(
           `INSERT OR REPLACE INTO agents
-            (id, owner_wallet, display_name, supported_games, bankroll_policy, status, free_enabled, wager_enabled, max_wager_wei, endpoint_url)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            (id, owner_wallet, display_name, avatar_url, supported_games, bankroll_policy, status, free_enabled, wager_enabled, max_wager_wei, endpoint_url)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         )
           .bind(
             agent.agentId,
             agent.ownerWallet,
             agent.displayName,
+            agent.avatarUrl,
             JSON.stringify(agent.supportedGames),
             agent.bankrollPolicy,
             agent.status,
@@ -596,10 +654,15 @@ async function matchmakeHuman(env: Env, requestUrl: string, input: Record<string
   const gameId = String(input.gameId ?? "grid-four").trim();
   if (gameId !== "grid-four") throw new RoomRuntimeError("only grid-four human auto-match is implemented for live E2E", 400);
   const wagerWei = normalizeWagerWei(input.wagerWei);
+  const matchGroup = String(input.matchGroup ?? "default")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, "-")
+    .slice(0, 48);
   const player = input.player as Partial<GamePlayer> | null;
   if (!player || player.kind !== "human") throw new RoomRuntimeError("human player is required", 400);
 
-  const queueKey = `matchmaking:human:${gameId}:${wagerWei}`;
+  const queueKey = `matchmaking:human:${gameId}:${wagerWei}:${matchGroup || "default"}`;
   const waitingRoomId = await env.ACTIVE_GAME_REGISTRY.get(queueKey);
   if (waitingRoomId) {
     const waitingRoom = await fetchRoomById(env, requestUrl, waitingRoomId);
@@ -695,6 +758,7 @@ type RegisteredAgent = {
   agentId: string;
   ownerWallet: string;
   displayName: string;
+  avatarUrl: string;
   supportedGames: string[];
   bankrollPolicy: string;
   status: "pending" | "qualified" | "disabled";
@@ -708,6 +772,7 @@ type AgentRow = {
   id: string;
   owner_wallet: string;
   display_name: string;
+  avatar_url?: string | null;
   supported_games: string;
   bankroll_policy: string;
   status: "pending" | "qualified" | "disabled";
@@ -738,6 +803,7 @@ function normalizeAgentRegistration(input: Record<string, unknown>): RegisteredA
     agentId,
     ownerWallet,
     displayName,
+    avatarUrl: normalizeAgentAvatarUrl(input.avatarUrl, agentId),
     supportedGames,
     bankrollPolicy: String(input.bankrollPolicy ?? "testnet only").trim() || "testnet only",
     status,
@@ -752,6 +818,29 @@ function normalizeAgentId(input: string) {
   return input.trim().toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 64);
 }
 
+function normalizeAgentAvatarUrl(input: unknown, agentId: string) {
+  const raw = typeof input === "string" ? input.trim() : "";
+  if (/^https:\/\/[^\s<>"]{1,240}$/i.test(raw)) return raw;
+  if (/^data:image\/svg\+xml,[^\s<>"]{1,1800}$/i.test(raw)) return raw;
+  return generatedAgentAvatar(agentId);
+}
+
+function generatedAgentAvatar(agentId: string) {
+  const palette = ["46ff9f", "57e2ff", "ffe66d", "ff8a8a"];
+  let hash = 0;
+  for (const char of agentId) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+  const primary = palette[hash % palette.length];
+  const secondary = palette[(hash >>> 3) % palette.length];
+  const initials = agentId
+    .split("-")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("") || "0G";
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img"><rect width="240" height="240" rx="48" fill="#080b0e"/><circle cx="120" cy="108" r="70" fill="#${primary}"/><path d="M64 178c24-38 88-38 112 0" fill="#${secondary}"/><text x="120" y="128" text-anchor="middle" font-family="Arial,sans-serif" font-size="54" font-weight="900" fill="#080b0e">${initials}</text></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 function agentFromRow(row: AgentRow): RegisteredAgent {
   let supportedGames: string[] = [];
   try {
@@ -763,6 +852,7 @@ function agentFromRow(row: AgentRow): RegisteredAgent {
     agentId: row.id,
     ownerWallet: row.owner_wallet,
     displayName: row.display_name,
+    avatarUrl: normalizeAgentAvatarUrl(row.avatar_url, row.id),
     supportedGames,
     bankrollPolicy: row.bankroll_policy,
     status: row.status,
@@ -771,6 +861,14 @@ function agentFromRow(row: AgentRow): RegisteredAgent {
     maxWagerWei: row.max_wager_wei,
     endpointUrl: row.endpoint_url,
   };
+}
+
+async function ensureAgentAvatarColumn(env: Env) {
+  try {
+    await env.ARCADE_DB.prepare("ALTER TABLE agents ADD COLUMN avatar_url TEXT").run();
+  } catch {
+    // Existing D1 databases may already have the column; SQLite reports that as an error.
+  }
 }
 
 function agentQualifies(agent: RegisteredAgent, gameId: string | null, wagerWei: string) {

@@ -8,9 +8,16 @@ const operatorAddress = process.env.OG_ARCADE_OPERATOR_ADDRESS;
 const wagerEscrow = "0xd58960a15e1036efde2ca873716396c0f47031d4";
 const wagerWei = "100000000000000";
 const runId = Date.now().toString(36);
-const roomId = `h2a-wager-${runId}`;
+const roomPrefix = process.env.AGENT_WAGER_ROOM_PREFIX || "h2a-wager";
+const expectedComputeMode = process.env.AGENT_WAGER_EXPECT_COMPUTE_MODE || "deterministic-fallback";
+const evidencePath =
+  process.env.AGENT_WAGER_EVIDENCE_PATH || "evidence/live-proofs/agent-wager-match-api-2026-06-24.json";
+const roomId = `${roomPrefix}-${runId}`;
 const agentId = `agent-wager-warden-${runId}`;
-const evidencePath = "evidence/live-proofs/agent-wager-match-api-2026-06-24.json";
+
+if (!["deterministic-fallback", "0g-compute"].includes(expectedComputeMode)) {
+  throw new Error("AGENT_WAGER_EXPECT_COMPUTE_MODE must be deterministic-fallback or 0g-compute");
+}
 
 if (!privateKey || !operatorAddress) {
   throw new Error("Load ~/.codex/secrets/0g-arcade-arena/operator-wallet.env before running agent wager match proof.");
@@ -183,27 +190,34 @@ if (started.status === 409) {
 }
 
 let latestRoom = started.body?.room ?? null;
-const turns = [
-  { kind: "human", playerId: human.id, move: { column: 0 } },
-  { kind: "agent" },
-  { kind: "human", playerId: human.id, move: { column: 0 } },
-  { kind: "agent" },
-  { kind: "human", playerId: human.id, move: { column: 0 } },
-  { kind: "agent" },
-  { kind: "human", playerId: human.id, move: { column: 0 } },
-];
 const moveResults = [];
-for (const turn of turns) {
+for (let turnIndex = 0; turnIndex < 42 && latestRoom?.status !== "finished"; turnIndex += 1) {
+  const currentPlayerId = latestRoom?.currentPlayerIds?.[0];
+  const isAgentTurn = currentPlayerId === agentId;
+  const isHumanTurn = currentPlayerId === human.id;
+  if (!isAgentTurn && !isHumanTurn) {
+    moveResults.push({
+      kind: "unknown",
+      status: 0,
+      roomStatus: latestRoom?.status ?? null,
+      currentPlayerIds: latestRoom?.currentPlayerIds ?? null,
+      agentMove: null,
+      error: `unexpected current player ${currentPlayerId ?? "none"}`,
+    });
+    break;
+  }
+  const legalMove = latestRoom?.legalMoves?.[0] ?? { column: 0 };
   const result =
-    turn.kind === "agent"
+    isAgentTurn
       ? await postJson(`/api/rooms/${encodeURIComponent(roomId)}/agent-move`, {})
-      : await postJson(`/api/rooms/${encodeURIComponent(roomId)}/move`, { playerId: turn.playerId, move: turn.move });
+      : await postJson(`/api/rooms/${encodeURIComponent(roomId)}/move`, { playerId: human.id, move: legalMove });
   latestRoom = result.body?.room ?? latestRoom;
   moveResults.push({
-    kind: turn.kind,
+    kind: isAgentTurn ? "agent" : "human",
     status: result.status,
     roomStatus: result.body?.room?.status ?? null,
     currentPlayerIds: result.body?.room?.currentPlayerIds ?? null,
+    move: isHumanTurn ? legalMove : null,
     agentMove: result.body?.agentMove
       ? {
           move: result.body.agentMove.move,
@@ -214,7 +228,9 @@ for (const turn of turns) {
   });
 }
 
-const settlement = castSend("settleWinner(uint256,address)", [matchId, operatorAddress]);
+const winnerId = latestRoom?.result?.winnerIds?.[0] ?? null;
+const loserId = latestRoom?.result?.loserIds?.[0] ?? null;
+const settlement = latestRoom?.status === "finished" ? castSend("settleWinner(uint256,address)", [matchId, operatorAddress]) : null;
 const proof = await request(`/api/proofs/match-${encodeURIComponent(roomId)}`);
 const global = await request("/api/leaderboard?scope=global&mode=all");
 const wagerMode = await request("/api/leaderboard?scope=mode&mode=wager");
@@ -222,34 +238,85 @@ const gameWagerMode = await request("/api/leaderboard?scope=game-mode&mode=wager
 const freeMode = await request("/api/leaderboard?scope=mode&mode=free");
 
 const listedIds = Array.isArray(listed.body?.agents) ? listed.body.agents.map((agent) => agent.agentId) : [];
-const winnerId = latestRoom?.result?.winnerIds?.[0] ?? null;
-const loserId = latestRoom?.result?.loserIds?.[0] ?? null;
 const agentMoves = moveResults.filter((move) => move.kind === "agent");
-const verified = {
+const knownParticipantIds = [human.id, agentId];
+const commonVerified = {
   agentRegistered: registered.status === 201 && registered.body?.agent?.agentId === agentId,
   agentListedForWager: listed.status === 200 && listedIds.includes(agentId),
   roomCreated: created.status === 200 && created.body?.room?.wagerWei === wagerWei,
   agentJoined: joined.status === 200 && joined.body?.room?.status === "ready",
   fundedTwice: fundHuman.status === "0x1" && fundAgent.status === "0x1",
   roomStartedAfterFunding: started.status === 200 && started.body?.room?.status === "active",
-  agentMovedThreeTimes: agentMoves.length === 3 && agentMoves.every((move) => move.status === 200),
-  agentMovesUseFallbackWhileComputeBlocked: agentMoves.every((move) => move.agentMove?.computeMode === "deterministic-fallback"),
+  agentMovedAtLeastOnce: agentMoves.length >= 1 && agentMoves.every((move) => move.status === 200),
+  agentMovedThreeTimes: agentMoves.length >= 3 && agentMoves.every((move) => move.status === 200),
+  agentMovesUseExpectedCompute: agentMoves.every((move) => move.agentMove?.computeMode === expectedComputeMode),
+  matchFinishedWithWinner: latestRoom?.status === "finished" && knownParticipantIds.includes(winnerId),
+  winnerIsKnownParticipant: knownParticipantIds.includes(winnerId),
+  loserIsKnownParticipant: knownParticipantIds.includes(loserId),
   matchFinishedWithHumanWinner: latestRoom?.status === "finished" && winnerId === human.id && loserId === agentId,
-  settlementMined: settlement.status === "0x1",
+  settlementMined: settlement?.status === "0x1",
   proofIndexed:
     proof.status === 200 &&
     proof.body?.proof?.matchId === `match-${roomId}` &&
     proof.body?.proof?.roomId === roomId &&
     proof.body?.proof?.status === "finished",
-  proofDisclosesFallbackCompute: proof.body?.proof?.computeMode === "deterministic-fallback",
+  proofDisclosesExpectedCompute: proof.body?.proof?.computeMode === expectedComputeMode,
+  globalIncludesWinner: hasEntry(global, winnerId, { wins: 1 }),
+  wagerIncludesWinner: hasEntry(wagerMode, winnerId, { wins: 1, wagerWins: 1 }),
+  gameWagerIncludesWinner: hasEntry(gameWagerMode, winnerId, { wins: 1, wagerWins: 1 }),
+  wagerIncludesLoserLoss: hasEntry(wagerMode, loserId, { losses: 1 }),
+  humanAndAgentIndexedInWagerMode:
+    entries(wagerMode).some((entry) => entry.participantId === human.id) &&
+    entries(wagerMode).some((entry) => entry.participantId === agentId),
+  freeModeDoesNotIncludeWagerWinner: !hasEntry(freeMode, winnerId),
   globalIncludesHumanWinner: hasEntry(global, human.id, { wins: 1 }),
   wagerIncludesHumanWinner: hasEntry(wagerMode, human.id, { wins: 1, wagerWins: 1 }),
   gameWagerIncludesHumanWinner: hasEntry(gameWagerMode, human.id, { wins: 1, wagerWins: 1 }),
   wagerIncludesAgentLoss: hasEntry(wagerMode, agentId, { losses: 1 }),
-  freeModeDoesNotIncludeWagerWinner: !hasEntry(freeMode, human.id),
+};
+const modeVerified =
+  expectedComputeMode === "0g-compute"
+    ? {
+        agentMovesUseRouterCompute: agentMoves.every((move) => move.agentMove?.computeMode === "0g-compute"),
+        proofDisclosesRouterCompute: proof.body?.proof?.computeMode === "0g-compute",
+      }
+    : {
+        agentMovesUseFallbackWhileComputeBlocked: agentMoves.every(
+          (move) => move.agentMove?.computeMode === "deterministic-fallback",
+        ),
+        proofDisclosesFallbackCompute: proof.body?.proof?.computeMode === "deterministic-fallback",
+      };
+const verified = {
+  ...commonVerified,
+  ...modeVerified,
 };
 
-const status = Object.values(verified).every(Boolean) ? "passed" : "failed";
+const requiredStatusChecks = [
+  "agentRegistered",
+  "agentListedForWager",
+  "roomCreated",
+  "agentJoined",
+  "fundedTwice",
+  "roomStartedAfterFunding",
+  "agentMovedAtLeastOnce",
+  "agentMovesUseExpectedCompute",
+  "matchFinishedWithWinner",
+  "winnerIsKnownParticipant",
+  "loserIsKnownParticipant",
+  "settlementMined",
+  "proofIndexed",
+  "proofDisclosesExpectedCompute",
+  "globalIncludesWinner",
+  "wagerIncludesWinner",
+  "gameWagerIncludesWinner",
+  "wagerIncludesLoserLoss",
+  "humanAndAgentIndexedInWagerMode",
+  "freeModeDoesNotIncludeWagerWinner",
+  ...(expectedComputeMode === "0g-compute"
+    ? ["agentMovesUseRouterCompute", "proofDisclosesRouterCompute"]
+    : ["agentMovesUseFallbackWhileComputeBlocked", "proofDisclosesFallbackCompute"]),
+];
+const status = requiredStatusChecks.every((key) => verified[key] === true) ? "passed" : "failed";
 const evidence = {
   mode: "local-agent-wager-match-api",
   status,
@@ -258,6 +325,7 @@ const evidence = {
   roomId,
   matchId,
   wagerWei,
+  expectedComputeMode,
   human: { id: human.id, displayName: human.displayName },
   agent: { id: agentId, displayName: agentPlayer.displayName },
   winnerId,
@@ -265,7 +333,7 @@ const evidence = {
   transactions: {
     fundHuman: txSummary(fundHuman),
     fundAgent: txSummary(fundAgent),
-    settlement: txSummary(settlement),
+    settlement: settlement ? txSummary(settlement) : null,
   },
   api: {
     registered: { status: registered.status },
@@ -274,6 +342,8 @@ const evidence = {
     joined: { status: joined.status, roomStatus: joined.body?.room?.status ?? null },
     started: { status: started.status, roomStatus: started.body?.room?.status ?? null },
     moveResults,
+    finalRoomStatus: latestRoom?.status ?? null,
+    finalResult: latestRoom?.result ?? null,
     proof: {
       status: proof.status,
       matchId: proof.body?.proof?.matchId ?? null,

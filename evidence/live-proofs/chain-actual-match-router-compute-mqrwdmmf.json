@@ -1,0 +1,64 @@
+{
+  "mode": "live-0g-galileo-actual-match-result",
+  "status": "passed",
+  "verifiedAt": "2026-06-24T09:57:04.025Z",
+  "chainId": 16602,
+  "rpcUrl": "https://evmrpc-testnet.0g.ai",
+  "explorer": "https://chainscan-galileo.0g.ai",
+  "operator": "0x9BD46195661F61a323c3c8C82132dCDE72a3bcbC",
+  "roomId": "router-compute-mqrwdmmf",
+  "matchId": "match-router-compute-mqrwdmmf",
+  "onchainMatchId": "4",
+  "contract": {
+    "name": "ArcadeMatchRegistry",
+    "address": "0xbfbe80a1907e3cbfc2c2598c8d9fb9665ff0d2a7"
+  },
+  "sourceEvidence": {
+    "routerCompute": "evidence/live-proofs/router-compute-agent-match-2026-06-24.json",
+    "storage": "evidence/live-proofs/0g-storage-room-router-compute-mqrwdmmf.json",
+    "chainDeployments": "evidence/live-proofs/chain-check-latest.json"
+  },
+  "committed": {
+    "gameId": "0x677269642d666f75720000000000000000000000000000000000000000000000",
+    "resultHash": "0x4379235cc54dacdc4e369375d33613be2c1ae31a4d3d951673645df7c2a5ce38",
+    "replayHash": "0xf13b659a2e62927636e960280e5e37f786c260e7fd3cf75679ccc762cba3f344",
+    "appReplayHash": "0xb3803544",
+    "appResultHash": "0xacdc37d4",
+    "storageRoot": "0xa27dceac2040f491db0993daa24e3823b247e7b666c1e1e7877f6031faa9e3de",
+    "storageUri": "0g://storage/0xa27dceac2040f491db0993daa24e3823b247e7b666c1e1e7877f6031faa9e3de",
+    "storageUriHash": "0x387f92f53d5e515983666bb3eb5dda97338099879d46a451489b1b039709b6d5",
+    "wagered": false,
+    "computeMode": "0g-compute"
+  },
+  "transactions": {
+    "createMatch": {
+      "txHash": "0xafa956e41fd9c12a99c9e8c60be7803429dfd8b414393fc3dff60632b9a9cf2e",
+      "blockNumber": 40462864,
+      "gasUsed": 82665,
+      "status": "0x1"
+    },
+    "commitResult": {
+      "txHash": "0x0c7dabcef133a6a1e0ef215b178e72285f6b3a4d7dde0ed25275fd8b8c353dee",
+      "blockNumber": 40462884,
+      "gasUsed": 161569,
+      "status": "0x1"
+    }
+  },
+  "stored": "0x677269642d666f75720000000000000000000000000000000000000000000000\n0x9BD46195661F61a323c3c8C82132dCDE72a3bcbC\nfalse\n0x4379235cc54dacdc4e369375d33613be2c1ae31a4d3d951673645df7c2a5ce38\n0xf13b659a2e62927636e960280e5e37f786c260e7fd3cf75679ccc762cba3f344\n\"0g://storage/0xa27dceac2040f491db0993daa24e3823b247e7b666c1e1e7877f6031faa9e3de\"\nfalse",
+  "verified": {
+    "createMatchMined": true,
+    "commitResultMined": true,
+    "storedGameId": true,
+    "storedCreator": true,
+    "storedWagered": true,
+    "storedResultHash": true,
+    "storedReplayHash": true,
+    "storedStorageUri": true
+  },
+  "claims": {
+    "chain": "The completed free match result and reachable 0G Storage replay root were committed to the live Galileo ArcadeMatchRegistry.",
+    "storage": "The committed replayHash is the sha256 payload hash from the reachable 0G Storage room replay evidence.",
+    "compute": "The completed match includes at least one 0G testnet Router-selected agent move, and the app proof index recorded computeMode=0g-compute.",
+    "da": "No 0G DA publication is claimed by this proof."
+  }
+}

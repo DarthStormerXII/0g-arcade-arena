@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-06-24T10:30:08.211Z",
+  "mode": "live-0g-storage-room-replay",
+  "roomId": "mgr-tile-race-mqrxg2lh",
+  "matchId": "match-mgr-tile-race-mqrxg2lh",
+  "gameId": "tile-race",
+  "replayHash": "0x6cf20ed4",
+  "resultHash": "0x9f53f1ec",
+  "wagerWei": "0",
+  "computeMode": "0g-compute",
+  "computeProofCount": 1,
+  "payloadSha256": "sha256:afbcb4f8c42ee0a07257c94a77d5be768d0936aca54db94bd9cfac17f9f1906c",
+  "rootHash": "0xdbc1eeba3cfc798823209a80d0b456a07de974a91be60e906baf552fcc1153ba",
+  "txHash": "0x5ea78612a1e8228b5f3a3cec7d9a03759fe82ed1c3b948c3b63db1df627f635e",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

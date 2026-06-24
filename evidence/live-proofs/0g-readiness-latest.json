@@ -1,77 +1,101 @@
 {
-  "checkedAt": "2026-06-24T08:05:13.582Z",
+  "checkedAt": "2026-06-24T14:16:13.949Z",
   "envFile": "/Users/gabrielantonyxaviour/.codex/secrets/0g-arcade-arena/0g-live.env",
   "chain": {
     "rpcUrl": "https://evmrpc-testnet.0g.ai",
     "chainId": 16602,
-    "ok": true
+    "ok": true,
+    "chainIdProbe": {
+      "ok": true,
+      "result": "0x40da",
+      "elapsedMs": 5994
+    },
+    "operatorBalanceProbe": {
+      "ok": true,
+      "result": "0x96dd9c8e62cafa2",
+      "elapsedMs": 6060
+    }
   },
   "operator": {
     "address": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586",
-    "balance0g": "0.691164",
+    "balance0g": "0.679438",
     "privateKeyPresent": true
   },
   "privyWallets": {
     "0x23761115c5f38ca51f0d425d00DE6E34029239EC": "0.056269"
   },
   "compute": {
-    "routerHost": "router-api.0g.ai",
+    "routerHost": "router-api-testnet.integratenetwork.work",
     "modelsStatus": 200,
-    "modelsCount": 15,
-    "configuredModel": "glm-5.1",
+    "modelsCount": 2,
+    "configuredModel": "qwen2.5-omni",
     "configuredModelProbe": {
-      "ok": false,
-      "status": 402,
-      "elapsedMs": 560,
-      "responseKeyPresent": false,
+      "ok": true,
+      "status": 200,
+      "elapsedMs": 5934,
+      "attemptElapsedMs": 5934,
+      "rateLimit": {
+        "retryAfter": null,
+        "limit": null,
+        "remaining": null,
+        "reset": null
+      },
+      "responseKeyPresent": true,
       "responseSignaturePresent": false,
-      "traceProviderPresent": false,
-      "traceRequestIdPresent": false,
-      "teeVerifiedField": null,
-      "contentHash": null,
-      "errorCode": "insufficient_balance",
-      "errorMessage": "Insufficient balance"
+      "traceProviderPresent": true,
+      "traceRequestIdPresent": true,
+      "teeVerifiedField": true,
+      "contentHash": "sha256:565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "errorCode": null,
+      "errorMessage": null,
+      "attempts": [
+        {
+          "status": 200,
+          "ok": true,
+          "elapsedMs": 5934,
+          "rateLimit": {
+            "retryAfter": null,
+            "limit": null,
+            "remaining": null,
+            "reset": null
+          },
+          "errorCode": null,
+          "errorMessage": null
+        }
+      ]
     },
-    "glm52Probe": {
-      "ok": false,
-      "status": 402,
-      "elapsedMs": 256,
-      "responseKeyPresent": false,
-      "responseSignaturePresent": false,
-      "traceProviderPresent": false,
-      "traceRequestIdPresent": false,
-      "teeVerifiedField": null,
-      "contentHash": null,
-      "errorCode": "insufficient_balance",
-      "errorMessage": "Insufficient balance"
-    },
+    "glm52Probe": null,
+    "extraComputeProbesEnabled": false,
+    "diagnosticChatProbesEnabled": false,
     "networkDiagnostic": {
-      "configuredRouterHost": "router-api.0g.ai",
+      "configuredRouterHost": "router-api-testnet.integratenetwork.work",
       "expectedTestnetRouterHost": "router-api-testnet.integratenetwork.work",
       "chainNetwork": "galileo-testnet",
       "storageNetwork": "testnet",
-      "configuredRouterLooksMainnet": true,
+      "configuredRouterLooksMainnet": false,
       "mainnetRouterProbe": {
         "routerHost": "router-api.0g.ai",
         "modelsStatus": 200,
-        "modelsElapsedMs": 523,
+        "modelsElapsedMs": 825,
         "modelsCount": 15,
-        "chatStatus": 402,
-        "chatElapsedMs": 258,
-        "errorCode": "insufficient_balance",
-        "errorMessage": "Insufficient balance"
+        "chatSkipped": true,
+        "chatStatus": null,
+        "chatElapsedMs": null,
+        "errorCode": null,
+        "errorMessage": null
       },
       "testnetRouterProbe": {
         "routerHost": "router-api-testnet.integratenetwork.work",
         "modelsStatus": 200,
-        "modelsElapsedMs": 1618,
+        "modelsElapsedMs": 4496,
         "modelsCount": 2,
-        "chatStatus": 401,
-        "chatElapsedMs": 1108,
-        "errorCode": "invalid_api_key",
-        "errorMessage": "Invalid API key or token"
+        "chatSkipped": true,
+        "chatStatus": null,
+        "chatElapsedMs": null,
+        "errorCode": null,
+        "errorMessage": null
       },
-      "conclusion": "The project has a mainnet Router API key or mainnet Router balance issue while the rest of the app targets Galileo testnet. Fund the Router balance for the configured mainnet key, or replace it with a valid testnet Router key and endpoint."
+      "conclusion": "The project is configured for the 0G testnet Router and the configured model completed a chat probe."
     }
   },
   "storage": {
@@ -81,7 +105,7 @@
   },
   "ready": {
     "chain": true,
-    "compute": false,
+    "compute": true,
     "storageConfig": true,
     "storageEndpoint": true
   }

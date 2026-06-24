@@ -19,6 +19,7 @@ import { PlayableMatch } from "../components/PlayableMatch";
 import { ProofTable } from "../components/ProofTable";
 import { Button } from "../components/ui/button";
 import { Panel, StatusPill } from "../components/ui/panel";
+import { PlaySetup } from "./GameDetailPage";
 import { platformAgents } from "../lib/agents";
 import { gameAdapters, gameDescriptions, gameVisuals, getGame } from "../lib/game-registry";
 import { gameIdFromMatchId, resolveMatchRecord } from "../lib/match-records";
@@ -26,36 +27,32 @@ import { downloadShareCardPng, shareText } from "../lib/share-card";
 import { currentValidationRows, requiredPackFiles, validationChecks } from "../lib/submission-checks";
 
 export function Lobby() {
-  const featuredAgent = platformAgents[0];
+  const featuredGame = getGame("grid-four");
+  const visuals = gameVisuals[featuredGame.id];
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
-      <section className="scanline min-h-[560px] rounded-md border border-[#46ff9f55] bg-black/45 p-6 md:p-8">
-        <StatusPill tone="green">Open game arena</StatusPill>
-        <h1 className="mt-6 max-w-4xl text-5xl font-black uppercase leading-[0.95] md:text-7xl">
-          Play, submit, and challenge game agents.
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg text-white/72">
-          Four deterministic games, human and agent opponents, tiny testnet wagers, and a clean pull-request flow for new Game Packs.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button onClick={() => (window.location.href = "/play/grid-four/create")}>
-            <Swords size={18} /> Start Grid Four
-          </Button>
-          <Link to="/submit-game"><Button variant="secondary"><Upload size={18} /> Submit Game</Button></Link>
-        </div>
+    <div className="grid gap-6">
+      <section className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,.9fr)]">
+        <Panel className="scanline min-h-[560px] overflow-hidden p-0">
+          <img className="h-[360px] w-full object-cover" src={visuals.cover} alt="" />
+          <div className="grid gap-4 p-5 sm:grid-cols-[88px_1fr]">
+            <img className="h-20 w-20 rounded-md object-cover" src={visuals.logo} alt="" />
+            <div>
+              <StatusPill tone="green">Featured game</StatusPill>
+              <h1 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">{featuredGame.manifest.name}</h1>
+              <p className="mt-3 max-w-3xl text-white/68">
+                {gameDescriptions[featuredGame.id]} Choose a 0G agent or a human opponent, then start free or with a tiny
+                testnet wager.
+              </p>
+            </div>
+          </div>
+        </Panel>
+        <PlaySetup gameId={featuredGame.id} supportsWagers={featuredGame.manifest.supportsWagers} />
       </section>
-      <Panel className="space-y-4">
-        <img className="h-28 w-28 rounded-md object-cover" src={featuredAgent.avatarUrl} alt="" />
-        <StatusPill tone="cyan">Featured agent</StatusPill>
-        <h2 className="text-2xl font-black uppercase">{featuredAgent.displayName}</h2>
-        <p className="text-sm text-white/68">
-          Challenge a deterministic agent opponent, then inspect the replay and chain evidence from Explorer when you want
-          the technical view.
-        </p>
-        <Link to={`/agents/${featuredAgent.agentId}`}>
-          <Button className="w-full" variant="secondary"><Bot size={18} /> View Agent</Button>
-        </Link>
-      </Panel>
+      <div className="flex flex-wrap gap-3">
+        <Link to="/games"><Button variant="secondary"><Gamepad2 size={18} /> All Games</Button></Link>
+        <Link to="/agents"><Button variant="secondary"><Bot size={18} /> Agents</Button></Link>
+        <Link to="/submit-game"><Button variant="secondary"><Upload size={18} /> Submit Game</Button></Link>
+      </div>
       <GameStrip />
     </div>
   );

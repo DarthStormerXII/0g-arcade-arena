@@ -1,44 +1,44 @@
 {
   "mode": "local-agent-wager-policy-api",
   "status": "passed",
-  "checkedAt": "2026-06-23T18:05:01.135Z",
+  "checkedAt": "2026-06-24T11:11:10.008Z",
   "baseUrl": "http://localhost:3021",
   "wagerWei": "100000000000000",
   "registrations": [
     {
       "status": 201,
-      "agentId": "policy-pending-20260623180500"
+      "agentId": "policy-pending-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-free-disabled-20260623180500"
+      "agentId": "policy-free-disabled-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-free-ok-20260623180500"
+      "agentId": "policy-free-ok-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-unsupported-20260623180500"
+      "agentId": "policy-unsupported-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-wager-disabled-20260623180500"
+      "agentId": "policy-wager-disabled-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-cap-low-20260623180500"
+      "agentId": "policy-cap-low-20260624111109"
     },
     {
       "status": 201,
-      "agentId": "policy-cap-ok-20260623180500"
+      "agentId": "policy-cap-ok-20260624111109"
     }
   ],
   "cases": [
     {
       "label": "unregistered",
-      "roomId": "pol-unregister-1-mqqyfhjt",
-      "agentId": "policy-missing-20260623180500",
+      "roomId": "pol-unregister-1-mqrz34dz",
+      "agentId": "policy-missing-20260624111109",
       "wagerWei": "0",
       "expectedStatus": 404,
       "actualStatus": 404,
@@ -48,8 +48,8 @@
     },
     {
       "label": "pending agent",
-      "roomId": "pol-pending-ag-2-mqqyfhjt",
-      "agentId": "policy-pending-20260623180500",
+      "roomId": "pol-pending-ag-2-mqrz34dz",
+      "agentId": "policy-pending-20260624111109",
       "wagerWei": "0",
       "expectedStatus": 403,
       "actualStatus": 403,
@@ -59,8 +59,8 @@
     },
     {
       "label": "free disabled agent",
-      "roomId": "pol-free-disab-3-mqqyfhjt",
-      "agentId": "policy-free-disabled-20260623180500",
+      "roomId": "pol-free-disab-3-mqrz34dz",
+      "agentId": "policy-free-disabled-20260624111109",
       "wagerWei": "0",
       "expectedStatus": 403,
       "actualStatus": 403,
@@ -70,8 +70,8 @@
     },
     {
       "label": "free qualified agent",
-      "roomId": "pol-free-quali-4-mqqyfhjt",
-      "agentId": "policy-free-ok-20260623180500",
+      "roomId": "pol-free-quali-4-mqrz34dz",
+      "agentId": "policy-free-ok-20260624111109",
       "wagerWei": "0",
       "expectedStatus": 200,
       "actualStatus": 200,
@@ -81,8 +81,8 @@
     },
     {
       "label": "unsupported game agent",
-      "roomId": "pol-unsupporte-5-mqqyfhjt",
-      "agentId": "policy-unsupported-20260623180500",
+      "roomId": "pol-unsupporte-5-mqrz34dz",
+      "agentId": "policy-unsupported-20260624111109",
       "wagerWei": "0",
       "expectedStatus": 403,
       "actualStatus": 403,
@@ -92,8 +92,8 @@
     },
     {
       "label": "wager disabled agent",
-      "roomId": "pol-wager-disa-6-mqqyfhjt",
-      "agentId": "policy-wager-disabled-20260623180500",
+      "roomId": "pol-wager-disa-6-mqrz34dz",
+      "agentId": "policy-wager-disabled-20260624111109",
       "wagerWei": "100000000000000",
       "expectedStatus": 403,
       "actualStatus": 403,
@@ -103,8 +103,8 @@
     },
     {
       "label": "wager cap below room",
-      "roomId": "pol-wager-cap--7-mqqyfhjt",
-      "agentId": "policy-cap-low-20260623180500",
+      "roomId": "pol-wager-cap--7-mqrz34dz",
+      "agentId": "policy-cap-low-20260624111109",
       "wagerWei": "100000000000000",
       "expectedStatus": 403,
       "actualStatus": 403,
@@ -114,8 +114,8 @@
     },
     {
       "label": "wager cap equal room",
-      "roomId": "pol-wager-cap--8-mqqyfhjt",
-      "agentId": "policy-cap-ok-20260623180500",
+      "roomId": "pol-wager-cap--8-mqrz34dz",
+      "agentId": "policy-cap-ok-20260624111109",
       "wagerWei": "100000000000000",
       "expectedStatus": 200,
       "actualStatus": 200,
@@ -127,6 +127,15 @@
   "listing": {
     "status": 200,
     "listedIds": [
+      "policy-free-disabled-20260624111109",
+      "policy-cap-ok-20260624111109",
+      "agent-wager-warden-mqrx23nu",
+      "policy-free-disabled-20260624094731",
+      "policy-cap-ok-20260624094731",
+      "agent-ui-grid-four-pickmqrqjway",
+      "agent-wager-warden-mqr1xs1b",
+      "agent-wager-warden-mqr1vspx",
+      "agent-browser-proof-grid-warden",
       "policy-free-disabled-20260623180500",
       "policy-cap-ok-20260623180500",
       "policy-free-disabled-20260623180445",

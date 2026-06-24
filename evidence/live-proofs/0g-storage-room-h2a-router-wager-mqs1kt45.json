@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-06-24T12:22:53.522Z",
+  "mode": "live-0g-storage-room-replay",
+  "roomId": "h2a-router-wager-mqs1kt45",
+  "matchId": "match-h2a-router-wager-mqs1kt45",
+  "gameId": "grid-four",
+  "replayHash": "0xb8e9bf38",
+  "resultHash": "0x93d5b20b",
+  "wagerWei": "100000000000000",
+  "computeMode": "0g-compute",
+  "computeProofCount": 3,
+  "payloadSha256": "sha256:2fad8a3424b563484ef5b98848903b152a6b24fb29fcd1285389e7f3bfbbecb6",
+  "rootHash": "0x7aeac238a3e6493e61c9c8bce13988bd9885dbb59954036c8c14943b31daf5a8",
+  "txHash": "0xd99d840e18358fb903c702c64a52c77cfe242d3f759e33d88f8b784465fc269a",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

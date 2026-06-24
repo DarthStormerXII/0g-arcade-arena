@@ -1,0 +1,48 @@
+{
+  "mode": "local-external-compute-proof-api",
+  "status": "passed",
+  "checkedAt": "2026-06-24T09:47:31.963Z",
+  "baseUrl": "http://localhost:3021",
+  "acceptedRoom": {
+    "roomId": "external-proof-mqrw3khg",
+    "setup": {
+      "registered": 201,
+      "created": 200,
+      "joined": 200,
+      "started": 200
+    },
+    "humanMove": {
+      "status": 200
+    },
+    "agentMove": {
+      "status": 200,
+      "computeMode": "0g-compute",
+      "computeProofCount": 1
+    },
+    "proof": {
+      "status": 200,
+      "computeMode": "0g-compute"
+    }
+  },
+  "rejectedHumanProof": {
+    "roomId": "external-proof-reject-mqrw3khg",
+    "setup": {
+      "registered": 201,
+      "created": 200,
+      "joined": 200,
+      "started": 200
+    },
+    "status": 400,
+    "error": "external compute proof can only be attached to agent moves"
+  },
+  "verified": {
+    "agentRegistered": true,
+    "roomStarted": true,
+    "humanMoveAccepted": true,
+    "agentMoveAccepted": true,
+    "roomMarkedCompute": true,
+    "computeProofPersisted": true,
+    "proofIndexedCompute": true,
+    "humanProofRejected": true
+  }
+}

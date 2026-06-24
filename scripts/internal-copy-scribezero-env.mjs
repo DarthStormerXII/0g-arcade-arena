@@ -48,8 +48,8 @@ const output = {
   ZEROG_ROUTER_API_KEY: source.ZEROG_ROUTER_API_KEY,
   ZEROG_RPC: source.ZEROG_RPC || "https://evmrpc-testnet.0g.ai",
   ZEROG_INDEXER: source.ZEROG_INDEXER || "https://indexer-storage-testnet-turbo.0g.ai",
-  ZEROG_COMPUTE_ROUTER: source.ZEROG_COMPUTE_ROUTER || "https://router-api.0g.ai/v1",
-  ZEROG_COMPUTE_MODEL: "glm-5.1",
+  ZEROG_COMPUTE_ROUTER: source.ZEROG_COMPUTE_ROUTER || "https://router-api-testnet.integratenetwork.work/v1",
+  ZEROG_COMPUTE_MODEL: source.ZEROG_COMPUTE_MODEL || "qwen2.5-omni",
   ZEROG_STORAGE_MODE: "live",
 };
 

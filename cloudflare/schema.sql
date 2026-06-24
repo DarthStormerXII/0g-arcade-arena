@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS agents (
   id TEXT PRIMARY KEY,
   owner_wallet TEXT NOT NULL,
   display_name TEXT NOT NULL,
+  avatar_url TEXT,
   supported_games TEXT NOT NULL,
   bankroll_policy TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'pending',

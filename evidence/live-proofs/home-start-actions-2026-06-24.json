@@ -1,0 +1,44 @@
+{
+  "mode": "local-home-start-actions-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T13:33:32.142Z",
+  "url": "http://localhost:3021",
+  "registeredAgent": {
+    "freeAgentId": "home-start-agent-mqs466cp",
+    "freeAgentName": "Home Start Agent MQS466CP",
+    "freeAgentStatus": 201,
+    "wagerAgentId": "home-wager-agent-mqs466cp",
+    "wagerAgentName": "Home Wager Agent MQS466CP",
+    "wagerAgentStatus": 201
+  },
+  "screenshots": {
+    "humanRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-start-human-room-2026-06-24.png",
+    "agentMatch": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-start-agent-match-2026-06-24.png",
+    "humanWagerRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-start-human-wager-room-2026-06-24.png",
+    "agentWagerRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-start-agent-wager-room-2026-06-24.png"
+  },
+  "observed": {
+    "roomCode": "GR-B6GX",
+    "humanUrl": "http://localhost:3021/room/gr-b6gx?game=grid-four&opponent=human&wager=free",
+    "agentUrl": "http://localhost:3021/match/match-gr-f686?room=gr-f686&game=grid-four",
+    "wagerHumanRoomCode": "GR-SLSG",
+    "humanWagerUrl": "http://localhost:3021/room/gr-slsg?game=grid-four&opponent=human&wager=0.0001",
+    "agentWagerUrl": "http://localhost:3021/room/gr-gho8?game=grid-four&opponent=agent&wager=0.0001",
+    "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM GR-B6GX\nWAITING\nGR-B6GX\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: grid-four\nWager: Free match\nPlayers: Guest 467670\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+    "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: GRID-FOUR\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: gr-f686\nGame: grid-four\nTurn: 0\nCurrent player: guest-467670\nOpponent: agent\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF",
+    "humanWagerTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM GR-SLSG\nWAITING\nGR-SLSG\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: grid-four\nWager: 0.0001 testnet 0G\nPlayers: Guest 467670\nWAGER ESCROW\nEach player funds 0.0001 testnet 0G before start.\nFUND WAGER FROM WALLET\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+    "agentWagerTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM GR-GHO8\nREADY\nGR-GHO8\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: grid-four\nWager: 0.0001 testnet 0G\nPlayers: Guest 467670, Home Wager Agent MQS466CP\nWAGER ESCROW\nEach player funds 0.0001 testnet 0G before start.\nFUND WAGER FROM WALLET\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE"
+  },
+  "verified": {
+    "agentRegistered": true,
+    "humanRoomCodeCreated": true,
+    "humanRoomScreenLoaded": true,
+    "agentSelectedFromHome": true,
+    "agentMatchStarted": true,
+    "humanWagerRoomCreated": true,
+    "humanWagerStopsBeforeStart": true,
+    "agentWagerRoomCreated": true,
+    "agentWagerStopsBeforeStart": true
+  },
+  "conclusion": "The localhost home route can start free human rooms, free selected-agent matches, tiny-wager human rooms, and tiny-wager selected-agent rooms through the visible match setup controls. Wager rooms stop at the escrow room screen before match start."
+}

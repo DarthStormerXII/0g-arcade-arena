@@ -19,8 +19,8 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
           <StatusPill tone="green">Live Galileo Chain Smoke</StatusPill>
           <h2 className="mt-3 text-2xl font-black uppercase">Verified on 0G Chain</h2>
           <p className="mt-2 text-sm text-white/62">
-            Six contracts and nine registry/wager transactions were mined on chain ID {liveChainProof.chainId}. Storage,
-            Compute, and DA remain explicitly fallback until live credentials are configured.
+            Six contracts and nine registry/wager transactions were mined on chain ID {liveChainProof.chainId}. This
+            receipt is chain-only; Storage, Compute, and DA proof states are shown in the dedicated live proof panels.
           </p>
         </div>
         <div className="rounded-sm border border-white/10 bg-black/35 p-3 text-xs">

@@ -4,6 +4,7 @@ export type RegisteredAgent = {
   agentId: string;
   ownerWallet: string;
   displayName: string;
+  avatarUrl: string;
   supportedGames: string[];
   bankrollPolicy: string;
   status: "pending" | "qualified" | "disabled";

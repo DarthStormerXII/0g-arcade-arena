@@ -74,7 +74,7 @@ export function GameDetail() {
   );
 }
 
-function PlaySetup({ gameId, supportsWagers }: { gameId: string; supportsWagers: boolean }) {
+export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supportsWagers: boolean }) {
   const navigate = useNavigate();
   const player = useArcadePlayer();
   const [opponent, setOpponent] = useState<OpponentMode>("agent");
@@ -247,7 +247,7 @@ function PlaySetup({ gameId, supportsWagers }: { gameId: string; supportsWagers:
                   active={selectedAgent?.agentId === agent.agentId}
                   onClick={() => setSelectedAgentId(agent.agentId)}
                 >
-                  <Bot size={18} /> {agent.displayName}
+                  <img className="h-7 w-7 rounded-md object-cover" src={agent.avatarUrl} alt="" /> {agent.displayName}
                 </SegmentButton>
               ))
             ) : (

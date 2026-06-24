@@ -17,7 +17,13 @@ for (const game of ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"]) 
 }
 
 commands.push(["pnpm", ["game:submission-workflow-check"]]);
+commands.push(["pnpm", ["agent:avatar-check"]]);
+commands.push(["pnpm", ["e2e:local"]]);
+commands.push(["pnpm", ["e2e:live-0g"]]);
 commands.push(["pnpm", ["0g:da-candidate"]]);
+commands.push(["pnpm", ["0g:da-readiness"]]);
+commands.push(["pnpm", ["0g:da-publisher-harness"]]);
+commands.push(["pnpm", ["0g:da-publish"]]);
 commands.push(["pnpm", ["audit:check"]]);
 
 for (const [cmd, args] of commands) {

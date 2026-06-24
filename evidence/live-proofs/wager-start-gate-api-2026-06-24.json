@@ -1,9 +1,9 @@
 {
   "mode": "local-wager-start-gate-api",
   "status": "passed",
-  "checkedAt": "2026-06-23T19:16:52.306Z",
+  "checkedAt": "2026-06-24T09:47:32.770Z",
   "baseUrl": "http://localhost:3021",
-  "roomId": "gate-mqr0zvjn",
+  "roomId": "gate-mqrw3klh",
   "wagerWei": "100000000000000",
   "created": {
     "status": 200,

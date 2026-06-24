@@ -95,9 +95,9 @@ export const liveChainProof = {
   ],
   scope: {
     chain: "Live Galileo deployment and registry writes verified.",
-    storage: "No 0G Storage upload claimed; storage remains local fallback.",
-    compute: "No 0G Compute execution claimed; agents remain deterministic fallback.",
-    da: "No 0G DA publication claimed.",
+    storage: "This chain-smoke receipt does not claim Storage; live Storage receipts are shown separately.",
+    compute: "This chain-smoke receipt does not claim Compute; live Router Compute receipts are shown separately.",
+    da: "No 0G DA publication claimed by this chain-smoke receipt.",
   },
 } as const;
 
