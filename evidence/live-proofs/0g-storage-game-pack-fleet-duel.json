@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-06-24T07:26:28.950Z",
+  "mode": "live-0g-storage-game-pack",
+  "gameId": "fleet-duel",
+  "fileCount": 11,
+  "payloadSha256": "sha256:a204377c25c49c9cd239ea315a1c4bf291858b1fa0f40b9dec09e2750317672c",
+  "manifestHash": "0xba8285862e02c18d0e0f4f5a053b36621e4237946865b16017b270956c680674",
+  "rootHash": "0x64764074cf9142a25147673e160f020dd1ce0d245445ae730d986b106d0289c0",
+  "txHash": "0x6e4e738fe95ce5f5bb646c71999bbaadf74665868e81a8c5aecf01d67b52934b",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

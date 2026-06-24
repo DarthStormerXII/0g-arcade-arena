@@ -15,17 +15,22 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | 0G Storage readiness | `pnpm 0g:readiness` | Credentials and indexer endpoint verified |
 | Local H2H Grid Four API | `evidence/live-proofs/h2h-grid-four-local-api-2026-06-23.json` | Durable Object room create/join/start/move/result verified on `http://localhost:3021` |
 | Local non-Grid room APIs | `evidence/live-proofs/multigame-room-api-2026-06-24.json` | Fleet Duel, Tile Race, and World Cup Draft each finish human-vs-human and human-vs-agent rooms through `/api/rooms`, `/move`, `/agent-move`, `/api/proofs`, and D1 indexing |
+| Local non-Grid room UI | `evidence/live-proofs/non-grid-room-ui-2026-06-24.json` | Real Fleet Duel, Tile Race, and World Cup Draft rooms render route game headers, shared-room state, current player, and game-specific legal move controls in the browser |
 | Local H2H Grid Four UI smoke | `evidence/live-proofs/h2h-grid-four-ui-smoke-2026-06-23.json` | Match page reads the room API and applies a browser move to Durable Object state |
 | Two-Privy-user H2H Grid Four | `evidence/live-proofs/two-privy-h2h-grid-four-2026-06-23.json` | Both test accounts logged in, created/joined/started, alternated moves, and finished a free match |
 | Two-Privy-user tiny wager H2H | `evidence/live-proofs/h2h-grid-four-wager-browser-full-2026-06-23.json` | Both Privy wallets funded `0.0001 0G`, Worker start was escrow-gated, all moves were browser-clicked, and winner settlement mined on Galileo |
 | 0G Storage room replay upload | `evidence/live-proofs/0g-storage-room-gr-zqvy.json` | Completed wager replay uploaded to 0G Storage; root is reachable |
-| 0G Storage game-pack upload | `evidence/live-proofs/0g-storage-game-pack-grid-four.json` | Grid Four game pack uploaded to 0G Storage; root is reachable |
+| 0G Storage game-pack uploads | `evidence/live-proofs/0g-storage-game-pack-*.json` | All four v1 game packs are uploaded to 0G Storage with reachable roots |
+| 0G Storage proof artifact bundle | `evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json` | Submission review receipt, share-card metadata, and non-sensitive agent reasoning transcript are bundled in one reachable 0G Storage payload |
+| 0G DA batch candidate | `evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json` | Deterministic unpublished batch hash covers the live wager replay roots, live chain commits, all four game-pack roots, and proof-artifact bundle |
 | Actual match chain result commit | `evidence/live-proofs/chain-actual-match-gr-zqvy.json` | Completed browser wager room `gr-zqvy` committed result hash, replay payload hash, and 0G Storage URI to live Galileo `ArcadeMatchRegistry` match ID `2` |
 | D1 proof/leaderboard APIs | `evidence/live-proofs/d1-proof-leaderboard-api-2026-06-23.json`, `evidence/live-proofs/wager-leaderboard-api-2026-06-24.json` | Completed free room wrote `/api/proofs` and global/game/free leaderboard rows; tiny escrow-backed wager room wrote global/game/wager/game-wager rows |
 | Qualified agent room API | `evidence/live-proofs/agent-registry-room-api-2026-06-23.json` | D1 registered qualified Grid Four agent joined a room, moved through `/agent-move`, and indexed leaderboard rows |
 | Agent wager join policy | `evidence/live-proofs/agent-wager-policy-api-2026-06-24.json` | Direct room joins enforce registration, qualified status, supported game, free/wager enablement, and max wager cap |
+| All-game agent picker UI | `evidence/live-proofs/agent-picker-all-games-2026-06-24.json` | Grid Four, Fleet Duel, Tile Race, and World Cup Draft each render a qualified agent and selected-agent CTA in the browser |
+| PR-based game submission workflow | `evidence/live-proofs/game-submission-workflow-2026-06-24.json` | `/submit-game` is pull-request-only, docs/template/workflow/tooling are present, every v1 pack has cover/logo assets and matching hashes, and no game pack contains banned secret/network/RCE patterns |
 | Router-bound agent Compute attempt | `evidence/live-proofs/agent-compute-router-bound-api-2026-06-24.json` | Local Wrangler loaded project-only router env, `/agent-move` reached 0G Router, and fallback persisted the real `Insufficient balance` blocker |
-| Malformed Compute output defense | `worker/agent-move-output.test.ts`, `worker/agent-move-choice.test.ts` | Fenced/embedded JSON is parsed, confidence is clamped, missing JSON/non-integer columns are rejected, and malformed/illegal mocked Compute moves fall back to legal deterministic moves |
+| Malformed Compute output defense | `worker/agent-move-output.test.ts`, `worker/agent-move-choice.test.ts` | Fenced/embedded JSON is parsed, confidence is clamped, missing JSON/invalid JSON shapes are rejected, and malformed/illegal mocked Compute moves fall back to legal deterministic moves |
 | Wager negative API and contract tests | `evidence/live-proofs/wager-negative-api-2026-06-24.json`, `forge test` | Unfunded start, room cancel, wrong turn, illegal move, duplicate move after finish, zero wager, and double-settle rejection are proven |
 | Existing route/build gate | `pnpm audit:check`, `pnpm test`, `pnpm typecheck` | Passing |
 | Static proof artifacts | `public/proofs/match-*-receipt-*.json` | Generated fallback receipts |
@@ -36,9 +41,9 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | Decision | Current State | Required Work |
 | --- | --- | --- |
 | Tournaments out of active hackathon scope | Active routes removed; v1 manifests now set `supportsTournaments: false`; contracts/schema retain future capability only | Keep audit enforcing 1v1 scope |
-| Game submission by PR, not UI upload | `/submit-game` now presents PR workflow, validator commands, and maintainer approval language | Add real PR/E2E documentation evidence to final audit |
-| Agent play uses qualified agent selection | Game page has a direct `Find 0G agent match` CTA | Add qualified agent list and choose-agent flow |
-| Human play supports auto-match and room code | Worker supports room-code lifecycle and `/api/matchmaking/human` pairs compatible human players by game/wager | Browser visual pass for the auto-match CTA remains separate from API evidence |
+| Game submission by PR, not UI upload | `/submit-game` now presents PR workflow, validator commands, and maintainer approval language | Proven by `evidence/live-proofs/game-submission-workflow-2026-06-24.json`; keep audit enforcing PR-only workflow |
+| Agent play uses qualified agent selection | Game detail fetches API-qualified agents for the selected game/wager mode, renders a picker, and starts the room with the selected qualified agent; browser proof covers all four game pages | Re-prove completed matches with live Compute after router funding |
+| Human play supports auto-match and room code | Worker supports room-code lifecycle and `/api/matchmaking/human` pairs compatible human players by game/wager; browser proof verifies the auto-match CTA reaches an active shared-room match | Re-prove on production origin after Privy allowed origin is configured and the Workers bundle is redeployed |
 
 ## Missing For Human-vs-Human Free
 
@@ -68,7 +73,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | Requirement | Current State | Evidence Needed |
 | --- | --- | --- |
 | Agent registry | D1-backed `/api/agents` implemented | Evidence proves registration, qualified listing, per-wager filtering, and server-side direct-join enforcement |
-| Qualified agent list | Game detail fetches API-qualified agents for selected game/wager mode | Browser proof now verifies the Grid Four qualified-agent picker and selected-agent CTA in `evidence/live-proofs/browser-proof-surfaces-2026-06-24.json` |
+| Qualified agent list | Game detail fetches API-qualified agents for selected game/wager mode | Browser proof verifies qualified-agent picker and selected-agent CTA for all four games in `evidence/live-proofs/agent-picker-all-games-2026-06-24.json` |
 | Agent skill package | Project-level skill package now covers platform API, registration, all four v1 games, examples, and wager safety | `docs/agent-skills/0g-arcade-player/*`, `pnpm agent:skill-check`, `evidence/live-proofs/agent-skill-package-2026-06-24.json` |
 | Human-vs-agent wager | Proven with deterministic fallback Compute while router balance is blocked | `evidence/live-proofs/agent-wager-match-api-2026-06-24.json` proves qualified agent registration/listing, tiny escrow funding, `/agent-move`, fallback disclosure, proof indexing, live Galileo settlement, and wager leaderboard rows; `0g-storage-room-h2a-wager-mqr1xs1b.json` and `chain-actual-match-h2a-wager-mqr1xs1b.json` prove its replay root and result were committed to 0G Storage/Chain |
 | Live 0G Compute move | Worker `/api/rooms/:roomId/agent-move` now attempts 0G Router when `ZEROG_ROUTER_API_KEY` is bound, validates returned JSON against legal moves, and stores proof metadata; local binding and router-balance failure are proven | Fund router and rerun human-vs-agent free/wager matches with `computeMode=0g-compute` |
@@ -80,18 +85,23 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | Requirement | Current State | Evidence Needed |
 | --- | --- | --- |
 | Fleet Duel room API | Proven locally for human and fallback-agent rooms | `evidence/live-proofs/multigame-room-api-2026-06-24.json` |
+| Fleet Duel room UI | Proven locally in browser | `evidence/live-proofs/non-grid-room-ui-2026-06-24.json` and `non-grid-room-ui-fleet-duel-2026-06-24.png` |
 | Tile Race room API | Proven locally for human and fallback-agent rooms | `evidence/live-proofs/multigame-room-api-2026-06-24.json` |
+| Tile Race room UI | Proven locally in browser | `evidence/live-proofs/non-grid-room-ui-2026-06-24.json` and `non-grid-room-ui-tile-race-2026-06-24.png` |
 | World Cup Draft room API | Proven locally for human and fallback-agent rooms | `evidence/live-proofs/multigame-room-api-2026-06-24.json` |
-| Agent fallback disclosure | Proven for non-Grid agent rooms | The proof checks every `/agent-move` result returns `computeMode: deterministic-fallback`; live 0G Compute prompts remain Grid Four-only until router funding and per-game prompts are expanded |
+| World Cup Draft room UI | Proven locally in browser | `evidence/live-proofs/non-grid-room-ui-2026-06-24.json` and `non-grid-room-ui-world-cup-draft-2026-06-24.png` |
+| Agent fallback disclosure | Proven for non-Grid agent rooms | The proof checks every `/agent-move` result returns `computeMode: deterministic-fallback` while the router balance is blocked; Worker prompts are now game-generic and validate Compute moves through the active game adapter |
 
 ## Missing For 0G Storage and Proofs
 
 | Requirement | Current State | Evidence Needed |
 | --- | --- | --- |
 | Match replay upload | Proven for browser-only H2H wager and H2A wager matches | Room `gr-zqvy` uploaded to 0G Storage root `0xe22ca7771560aca78982bcc16d00c01683f28ffb9e8f18c7aaa01a2a9221c8c7`; H2A room `h2a-wager-mqr1xs1b` uploaded to root `0x3df0db7d73b6a2833281daa275a55dc925ebf3c3fd6b6f092e68d6260bb93b17` |
-| Game pack upload | Proven for Grid Four only | Grid Four uploaded to root `0x81a3504d17ba2fd003069e1c8f62a2b47d20d84618703750e59962e1a2f47e54`; upload remaining packs only if needed to conserve testnet funds |
+| Game pack upload | Proven for all four v1 games | Grid Four root `0x81a3504d17ba2fd003069e1c8f62a2b47d20d84618703750e59962e1a2f47e54`; Fleet Duel root `0x64764074cf9142a25147673e160f020dd1ce0d245445ae730d986b106d0289c0`; Tile Race root `0x3edfece3b2e45e10636fb00a4aa8d52b0480648b1c988b8f63c9eabeab4d41d2`; World Cup Draft root `0x5f4709463db77e8f5133a0dec94d306261a836e5984f25e0021e2c2d7b852220`; all evidence files report `reachable: true` |
+| Submission review/share-card/agent transcript storage | Proven as a consolidated 0G Storage artifact | Root `0x5e6b327f1ad200fd79ecd12aa1471ed7488d7a8da0b906a08aa9a1e41937da51` stores the PR-only submission review receipt, `gr-zqvy` share-card metadata, and H2A fallback agent move transcript; evidence reports `reachable: true` |
 | Storage root verification | Proven for room replay upload | `evidence/live-proofs/0g-storage-room-gr-zqvy.json` has `reachable: true` |
 | Chain result commit | Proven for browser-only H2H wager and H2A wager matches | `chain-actual-match-gr-zqvy.json` records on-chain match ID `2`; `chain-actual-match-h2a-wager-mqr1xs1b.json` records on-chain match ID `3`, create tx `0x5d99c30d044d85bfe52a73bb00a7e840b49d880a75b84ec992c683cf5e86b015`, and commit tx `0xfae0aca97afb3338e60daafc854666bd1801b952782192c657971eed31a3da2e` |
+| DA batch payload | Proven as unpublished candidate | Batch hash `0x629572d9de53a9dd79dfbc68cb566f4dcf1c7f3c7b4a5a7c2ffaf2a10e3cf218` is generated by `pnpm 0g:da-candidate` and shown in Explorer; live DA publication remains not configured |
 | Proof page | Shows local fallback receipts plus live proof panel for indexed/static 0G Storage and actual chain commit proofs | Replace remaining fallback fields only as each additional match type is uploaded/committed |
 | Explorer | Shows live smoke, static receipts, D1 proofs, 0G Storage replay root, and the actual `gr-zqvy` chain commit tx | Browser proof verifies the Explorer contracts, storage/compute labels, and live match proof panels |
 
@@ -108,7 +118,8 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 ## Next Implementation Order
 
 1. Fund/fix the 0G Router balance and re-run `/agent-move` until proof rows show `computeMode=0g-compute`.
-2. Add production-origin Privy auth proof when the hosted URL is configured.
+2. Add production-origin Privy auth proof after the Workers URL is accepted by Privy and the hosted bundle is redeployed; current blocker evidence is `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`.
+3. Configure a real 0G DA client path if the hackathon reviewers require live DA publication instead of the current deterministic candidate hash.
 
 ## Completed During Current Execution
 
@@ -128,7 +139,9 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 - Tiny-wager H2H now has full browser-only real Galileo proof: both Privy wallets funded `0.0001 0G`, the Worker rejected unfunded starts, all seven moves were clicked in two browser contexts, the match result finished with replay hash `0x589c7a3b`, and the winner settled escrow in tx `0xe34b656a4541a38d18ea6943cb5c9c8a1d250a6990c14446a276701bbf664969`. Evidence is `evidence/live-proofs/h2h-grid-four-wager-browser-full-2026-06-23.json`.
 - Completed wager replay `gr-zqvy` uploaded to 0G Storage with reachable root `0xe22ca7771560aca78982bcc16d00c01683f28ffb9e8f18c7aaa01a2a9221c8c7` and tx `0xc94541253faea6fe444ca4543aec8c553f1b909c84edfc3ee587957d54a5251d`; evidence is `evidence/live-proofs/0g-storage-room-gr-zqvy.json`.
 - Completed wager room `gr-zqvy` committed to the live Galileo `ArcadeMatchRegistry` at on-chain match ID `2`; create tx `0xa596e5fe185dbb1d2dcd5acedce2b861fcce416b5c4723ad76128d8116611701`, commit tx `0xe415c99906bb498d64e7ad147680a27d007993bea9f2ef7bb7c1432fa48738d3`, evidence `evidence/live-proofs/chain-actual-match-gr-zqvy.json`.
-- Grid Four game pack uploaded to 0G Storage with reachable root `0x81a3504d17ba2fd003069e1c8f62a2b47d20d84618703750e59962e1a2f47e54` and tx `0x296d52cdfb06a881d2fb7afbe3c6fc81c48559de6e044b751da91977b5c700bc`; evidence is `evidence/live-proofs/0g-storage-game-pack-grid-four.json`.
+- All four v1 game packs are uploaded to 0G Storage with reachable roots: Grid Four `0x81a3504d17ba2fd003069e1c8f62a2b47d20d84618703750e59962e1a2f47e54`, Fleet Duel `0x64764074cf9142a25147673e160f020dd1ce0d245445ae730d986b106d0289c0`, Tile Race `0x3edfece3b2e45e10636fb00a4aa8d52b0480648b1c988b8f63c9eabeab4d41d2`, and World Cup Draft `0x5f4709463db77e8f5133a0dec94d306261a836e5984f25e0021e2c2d7b852220`; evidence lives in `evidence/live-proofs/0g-storage-game-pack-*.json`.
+- A consolidated proof-artifact payload is uploaded to 0G Storage root `0x5e6b327f1ad200fd79ecd12aa1471ed7488d7a8da0b906a08aa9a1e41937da51`; it includes submission review receipt, share-card metadata, and non-sensitive H2A fallback agent transcript evidence.
+- `pnpm 0g:da-candidate` writes an unpublished deterministic DA batch candidate at `evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json`, with batch hash `0x629572d9de53a9dd79dfbc68cb566f4dcf1c7f3c7b4a5a7c2ffaf2a10e3cf218`.
 - D1 proof and leaderboard indexing is proven by `evidence/live-proofs/d1-proof-leaderboard-api-2026-06-23.json`; wager-mode separation is proven by `evidence/live-proofs/wager-leaderboard-api-2026-06-24.json`.
 - Qualified agent registration, listing, server-side fallback move, proof indexing, and agent leaderboard entry are proven by `evidence/live-proofs/agent-registry-room-api-2026-06-23.json`.
 - Direct agent room joins now enforce registration, qualified status, supported game, free/wager enablement, and max wager cap; evidence is `evidence/live-proofs/agent-wager-policy-api-2026-06-24.json`.
@@ -137,8 +150,12 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 - The project-level external agent skill package now includes registration, API, all four v1 game guides, wager policy, and examples; `pnpm agent:skill-check` writes `evidence/live-proofs/agent-skill-package-2026-06-24.json`.
 - Human auto-match is implemented through `/api/matchmaking/human`; evidence `evidence/live-proofs/human-automatch-api-2026-06-24.json` proves free players pair into the same room and auto-start, while tiny-wager players pair into a ready room that still requires escrow funding before start.
 - Fleet Duel, Tile Race, and World Cup Draft now run through the same Worker/Durable Object room APIs as Grid Four. `evidence/live-proofs/multigame-room-api-2026-06-24.json` proves human-vs-human and human-vs-agent fallback completion plus proof indexing for all three games.
+- In-app Browser proof for real Fleet Duel, Tile Race, and World Cup Draft rooms is saved in `evidence/live-proofs/non-grid-room-ui-2026-06-24.json` with per-game screenshots; it proves the shared-room page renders each non-Grid game id and legal move controls from room state.
+- In-app Browser proof for all four game detail agent pickers is saved in `evidence/live-proofs/agent-picker-all-games-2026-06-24.json`; it proves seeded qualified agents and selected-agent CTAs render for Grid Four, Fleet Duel, Tile Race, and World Cup Draft.
+- PR-based game submission is proven by `evidence/live-proofs/game-submission-workflow-2026-06-24.json`; it verifies the submit page, docs, PR template, GitHub Actions workflow, game tooling scripts, cover/logo assets, manifest hashes, and banned-pattern guard for every v1 game pack.
 - In-app Browser proof for Grid Four qualified-agent selection, leaderboard sections, Explorer panels, and proof receipt panels is saved in `evidence/live-proofs/browser-proof-surfaces-2026-06-24.json` with four route screenshots.
-- 0G Compute move parsing is extracted and unit-tested. Malformed JSON, non-integer columns, illegal mocked Compute moves, and confidence clamping now fall back or normalize before deterministic rules apply.
+- 0G Compute move parsing is extracted and unit-tested. Malformed JSON, invalid JSON shapes, illegal mocked Compute moves, and confidence clamping now fall back or normalize before deterministic rules apply.
 - Wager negative cases are proven by `evidence/live-proofs/wager-negative-api-2026-06-24.json` and Foundry's zero-wager/double-settle tests.
 - The wager escrow gate now also covers the pre-start `/move` path; `evidence/live-proofs/wager-start-gate-api-2026-06-24.json` proves an unfunded wager room stays `ready` and cannot auto-start through a move request.
 - Local Wrangler now binds project-only 0G router env through ignored `.dev.vars`; `/agent-move` reaches the router and records the real `Insufficient balance` blocker in `evidence/live-proofs/agent-compute-router-bound-api-2026-06-24.json`.
+- Hosted production Privy auth attempt is now evidence-backed as blocked: `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json` shows the Workers route loads and Login is present, but Privy blocks the hosted origin and the deployed bundle is stale relative to localhost.

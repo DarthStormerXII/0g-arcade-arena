@@ -1,0 +1,91 @@
+{
+  "mode": "0g-da-batch-candidate",
+  "status": "not-published",
+  "checkedAt": "2026-06-24T07:48:30.335Z",
+  "schema": "0g-arcade-da-batch@1",
+  "daMode": "candidate-not-published",
+  "chainId": 16602,
+  "batchHash": "0x629572d9de53a9dd79dfbc68cb566f4dcf1c7f3c7b4a5a7c2ffaf2a10e3cf218",
+  "payloadSha256": "sha256:629572d9de53a9dd79dfbc68cb566f4dcf1c7f3c7b4a5a7c2ffaf2a10e3cf218",
+  "sourceEvidence": [
+    "evidence/live-proofs/0g-storage-room-gr-zqvy.json",
+    "evidence/live-proofs/0g-storage-room-h2a-wager-mqr1xs1b.json",
+    "evidence/live-proofs/chain-actual-match-gr-zqvy.json",
+    "evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json",
+    "evidence/live-proofs/0g-storage-game-pack-grid-four.json",
+    "evidence/live-proofs/0g-storage-game-pack-fleet-duel.json",
+    "evidence/live-proofs/0g-storage-game-pack-tile-race.json",
+    "evidence/live-proofs/0g-storage-game-pack-world-cup-draft.json",
+    "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json"
+  ],
+  "payload": {
+    "chainId": 16602,
+    "createdFor": "0g-zero-cup-localhost-first-e2e",
+    "daMode": "candidate-not-published",
+    "gamePacks": [
+      {
+        "gameId": "grid-four",
+        "payloadSha256": "sha256:93227d2b67cbf38fddb2bab19b99f839dcca178f9b02f63d4777bd530666d7c7",
+        "storageRoot": "0x81a3504d17ba2fd003069e1c8f62a2b47d20d84618703750e59962e1a2f47e54"
+      },
+      {
+        "gameId": "fleet-duel",
+        "payloadSha256": "sha256:a204377c25c49c9cd239ea315a1c4bf291858b1fa0f40b9dec09e2750317672c",
+        "storageRoot": "0x64764074cf9142a25147673e160f020dd1ce0d245445ae730d986b106d0289c0"
+      },
+      {
+        "gameId": "tile-race",
+        "payloadSha256": "sha256:d35b986dfb981ebf3037208bfc75297b4899612247d08f1b87cd516c8c9530a2",
+        "storageRoot": "0x3edfece3b2e45e10636fb00a4aa8d52b0480648b1c988b8f63c9eabeab4d41d2"
+      },
+      {
+        "gameId": "world-cup-draft",
+        "payloadSha256": "sha256:3da6ef2a7a623c4579982fda019cbb37e42175f0fc9990f782681d128939993e",
+        "storageRoot": "0x5f4709463db77e8f5133a0dec94d306261a836e5984f25e0021e2c2d7b852220"
+      }
+    ],
+    "matches": [
+      {
+        "chainCommitTx": "0xe415c99906bb498d64e7ad147680a27d007993bea9f2ef7bb7c1432fa48738d3",
+        "chainMatchId": "2",
+        "gameId": "grid-four",
+        "matchId": "match-gr-zqvy",
+        "replayHash": "sha256:7328a9b94e946521d1cd52222de09ccd3f2bc6f2f5ebc31f2b401e00ba30d1fe",
+        "resultHash": "0xaf09796f99d45a3039299f75e9e16becc1688c4388180d8f2d1f9da9b2026384",
+        "roomId": "gr-zqvy",
+        "storageRoot": "0xe22ca7771560aca78982bcc16d00c01683f28ffb9e8f18c7aaa01a2a9221c8c7",
+        "storageTx": "0xc94541253faea6fe444ca4543aec8c553f1b909c84edfc3ee587957d54a5251d"
+      },
+      {
+        "chainCommitTx": "0xfae0aca97afb3338e60daafc854666bd1801b952782192c657971eed31a3da2e",
+        "chainMatchId": "3",
+        "gameId": "grid-four",
+        "matchId": "match-h2a-wager-mqr1xs1b",
+        "replayHash": "sha256:903fd825fa14bdf5ab510e518f35f38d1dee9ed1774e26d2bb948c76a22a56e5",
+        "resultHash": "0x822b868c62a57cb4df320a0ad056b81f696a35165c9bafd756309487690c7595",
+        "roomId": "h2a-wager-mqr1xs1b",
+        "storageRoot": "0x3df0db7d73b6a2833281daa275a55dc925ebf3c3fd6b6f092e68d6260bb93b17",
+        "storageTx": "0xfaf7c7eed7da1fb3dacd861ecc27bde6e473c737ae99b68b43f23723e029e6c0"
+      }
+    ],
+    "proofArtifacts": {
+      "artifactTypes": [
+        "submission-review-receipt",
+        "share-card-metadata",
+        "agent-reasoning-transcript"
+      ],
+      "payloadSha256": "sha256:32fa366708c1dc396a472e25665987ca73c5bac279c999ce04670080837cac51",
+      "schema": "0g-arcade-proof-artifacts@1",
+      "storageRoot": "0x5e6b327f1ad200fd79ecd12aa1471ed7488d7a8da0b906a08aa9a1e41937da51"
+    },
+    "schema": "0g-arcade-da-batch@1"
+  },
+  "verified": {
+    "hasPublishedStorageRoots": true,
+    "hasChainCommitTxs": true,
+    "hasAllGamePacks": true,
+    "hasProofArtifactBundle": true,
+    "doesNotClaimLiveDaPublication": true
+  },
+  "notes": "0G DA client credentials are not configured in this project. This file is the exact deterministic batch payload/hash Arcade would publish once a DA path is available; it is not a live DA publication claim."
+}

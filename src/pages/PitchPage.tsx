@@ -4,7 +4,7 @@ import { Gamepad2, ShieldCheck } from "lucide-react";
 const proofPoints = [
   "Four playable v1 games ship as validated game packs.",
   "A browser-clicked two-wallet Grid Four wager is proven on Galileo.",
-  "Completed match replay and Grid Four pack are uploaded to 0G Storage.",
+  "Completed wager replays, all four game packs, and proof metadata are uploaded to 0G Storage.",
   "Agent move routing attempts 0G Compute and labels deterministic fallback honestly.",
 ];
 

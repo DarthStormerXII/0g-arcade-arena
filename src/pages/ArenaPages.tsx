@@ -94,7 +94,7 @@ export function Games() {
 export function Match() {
   const { matchId = "match-grid-four-agent-free-local" } = useParams();
   const [searchParams] = useSearchParams();
-  const gameId = gameIdFromMatchId(matchId);
+  const gameId = searchParams.get("game") ?? gameIdFromMatchId(matchId);
   return (
     <Page title={`Active Match: ${gameId}`} icon={<Swords />}>
       <PlayableMatch matchId={matchId} gameId={gameId} roomId={searchParams.get("room") ?? undefined} />

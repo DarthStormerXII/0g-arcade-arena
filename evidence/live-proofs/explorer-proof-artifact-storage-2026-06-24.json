@@ -1,0 +1,21 @@
+{
+  "mode": "local-explorer-proof-artifact-storage-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T07:44:43.400Z",
+  "url": "http://localhost:3021/explorer",
+  "screenshot": "evidence/live-proofs/explorer-proof-artifact-storage-2026-06-24.png",
+  "requiredText": [
+    "proof artifact storage",
+    "0g-arcade-proof-artifacts@1",
+    "submission-review-receipt",
+    "share-card-metadata",
+    "agent-reasoning-transcript",
+    "0g storage reachable"
+  ],
+  "verified": {
+    "proofArtifactPanelRendered": true,
+    "artifactTypesRendered": true,
+    "storageReachableRendered": true,
+    "screenshotCaptured": true
+  }
+}

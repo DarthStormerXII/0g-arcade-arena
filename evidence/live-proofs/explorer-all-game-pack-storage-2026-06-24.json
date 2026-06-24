@@ -1,0 +1,19 @@
+{
+  "mode": "local-explorer-all-game-pack-storage-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T07:35:30.000Z",
+  "url": "http://localhost:3021/explorer",
+  "screenshot": "evidence/live-proofs/explorer-all-game-pack-storage-2026-06-24.png",
+  "games": [
+    "grid-four",
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "reachableCount": 4,
+  "verified": {
+    "allV1GamesRendered": true,
+    "allV1GamePackStorageRowsReachable": true,
+    "screenshotCaptured": true
+  }
+}

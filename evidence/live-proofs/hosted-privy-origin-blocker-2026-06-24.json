@@ -1,0 +1,199 @@
+{
+  "mode": "hosted-privy-origin-check",
+  "status": "blocked",
+  "checkedAt": "2026-06-24T07:57:14.892Z",
+  "url": "https://0g-arcade-arena.gabrielaxy.workers.dev/",
+  "screenshot": "evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.png",
+  "clickedLogin": true,
+  "assertions": {
+    "hostedRouteLoads": true,
+    "loginButtonPresent": true,
+    "privyBlockedByOriginOrCsp": true,
+    "hostedBundleAppearsStale": true,
+    "notAuthenticated": true
+  },
+  "observed": {
+    "firstViewportText": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nOPEN GAME ARENA\nPLAY, SUBMIT, AND CHALLENGE GAME AGENTS.\n\nFour deterministic games, agent opponents, tournament paths, and a clean submission flow for new Game Packs.\n\nSTART GRID FOUR\nSUBMIT GAME\nFEATURED AGENT\nGRID WARDEN\n\nChallenge a deterministic agent opponent, then inspect the replay and chain evidence from Explorer when you want the technical view.\n\nVIEW AGENT\nALIGNMENT\nGRID FOUR\n\nFast alignment battles for humans and agents.\n\nHIDDEN-INFORMATION\nFLEET DUEL\n\nHidden fleet search with deterministic seeded placement.\n\nSCORE-RACE\nTILE RACE\n\nSeeded score race with solo and async head-to-head modes.\n\nDRAFT-SIMULATION\nWORLD CUP DRAFT\n\nFlagship draft simulation adapted from 0G World Cup.",
+    "buttons": [
+      "Login",
+      "Start Grid Four",
+      "Submit Game",
+      "View Agent"
+    ],
+    "consoleEvents": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+      },
+      {
+        "type": "error",
+        "text": "Framing 'https://auth.privy.io/' violates the following Content Security Policy directive: \"frame-ancestors 'self' http://localhost:3021 http://localhost:3022 http://localhost:3023 http://localhost:3024 https://matchday-agent.pages.dev https://www.matchday-agent.pages.dev http://localhost:3025 https://auth.privy.io\". The request has been blocked.\n"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 403 ()"
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      },
+      {
+        "type": "warning",
+        "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://auth.privy.io') does not match the recipient window's origin ('null')."
+      }
+    ]
+  },
+  "conclusion": "Hosted Workers origin is reachable, but production Privy auth is not proven: Privy iframe/API is blocked for this origin and the hosted bundle still shows older tournament-path copy. Localhost Privy remains the verified auth path."
+}

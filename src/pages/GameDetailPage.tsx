@@ -127,7 +127,7 @@ function PlaySetup({ gameId, supportsWagers }: { gameId: string; supportsWagers:
         return;
       }
       const started = await startApiRoom(joined.roomId);
-      navigate(`/match/${started.matchId}?room=${started.roomId}`);
+      navigate(`/match/${started.matchId}?room=${started.roomId}&game=${gameId}`);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Could not start agent room");
     } finally {
@@ -163,7 +163,7 @@ function PlaySetup({ gameId, supportsWagers }: { gameId: string; supportsWagers:
         wagerWei,
       });
       if (room.status === "active") {
-        navigate(`/match/${room.matchId}?room=${room.roomId}`);
+        navigate(`/match/${room.matchId}?room=${room.roomId}&game=${gameId}`);
         return;
       }
       navigate(`/room/${room.roomId}?game=${gameId}&opponent=human&wager=${canWager ? amount : "free"}`);
@@ -371,9 +371,9 @@ export function Room() {
 
   useEffect(() => {
     if (room?.status === "active") {
-      navigate(`/match/${room.matchId}?room=${room.roomId}`);
+      navigate(`/match/${room.matchId}?room=${room.roomId}&game=${room.gameId}`);
     }
-  }, [navigate, room?.matchId, room?.roomId, room?.status]);
+  }, [navigate, room?.gameId, room?.matchId, room?.roomId, room?.status]);
 
   async function createThisRoom() {
     setBusy(true);
@@ -412,7 +412,7 @@ export function Room() {
     try {
       const next = await startApiRoom(room.roomId);
       setRoom(next);
-      navigate(`/match/${next.matchId}?room=${next.roomId}`);
+      navigate(`/match/${next.matchId}?room=${next.roomId}&game=${next.gameId}`);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Could not start room");
     } finally {

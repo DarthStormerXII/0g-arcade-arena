@@ -1,0 +1,13 @@
+{
+  "mode": "browser-explorer-da-batch-candidate",
+  "status": "passed",
+  "checkedAt": "2026-06-24T07:53:48.970Z",
+  "url": "http://localhost:3021/explorer",
+  "screenshot": "evidence/live-proofs/explorer-da-batch-candidate-2026-06-24.png",
+  "assertions": {
+    "hasDaPanel": true,
+    "hasUnpublishedLabel": true,
+    "hasBatchHash": true,
+    "hasSourceEvidenceCount": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-06-24T07:27:37.177Z",
+  "mode": "live-0g-storage-game-pack",
+  "gameId": "world-cup-draft",
+  "fileCount": 11,
+  "payloadSha256": "sha256:3da6ef2a7a623c4579982fda019cbb37e42175f0fc9990f782681d128939993e",
+  "manifestHash": "0x7812649775c34b6764de38c15d1ed58b18d941a310ea16f84b3d062306e838ae",
+  "rootHash": "0x5f4709463db77e8f5133a0dec94d306261a836e5984f25e0021e2c2d7b852220",
+  "txHash": "0xe58eaf98e76f8249be115bc8d628db79146d658e041c9bb9b0576d17e8d3ede3",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

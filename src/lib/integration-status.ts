@@ -6,8 +6,8 @@ export const integrationStatus = [
   },
   {
     name: "0G Storage",
-    mode: "live samples + fallback receipts",
-    detail: "One completed replay and the Grid Four game pack are live on 0G Storage; CI publish receipts stay local to avoid repeated writes.",
+    mode: "live game packs + fallback receipts",
+    detail: "Completed H2H/H2A wager replays and all four v1 game packs are live on 0G Storage; CI publish receipts stay local to avoid repeated writes.",
   },
   {
     name: "0G Compute",
@@ -16,8 +16,8 @@ export const integrationStatus = [
   },
   {
     name: "0G DA",
-    mode: "not-configured",
-    detail: "Tournament replay batches show a DA fallback label.",
+    mode: "candidate-not-published",
+    detail: "A deterministic 1v1 match/game-pack batch payload is hashed for DA publication, but no live DA client is configured.",
   },
   {
     name: "Cloudflare Ops",

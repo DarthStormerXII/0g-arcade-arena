@@ -272,25 +272,30 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
   });
 
   if (!env.ZEROG_ROUTER_API_KEY) return fallback("ZEROG_ROUTER_API_KEY is not configured in the Worker environment.");
-  if (room.gameId !== "grid-four") {
-    return fallback("0G Compute live prompt is currently configured for Grid Four only.");
-  }
 
   const router = env.ZEROG_COMPUTE_ROUTER || "https://router-api.0g.ai/v1";
   const model = env.ZEROG_COMPUTE_MODEL || "glm-5.1";
   const view = getRoomView(room);
   const currentPlayerId = view.currentPlayerIds[0] ?? "";
+  const playerView = room.state ? adapter.getPlayerView(room.state, currentPlayerId) : null;
   const prompt = [
-    "You are playing Grid Four in 0G Arcade Arena.",
+    `You are playing ${adapter.manifest.name} in 0G Arcade Arena.`,
     "Choose exactly one legal move for the current agent player.",
+    "The move MUST exactly match one entry from legalMoves.",
     "Return only JSON with this shape:",
-    '{"move":{"column":0},"confidence":0.7,"reasoningSummary":"short reason"}',
+    '{"move":{},"confidence":0.7,"reasoningSummary":"short reason"}',
     "Do not include markdown or hidden reasoning.",
     JSON.stringify({
       gameId: room.gameId,
+      manifest: {
+        gameType: adapter.manifest.gameType,
+        turnType: adapter.manifest.turnType,
+        hiddenInformation: adapter.manifest.hiddenInformation,
+        randomness: adapter.manifest.randomness,
+      },
       playerId: currentPlayerId,
       legalMoves: view.legalMoves,
-      board: room.state?.board,
+      playerView,
       players: room.players.map((player) => ({
         id: player.id,
         kind: player.kind,
@@ -328,8 +333,8 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
     }
     const content = payload?.choices?.[0]?.message?.content ?? "";
     const parsed = parseAgentMoveContent(content);
-    const legal = view.legalMoves.some((move) => move.column === parsed.move.column);
-    if (!legal) {
+    const validation = room.state ? adapter.validateMove(room.state, currentPlayerId, parsed.move) : { ok: false };
+    if (!validation.ok) {
       return fallback(`0G Compute returned an illegal move: ${JSON.stringify(parsed.move)}.`);
     }
     return {

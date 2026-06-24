@@ -1,0 +1,126 @@
+{
+  "mode": "local-game-submission-workflow",
+  "status": "passed",
+  "checkedAt": "2026-06-24T07:55:19.147Z",
+  "routes": {
+    "submitGameSource": "src/pages/ArenaPages.tsx",
+    "pullRequestOnly": true,
+    "maintainerApprovalLanguage": true
+  },
+  "repository": {
+    "docs": "docs/GAME_SUBMISSION.md",
+    "prTemplate": ".github/PULL_REQUEST_TEMPLATE/game-submission.md",
+    "workflow": ".github/workflows/game-pack-ci.yml",
+    "tooling": "scripts/game-tool.mjs",
+    "packageScripts": [
+      "game:create",
+      "game:validate",
+      "game:test",
+      "game:simulate",
+      "game:agent-test",
+      "game:pack",
+      "game:publish",
+      "game:hash"
+    ],
+    "workflowTriggersPullRequest": true,
+    "workflowValidatesGamePacks": true,
+    "docsPullRequestOnly": true
+  },
+  "gamePacks": [
+    {
+      "id": "grid-four",
+      "name": "Grid Four",
+      "supportsHumanVsHuman": true,
+      "supportsHumanVsAgent": true,
+      "supportsWagers": true,
+      "supportsTournaments": false,
+      "files": {
+        "required": 9,
+        "cover": true,
+        "logo": true
+      },
+      "hashes": {
+        "moveSchemaHash": true,
+        "rulesHash": true,
+        "uiHash": true,
+        "agentPromptHash": true,
+        "replaySchemaHash": true
+      }
+    },
+    {
+      "id": "fleet-duel",
+      "name": "Fleet Duel",
+      "supportsHumanVsHuman": true,
+      "supportsHumanVsAgent": true,
+      "supportsWagers": true,
+      "supportsTournaments": false,
+      "files": {
+        "required": 9,
+        "cover": true,
+        "logo": true
+      },
+      "hashes": {
+        "moveSchemaHash": true,
+        "rulesHash": true,
+        "uiHash": true,
+        "agentPromptHash": true,
+        "replaySchemaHash": true
+      }
+    },
+    {
+      "id": "tile-race",
+      "name": "Tile Race",
+      "supportsHumanVsHuman": true,
+      "supportsHumanVsAgent": true,
+      "supportsWagers": false,
+      "supportsTournaments": false,
+      "files": {
+        "required": 9,
+        "cover": true,
+        "logo": true
+      },
+      "hashes": {
+        "moveSchemaHash": true,
+        "rulesHash": true,
+        "uiHash": true,
+        "agentPromptHash": true,
+        "replaySchemaHash": true
+      }
+    },
+    {
+      "id": "world-cup-draft",
+      "name": "World Cup Draft",
+      "supportsHumanVsHuman": true,
+      "supportsHumanVsAgent": true,
+      "supportsWagers": true,
+      "supportsTournaments": false,
+      "files": {
+        "required": 9,
+        "cover": true,
+        "logo": true
+      },
+      "hashes": {
+        "moveSchemaHash": true,
+        "rulesHash": true,
+        "uiHash": true,
+        "agentPromptHash": true,
+        "replaySchemaHash": true
+      }
+    }
+  ],
+  "verified": {
+    "submitPageIsPullRequestOnly": true,
+    "maintainerApprovalLanguage": true,
+    "docsExplainPrWorkflow": true,
+    "prTemplateChecklist": true,
+    "ciRunsOnPullRequest": true,
+    "ciValidatesGamePacks": true,
+    "toolingScriptsPresent": true,
+    "allGamePacksHaveRequiredFiles": true,
+    "allManifestHashesMatch": true,
+    "coverLogoAssetsRequiredAndPresent": true,
+    "bannedPatternsAbsent": true,
+    "noInAppUploadLanguage": true
+  },
+  "errors": []
+}

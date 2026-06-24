@@ -1,0 +1,185 @@
+{
+  "mode": "local-all-game-agent-picker-browser-ui",
+  "status": "passed",
+  "checkedAt": "2026-06-24T07:12:24.004Z",
+  "baseUrl": "http://localhost:3021",
+  "games": [
+    "grid-four",
+    "fleet-duel",
+    "tile-race",
+    "world-cup-draft"
+  ],
+  "routes": [
+    {
+      "gameId": "grid-four",
+      "gameName": "Grid Four",
+      "agentId": "agent-ui-grid-four-pickmqrqjway",
+      "displayName": "UI Grid Four Agent pickmqrqjway",
+      "url": "http://localhost:3021/games/grid-four",
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/agent-picker-grid-four-2026-06-24.png",
+      "verified": {
+        "routeGameRendered": true,
+        "agentModeRendered": true,
+        "humanModeRendered": true,
+        "qualifiedAgentsPanelRendered": true,
+        "seededQualifiedAgentRendered": true,
+        "selectedAgentCtaRendered": true,
+        "noEmptyAgentState": true
+      },
+      "buttons": [
+        "Play with 0G agent",
+        "Play with humans",
+        "Free match",
+        "Testnet wager",
+        "UI Grid Four Agent pickmqrqjway",
+        "H2A Wager Grid Warden",
+        "H2A Wager Grid Warden",
+        "Browser Proof Grid Warden",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Policy Free OK",
+        "Policy Wager Disabled",
+        "Policy Cap Low",
+        "Policy Cap OK",
+        "Grid Warden Live",
+        "Play selected 0G agent"
+      ],
+      "headings": [
+        "Grid Four",
+        "Grid Four",
+        "Choose how you want to play",
+        "Game Details"
+      ],
+      "excerpt": "0G ARCADE ARENA Games Agents Submit Leaderboard Explorer Pitch AUTH LOADING GRID FOUR WAGERS AVAILABLE ALIGNMENT GRID FOUR Fast alignment battles for humans and agents. START MATCH CHOOSE HOW YOU WANT TO PLAY This is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room. PLAY WITH 0G AGENT PLAY WITH HUMANS WAGER FREE MATCH TESTNET WAGER Wager amount in testnet 0G QUALIFIED AGENTS 17 UI GRID FOUR AGENT PICKMQRQJWAY H2A WAGER GRID WARDEN H2A WAGER GRID WARDEN BROWSER PROOF GRID WARDEN POLICY FREE OK POLICY WAGER DISABLED POLICY CAP LOW POLICY CAP OK POLICY FREE OK POLICY WAGER DISABLED POLICY CAP LOW POLICY CAP OK POLICY FREE OK POLICY WAGER DISABLED POLICY CAP LOW POLICY CAP OK GRID WARDEN LIVE PLAY SELECTED 0G AGENT GAME DETAILS id grid-four name Grid Four version 1.0.0 author 0G Arcade Arena license MIT minPlayers"
+    },
+    {
+      "gameId": "fleet-duel",
+      "gameName": "Fleet Duel",
+      "agentId": "agent-ui-fleet-duel-pickmqrqjway",
+      "displayName": "UI Fleet Duel Agent pickmqrqjway",
+      "url": "http://localhost:3021/games/fleet-duel",
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/agent-picker-fleet-duel-2026-06-24.png",
+      "verified": {
+        "routeGameRendered": true,
+        "agentModeRendered": true,
+        "humanModeRendered": true,
+        "qualifiedAgentsPanelRendered": true,
+        "seededQualifiedAgentRendered": true,
+        "selectedAgentCtaRendered": true,
+        "noEmptyAgentState": true
+      },
+      "buttons": [
+        "Logout",
+        "Play with 0G agent",
+        "Play with humans",
+        "Free match",
+        "Testnet wager",
+        "UI Fleet Duel Agent pickmqrqjway",
+        "Multi fleet-duel Agent",
+        "Multi fleet-duel Agent",
+        "Multi fleet-duel Agent",
+        "Multi fleet-duel Agent",
+        "Policy Unsupported",
+        "Policy Unsupported",
+        "Policy Unsupported",
+        "Play selected 0G agent"
+      ],
+      "headings": [
+        "Fleet Duel",
+        "Fleet Duel",
+        "Choose how you want to play",
+        "Game Details"
+      ],
+      "excerpt": "0G ARCADE ARENA Games Agents Submit Leaderboard Explorer Pitch SIGNED IN test-1032@privy.io WALLET 0x2376...39EC LOGOUT FLEET DUEL WAGERS AVAILABLE HIDDEN-INFORMATION FLEET DUEL Hidden fleet search with deterministic seeded placement. START MATCH CHOOSE HOW YOU WANT TO PLAY This is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room. PLAY WITH 0G AGENT PLAY WITH HUMANS WAGER FREE MATCH TESTNET WAGER Wager amount in testnet 0G QUALIFIED AGENTS 8 UI FLEET DUEL AGENT PICKMQRQJWAY MULTI FLEET-DUEL AGENT MULTI FLEET-DUEL AGENT MULTI FLEET-DUEL AGENT MULTI FLEET-DUEL AGENT POLICY UNSUPPORTED POLICY UNSUPPORTED POLICY UNSUPPORTED PLAY SELECTED 0G AGENT GAME DETAILS id fleet-duel name Fleet Duel version 1.0.0 author 0G Arcade Arena license MIT minPlayers 2 maxPlayers 2 supportsSolo false supportsHumanVsHuman true support"
+    },
+    {
+      "gameId": "tile-race",
+      "gameName": "Tile Race",
+      "agentId": "agent-ui-tile-race-pickmqrqjway",
+      "displayName": "UI Tile Race Agent pickmqrqjway",
+      "url": "http://localhost:3021/games/tile-race",
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/agent-picker-tile-race-2026-06-24.png",
+      "verified": {
+        "routeGameRendered": true,
+        "agentModeRendered": true,
+        "humanModeRendered": true,
+        "qualifiedAgentsPanelRendered": true,
+        "seededQualifiedAgentRendered": true,
+        "selectedAgentCtaRendered": true,
+        "noEmptyAgentState": true
+      },
+      "buttons": [
+        "Logout",
+        "Play with 0G agent",
+        "Play with humans",
+        "Free match",
+        "Testnet wager",
+        "UI Tile Race Agent pickmqrqjway",
+        "Multi tile-race Agent",
+        "Multi tile-race Agent",
+        "Multi tile-race Agent",
+        "Multi tile-race Agent",
+        "Play selected 0G agent"
+      ],
+      "headings": [
+        "Tile Race",
+        "Tile Race",
+        "Choose how you want to play",
+        "Game Details"
+      ],
+      "excerpt": "0G ARCADE ARENA Games Agents Submit Leaderboard Explorer Pitch SIGNED IN test-1032@privy.io WALLET 0x2376...39EC LOGOUT TILE RACE FREE PLAY ONLY SCORE-RACE TILE RACE Seeded score race with solo and async head-to-head modes. START MATCH CHOOSE HOW YOU WANT TO PLAY This is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room. PLAY WITH 0G AGENT PLAY WITH HUMANS WAGER FREE MATCH TESTNET WAGER This game is currently free play only. QUALIFIED AGENTS 5 UI TILE RACE AGENT PICKMQRQJWAY MULTI TILE-RACE AGENT MULTI TILE-RACE AGENT MULTI TILE-RACE AGENT MULTI TILE-RACE AGENT PLAY SELECTED 0G AGENT GAME DETAILS id tile-race name Tile Race version 1.0.0 author 0G Arcade Arena license MIT minPlayers 1 maxPlayers 2 supportsSolo true supportsHumanVsHuman true supportsHumanVsAgent true supportsAgentVsAgent true supportsWagers fals"
+    },
+    {
+      "gameId": "world-cup-draft",
+      "gameName": "World Cup Draft",
+      "agentId": "agent-ui-world-cup-draft-pickmqrqjway",
+      "displayName": "UI World Cup Draft Agent pickmqrqjway",
+      "url": "http://localhost:3021/games/world-cup-draft",
+      "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/agent-picker-world-cup-draft-2026-06-24.png",
+      "verified": {
+        "routeGameRendered": true,
+        "agentModeRendered": true,
+        "humanModeRendered": true,
+        "qualifiedAgentsPanelRendered": true,
+        "seededQualifiedAgentRendered": true,
+        "selectedAgentCtaRendered": true,
+        "noEmptyAgentState": true
+      },
+      "buttons": [
+        "Logout",
+        "Play with 0G agent",
+        "Play with humans",
+        "Free match",
+        "Testnet wager",
+        "UI World Cup Draft Agent pickmqrqjway",
+        "Multi world-cup-draft Agent",
+        "Multi world-cup-draft Agent",
+        "Multi world-cup-draft Agent",
+        "Multi world-cup-draft Agent",
+        "Play selected 0G agent"
+      ],
+      "headings": [
+        "World Cup Draft",
+        "World Cup Draft",
+        "Choose how you want to play",
+        "Game Details"
+      ],
+      "excerpt": "0G ARCADE ARENA Games Agents Submit Leaderboard Explorer Pitch SIGNED IN test-1032@privy.io WALLET 0x2376...39EC LOGOUT WORLD CUP DRAFT WAGERS AVAILABLE DRAFT-SIMULATION WORLD CUP DRAFT Flagship draft simulation adapted from 0G World Cup. START MATCH CHOOSE HOW YOU WANT TO PLAY This is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room. PLAY WITH 0G AGENT PLAY WITH HUMANS WAGER FREE MATCH TESTNET WAGER Wager amount in testnet 0G QUALIFIED AGENTS 5 UI WORLD CUP DRAFT AGENT PICKMQRQJWAY MULTI WORLD-CUP-DRAFT AGENT MULTI WORLD-CUP-DRAFT AGENT MULTI WORLD-CUP-DRAFT AGENT MULTI WORLD-CUP-DRAFT AGENT PLAY SELECTED 0G AGENT GAME DETAILS id world-cup-draft name World Cup Draft version 1.0.0 author 0G Arcade Arena, adapted from 0G World Cup license MIT minPlayers 1 maxPlayers 4 supportsSolo true supportsHumanVsHuman true"
+    }
+  ],
+  "verified": {
+    "allExpectedGamesRendered": true,
+    "allScreenshotsExist": true,
+    "allAgentModeRendered": true,
+    "allHumanModeRendered": true,
+    "allQualifiedAgentPanelsRendered": true,
+    "allSeededQualifiedAgentsRendered": true,
+    "allSelectedAgentCtasRendered": true
+  }
+}

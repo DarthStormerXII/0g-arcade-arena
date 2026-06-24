@@ -21,14 +21,14 @@ type PlayableMatchProps = {
 };
 
 export function PlayableMatch({ matchId, gameId, roomId }: PlayableMatchProps) {
-  if (gameId === "grid-four" && roomId) return <GridFourRoomMatch matchId={matchId} roomId={roomId} />;
+  if (roomId) return <LiveRoomMatch matchId={matchId} gameId={gameId} roomId={roomId} />;
   if (gameId === "grid-four") return <GridFourMatch matchId={matchId} />;
   if (gameId === "fleet-duel") return <StepMatch matchId={matchId} gameId={gameId} label="Fire next legal shot" />;
   if (gameId === "tile-race") return <TileRaceMatch matchId={matchId} />;
   return <StepMatch matchId={matchId} gameId={gameId} label="Draft next player" />;
 }
 
-function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: string }) {
+function LiveRoomMatch({ matchId, gameId, roomId }: { matchId: string; gameId: string; roomId: string }) {
   const player = useArcadePlayer();
   const { wallets } = useWallets();
   const activeWallet = wallets[0] as unknown as EthereumWallet | undefined;
@@ -37,7 +37,7 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
   const [busy, setBusy] = useState(false);
   const [settleTx, setSettleTx] = useState("");
   const [agentMoveAttempt, setAgentMoveAttempt] = useState("");
-  const state = room?.state as GridFourState | null | undefined;
+  const liveGameId = room?.gameId ?? gameId;
   const isPlayer = room?.players.some((item) => item.id === player.id) ?? false;
   const isMyTurn = room?.currentPlayerIds.includes(player.id) ?? false;
   const currentPlayer = room?.players.find((item) => item.id === room.currentPlayerIds[0]);
@@ -50,7 +50,7 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
         if (cancelled) return;
         setRoom(next);
         if (next.replay && next.score) {
-          saveMatchRecord(makeMatchRecord(matchId, "grid-four", next.replay, next.score));
+          saveMatchRecord(makeMatchRecord(matchId, next.gameId, next.replay, next.score));
         }
       } catch (caught) {
         if (!cancelled) setError(caught instanceof Error ? caught.message : "Could not load room");
@@ -78,7 +78,7 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
         if (cancelled) return;
         setRoom(next);
         if (next.replay && next.score) {
-          saveMatchRecord(makeMatchRecord(matchId, "grid-four", next.replay, next.score));
+          saveMatchRecord(makeMatchRecord(matchId, next.gameId, next.replay, next.score));
         }
       } catch (caught) {
         if (!cancelled) setError(caught instanceof Error ? caught.message : "Agent move rejected");
@@ -104,15 +104,15 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
     }
   }
 
-  async function playColumn(column: number) {
+  async function playMove(move: unknown) {
     if (!room || !isMyTurn || room.status === "finished") return;
     setBusy(true);
     setError("");
     try {
-      const next = await playRoomMove(room.roomId, player.id, { column });
+      const next = await playRoomMove(room.roomId, player.id, move);
       setRoom(next);
       if (next.replay && next.score) {
-        saveMatchRecord(makeMatchRecord(matchId, "grid-four", next.replay, next.score));
+        saveMatchRecord(makeMatchRecord(matchId, next.gameId, next.replay, next.score));
       }
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Move rejected");
@@ -142,23 +142,14 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
 
   return (
     <Panel className="grid gap-5 lg:grid-cols-[1fr_.7fr]">
-      <div className="grid grid-cols-7 gap-2">
-        {(state?.board ?? Array.from({ length: 6 }, () => Array<string | null>(7).fill(null))).flatMap((row, rowIndex) =>
-          row.map((cell, colIndex) => (
-            <button
-              key={`${rowIndex}-${colIndex}`}
-              className="aspect-square rounded-full border border-white/15 bg-black/45 p-1 disabled:cursor-not-allowed disabled:opacity-70"
-              disabled={busy || !isMyTurn || room?.status === "finished"}
-              onClick={() => void playColumn(colIndex)}
-              aria-label={`Drop in column ${colIndex + 1}, row ${rowIndex + 1}`}
-            >
-              <span
-                className={`block h-full rounded-full ${cell === player.id ? "bg-[#46ff9f]" : cell ? "bg-[#ffe66d]" : "bg-white/8"}`}
-              />
-            </button>
-          )),
-        )}
-      </div>
+      <LiveRoomBoard
+        busy={busy}
+        gameId={liveGameId}
+        isMyTurn={isMyTurn}
+        playerId={player.id}
+        room={room}
+        onMove={playMove}
+      />
       <div className="space-y-4">
         <StatusPill tone={room?.status === "finished" ? "green" : isMyTurn ? "yellow" : "cyan"}>
           {room?.status ?? "Loading room"}
@@ -166,11 +157,12 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
         <h2 className="text-2xl font-black uppercase">Shared room match</h2>
         <p className="text-white/70">
           {room?.result?.reason ??
-            (isMyTurn ? "Your turn. Pick a column." : "Waiting for the other player to move.")}
+            (isMyTurn ? "Your turn. Pick a legal move." : "Waiting for the other player to move.")}
         </p>
         <div className="rounded-sm border border-white/10 bg-black/35 p-3 text-sm text-white/70">
           Room: {roomId}<br />
-          Turn: {state?.turn ?? 0}<br />
+          Game: {liveGameId}<br />
+          Turn: {roomTurn(room)}<br />
           Current player: {room?.currentPlayerIds[0] ?? "pending"}<br />
           Opponent: {currentPlayer?.kind === "agent" ? "0G agent fallback move" : room?.opponentMode ?? "human"}<br />
           Replay hash: {room?.replayHash ?? "pending"}<br />
@@ -188,6 +180,78 @@ function GridFourRoomMatch({ matchId, roomId }: { matchId: string; roomId: strin
       </div>
     </Panel>
   );
+}
+
+function LiveRoomBoard({
+  busy,
+  gameId,
+  isMyTurn,
+  playerId,
+  room,
+  onMove,
+}: {
+  busy: boolean;
+  gameId: string;
+  isMyTurn: boolean;
+  playerId: string;
+  room: ArcadeRoomView | null;
+  onMove: (move: unknown) => void;
+}) {
+  if (gameId === "grid-four") {
+    const state = room?.state as GridFourState | null | undefined;
+    return (
+      <div className="grid grid-cols-7 gap-2">
+        {(state?.board ?? Array.from({ length: 6 }, () => Array<string | null>(7).fill(null))).flatMap((row, rowIndex) =>
+          row.map((cell, colIndex) => (
+            <button
+              key={`${rowIndex}-${colIndex}`}
+              className="aspect-square rounded-full border border-white/15 bg-black/45 p-1 disabled:cursor-not-allowed disabled:opacity-70"
+              disabled={busy || !isMyTurn || room?.status === "finished"}
+              onClick={() => onMove({ column: colIndex })}
+              aria-label={`Drop in column ${colIndex + 1}, row ${rowIndex + 1}`}
+            >
+              <span
+                className={`block h-full rounded-full ${cell === playerId ? "bg-[#46ff9f]" : cell ? "bg-[#ffe66d]" : "bg-white/8"}`}
+              />
+            </button>
+          )),
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      {room?.state ? <GameStatePreview gameId={gameId} state={room.state as FleetState | TileRaceState | DraftState} /> : null}
+      <div className="grid gap-2">
+        {(room?.legalMoves ?? []).map((move, index) => (
+          <Button
+            key={`${index}-${moveLabel(move)}`}
+            disabled={busy || !isMyTurn || room?.status === "finished"}
+            variant={index === 0 ? "default" : "secondary"}
+            onClick={() => onMove(move)}
+          >
+            {moveLabel(move)}
+          </Button>
+        ))}
+        {!room?.legalMoves?.length ? <p className="text-sm text-white/58">Waiting for legal moves.</p> : null}
+      </div>
+    </div>
+  );
+}
+
+function roomTurn(room: ArcadeRoomView | null) {
+  const maybeTurn = (room?.state as { turn?: unknown } | null)?.turn;
+  return typeof maybeTurn === "number" ? maybeTurn : 0;
+}
+
+function moveLabel(move: unknown) {
+  if (!move || typeof move !== "object") return "Play move";
+  if ("direction" in move) return String(move.direction);
+  if ("x" in move && "y" in move) return `Fire ${String(move.x)},${String(move.y)}`;
+  if ("pickId" in move) return `Draft ${String(move.pickId)}`;
+  if ("column" in move) return `Column ${Number(move.column) + 1}`;
+  return JSON.stringify(move);
 }
 
 function initialState(gameId: string) {

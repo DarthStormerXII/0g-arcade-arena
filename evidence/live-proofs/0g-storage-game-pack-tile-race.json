@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-06-24T07:27:19.040Z",
+  "mode": "live-0g-storage-game-pack",
+  "gameId": "tile-race",
+  "fileCount": 11,
+  "payloadSha256": "sha256:d35b986dfb981ebf3037208bfc75297b4899612247d08f1b87cd516c8c9530a2",
+  "manifestHash": "0x5b2e8c1a4550c255978c81d8b9eec2de30d5ef31507ce0b113be13c1bbb11881",
+  "rootHash": "0x3edfece3b2e45e10636fb00a4aa8d52b0480648b1c988b8f63c9eabeab4d41d2",
+  "txHash": "0xf8c0488e22306d2ff040ceff031fbfc2f16ec273a9fe2669e0054e2b69ec4acb",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586"
+}

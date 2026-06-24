@@ -16,6 +16,8 @@ for (const game of ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"]) 
   commands.push(["pnpm", ["game:publish", game]]);
 }
 
+commands.push(["pnpm", ["game:submission-workflow-check"]]);
+commands.push(["pnpm", ["0g:da-candidate"]]);
 commands.push(["pnpm", ["audit:check"]]);
 
 for (const [cmd, args] of commands) {

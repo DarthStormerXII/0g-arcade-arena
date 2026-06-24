@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-06-23T19:30:14.528Z",
+  "checkedAt": "2026-06-24T07:38:32.903Z",
   "envFile": "/Users/gabrielantonyxaviour/.codex/secrets/0g-arcade-arena/0g-live.env",
   "chain": {
     "rpcUrl": "https://evmrpc-testnet.0g.ai",
@@ -8,11 +8,11 @@
   },
   "operator": {
     "address": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586",
-    "balance0g": "0.701770",
+    "balance0g": "0.692417",
     "privateKeyPresent": true
   },
   "privyWallets": {
-    "0x23761115c5f38ca51f0d425d00DE6E34029239EC": "0.036769"
+    "0x23761115c5f38ca51f0d425d00DE6E34029239EC": "0.056269"
   },
   "compute": {
     "routerHost": "router-api.0g.ai",
@@ -22,7 +22,7 @@
     "configuredModelProbe": {
       "ok": false,
       "status": 402,
-      "elapsedMs": 526,
+      "elapsedMs": 764,
       "responseKeyPresent": false,
       "responseSignaturePresent": false,
       "traceProviderPresent": false,
@@ -35,7 +35,7 @@
     "glm52Probe": {
       "ok": false,
       "status": 402,
-      "elapsedMs": 273,
+      "elapsedMs": 388,
       "responseKeyPresent": false,
       "responseSignaturePresent": false,
       "traceProviderPresent": false,

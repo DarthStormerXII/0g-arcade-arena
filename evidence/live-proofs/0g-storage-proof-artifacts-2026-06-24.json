@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-06-24T07:40:41.828Z",
+  "mode": "live-0g-storage-proof-artifacts",
+  "schema": "0g-arcade-proof-artifacts@1",
+  "artifactTypes": [
+    "submission-review-receipt",
+    "share-card-metadata",
+    "agent-reasoning-transcript"
+  ],
+  "payloadSha256": "sha256:32fa366708c1dc396a472e25665987ca73c5bac279c999ce04670080837cac51",
+  "rootHash": "0x5e6b327f1ad200fd79ecd12aa1471ed7488d7a8da0b906a08aa9a1e41937da51",
+  "txHash": "0x5c13d3266baa7a2ab9ac3455862279765ec7bd140ea2cf83ffa54525ee6d18b7",
+  "reachable": true,
+  "indexerUrl": "https://indexer-storage-testnet-turbo.0g.ai",
+  "uploader": "0x2F20c3aB29E0cb37ED2Cb0765222E39f42AaF586",
+  "sourceFiles": {
+    "submissionReview": {
+      "path": "evidence/live-proofs/game-submission-workflow-2026-06-24.json",
+      "sha256": "sha256:51a7baa1710d1b805f26f5b432e8dead3a5c6d440014bde5867f90e8bc6e7c0e"
+    },
+    "agentWagerMatch": {
+      "path": "evidence/live-proofs/agent-wager-match-api-2026-06-24.json",
+      "sha256": "sha256:d0fa24775a4bd378fedb882a9ad18a8735938c96ec43ba643c8512deb4a9e9d5"
+    },
+    "chainMatch": {
+      "path": "evidence/live-proofs/chain-actual-match-gr-zqvy.json",
+      "sha256": "sha256:9727867262ca45b8c7df756a13d631dcc1ed5e456e97c67fda45ebf29cfb386f"
+    },
+    "storageRoom": {
+      "path": "evidence/live-proofs/0g-storage-room-gr-zqvy.json",
+      "sha256": "sha256:ce93a877e007df4fd52c838c22d83f6365408a4ecd463b2c503d16e2603108b6"
+    }
+  },
+  "verified": {
+    "submissionReviewReceiptIncluded": true,
+    "shareCardMetadataIncluded": true,
+    "agentReasoningTranscriptIncluded": true,
+    "agentFallbackDisclosed": true
+  }
+}

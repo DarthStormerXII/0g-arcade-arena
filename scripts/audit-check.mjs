@@ -66,6 +66,9 @@ const requiredAppFiles = [
   "src/lib/submission-checks.ts",
   ".github/PULL_REQUEST_TEMPLATE/game-submission.md",
   ".github/workflows/game-pack-ci.yml",
+  "scripts/verify-game-submission-workflow.mjs",
+  "scripts/upload-proof-artifacts-0g.mjs",
+  "scripts/build-da-batch-candidate.mjs",
   "wrangler.jsonc",
   "worker/index.ts",
   "cloudflare/schema.sql",
@@ -76,6 +79,11 @@ const requiredAppFiles = [
   "evidence/live-proofs/0g-storage-room-h2a-wager-mqr1xs1b.json",
   "evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json",
   "evidence/live-proofs/0g-storage-game-pack-grid-four.json",
+  "evidence/live-proofs/0g-storage-game-pack-fleet-duel.json",
+  "evidence/live-proofs/0g-storage-game-pack-tile-race.json",
+  "evidence/live-proofs/0g-storage-game-pack-world-cup-draft.json",
+  "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json",
+  "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
   "evidence/live-proofs/d1-proof-leaderboard-api-2026-06-23.json",
   "evidence/live-proofs/agent-registry-room-api-2026-06-23.json",
   "evidence/live-proofs/wager-negative-api-2026-06-24.json",
@@ -93,6 +101,25 @@ const requiredAppFiles = [
   "evidence/live-proofs/browser-proof-leaderboard-2026-06-24.png",
   "evidence/live-proofs/browser-proof-explorer-2026-06-24.png",
   "evidence/live-proofs/browser-proof-proof-page-2026-06-24.png",
+  "evidence/live-proofs/explorer-all-game-pack-storage-2026-06-24.json",
+  "evidence/live-proofs/explorer-all-game-pack-storage-2026-06-24.png",
+  "evidence/live-proofs/explorer-proof-artifact-storage-2026-06-24.json",
+  "evidence/live-proofs/explorer-proof-artifact-storage-2026-06-24.png",
+  "evidence/live-proofs/explorer-da-batch-candidate-2026-06-24.json",
+  "evidence/live-proofs/explorer-da-batch-candidate-2026-06-24.png",
+  "evidence/live-proofs/agent-picker-all-games-2026-06-24.json",
+  "evidence/live-proofs/agent-picker-grid-four-2026-06-24.png",
+  "evidence/live-proofs/agent-picker-fleet-duel-2026-06-24.png",
+  "evidence/live-proofs/agent-picker-tile-race-2026-06-24.png",
+  "evidence/live-proofs/agent-picker-world-cup-draft-2026-06-24.png",
+  "evidence/live-proofs/non-grid-room-ui-2026-06-24.json",
+  "evidence/live-proofs/non-grid-room-ui-2026-06-24.png",
+  "evidence/live-proofs/non-grid-room-ui-fleet-duel-2026-06-24.png",
+  "evidence/live-proofs/non-grid-room-ui-tile-race-2026-06-24.png",
+  "evidence/live-proofs/non-grid-room-ui-world-cup-draft-2026-06-24.png",
+  "evidence/live-proofs/game-submission-workflow-2026-06-24.json",
+  "evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json",
+  "evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.png",
   "docs/agent-skills/0g-arcade-player/SKILL.md",
   "docs/agent-skills/0g-arcade-player/api.md",
   "docs/agent-skills/0g-arcade-player/registration.md",
@@ -355,23 +382,131 @@ if (existsSync("evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json"
   }
 }
 
-if (existsSync("evidence/live-proofs/0g-storage-game-pack-grid-four.json")) {
-  const gamePackStorage = readJson("evidence/live-proofs/0g-storage-game-pack-grid-four.json");
-  if (gamePackStorage) {
-    if (gamePackStorage.mode !== "live-0g-storage-game-pack") {
-      errors.push("0G Storage game-pack proof has wrong mode");
+for (const game of games) {
+  const gamePackStoragePath = `evidence/live-proofs/0g-storage-game-pack-${game}.json`;
+  if (existsSync(gamePackStoragePath)) {
+    const gamePackStorage = readJson(gamePackStoragePath);
+    if (gamePackStorage) {
+      if (gamePackStorage.mode !== "live-0g-storage-game-pack") {
+        errors.push(`${game} 0G Storage game-pack proof has wrong mode`);
+      }
+      if (gamePackStorage.gameId !== game) {
+        errors.push(`${game} 0G Storage game-pack proof has wrong game id`);
+      }
+      if (gamePackStorage.fileCount < requiredGameFiles.length) {
+        errors.push(`${game} 0G Storage game-pack proof has too few files`);
+      }
+      if (gamePackStorage.reachable !== true) {
+        errors.push(`${game} 0G Storage game-pack proof is not reachable`);
+      }
+      if (!/^0x[a-fA-F0-9]{64}$/.test(gamePackStorage.rootHash ?? "")) {
+        errors.push(`${game} 0G Storage game-pack proof has invalid root hash`);
+      }
+      if (!/^0x[a-fA-F0-9]{64}$/.test(gamePackStorage.txHash ?? "")) {
+        errors.push(`${game} 0G Storage game-pack proof has invalid tx hash`);
+      }
+      if (!/^sha256:[a-fA-F0-9]{64}$/.test(gamePackStorage.payloadSha256 ?? "")) {
+        errors.push(`${game} 0G Storage game-pack proof has invalid payload hash`);
+      }
     }
-    if (gamePackStorage.gameId !== "grid-four") {
-      errors.push("0G Storage game-pack proof must be for grid-four");
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json")) {
+  const proofArtifactStorage = readJson("evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json");
+  if (proofArtifactStorage) {
+    if (proofArtifactStorage.mode !== "live-0g-storage-proof-artifacts") {
+      errors.push("0G Storage proof artifact bundle has wrong mode");
     }
-    if (gamePackStorage.reachable !== true) {
-      errors.push("0G Storage game-pack proof is not reachable");
+    if (proofArtifactStorage.schema !== "0g-arcade-proof-artifacts@1") {
+      errors.push("0G Storage proof artifact bundle has wrong schema");
     }
-    if (!/^0x[a-fA-F0-9]{64}$/.test(gamePackStorage.rootHash ?? "")) {
-      errors.push("0G Storage game-pack proof has invalid root hash");
+    for (const type of ["submission-review-receipt", "share-card-metadata", "agent-reasoning-transcript"]) {
+      if (!proofArtifactStorage.artifactTypes?.includes(type)) {
+        errors.push(`0G Storage proof artifact bundle missing ${type}`);
+      }
     }
-    if (!/^0x[a-fA-F0-9]{64}$/.test(gamePackStorage.txHash ?? "")) {
-      errors.push("0G Storage game-pack proof has invalid tx hash");
+    if (proofArtifactStorage.reachable !== true) {
+      errors.push("0G Storage proof artifact bundle is not reachable");
+    }
+    if (!/^0x[a-fA-F0-9]{64}$/.test(proofArtifactStorage.rootHash ?? "")) {
+      errors.push("0G Storage proof artifact bundle has invalid root hash");
+    }
+    if (!/^0x[a-fA-F0-9]{64}$/.test(proofArtifactStorage.txHash ?? "")) {
+      errors.push("0G Storage proof artifact bundle has invalid tx hash");
+    }
+    if (!/^sha256:[a-fA-F0-9]{64}$/.test(proofArtifactStorage.payloadSha256 ?? "")) {
+      errors.push("0G Storage proof artifact bundle has invalid payload hash");
+    }
+    for (const [key, value] of Object.entries(proofArtifactStorage.verified ?? {})) {
+      if (value !== true) errors.push(`0G Storage proof artifact bundle did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json")) {
+  const daCandidate = readJson("evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json");
+  if (daCandidate) {
+    if (daCandidate.mode !== "0g-da-batch-candidate") {
+      errors.push("0G DA batch candidate has wrong mode");
+    }
+    if (daCandidate.status !== "not-published" || daCandidate.daMode !== "candidate-not-published") {
+      errors.push("0G DA batch candidate must not claim live DA publication");
+    }
+    if (daCandidate.schema !== "0g-arcade-da-batch@1") {
+      errors.push("0G DA batch candidate has wrong schema");
+    }
+    if (!/^0x[a-fA-F0-9]{64}$/.test(daCandidate.batchHash ?? "")) {
+      errors.push("0G DA batch candidate has invalid batch hash");
+    }
+    if (!/^sha256:[a-fA-F0-9]{64}$/.test(daCandidate.payloadSha256 ?? "")) {
+      errors.push("0G DA batch candidate has invalid payload hash");
+    }
+    if (daCandidate.payload?.matches?.length !== 2) {
+      errors.push("0G DA batch candidate must include the two live committed wager match payloads");
+    }
+    if (daCandidate.payload?.gamePacks?.length !== games.length) {
+      errors.push("0G DA batch candidate must include all four game-pack storage roots");
+    }
+    for (const requiredSource of [
+      "evidence/live-proofs/0g-storage-room-gr-zqvy.json",
+      "evidence/live-proofs/0g-storage-room-h2a-wager-mqr1xs1b.json",
+      "evidence/live-proofs/chain-actual-match-gr-zqvy.json",
+      "evidence/live-proofs/chain-actual-match-h2a-wager-mqr1xs1b.json",
+      "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json",
+    ]) {
+      if (!daCandidate.sourceEvidence?.includes(requiredSource)) {
+        errors.push(`0G DA batch candidate missing source ${requiredSource}`);
+      }
+    }
+    for (const [key, value] of Object.entries(daCandidate.verified ?? {})) {
+      if (value !== true) errors.push(`0G DA batch candidate did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/explorer-da-batch-candidate-2026-06-24.json")) {
+  const daExplorer = readJson("evidence/live-proofs/explorer-da-batch-candidate-2026-06-24.json");
+  if (daExplorer) {
+    if (daExplorer.mode !== "browser-explorer-da-batch-candidate" || daExplorer.status !== "passed") {
+      errors.push("Explorer DA batch candidate browser proof did not pass");
+    }
+    for (const [key, value] of Object.entries(daExplorer.assertions ?? {})) {
+      if (value !== true) errors.push(`Explorer DA batch candidate proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json")) {
+  const hostedPrivy = readJson("evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json");
+  if (hostedPrivy) {
+    if (hostedPrivy.mode !== "hosted-privy-origin-check" || hostedPrivy.status !== "blocked") {
+      errors.push("hosted Privy origin evidence must record the current blocked production-auth state");
+    }
+    for (const key of ["hostedRouteLoads", "loginButtonPresent", "privyBlockedByOriginOrCsp", "hostedBundleAppearsStale", "notAuthenticated"]) {
+      if (hostedPrivy.assertions?.[key] !== true) {
+        errors.push(`hosted Privy origin blocker evidence did not verify ${key}`);
+      }
     }
   }
 }
@@ -687,6 +822,155 @@ if (existsSync("evidence/live-proofs/browser-proof-surfaces-2026-06-24.json")) {
       }
       for (const [key, value] of Object.entries(routeProof.verified ?? {})) {
         if (value !== true) errors.push(`browser proof ${route} did not verify ${key}`);
+      }
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/explorer-all-game-pack-storage-2026-06-24.json")) {
+  const explorerStorageProof = readJson("evidence/live-proofs/explorer-all-game-pack-storage-2026-06-24.json");
+  if (explorerStorageProof) {
+    if (explorerStorageProof.mode !== "local-explorer-all-game-pack-storage-browser-ui" || explorerStorageProof.status !== "passed") {
+      errors.push("Explorer all-game game-pack storage browser proof did not pass");
+    }
+    for (const game of games) {
+      if (!explorerStorageProof.games?.includes(game)) {
+        errors.push(`Explorer all-game game-pack storage proof missing ${game}`);
+      }
+    }
+    if (explorerStorageProof.reachableCount < games.length) {
+      errors.push("Explorer all-game game-pack storage proof did not render all reachable storage rows");
+    }
+    if (!existsSync(explorerStorageProof.screenshot ?? "")) {
+      errors.push("Explorer all-game game-pack storage proof screenshot is missing");
+    }
+    for (const [key, value] of Object.entries(explorerStorageProof.verified ?? {})) {
+      if (value !== true) errors.push(`Explorer all-game game-pack storage proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/explorer-proof-artifact-storage-2026-06-24.json")) {
+  const explorerArtifactProof = readJson("evidence/live-proofs/explorer-proof-artifact-storage-2026-06-24.json");
+  if (explorerArtifactProof) {
+    if (explorerArtifactProof.mode !== "local-explorer-proof-artifact-storage-browser-ui" || explorerArtifactProof.status !== "passed") {
+      errors.push("Explorer proof artifact storage browser proof did not pass");
+    }
+    for (const text of ["proof artifact storage", "0g-arcade-proof-artifacts@1", "submission-review-receipt", "share-card-metadata", "agent-reasoning-transcript"]) {
+      if (!explorerArtifactProof.requiredText?.includes(text)) {
+        errors.push(`Explorer proof artifact storage proof missing required text ${text}`);
+      }
+    }
+    if (!existsSync(explorerArtifactProof.screenshot ?? "")) {
+      errors.push("Explorer proof artifact storage proof screenshot is missing");
+    }
+    for (const [key, value] of Object.entries(explorerArtifactProof.verified ?? {})) {
+      if (value !== true) errors.push(`Explorer proof artifact storage proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/agent-picker-all-games-2026-06-24.json")) {
+  const agentPickerProof = readJson("evidence/live-proofs/agent-picker-all-games-2026-06-24.json");
+  if (agentPickerProof) {
+    if (agentPickerProof.mode !== "local-all-game-agent-picker-browser-ui" || agentPickerProof.status !== "passed") {
+      errors.push("all-game agent picker browser proof did not pass");
+    }
+    const expectedGames = ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"];
+    for (const game of expectedGames) {
+      if (!agentPickerProof.games?.includes(game)) {
+        errors.push(`all-game agent picker proof missing ${game}`);
+      }
+      const route = agentPickerProof.routes?.find((item) => item.gameId === game);
+      if (!route) {
+        errors.push(`all-game agent picker proof missing route for ${game}`);
+        continue;
+      }
+      if (!route.agentId || !route.displayName || !route.url?.endsWith(`/games/${game}`)) {
+        errors.push(`all-game agent picker proof has incomplete route data for ${game}`);
+      }
+      if (!existsSync(route.screenshot ?? "")) {
+        errors.push(`all-game agent picker proof screenshot is missing for ${game}`);
+      }
+      for (const [key, value] of Object.entries(route.verified ?? {})) {
+        if (value !== true) errors.push(`all-game agent picker proof ${game} did not verify ${key}`);
+      }
+    }
+    for (const [key, value] of Object.entries(agentPickerProof.verified ?? {})) {
+      if (value !== true) errors.push(`all-game agent picker proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/non-grid-room-ui-2026-06-24.json")) {
+  const nonGridRoomUiProof = readJson("evidence/live-proofs/non-grid-room-ui-2026-06-24.json");
+  if (nonGridRoomUiProof) {
+    if (nonGridRoomUiProof.mode !== "local-non-grid-room-browser-ui" || nonGridRoomUiProof.status !== "passed") {
+      errors.push("non-Grid room browser UI proof did not pass");
+    }
+    const expectedGames = ["fleet-duel", "tile-race", "world-cup-draft"];
+    for (const game of expectedGames) {
+      if (!nonGridRoomUiProof.games?.includes(game)) {
+        errors.push(`non-Grid room browser UI proof missing ${game}`);
+      }
+      const room = nonGridRoomUiProof.rooms?.find((item) => item.gameId === game);
+      if (!room) {
+        errors.push(`non-Grid room browser UI proof missing room for ${game}`);
+        continue;
+      }
+      if (!room.url?.includes(`game=${game}`) || !room.matchId || !room.roomId) {
+        errors.push(`non-Grid room browser UI proof has incomplete route data for ${game}`);
+      }
+      if (!existsSync(room.screenshot ?? "")) {
+        errors.push(`non-Grid room browser UI proof screenshot is missing for ${game}`);
+      }
+      for (const [key, value] of Object.entries(room.verified ?? {})) {
+        if (value !== true) errors.push(`non-Grid room browser UI proof ${game} did not verify ${key}`);
+      }
+    }
+    for (const [key, value] of Object.entries(nonGridRoomUiProof.verified ?? {})) {
+      if (value !== true) errors.push(`non-Grid room browser UI proof did not verify ${key}`);
+    }
+  }
+}
+
+if (existsSync("evidence/live-proofs/game-submission-workflow-2026-06-24.json")) {
+  const submissionWorkflowProof = readJson("evidence/live-proofs/game-submission-workflow-2026-06-24.json");
+  if (submissionWorkflowProof) {
+    if (submissionWorkflowProof.mode !== "local-game-submission-workflow" || submissionWorkflowProof.status !== "passed") {
+      errors.push("game submission workflow proof did not pass");
+    }
+    const expectedGames = ["grid-four", "fleet-duel", "tile-race", "world-cup-draft"];
+    const requiredChecks = [
+      "submitPageIsPullRequestOnly",
+      "maintainerApprovalLanguage",
+      "docsExplainPrWorkflow",
+      "prTemplateChecklist",
+      "ciRunsOnPullRequest",
+      "ciValidatesGamePacks",
+      "toolingScriptsPresent",
+      "allGamePacksHaveRequiredFiles",
+      "allManifestHashesMatch",
+      "coverLogoAssetsRequiredAndPresent",
+      "bannedPatternsAbsent",
+      "noInAppUploadLanguage",
+    ];
+    for (const game of expectedGames) {
+      const pack = submissionWorkflowProof.gamePacks?.find((item) => item.id === game);
+      if (!pack) {
+        errors.push(`game submission workflow proof missing ${game}`);
+        continue;
+      }
+      if (pack.files?.cover !== true || pack.files?.logo !== true) {
+        errors.push(`game submission workflow proof missing cover/logo for ${game}`);
+      }
+      if (!Object.values(pack.hashes ?? {}).every(Boolean)) {
+        errors.push(`game submission workflow proof has hash mismatch for ${game}`);
+      }
+    }
+    for (const key of requiredChecks) {
+      if (submissionWorkflowProof.verified?.[key] !== true) {
+        errors.push(`game submission workflow proof did not verify ${key}`);
       }
     }
   }

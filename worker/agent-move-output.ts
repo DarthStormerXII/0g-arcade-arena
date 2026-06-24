@@ -1,5 +1,5 @@
 export type ParsedAgentMove = {
-  move: { column: number };
+  move: unknown;
   confidence: number;
   reasoningSummary: string;
 };
@@ -7,16 +7,15 @@ export type ParsedAgentMove = {
 export function parseAgentMoveContent(content: string): ParsedAgentMove {
   const jsonText = extractJson(content);
   const parsed = JSON.parse(jsonText) as {
-    move?: { column?: unknown };
+    move?: unknown;
     confidence?: unknown;
     reasoningSummary?: unknown;
   };
-  const column = Number(parsed.move?.column);
-  if (!Number.isInteger(column)) {
-    throw new Error("0G Compute response did not include an integer move.column.");
+  if (!parsed.move || typeof parsed.move !== "object" || Array.isArray(parsed.move)) {
+    throw new Error("0G Compute response did not include a JSON object move.");
   }
   return {
-    move: { column },
+    move: parsed.move,
     confidence: normalizeConfidence(typeof parsed.confidence === "number" ? parsed.confidence : 0.5),
     reasoningSummary: typeof parsed.reasoningSummary === "string" ? parsed.reasoningSummary.slice(0, 240) : "",
   };

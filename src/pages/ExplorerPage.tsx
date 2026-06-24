@@ -8,7 +8,7 @@ import { platformAgents } from "../lib/agents";
 import { gameAdapters, gameDescriptions, gameVisuals } from "../lib/game-registry";
 import { integrationStatus } from "../lib/integration-status";
 import { liveChainProof, shortHash } from "../lib/live-chain-proof";
-import { liveGamePackProofs } from "../lib/live-proof-api";
+import { liveDaBatchCandidate, liveGamePackProofs, liveProofArtifactStorage } from "../lib/live-proof-api";
 import { runDemo } from "../lib/match-records";
 
 export function Explorer() {
@@ -61,6 +61,46 @@ export function Explorer() {
                 </div>
               </div>
             ))}
+          </div>
+        </Panel>
+
+        <Panel>
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="text-[#57e2ff]" />
+            <h2 className="text-2xl font-black uppercase">Proof Artifact Storage</h2>
+          </div>
+          <div className="mt-4 rounded-sm border border-white/10 bg-black/35 p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <strong>{liveProofArtifactStorage.schema}</strong>
+              <StatusPill tone={liveProofArtifactStorage.reachable ? "green" : "yellow"}>
+                {liveProofArtifactStorage.reachable ? "0G Storage reachable" : "storage pending"}
+              </StatusPill>
+            </div>
+            <div className="mt-2 grid gap-1 font-mono text-xs text-white/58">
+              <span>root {shortHash(liveProofArtifactStorage.rootHash)}</span>
+              <span>tx {shortHash(liveProofArtifactStorage.txHash)}</span>
+              <span>payload {shortHash(liveProofArtifactStorage.payloadSha256)}</span>
+              <span>{liveProofArtifactStorage.artifactTypes.join(", ")}</span>
+            </div>
+          </div>
+        </Panel>
+
+        <Panel>
+          <div className="flex items-center gap-3">
+            <Boxes className="text-[#ffe66d]" />
+            <h2 className="text-2xl font-black uppercase">DA Batch Candidate</h2>
+          </div>
+          <div className="mt-4 rounded-sm border border-white/10 bg-black/35 p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <strong>{liveDaBatchCandidate.schema}</strong>
+              <StatusPill tone="yellow">{liveDaBatchCandidate.daMode}</StatusPill>
+            </div>
+            <div className="mt-2 grid gap-1 font-mono text-xs text-white/58">
+              <span>batch {shortHash(liveDaBatchCandidate.batchHash)}</span>
+              <span>payload {shortHash(liveDaBatchCandidate.payloadSha256)}</span>
+              <span>{liveDaBatchCandidate.matchCount} matches, {liveDaBatchCandidate.gamePackCount} game packs</span>
+              <span>{liveDaBatchCandidate.sourceEvidenceCount} source evidence files</span>
+            </div>
           </div>
         </Panel>
 

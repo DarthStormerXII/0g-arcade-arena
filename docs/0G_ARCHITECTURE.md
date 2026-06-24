@@ -6,7 +6,7 @@
 
 0G Compute: agent move selection, agent-vs-agent matches, submission review assistant, strategy commentary, and post-match recap. AI never overrides deterministic rules.
 
-0G DA: future batch replay/event commitments where feasible; the current hackathon build says DA fallback/not configured.
+0G DA: deterministic batch replay/event commitments for the two live 1v1 wager proofs and all four game-pack roots. The current hackathon build exports a DA candidate payload/hash but does not claim live DA publication because no project-local DA client is configured.
 
 ## Cloudflare Operational Layer
 

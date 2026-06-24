@@ -31,12 +31,18 @@ describe("0G Compute agent move output parsing", () => {
     );
   });
 
-  it("rejects non-integer columns", () => {
-    expect(() => parseAgentMoveContent('{"move":{"column":"left"},"confidence":0.5}')).toThrow(
-      "0G Compute response did not include an integer move.column.",
+  it("parses non-Grid move objects", () => {
+    const parsed = parseAgentMoveContent('{"move":{"direction":"left"},"confidence":0.5}');
+
+    expect(parsed.move).toEqual({ direction: "left" });
+  });
+
+  it("rejects missing or non-object moves", () => {
+    expect(() => parseAgentMoveContent('{"confidence":0.5}')).toThrow(
+      "0G Compute response did not include a JSON object move.",
     );
-    expect(() => parseAgentMoveContent('{"move":{"column":1.5},"confidence":0.5}')).toThrow(
-      "0G Compute response did not include an integer move.column.",
+    expect(() => parseAgentMoveContent('{"move":"left","confidence":0.5}')).toThrow(
+      "0G Compute response did not include a JSON object move.",
     );
   });
 

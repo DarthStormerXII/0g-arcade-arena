@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { GamePlayer } from "../src/lib/game-pack";
-import { createRoom, joinRoom, startRoom } from "./game-runtime";
+import { createRoom, getRoomView, joinRoom, startRoom } from "./game-runtime";
 import { chooseAgentMove } from "./index";
 
 const agent: GamePlayer = {
@@ -24,6 +24,21 @@ function makeActiveAgentRoom() {
         roomId: "agent-compute-test",
         host: agent,
         seed: "agent-compute-seed",
+        now: "2026-06-24T00:00:00.000Z",
+      }),
+      { player: human },
+    ),
+  );
+}
+
+function makeActiveTileAgentRoom() {
+  return startRoom(
+    joinRoom(
+      createRoom({
+        roomId: "agent-tile-compute-test",
+        gameId: "tile-race",
+        host: agent,
+        seed: "agent-tile-compute-seed",
         now: "2026-06-24T00:00:00.000Z",
       }),
       { player: human },
@@ -95,5 +110,23 @@ describe("0G Compute agent move selection", () => {
     expect(choice.computeMode).toBe("deterministic-fallback");
     expect(choice.move).toEqual({ column: 3 });
     expect(choice.fallbackReason).toContain("0G Compute returned an illegal move");
+  });
+
+  it("accepts a legal mocked 0G Compute move for Tile Race", async () => {
+    const room = makeActiveTileAgentRoom();
+    const legalMove = getRoomView(room).legalMoves[0];
+    mockComputeContent(
+      JSON.stringify({ move: legalMove, confidence: 0.8, reasoningSummary: "Slide toward merges." }),
+    );
+
+    const choice = await chooseAgentMove(room, makeEnv());
+
+    expect(legalMove).toBeTruthy();
+    expect(choice.computeMode).toBe("0g-compute");
+    expect(choice.move).toEqual(legalMove);
+    expect(choice.provider).toBe("mock-provider");
+    expect(choice.requestId).toBe("mock-request");
+    expect(choice.verified).toBe(true);
+    expect(choice.fallbackReason).toBeNull();
   });
 });

@@ -1,7 +1,7 @@
 {
   "mode": "local-multigame-room-api",
   "status": "passed",
-  "checkedAt": "2026-06-23T19:59:37.140Z",
+  "checkedAt": "2026-06-24T06:55:24.463Z",
   "baseUrl": "http://localhost:3021",
   "games": [
     "fleet-duel",
@@ -11,7 +11,7 @@
   "humanRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mg-fleet-duel-mqr2itd0",
+      "roomId": "mg-fleet-duel-mqrpxwab",
       "kind": "human",
       "created": {
         "status": 200,
@@ -25,25 +25,25 @@
         "status": 200,
         "roomStatus": "active"
       },
-      "moves": 59,
+      "moves": 69,
       "final": {
         "status": "finished",
-        "replayHash": "0x24bf08f1",
-        "resultHash": "0x8be0d30e",
+        "replayHash": "0xfc2397d0",
+        "resultHash": "0xc695baf6",
         "winnerIds": [
-          "human-a-fleet-duel-mqr2itd0"
+          "human-a-fleet-duel-mqrpxwab"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-fleet-duel-mqr2itd0",
+        "matchId": "match-mg-fleet-duel-mqrpxwab",
         "gameId": "fleet-duel"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mg-tile-race-mqr2itd0",
+      "roomId": "mg-tile-race-mqrpxwab",
       "kind": "human",
       "created": {
         "status": 200,
@@ -60,23 +60,23 @@
       "moves": 24,
       "final": {
         "status": "finished",
-        "replayHash": "0x7f8d7333",
-        "resultHash": "0x7b27de04",
+        "replayHash": "0x3e80c1d7",
+        "resultHash": "0xf77401ae",
         "winnerIds": [
-          "human-a-tile-race-mqr2itd0",
-          "human-b-tile-race-mqr2itd0"
+          "human-a-tile-race-mqrpxwab",
+          "human-b-tile-race-mqrpxwab"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-tile-race-mqr2itd0",
+        "matchId": "match-mg-tile-race-mqrpxwab",
         "gameId": "tile-race"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mg-world-cup-draft-mqr2itd0",
+      "roomId": "mg-world-cup-draft-mqrpxwab",
       "kind": "human",
       "created": {
         "status": 200,
@@ -93,16 +93,16 @@
       "moves": 8,
       "final": {
         "status": "finished",
-        "replayHash": "0xda41365c",
-        "resultHash": "0xf9e12002",
+        "replayHash": "0x0109aa1d",
+        "resultHash": "0x29decb46",
         "winnerIds": [
-          "human-a-world-cup-draft-mqr2itd0"
+          "human-a-world-cup-draft-mqrpxwab"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-world-cup-draft-mqr2itd0",
+        "matchId": "match-mg-world-cup-draft-mqrpxwab",
         "gameId": "world-cup-draft"
       }
     }
@@ -110,11 +110,11 @@
   "agentRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mga-fleet-duel-mqr2itd0",
+      "roomId": "mga-fleet-duel-mqrpxwab",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-fleet-duel-mqr2itd0"
+        "agentId": "agent-fleet-duel-mqrpxwab"
       },
       "created": {
         "status": 200,
@@ -128,137 +128,162 @@
         "status": 200,
         "roomStatus": "active"
       },
-      "moves": 43,
+      "moves": 53,
       "agentMoves": [
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Rate limit exceeded. Please try again later."
+        },
+        {
+          "status": 200,
+          "computeMode": "deterministic-fallback",
+          "fallbackReason": "Insufficient balance"
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x9bbd65e9",
-        "resultHash": "0x134bac31",
+        "replayHash": "0xff4c3852",
+        "resultHash": "0x9c0a0591",
         "winnerIds": [
-          "human-agent-fleet-duel-mqr2itd0"
+          "human-agent-fleet-duel-mqrpxwab"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-fleet-duel-mqr2itd0",
+        "matchId": "match-mga-fleet-duel-mqrpxwab",
         "gameId": "fleet-duel",
         "computeMode": "deterministic-fallback"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mga-tile-race-mqr2itd0",
+      "roomId": "mga-tile-race-mqrpxwab",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-tile-race-mqr2itd0"
+        "agentId": "agent-tile-race-mqrpxwab"
       },
       "created": {
         "status": 200,
@@ -277,87 +302,87 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x3f4430e8",
-        "resultHash": "0xc63fc626",
+        "replayHash": "0xa6a1eb64",
+        "resultHash": "0x48d274d2",
         "winnerIds": [
-          "agent-tile-race-mqr2itd0"
+          "agent-tile-race-mqrpxwab"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-tile-race-mqr2itd0",
+        "matchId": "match-mga-tile-race-mqrpxwab",
         "gameId": "tile-race",
         "computeMode": "deterministic-fallback"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mga-world-cup-draft-mqr2itd0",
+      "roomId": "mga-world-cup-draft-mqrpxwab",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-world-cup-draft-mqr2itd0"
+        "agentId": "agent-world-cup-draft-mqrpxwab"
       },
       "created": {
         "status": 200,
@@ -376,36 +401,36 @@
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "0G Compute live prompt is currently configured for Grid Four only."
+          "fallbackReason": "Rate limit exceeded. Please try again later."
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x5858a9b1",
-        "resultHash": "0x2597bf1f",
+        "replayHash": "0x30c3142e",
+        "resultHash": "0x2637ba0b",
         "winnerIds": [
-          "human-agent-world-cup-draft-mqr2itd0"
+          "human-agent-world-cup-draft-mqrpxwab"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-world-cup-draft-mqr2itd0",
+        "matchId": "match-mga-world-cup-draft-mqrpxwab",
         "gameId": "world-cup-draft",
         "computeMode": "deterministic-fallback"
       }
