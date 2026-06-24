@@ -1,5 +1,7 @@
 import type { GamePlayer, GameReplay, GameResult, ScoreSummary } from "./game-pack";
 
+export type AgentComputeMode = "0g-compute" | "sarvam-fallback" | "deterministic-fallback";
+
 export type ArcadeRoomView = {
   roomId: string;
   matchId: string;
@@ -13,17 +15,18 @@ export type ArcadeRoomView = {
   replay: GameReplay | null;
   result: GameResult | null;
   score: ScoreSummary | null;
-  computeMode?: "0g-compute" | "deterministic-fallback";
+  computeMode?: AgentComputeMode;
   computeProofs?: Array<{
     turn: number;
     playerId: string;
-    mode: "0g-compute" | "deterministic-fallback";
+    mode: AgentComputeMode;
     provider: string | null;
     requestId: string | null;
     verified: boolean;
     model: string | null;
     contentHash: string | null;
     fallbackReason: string | null;
+    primaryComputeError: string | null;
   }>;
   currentPlayerIds: string[];
   legalMoves: unknown[];

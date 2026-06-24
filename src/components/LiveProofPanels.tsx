@@ -76,6 +76,7 @@ export function LiveProofDetails({ matchId }: { matchId: string }) {
           ["result commit tx", proof.chainTx ?? "pending"],
           ["settlement tx", proof.settlementTx ?? "pending"],
           ["compute", proof.computeMode],
+          ["compute fallback", computeFallbackSummary(proof.computeProof)],
           ["da", proof.daMode],
         ].map(([label, value]) => (
           <div key={label} className="rounded-sm border border-white/10 bg-black/35 p-3">
@@ -86,6 +87,21 @@ export function LiveProofDetails({ matchId }: { matchId: string }) {
       </dl>
     </Panel>
   );
+}
+
+function computeFallbackSummary(computeProof: unknown) {
+  const proofList = (computeProof as { proofs?: unknown[] } | null)?.proofs;
+  const proofs = Array.isArray(proofList)
+    ? (proofList as Array<{ primaryComputeError?: unknown; fallbackReason?: unknown }>)
+    : [];
+  const latest = proofs.at(-1);
+  if (typeof latest?.primaryComputeError === "string" && latest.primaryComputeError) {
+    return `0G Router error: ${latest.primaryComputeError}`;
+  }
+  if (typeof latest?.fallbackReason === "string" && latest.fallbackReason) {
+    return latest.fallbackReason;
+  }
+  return "none";
 }
 
 export function LiveLeaderboard() {

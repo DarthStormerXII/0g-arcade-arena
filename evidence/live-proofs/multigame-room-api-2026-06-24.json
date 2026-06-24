@@ -1,7 +1,7 @@
 {
   "mode": "local-multigame-room-api",
   "status": "passed",
-  "checkedAt": "2026-06-24T13:30:57.083Z",
+  "checkedAt": "2026-06-24T18:04:49.192Z",
   "baseUrl": "http://localhost:3021",
   "games": [
     "fleet-duel",
@@ -11,7 +11,7 @@
   "humanRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mg-fleet-duel-mqs42kj0",
+      "roomId": "mg-fleet-duel-mqsdtxwx",
       "kind": "human",
       "created": {
         "status": 200,
@@ -25,25 +25,25 @@
         "status": 200,
         "roomStatus": "active"
       },
-      "moves": 57,
+      "moves": 51,
       "final": {
         "status": "finished",
-        "replayHash": "0x04e259cf",
-        "resultHash": "0x842ac566",
+        "replayHash": "0x70e10ca2",
+        "resultHash": "0x229e1382",
         "winnerIds": [
-          "human-a-fleet-duel-mqs42kj0"
+          "human-a-fleet-duel-mqsdtxwx"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-fleet-duel-mqs42kj0",
+        "matchId": "match-mg-fleet-duel-mqsdtxwx",
         "gameId": "fleet-duel"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mg-tile-race-mqs42kj0",
+      "roomId": "mg-tile-race-mqsdtxwx",
       "kind": "human",
       "created": {
         "status": 200,
@@ -60,22 +60,23 @@
       "moves": 24,
       "final": {
         "status": "finished",
-        "replayHash": "0x3d4b96bb",
-        "resultHash": "0x04e019ff",
+        "replayHash": "0x9e45f344",
+        "resultHash": "0x91b439da",
         "winnerIds": [
-          "human-b-tile-race-mqs42kj0"
+          "human-a-tile-race-mqsdtxwx",
+          "human-b-tile-race-mqsdtxwx"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-tile-race-mqs42kj0",
+        "matchId": "match-mg-tile-race-mqsdtxwx",
         "gameId": "tile-race"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mg-world-cup-draft-mqs42kj0",
+      "roomId": "mg-world-cup-draft-mqsdtxwx",
       "kind": "human",
       "created": {
         "status": 200,
@@ -92,16 +93,16 @@
       "moves": 8,
       "final": {
         "status": "finished",
-        "replayHash": "0xed88643a",
-        "resultHash": "0x0fde0a56",
+        "replayHash": "0x397442fb",
+        "resultHash": "0x508cedd6",
         "winnerIds": [
-          "human-a-world-cup-draft-mqs42kj0"
+          "human-a-world-cup-draft-mqsdtxwx"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mg-world-cup-draft-mqs42kj0",
+        "matchId": "match-mg-world-cup-draft-mqsdtxwx",
         "gameId": "world-cup-draft"
       }
     }
@@ -109,11 +110,11 @@
   "agentRooms": [
     {
       "gameId": "fleet-duel",
-      "roomId": "mga-fleet-duel-mqs42kj0",
+      "roomId": "mga-fleet-duel-mqsdtxwx",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-fleet-duel-mqs42kj0"
+        "agentId": "agent-fleet-duel-mqsdtxwx"
       },
       "created": {
         "status": 200,
@@ -131,158 +132,158 @@
       "agentMoves": [
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: 0G Compute returned an illegal move: {\"x\":2,\"y\":2}."
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: 0G Compute returned an illegal move: {\"x\":2,\"y\":3}."
+        },
+        {
+          "status": 200,
+          "computeMode": "0g-compute",
+          "fallbackReason": null
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "fallbackReason": "Sarvam fallback returned invalid content: Expected ',' or '}' after property value in JSON at position 21 (line 1 column 22). 0G Router error: Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "fallbackReason": "Sarvam fallback returned invalid content: Expected ',' or '}' after property value in JSON at position 21 (line 1 column 22). 0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xfc8d5967",
-        "resultHash": "0x7c86cb3d",
+        "replayHash": "0xd582839e",
+        "resultHash": "0x2c241921",
         "winnerIds": [
-          "human-agent-fleet-duel-mqs42kj0"
+          "human-agent-fleet-duel-mqsdtxwx"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-fleet-duel-mqs42kj0",
+        "matchId": "match-mga-fleet-duel-mqsdtxwx",
         "gameId": "fleet-duel",
-        "computeMode": "deterministic-fallback"
+        "computeMode": "sarvam-fallback"
       }
     },
     {
       "gameId": "tile-race",
-      "roomId": "mga-tile-race-mqs42kj0",
+      "roomId": "mga-tile-race-mqsdtxwx",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-tile-race-mqs42kj0"
+        "agentId": "agent-tile-race-mqsdtxwx"
       },
       "created": {
         "status": 200,
@@ -300,88 +301,88 @@
       "agentMoves": [
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
+        },
+        {
+          "status": 200,
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
           "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "fallbackReason": "Sarvam fallback returned invalid content: 0G Compute response did not contain JSON.. 0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Insufficient balance"
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
-        },
-        {
-          "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x1ade7d4f",
-        "resultHash": "0xa644eae6",
+        "replayHash": "0x6b7129d9",
+        "resultHash": "0x4183c01e",
         "winnerIds": [
-          "agent-tile-race-mqs42kj0"
+          "agent-tile-race-mqsdtxwx"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-tile-race-mqs42kj0",
+        "matchId": "match-mga-tile-race-mqsdtxwx",
         "gameId": "tile-race",
-        "computeMode": "deterministic-fallback"
+        "computeMode": "sarvam-fallback"
       }
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "mga-world-cup-draft-mqs42kj0",
+      "roomId": "mga-world-cup-draft-mqsdtxwx",
       "kind": "agent",
       "registered": {
         "status": 201,
-        "agentId": "agent-world-cup-draft-mqs42kj0"
+        "agentId": "agent-world-cup-draft-mqsdtxwx"
       },
       "created": {
         "status": 200,
@@ -399,39 +400,39 @@
       "agentMoves": [
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         },
         {
           "status": 200,
-          "computeMode": "deterministic-fallback",
-          "fallbackReason": "Rate limit exceeded. Please try again later."
+          "computeMode": "sarvam-fallback",
+          "fallbackReason": "0G Router error: Rate limit exceeded. Please try again later."
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x222c5b76",
-        "resultHash": "0x526514b7",
+        "replayHash": "0x29e3a029",
+        "resultHash": "0x379a9aaf",
         "winnerIds": [
-          "human-agent-world-cup-draft-mqs42kj0"
+          "human-agent-world-cup-draft-mqsdtxwx"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-mga-world-cup-draft-mqs42kj0",
+        "matchId": "match-mga-world-cup-draft-mqsdtxwx",
         "gameId": "world-cup-draft",
-        "computeMode": "deterministic-fallback"
+        "computeMode": "sarvam-fallback"
       }
     }
   ],

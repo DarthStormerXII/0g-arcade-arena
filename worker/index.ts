@@ -7,6 +7,7 @@ import {
   RoomRuntimeError,
   startRoom,
   type ArcadeRoomState,
+  type AgentComputeMode,
   type AgentMoveProof,
 } from "./game-runtime";
 import { normalizeConfidence, parseAgentMoveContent } from "./agent-move-output";
@@ -43,6 +44,10 @@ type Env = {
   ZEROG_ROUTER_API_KEY?: string;
   ZEROG_COMPUTE_ROUTER?: string;
   ZEROG_COMPUTE_MODEL?: string;
+  SARVAM_API_KEY?: string;
+  SARVAM_BASE_URL?: string;
+  SARVAM_CHAT_MODEL?: string;
+  SARVAM_CHAT_MAX_TOKENS?: string;
 };
 
 export class ArcadeRoom {
@@ -117,6 +122,7 @@ export class ArcadeRoom {
           model: agentMove.model,
           contentHash: agentMove.contentHash,
           fallbackReason: agentMove.fallbackReason,
+          primaryComputeError: agentMove.primaryComputeError,
         };
         const next: ArcadeRoomState = {
           ...moved,
@@ -142,6 +148,7 @@ export class ArcadeRoom {
             provider: agentMove.provider,
             requestId: agentMove.requestId,
             fallbackReason: agentMove.fallbackReason,
+            primaryComputeError: agentMove.primaryComputeError,
           },
         });
       }
@@ -255,19 +262,20 @@ type AgentMoveChoice = {
   move: unknown;
   confidence: number;
   reasoningSummary: string;
-  computeMode: "0g-compute" | "deterministic-fallback";
+  computeMode: AgentComputeMode;
   provider: string | null;
   requestId: string | null;
   verified: boolean;
   model: string | null;
   contentHash: string | null;
   fallbackReason: string | null;
+  primaryComputeError: string | null;
 };
 
 export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<AgentMoveChoice> {
   assertAgentTurn(room);
   const adapter = adapterFor(room.gameId);
-  const fallback = (reason: string): AgentMoveChoice => ({
+  const fallback = (reason: string, primaryComputeError: string | null = reason): AgentMoveChoice => ({
     move: chooseDeterministicAgentMove(room, adapter),
     confidence: 0.62,
     reasoningSummary: `Deterministic fallback selected a legal ${room.gameId} move.`,
@@ -278,9 +286,8 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
     model: null,
     contentHash: null,
     fallbackReason: reason,
+    primaryComputeError,
   });
-
-  if (!env.ZEROG_ROUTER_API_KEY) return fallback("ZEROG_ROUTER_API_KEY is not configured in the Worker environment.");
 
   const router = env.ZEROG_COMPUTE_ROUTER || "https://router-api-testnet.integratenetwork.work/v1";
   const model = env.ZEROG_COMPUTE_MODEL || "qwen2.5-omni";
@@ -313,6 +320,19 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
     }),
   ].join("\n");
 
+  const fallbackAfterPrimaryFailure = async (primaryComputeError: string) => {
+    const sarvam = await chooseSarvamAgentMove(room, env, primaryComputeError, adapter, currentPlayerId);
+    if (sarvam.choice) return sarvam.choice;
+    const reason = sarvam.failureReason
+      ? `${sarvam.failureReason} 0G Router error: ${primaryComputeError}`
+      : primaryComputeError;
+    return fallback(reason, primaryComputeError);
+  };
+
+  if (!env.ZEROG_ROUTER_API_KEY) {
+    return fallbackAfterPrimaryFailure("ZEROG_ROUTER_API_KEY is not configured in the Worker environment.");
+  }
+
   try {
     const response = await fetch(`${router}/chat/completions`, {
       method: "POST",
@@ -338,13 +358,18 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
       payload = null;
     }
     if (!response.ok) {
-      return fallback(payload?.error?.message ?? (errorPreview || `0G Compute returned ${response.status}.`));
+      return fallbackAfterPrimaryFailure(payload?.error?.message ?? (errorPreview || `0G Compute returned ${response.status}.`));
     }
     const content = payload?.choices?.[0]?.message?.content ?? "";
-    const parsed = parseAgentMoveContent(content);
+    let parsed: ReturnType<typeof parseAgentMoveContent>;
+    try {
+      parsed = parseAgentMoveContent(content);
+    } catch (error) {
+      return fallbackAfterPrimaryFailure(error instanceof Error ? error.message : "0G Compute response was invalid.");
+    }
     const validation = room.state ? adapter.validateMove(room.state, currentPlayerId, parsed.move) : { ok: false };
     if (!validation.ok) {
-      return fallback(`0G Compute returned an illegal move: ${JSON.stringify(parsed.move)}.`);
+      return fallbackAfterPrimaryFailure(`0G Compute returned an illegal move: ${JSON.stringify(parsed.move)}.`);
     }
     return {
       move: parsed.move,
@@ -357,14 +382,16 @@ export async function chooseAgentMove(room: ArcadeRoomState, env: Env): Promise<
       model,
       contentHash: stableHash(content),
       fallbackReason: null,
+      primaryComputeError: null,
     };
   } catch (error) {
-    return fallback(error instanceof Error ? error.message : "0G Compute request failed.");
+    return fallbackAfterPrimaryFailure(error instanceof Error ? error.message : "0G Compute request failed.");
   }
 }
 
 type ComputeChatResponse = {
-  choices?: Array<{ message?: { content?: string } }>;
+  id?: string;
+  choices?: Array<{ message?: { content?: string | null; reasoning_content?: string | null } }>;
   error?: { message?: string };
   x_0g_trace?: {
     provider?: string;
@@ -372,6 +399,110 @@ type ComputeChatResponse = {
     tee_verified?: boolean;
   };
 };
+
+type SarvamFallbackResult = {
+  choice: AgentMoveChoice | null;
+  failureReason: string | null;
+};
+
+async function chooseSarvamAgentMove(
+  room: ArcadeRoomState,
+  env: Env,
+  primaryComputeError: string,
+  adapter = adapterFor(room.gameId),
+  currentPlayerId = getRoomView(room).currentPlayerIds[0] ?? "",
+): Promise<SarvamFallbackResult> {
+  if (!env.SARVAM_API_KEY) {
+    return {
+      choice: null,
+      failureReason: "Sarvam fallback is unavailable because SARVAM_API_KEY is not configured.",
+    };
+  }
+
+  const baseUrl = (env.SARVAM_BASE_URL || "https://api.sarvam.ai").replace(/\/+$/, "");
+  const model = env.SARVAM_CHAT_MODEL || "sarvam-30b";
+  const configuredMaxTokens = Number(env.SARVAM_CHAT_MAX_TOKENS || 160);
+  const maxTokens = Number.isFinite(configuredMaxTokens) && configuredMaxTokens > 0 ? configuredMaxTokens : 160;
+  const candidateMove = chooseDeterministicAgentMove(room, adapter);
+  const exactOutput = JSON.stringify({
+    move: candidateMove,
+    confidence: 0.72,
+    reasoningSummary: "legal fallback",
+  });
+  const sarvamPrompt = `Return exactly this JSON: ${exactOutput}`;
+
+  try {
+    const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${env.SARVAM_API_KEY}`,
+        "api-subscription-key": env.SARVAM_API_KEY,
+      },
+      body: JSON.stringify({
+        model,
+        messages: [{ role: "user", content: sarvamPrompt }],
+        temperature: 0,
+        max_tokens: maxTokens,
+      }),
+    });
+    const raw = await response.text();
+    const errorPreview = raw.slice(0, 200);
+    let payload: ComputeChatResponse | null = null;
+    try {
+      payload = JSON.parse(raw) as ComputeChatResponse;
+    } catch {
+      payload = null;
+    }
+    if (!response.ok) {
+      return {
+        choice: null,
+        failureReason: `Sarvam fallback failed after 0G error: ${payload?.error?.message ?? errorPreview ?? response.status}.`,
+      };
+    }
+
+    const content =
+      payload?.choices?.[0]?.message?.content ?? payload?.choices?.[0]?.message?.reasoning_content ?? "";
+    let parsed: ReturnType<typeof parseAgentMoveContent>;
+    try {
+      parsed = parseAgentMoveContent(content);
+    } catch (error) {
+      return {
+        choice: null,
+        failureReason: `Sarvam fallback returned invalid content: ${error instanceof Error ? error.message : "unknown parse error"}.`,
+      };
+    }
+    const validation = room.state ? adapter.validateMove(room.state, currentPlayerId, parsed.move) : { ok: false };
+    if (!validation.ok) {
+      return {
+        choice: null,
+        failureReason: `Sarvam fallback returned an illegal move: ${JSON.stringify(parsed.move)}.`,
+      };
+    }
+
+    return {
+      choice: {
+        move: parsed.move,
+        confidence: normalizeConfidence(parsed.confidence),
+        reasoningSummary: parsed.reasoningSummary || "Sarvam fallback selected a legal move after 0G Router failed.",
+        computeMode: "sarvam-fallback",
+        provider: "sarvam",
+        requestId: payload?.id ?? null,
+        verified: false,
+        model,
+        contentHash: stableHash(content),
+        fallbackReason: `0G Router error: ${primaryComputeError}`,
+        primaryComputeError,
+      },
+      failureReason: null,
+    };
+  } catch (error) {
+    return {
+      choice: null,
+      failureReason: `Sarvam fallback request failed: ${error instanceof Error ? error.message : "unknown error"}.`,
+    };
+  }
+}
 
 function assertAgentTurn(room: ArcadeRoomState) {
   const view = getRoomView(room);
@@ -433,6 +564,7 @@ export function parseExternalComputeProof(
     model,
     contentHash,
     fallbackReason: null,
+    primaryComputeError: null,
   };
 }
 
@@ -1013,6 +1145,8 @@ async function persistTerminalRoom(env: Env, room: ArcadeRoomState) {
         reason:
           room.computeMode === "0g-compute"
             ? "At least one agent move was selected through 0G Compute."
+            : room.computeMode === "sarvam-fallback"
+              ? "0G Compute was unavailable for at least one agent move; Sarvam selected a legal fallback move and the original 0G error is stored in the proof."
             : "No live 0G Compute move was used for this room.",
       }),
     )

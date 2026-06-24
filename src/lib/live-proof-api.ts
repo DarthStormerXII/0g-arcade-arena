@@ -16,6 +16,7 @@ export type LiveProof = {
   chainTx: string | null;
   settlementTx: string | null;
   computeMode: string;
+  computeProof?: unknown;
   storageMode: string;
   chainMode: string;
   daMode: string;

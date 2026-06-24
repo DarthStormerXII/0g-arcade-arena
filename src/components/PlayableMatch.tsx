@@ -41,6 +41,7 @@ function LiveRoomMatch({ matchId, gameId, roomId }: { matchId: string; gameId: s
   const isPlayer = room?.players.some((item) => item.id === player.id) ?? false;
   const isMyTurn = room?.currentPlayerIds.includes(player.id) ?? false;
   const currentPlayer = room?.players.find((item) => item.id === room.currentPlayerIds[0]);
+  const latestComputeProof = room?.computeProofs?.at(-1);
 
   useEffect(() => {
     let cancelled = false;
@@ -164,7 +165,18 @@ function LiveRoomMatch({ matchId, gameId, roomId }: { matchId: string; gameId: s
           Game: {liveGameId}<br />
           Turn: {roomTurn(room)}<br />
           Current player: {room?.currentPlayerIds[0] ?? "pending"}<br />
-          Opponent: {currentPlayer?.kind === "agent" ? "0G agent fallback move" : room?.opponentMode ?? "human"}<br />
+          Opponent: {currentPlayer?.kind === "agent" ? "0G agent" : room?.opponentMode ?? "human"}<br />
+          Compute: {latestComputeProof?.mode ?? room?.computeMode ?? "pending"}<br />
+          {latestComputeProof?.primaryComputeError ? (
+            <>
+              0G Router error: {latestComputeProof.primaryComputeError}<br />
+            </>
+          ) : null}
+          {latestComputeProof?.fallbackReason && !latestComputeProof.primaryComputeError ? (
+            <>
+              Fallback: {latestComputeProof.fallbackReason}<br />
+            </>
+          ) : null}
           Replay hash: {room?.replayHash ?? "pending"}<br />
           {settleTx ? <>Settlement tx: {settleTx.slice(0, 10)}...{settleTx.slice(-6)}</> : null}
         </div>

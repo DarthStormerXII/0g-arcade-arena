@@ -112,7 +112,7 @@ export type ProofReceipt = {
   storageUri: string;
   chainTx: string;
   daCommitment: string;
-  computeMode: "0g-compute" | "deterministic-fallback";
+  computeMode: "0g-compute" | "sarvam-fallback" | "deterministic-fallback";
   storageMode: "0g-storage" | "local-fallback";
   chainMode: "0g-galileo" | "local-mock";
   daMode: "0g-da" | "not-configured";

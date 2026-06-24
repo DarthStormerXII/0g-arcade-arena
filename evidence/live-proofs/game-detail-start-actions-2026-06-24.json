@@ -1,7 +1,7 @@
 {
   "mode": "local-game-detail-start-actions-browser-ui",
   "status": "passed",
-  "checkedAt": "2026-06-24T13:28:10.842Z",
+  "checkedAt": "2026-06-24T17:56:07.914Z",
   "url": "http://localhost:3021",
   "games": [
     "grid-four",
@@ -13,21 +13,21 @@
     {
       "gameId": "grid-four",
       "gameName": "Grid Four",
-      "agentId": "detail-start-grid-four-mqs3z87t",
-      "displayName": "Detail Start Grid Four MQS3Z87T",
+      "agentId": "detail-start-grid-four-mqsdju2w",
+      "displayName": "Detail Start Grid Four MQSDJU2W",
       "registrationStatus": 201,
       "route": "http://localhost:3021/games/grid-four",
-      "roomCode": "GR-0FIK",
-      "humanUrl": "http://localhost:3021/room/gr-0fik?game=grid-four&opponent=human&wager=free",
-      "agentUrl": "http://localhost:3021/match/match-gr-e13f?room=gr-e13f&game=grid-four",
+      "roomCode": "GR-Z2GH",
+      "humanUrl": "http://localhost:3021/room/gr-z2gh?game=grid-four&opponent=human&wager=free",
+      "agentUrl": "http://localhost:3021/match/match-gr-gpco?room=gr-gpco&game=grid-four",
       "screenshots": {
         "humanRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-grid-four-human-room-2026-06-24.png",
         "agentMatch": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-grid-four-agent-match-2026-06-24.png"
       },
       "observed": {
-        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nGRID FOUR\nWAGERS AVAILABLE\nALIGNMENT\nGRID FOUR\n\nFast alignment battles for humans and agents.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n128\nDETAIL START GRID FOUR MQS3Z87T\nHOME WAGER AGENT MQS3Z6FX\nHOME START AGENT MQS3Z6FX\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS38SVE\nHOME START AGENT MQS38R6O\nHOME WAGER AGENT MQS38R6O\nAVATAR EXPLICIT\nAVATAR GENERATED\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2Z7JJ\nHOME START AGENT MQS2Z5T5\nHOME WAGER AGENT MQS2Z5T5\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2TK9W\nHOME START AGENT MQS2TGHS\nHOME WAGER AGENT MQS2TGHS\nDETAIL START GRID FOUR MQS2P3LG\nHOME START AGENT MQS2P1RT\nHOME WAGER AGEN",
-        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM GR-0FIK\nWAITING\nGR-0FIK\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: grid-four\nWager: Free match\nPlayers: Guest EF22D2\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
-        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: GRID-FOUR\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: gr-e13f\nGame: grid-four\nTurn: 0\nCurrent player: guest-333b18\nOpponent: agent\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
+        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nGRID FOUR\nWAGERS AVAILABLE\nALIGNMENT\nGRID FOUR\n\nFast alignment battles for humans and agents.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n140\nDETAIL START GRID FOUR MQSDJU2W\nHOME START AGENT MQSDJSHN\nHOME WAGER AGENT MQSDJSHN\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQSDAIU6\nHOME START AGENT MQSDAHK1\nHOME WAGER AGENT MQSDAHK1\nHOME START AGENT MQS466CP\nHOME WAGER AGENT MQS466CP\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS3Z87T\nHOME WAGER AGENT MQS3Z6FX\nHOME START AGENT MQS3Z6FX\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS38SVE\nHOME START AGENT MQS38R6O\nHOME WAGER AGENT MQS38R6O\nAVATAR EXPLICIT\nAVATAR GENERATED\nAVATAR EXPLICIT\nAVATA",
+        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nROOM GR-Z2GH\nWAITING\nGR-Z2GH\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: grid-four\nWager: Free match\nPlayers: Guest 3D6359\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nACTIVE MATCH: GRID-FOUR\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: gr-gpco\nGame: grid-four\nTurn: 0\nCurrent player: guest-5038a7\nOpponent: agent\nCompute: pending\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
       },
       "verified": {
         "agentRegistered": true,
@@ -42,21 +42,21 @@
     {
       "gameId": "fleet-duel",
       "gameName": "Fleet Duel",
-      "agentId": "detail-start-fleet-duel-mqs3z87t",
-      "displayName": "Detail Start Fleet Duel MQS3Z87T",
+      "agentId": "detail-start-fleet-duel-mqsdju2w",
+      "displayName": "Detail Start Fleet Duel MQSDJU2W",
       "registrationStatus": 201,
       "route": "http://localhost:3021/games/fleet-duel",
-      "roomCode": "FL-7I4Q",
-      "humanUrl": "http://localhost:3021/room/fl-7i4q?game=fleet-duel&opponent=human&wager=free",
-      "agentUrl": "http://localhost:3021/match/match-fl-50k8?room=fl-50k8&game=fleet-duel",
+      "roomCode": "FL-QM41",
+      "humanUrl": "http://localhost:3021/room/fl-qm41?game=fleet-duel&opponent=human&wager=free",
+      "agentUrl": "http://localhost:3021/match/match-fl-yju2?room=fl-yju2&game=fleet-duel",
       "screenshots": {
         "humanRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-fleet-duel-human-room-2026-06-24.png",
         "agentMatch": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-fleet-duel-agent-match-2026-06-24.png"
       },
       "observed": {
-        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nFLEET DUEL\nWAGERS AVAILABLE\nHIDDEN-INFORMATION\nFLEET DUEL\n\nHidden fleet search with deterministic seeded placement.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n37\nDETAIL START FLEET DUEL MQS3Z87T\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS38SVE\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2Z7JJ\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2TK9W\nDETAIL START FLEET DUEL MQS2P3LG\nMULTI FLEET-DUEL AGENT\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2GMP9\nDETAIL START FLEET DUEL MQS27R4B\nDETAIL START FLEET DUEL MQS20NJY\nDETAIL START FLEET DUEL MQS19HAC\nDETAIL START FLEET DUEL MQS181AO\nDETAIL START FLEET DUEL MQS16T6F\nDETAIL START FLEET DUEL MQS0HK7Z\nDETAIL ST",
-        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM FL-7I4Q\nWAITING\nFL-7I4Q\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: fleet-duel\nWager: Free match\nPlayers: Guest 58C731\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
-        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: FLEET-DUEL\nFIRE 0,0\nFIRE 1,0\nFIRE 2,0\nFIRE 3,0\nFIRE 4,0\nFIRE 5,0\nFIRE 0,1\nFIRE 1,1\nFIRE 2,1\nFIRE 3,1\nFIRE 4,1\nFIRE 5,1\nFIRE 0,2\nFIRE 1,2\nFIRE 2,2\nFIRE 3,2\nFIRE 4,2\nFIRE 5,2\nFIRE 0,3\nFIRE 1,3\nFIRE 2,3\nFIRE 3,3\nFIRE 4,3\nFIRE 5,3\nFIRE 0,4\nFIRE 1,4\nFIRE 2,4\nFIRE 3,4\nFIRE 4,4\nFIRE 5,4\nFIRE 0,5\nFIRE 1,5\nFIRE 2,5\nFIRE 3,5\nFIRE 4,5\nFIRE 5,5\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: fl-50k8\nGame: fleet-duel\nTurn: 0\nCurrent player: guest-3eb520\nOpponent: agent\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
+        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nFLEET DUEL\nWAGERS AVAILABLE\nHIDDEN-INFORMATION\nFLEET DUEL\n\nHidden fleet search with deterministic seeded placement.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n41\nDETAIL START FLEET DUEL MQSDJU2W\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQSDAIU6\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS3Z87T\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS38SVE\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2Z7JJ\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2TK9W\nDETAIL START FLEET DUEL MQS2P3LG\nMULTI FLEET-DUEL AGENT\nMULTI FLEET-DUEL AGENT\nDETAIL START FLEET DUEL MQS2GMP9\nDETAIL START FLEET DUEL MQS27R4B\nDETAIL START FLEET DUEL MQS20NJY\nDETAIL START FLEET DUEL MQS19",
+        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM FL-QM41\nWAITING\nFL-QM41\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: fleet-duel\nWager: Free match\nPlayers: Guest B7BE61\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nACTIVE MATCH: FLEET-DUEL\nFIRE 0,0\nFIRE 1,0\nFIRE 2,0\nFIRE 3,0\nFIRE 4,0\nFIRE 5,0\nFIRE 0,1\nFIRE 1,1\nFIRE 2,1\nFIRE 3,1\nFIRE 4,1\nFIRE 5,1\nFIRE 0,2\nFIRE 1,2\nFIRE 2,2\nFIRE 3,2\nFIRE 4,2\nFIRE 5,2\nFIRE 0,3\nFIRE 1,3\nFIRE 2,3\nFIRE 3,3\nFIRE 4,3\nFIRE 5,3\nFIRE 0,4\nFIRE 1,4\nFIRE 2,4\nFIRE 3,4\nFIRE 4,4\nFIRE 5,4\nFIRE 0,5\nFIRE 1,5\nFIRE 2,5\nFIRE 3,5\nFIRE 4,5\nFIRE 5,5\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: fl-yju2\nGame: fleet-duel\nTurn: 0\nCurrent player: guest-c25e48\nOpponent: agent\nCompute: pending\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
       },
       "verified": {
         "agentRegistered": true,
@@ -71,21 +71,21 @@
     {
       "gameId": "tile-race",
       "gameName": "Tile Race",
-      "agentId": "detail-start-tile-race-mqs3z87t",
-      "displayName": "Detail Start Tile Race MQS3Z87T",
+      "agentId": "detail-start-tile-race-mqsdju2w",
+      "displayName": "Detail Start Tile Race MQSDJU2W",
       "registrationStatus": 201,
       "route": "http://localhost:3021/games/tile-race",
-      "roomCode": "TI-C91N",
-      "humanUrl": "http://localhost:3021/room/ti-c91n?game=tile-race&opponent=human&wager=free",
-      "agentUrl": "http://localhost:3021/match/match-ti-9wd7?room=ti-9wd7&game=tile-race",
+      "roomCode": "TI-OBHE",
+      "humanUrl": "http://localhost:3021/room/ti-obhe?game=tile-race&opponent=human&wager=free",
+      "agentUrl": "http://localhost:3021/match/match-ti-n569?room=ti-n569&game=tile-race",
       "screenshots": {
         "humanRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-tile-race-human-room-2026-06-24.png",
         "agentMatch": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-tile-race-agent-match-2026-06-24.png"
       },
       "observed": {
-        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nTILE RACE\nFREE PLAY ONLY\nSCORE-RACE\nTILE RACE\n\nSeeded score race with solo and async head-to-head modes.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\n\nThis game is currently free play only.\n\nQUALIFIED AGENTS\n32\nDETAIL START TILE RACE MQS3Z87T\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS38SVE\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2Z7JJ\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2TK9W\nDETAIL START TILE RACE MQS2P3LG\nMULTI TILE-RACE AGENT\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2GMP9\nDETAIL START TILE RACE MQS27R4B\nDETAIL START TILE RACE MQS20NJY\nDETAIL START TILE RACE MQS19HAC\nDETAIL START TILE RACE MQS181AO\nDETAIL START TILE RACE MQS16T6F\nDETAIL START TILE RACE MQS0HK7Z\nDETAIL START TILE RACE ",
-        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM TI-C91N\nWAITING\nTI-C91N\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: tile-race\nWager: Free match\nPlayers: Guest EF381C\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
-        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: TILE-RACE\n2\n2\nUP\nDOWN\nLEFT\nRIGHT\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: ti-9wd7\nGame: tile-race\nTurn: 0\nCurrent player: guest-88dc48\nOpponent: agent\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
+        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nTILE RACE\nFREE PLAY ONLY\nSCORE-RACE\nTILE RACE\n\nSeeded score race with solo and async head-to-head modes.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\n\nThis game is currently free play only.\n\nQUALIFIED AGENTS\n36\nDETAIL START TILE RACE MQSDJU2W\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQSDAIU6\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS3Z87T\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS38SVE\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2Z7JJ\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2TK9W\nDETAIL START TILE RACE MQS2P3LG\nMULTI TILE-RACE AGENT\nMULTI TILE-RACE AGENT\nDETAIL START TILE RACE MQS2GMP9\nDETAIL START TILE RACE MQS27R4B\nDETAIL START TILE RACE MQS20NJY\nDETAIL START TILE RACE MQS19HAC\nDETAIL STAR",
+        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM TI-OBHE\nWAITING\nTI-OBHE\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: tile-race\nWager: Free match\nPlayers: Guest 38EA61\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: TILE-RACE\n4\n2\nUP\nDOWN\nLEFT\nRIGHT\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: ti-n569\nGame: tile-race\nTurn: 0\nCurrent player: guest-8c403a\nOpponent: agent\nCompute: pending\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
       },
       "verified": {
         "agentRegistered": true,
@@ -100,21 +100,21 @@
     {
       "gameId": "world-cup-draft",
       "gameName": "World Cup Draft",
-      "agentId": "detail-start-world-cup-draft-mqs3z87t",
-      "displayName": "Detail Start World Cup Draft MQS3Z87T",
+      "agentId": "detail-start-world-cup-draft-mqsdju2w",
+      "displayName": "Detail Start World Cup Draft MQSDJU2W",
       "registrationStatus": 201,
       "route": "http://localhost:3021/games/world-cup-draft",
-      "roomCode": "WO-8P51",
-      "humanUrl": "http://localhost:3021/room/wo-8p51?game=world-cup-draft&opponent=human&wager=free",
-      "agentUrl": "http://localhost:3021/match/match-wo-an68?room=wo-an68&game=world-cup-draft",
+      "roomCode": "WO-R2PI",
+      "humanUrl": "http://localhost:3021/room/wo-r2pi?game=world-cup-draft&opponent=human&wager=free",
+      "agentUrl": "http://localhost:3021/match/match-wo-5o5z?room=wo-5o5z&game=world-cup-draft",
       "screenshots": {
         "humanRoom": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-world-cup-draft-human-room-2026-06-24.png",
         "agentMatch": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/game-detail-start-world-cup-draft-agent-match-2026-06-24.png"
       },
       "observed": {
-        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nWORLD CUP DRAFT\nWAGERS AVAILABLE\nDRAFT-SIMULATION\nWORLD CUP DRAFT\n\nFlagship draft simulation adapted from 0G World Cup.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n32\nDETAIL START WORLD CUP DRAFT MQS3Z87T\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS38SVE\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2Z7JJ\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2TK9W\nDETAIL START WORLD CUP DRAFT MQS2P3LG\nMULTI WORLD-CUP-DRAFT AGENT\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2GMP9\nDETAIL START WORLD CUP DRAFT MQS27R4B\nDETAIL START WORLD CUP DRAFT MQS20NJY\nDETAIL START WORLD CUP DRAFT MQS19HAC\nDETAIL START WORLD CUP DRAFT MQS18",
-        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM WO-8P51\nWAITING\nWO-8P51\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: world-cup-draft\nWager: Free match\nPlayers: Guest 4FD42C\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
-        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nACTIVE MATCH: WORLD-CUP-DRAFT\nguest-6e6663\n\nDrafting...\n\ndetail-start-world-cup-draft-mqs3z87t\n\nDrafting...\n\nDRAFT FRA-9\nDRAFT ENG-7\nDRAFT ESP-6\nDRAFT GER-1\nDRAFT ITA-3\nDRAFT USA-8\nDRAFT GHA-5\nDRAFT MAR-4\nDRAFT ARG-10\nDRAFT BRA-11\nDRAFT JPN-14\nDRAFT KOR-18\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: wo-an68\nGame: world-cup-draft\nTurn: 0\nCurrent player: guest-6e6663\nOpponent: agent\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
+        "detailTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nWORLD CUP DRAFT\nWAGERS AVAILABLE\nDRAFT-SIMULATION\nWORLD CUP DRAFT\n\nFlagship draft simulation adapted from 0G World Cup.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n36\nDETAIL START WORLD CUP DRAFT MQSDJU2W\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQSDAIU6\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS3Z87T\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS38SVE\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2Z7JJ\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2TK9W\nDETAIL START WORLD CUP DRAFT MQS2P3LG\nMULTI WORLD-CUP-DRAFT AGENT\nMULTI WORLD-CUP-DRAFT AGENT\nDETAIL START WORLD CUP DRAFT MQS2GMP9\nDETAIL START WOR",
+        "humanTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nAUTH LOADING\nROOM WO-R2PI\nWAITING\nWO-R2PI\n\nShare this code with a friend. When both players join, the match starts from the same deterministic game rules and the result can be inspected from the proof route.\n\nGame: world-cup-draft\nWager: Free match\nPlayers: Guest 1EDFFF\nSTART MATCH\nCANCEL ROOM\nCOPY ROOM CODE",
+        "agentTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nACTIVE MATCH: WORLD-CUP-DRAFT\nguest-3c9553\n\nDrafting...\n\ndetail-start-world-cup-draft-mqsdju2w\n\nDrafting...\n\nDRAFT ARG-10\nDRAFT BRA-11\nDRAFT JPN-14\nDRAFT KOR-18\nDRAFT FRA-9\nDRAFT ENG-7\nDRAFT ESP-6\nDRAFT GER-1\nDRAFT ITA-3\nDRAFT USA-8\nDRAFT GHA-5\nDRAFT MAR-4\nACTIVE\nSHARED ROOM MATCH\n\nYour turn. Pick a legal move.\n\nRoom: wo-5o5z\nGame: world-cup-draft\nTurn: 0\nCurrent player: guest-3c9553\nOpponent: agent\nCompute: pending\nReplay hash: pending\n\nREVEAL RESULT\nOPEN PROOF"
       },
       "verified": {
         "agentRegistered": true,

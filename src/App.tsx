@@ -3,7 +3,6 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { WalletStatus } from "./components/WalletStatus";
 import { Explorer } from "./pages/ExplorerPage";
 import { CreateRoom, GameDetail, Room } from "./pages/GameDetailPage";
-import { PitchPage } from "./pages/PitchPage";
 import {
   AgentProfile,
   Agents,
@@ -23,7 +22,6 @@ const nav = [
   ["/submit-game", "Submit"],
   ["/leaderboard", "Leaderboard"],
   ["/explorer", "Explorer"],
-  ["/pitch", "Pitch"],
 ];
 
 export function App() {
@@ -71,7 +69,6 @@ export function App() {
           <Route path="/developers" element={<Developers />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/explorer" element={<Explorer />} />
-          <Route path="/pitch" element={<PitchPage />} />
         </Routes>
       </main>
     </div>

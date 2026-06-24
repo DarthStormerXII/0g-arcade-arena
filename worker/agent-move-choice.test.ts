@@ -46,11 +46,12 @@ function makeActiveTileAgentRoom() {
   );
 }
 
-function makeEnv() {
+function makeEnv(overrides: Record<string, string | undefined> = {}) {
   return {
     ZEROG_ROUTER_API_KEY: "test-router-key",
     ZEROG_COMPUTE_ROUTER: "https://compute.test/v1",
     ZEROG_COMPUTE_MODEL: "qwen2.5-omni",
+    ...overrides,
   } as never;
 }
 
@@ -90,6 +91,7 @@ describe("0G Compute agent move selection", () => {
     expect(choice.requestId).toBe("mock-request");
     expect(choice.verified).toBe(true);
     expect(choice.fallbackReason).toBeNull();
+    expect(choice.primaryComputeError).toBeNull();
   });
 
   it("falls back when mocked 0G Compute returns malformed content", async () => {
@@ -99,7 +101,9 @@ describe("0G Compute agent move selection", () => {
 
     expect(choice.computeMode).toBe("deterministic-fallback");
     expect(choice.move).toEqual({ column: 3 });
-    expect(choice.fallbackReason).toBe("0G Compute response did not contain JSON.");
+    expect(choice.fallbackReason).toContain("Sarvam fallback is unavailable");
+    expect(choice.fallbackReason).toContain("0G Router error: 0G Compute response did not contain JSON.");
+    expect(choice.primaryComputeError).toBe("0G Compute response did not contain JSON.");
   });
 
   it("falls back when mocked 0G Compute returns an illegal move", async () => {
@@ -110,6 +114,83 @@ describe("0G Compute agent move selection", () => {
     expect(choice.computeMode).toBe("deterministic-fallback");
     expect(choice.move).toEqual({ column: 3 });
     expect(choice.fallbackReason).toContain("0G Compute returned an illegal move");
+    expect(choice.primaryComputeError).toContain("0G Compute returned an illegal move");
+  });
+
+  it("uses Sarvam fallback when 0G Router returns a rate limit error", async () => {
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(JSON.stringify({ error: { message: "rate_limit_exceeded: retry later" } }), {
+          status: 429,
+          headers: { "content-type": "application/json" },
+        }),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            id: "sarvam-chat-1",
+            choices: [
+              {
+                message: {
+                  content: '{"move":{"column":3},"confidence":0.77,"reasoningSummary":"Take center after Router failed."}',
+                },
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const choice = await chooseAgentMove(
+      makeActiveAgentRoom(),
+      makeEnv({
+        SARVAM_API_KEY: "test-sarvam-key",
+        SARVAM_BASE_URL: "https://sarvam.test",
+        SARVAM_CHAT_MODEL: "sarvam-30b",
+      }),
+    );
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(String(fetchMock.mock.calls[1][0])).toBe("https://sarvam.test/v1/chat/completions");
+    expect(choice.computeMode).toBe("sarvam-fallback");
+    expect(choice.provider).toBe("sarvam");
+    expect(choice.requestId).toBe("sarvam-chat-1");
+    expect(choice.move).toEqual({ column: 3 });
+    expect(choice.fallbackReason).toBe("0G Router error: rate_limit_exceeded: retry later");
+    expect(choice.primaryComputeError).toBe("rate_limit_exceeded: retry later");
+  });
+
+  it("uses deterministic fallback when 0G fails and Sarvam returns an illegal move", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi
+        .fn()
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ error: { message: "insufficient balance" } }), {
+            status: 402,
+            headers: { "content-type": "application/json" },
+          }),
+        )
+        .mockResolvedValueOnce(
+          new Response(
+            JSON.stringify({
+              id: "sarvam-chat-illegal",
+              choices: [{ message: { content: '{"move":{"column":99},"confidence":0.5,"reasoningSummary":"Illegal."}' } }],
+            }),
+            { status: 200, headers: { "content-type": "application/json" } },
+          ),
+        ),
+    );
+
+    const choice = await chooseAgentMove(makeActiveAgentRoom(), makeEnv({ SARVAM_API_KEY: "test-sarvam-key" }));
+
+    expect(choice.computeMode).toBe("deterministic-fallback");
+    expect(choice.move).toEqual({ column: 3 });
+    expect(choice.fallbackReason).toContain("Sarvam fallback returned an illegal move");
+    expect(choice.fallbackReason).toContain("0G Router error: insufficient balance");
+    expect(choice.primaryComputeError).toBe("insufficient balance");
   });
 
   it("accepts a legal mocked 0G Compute move for Tile Race", async () => {
@@ -128,6 +209,7 @@ describe("0G Compute agent move selection", () => {
     expect(choice.requestId).toBe("mock-request");
     expect(choice.verified).toBe(true);
     expect(choice.fallbackReason).toBeNull();
+    expect(choice.primaryComputeError).toBeNull();
   });
 
   it("normalizes external direct-broker proof only for agent moves", () => {
@@ -163,6 +245,7 @@ describe("0G Compute agent move selection", () => {
       model: "qwen2.5-omni",
       contentHash: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       fallbackReason: null,
+      primaryComputeError: null,
     });
   });
 

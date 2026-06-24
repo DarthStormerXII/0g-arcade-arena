@@ -10,7 +10,6 @@
 - `forge` - Solidity contract tests.
 - `cast` - EVM wallet, RPC, and contract interaction helper.
 - `wrangler` - Cloudflare Worker/Pages/D1/R2/KV operations.
-- `playwright-cli-sessions` - deterministic browser automation when the configured browser host is available.
 - `gh`, `vercel`, `supabase`, `flyctl`, `stripe`, `docker` - available external service CLIs.
 - `rg`, `jq`, `psql`, `sqlite3` - local search/data inspection helpers.
 

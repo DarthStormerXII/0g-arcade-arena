@@ -1,32 +1,32 @@
 {
   "mode": "local-human-automatch-api",
   "status": "passed",
-  "checkedAt": "2026-06-24T13:30:41.627Z",
+  "checkedAt": "2026-06-24T17:58:54.033Z",
   "baseUrl": "http://localhost:3021",
   "wagerWei": "100000000000000",
   "matchGroups": {
-    "free": "free-20260624133041",
-    "wager": "wager-20260624133041"
+    "free": "free-20260624175853",
+    "wager": "wager-20260624175853"
   },
   "free": {
     "first": {
       "status": 200,
       "matchmaking": "waiting",
-      "roomId": "auto-4969278d",
+      "roomId": "auto-61657068",
       "roomStatus": "waiting",
       "playerCount": 1
     },
     "second": {
       "status": 200,
       "matchmaking": "started",
-      "roomId": "auto-4969278d",
+      "roomId": "auto-61657068",
       "roomStatus": "active",
       "playerCount": 2
     },
     "third": {
       "status": 200,
       "matchmaking": "waiting",
-      "roomId": "auto-67b7d762",
+      "roomId": "auto-b73b1c30",
       "roomStatus": "waiting",
       "playerCount": 1
     }
@@ -35,7 +35,7 @@
     "first": {
       "status": 200,
       "matchmaking": "waiting",
-      "roomId": "auto-2270f9e7",
+      "roomId": "auto-aa6488ed",
       "roomStatus": "waiting",
       "playerCount": 1,
       "wagerWei": "100000000000000"
@@ -43,7 +43,7 @@
     "second": {
       "status": 200,
       "matchmaking": "joined",
-      "roomId": "auto-2270f9e7",
+      "roomId": "auto-aa6488ed",
       "roomStatus": "ready",
       "playerCount": 2,
       "wagerWei": "100000000000000"

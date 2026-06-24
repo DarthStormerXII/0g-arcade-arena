@@ -1,0 +1,53 @@
+{
+  "schema": "0g-arcade.sarvam-fallback-agent-move.v1",
+  "mode": "sarvam-fallback-agent-move",
+  "baseUrl": "http://localhost:3021",
+  "roomId": "sarvam-fallback-mqsds5m8",
+  "checkedAt": "2026-06-24T18:02:35.037Z",
+  "api": {
+    "created": {
+      "status": 200,
+      "roomId": "sarvam-fallback-mqsds5m8"
+    },
+    "joined": {
+      "status": 200,
+      "playerCount": 2
+    },
+    "started": {
+      "status": 200,
+      "roomStatus": "active"
+    },
+    "agentMove": {
+      "status": 200,
+      "computeMode": "sarvam-fallback",
+      "provider": "sarvam",
+      "model": "sarvam-30b",
+      "primaryComputeError": "Network connection lost.",
+      "fallbackReason": "0G Router error: Network connection lost.",
+      "roomComputeProofCount": 1
+    }
+  },
+  "latestProof": {
+    "turn": 0,
+    "playerId": "agent-sarvam-sarvam-fallback-mqsds5m8",
+    "mode": "sarvam-fallback",
+    "provider": "sarvam",
+    "requestId": "20260624_f80526c3-b54d-4d24-a93c-79beb0b98c73",
+    "verified": false,
+    "model": "sarvam-30b",
+    "contentHash": "0x5bed3d03",
+    "fallbackReason": "0G Router error: Network connection lost.",
+    "primaryComputeError": "Network connection lost."
+  },
+  "verified": {
+    "roomCreated": true,
+    "roomJoined": true,
+    "roomStarted": true,
+    "agentMoveAccepted": true,
+    "sarvamFallbackUsed": true,
+    "providerDisclosed": true,
+    "primary0gErrorDisclosed": true,
+    "roomProofPersisted": true
+  },
+  "status": "passed"
+}

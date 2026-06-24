@@ -4,6 +4,7 @@ import { stableHash } from "../src/lib/hash";
 
 export type OpponentMode = "human" | "agent";
 export type RoomStatus = "waiting" | "ready" | "active" | "finished" | "cancelled";
+export type AgentComputeMode = "0g-compute" | "sarvam-fallback" | "deterministic-fallback";
 
 export type ArcadeRoomState = {
   roomId: string;
@@ -18,7 +19,7 @@ export type ArcadeRoomState = {
   replay: GameReplay | null;
   result: GameResult | null;
   score: ScoreSummary | null;
-  computeMode?: "0g-compute" | "deterministic-fallback";
+  computeMode?: AgentComputeMode;
   computeProofs?: AgentMoveProof[];
   createdAt: string;
   updatedAt: string;
@@ -27,13 +28,14 @@ export type ArcadeRoomState = {
 export type AgentMoveProof = {
   turn: number;
   playerId: string;
-  mode: "0g-compute" | "deterministic-fallback";
+  mode: AgentComputeMode;
   provider: string | null;
   requestId: string | null;
   verified: boolean;
   model: string | null;
   contentHash: string | null;
   fallbackReason: string | null;
+  primaryComputeError: string | null;
 };
 
 export type CreateRoomInput = {

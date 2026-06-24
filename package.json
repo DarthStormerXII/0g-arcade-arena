@@ -44,6 +44,7 @@
     "agent:wager-match-check": "node scripts/verify-agent-wager-match-api.mjs",
     "agent:wager-router-compute-match-check": "AGENT_WAGER_EXPECT_COMPUTE_MODE=0g-compute AGENT_WAGER_ROOM_PREFIX=h2a-router-wager AGENT_WAGER_EVIDENCE_PATH=evidence/live-proofs/agent-wager-router-compute-match-2026-06-24.json node scripts/verify-agent-wager-match-api.mjs",
     "agent:wager-policy-check": "node scripts/verify-agent-wager-policy.mjs",
+    "agent:sarvam-fallback-check": "node scripts/verify-sarvam-fallback-agent-move.mjs",
     "agent:multigame-router-compute-check": "node scripts/verify-multigame-router-compute.mjs",
     "human:automatch-check": "node scripts/verify-human-automatch-api.mjs",
     "home:product-flow-check": "node scripts/verify-home-product-flow.mjs",

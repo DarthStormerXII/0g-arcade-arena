@@ -178,12 +178,17 @@ const verified = {
     room.agentMoves.every(
       (move) =>
         move.status === 200 &&
-        (move.computeMode === "deterministic-fallback" || move.computeMode === "0g-compute") &&
+        (move.computeMode === "deterministic-fallback" ||
+          move.computeMode === "sarvam-fallback" ||
+          move.computeMode === "0g-compute") &&
         (move.computeMode === "0g-compute" ? move.fallbackReason == null : typeof move.fallbackReason === "string"),
     ),
   ),
   agentProofsDiscloseComputeMode: agentRooms.every(
-    (room) => room.proof?.computeMode === "deterministic-fallback" || room.proof?.computeMode === "0g-compute",
+    (room) =>
+      room.proof?.computeMode === "deterministic-fallback" ||
+      room.proof?.computeMode === "sarvam-fallback" ||
+      room.proof?.computeMode === "0g-compute",
   ),
   allProofsIndexed: [...humanRooms, ...agentRooms].every((room) => room.proof?.matchId === `match-${room.roomId}`),
 };

@@ -53,6 +53,10 @@ const output = {
   ZEROG_STORAGE_MODE: "live",
 };
 
+for (const key of ["SARVAM_API_KEY", "SARVAM_BASE_URL", "SARVAM_CHAT_MODEL", "SARVAM_CHAT_MAX_TOKENS"]) {
+  if (source[key]) output[key] = source[key];
+}
+
 mkdirSync(dirname(targetFile), { recursive: true });
 writeFileSync(
   targetFile,

@@ -38,6 +38,10 @@ const output = {
   ZEROG_COMPUTE_MODEL: source.ZEROG_COMPUTE_MODEL || "qwen2.5-omni",
 };
 
+for (const key of ["SARVAM_API_KEY", "SARVAM_BASE_URL", "SARVAM_CHAT_MODEL", "SARVAM_CHAT_MAX_TOKENS"]) {
+  if (source[key]) output[key] = source[key];
+}
+
 writeFileSync(
   targetFile,
   `${Object.entries(output)

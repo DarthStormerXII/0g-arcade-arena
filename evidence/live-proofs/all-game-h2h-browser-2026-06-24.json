@@ -1,7 +1,7 @@
 {
   "mode": "local-all-game-h2h-browser-ui",
   "status": "passed",
-  "checkedAt": "2026-06-24T13:30:41.002Z",
+  "checkedAt": "2026-06-24T17:58:53.405Z",
   "url": "http://localhost:3021",
   "games": [
     "grid-four",
@@ -12,140 +12,140 @@
   "rooms": [
     {
       "gameId": "grid-four",
-      "roomId": "gr-rixw",
-      "matchId": "match-gr-rixw",
-      "roomCode": "GR-RIXW",
+      "roomId": "gr-wkgp",
+      "matchId": "match-gr-wkgp",
+      "roomCode": "GR-WKGP",
       "hostGuest": {
-        "id": "guest-5c0cbf",
-        "displayName": "Guest 5C0CBF"
+        "id": "guest-24fa5e",
+        "displayName": "Guest 24FA5E"
       },
       "guestGuest": {
-        "id": "guest-7bd57d",
-        "displayName": "Guest 7BD57D"
+        "id": "guest-eb4b6b",
+        "displayName": "Guest EB4B6B"
       },
       "players": [
         {
-          "id": "guest-5c0cbf",
+          "id": "guest-24fa5e",
           "kind": "human",
-          "displayName": "Guest 5C0CBF"
+          "displayName": "Guest 24FA5E"
         },
         {
-          "id": "guest-7bd57d",
+          "id": "guest-eb4b6b",
           "kind": "human",
-          "displayName": "Guest 7BD57D"
+          "displayName": "Guest EB4B6B"
         }
       ],
       "clickedMoves": [
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 1
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 2
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 3
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 4
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 5
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 1",
           "statusAfterMove": "active",
           "turnAfterMove": 6
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 7
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 8
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 9
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 10
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 11
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 2",
           "statusAfterMove": "active",
           "turnAfterMove": 12
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 13
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 14
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 15
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 16
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 17
         },
         {
-          "playerId": "guest-7bd57d",
+          "playerId": "guest-eb4b6b",
           "label": "Drop in column 3",
           "statusAfterMove": "active",
           "turnAfterMove": 18
         },
         {
-          "playerId": "guest-5c0cbf",
+          "playerId": "guest-24fa5e",
           "label": "Drop in column 4",
           "statusAfterMove": "finished",
           "turnAfterMove": 19
@@ -153,16 +153,16 @@
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xce53774b",
-        "resultHash": "0x127398a6",
+        "replayHash": "0xd914979e",
+        "resultHash": "0x43408612",
         "winnerIds": [
-          "guest-5c0cbf"
+          "guest-24fa5e"
         ],
         "reason": "four connected cells"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-gr-rixw",
+        "matchId": "match-gr-wkgp",
         "gameId": "grid-four"
       },
       "screenshots": {
@@ -183,385 +183,349 @@
     },
     {
       "gameId": "fleet-duel",
-      "roomId": "fl-xdhg",
-      "matchId": "match-fl-xdhg",
-      "roomCode": "FL-XDHG",
+      "roomId": "fl-urj2",
+      "matchId": "match-fl-urj2",
+      "roomCode": "FL-URJ2",
       "hostGuest": {
-        "id": "guest-c051a4",
-        "displayName": "Guest C051A4"
+        "id": "guest-214b5d",
+        "displayName": "Guest 214B5D"
       },
       "guestGuest": {
-        "id": "guest-816303",
-        "displayName": "Guest 816303"
+        "id": "guest-073753",
+        "displayName": "Guest 073753"
       },
       "players": [
         {
-          "id": "guest-c051a4",
+          "id": "guest-214b5d",
           "kind": "human",
-          "displayName": "Guest C051A4"
+          "displayName": "Guest 214B5D"
         },
         {
-          "id": "guest-816303",
+          "id": "guest-073753",
           "kind": "human",
-          "displayName": "Guest 816303"
+          "displayName": "Guest 073753"
         }
       ],
       "clickedMoves": [
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 0,0",
           "statusAfterMove": "active",
           "turnAfterMove": 1
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 0,0",
           "statusAfterMove": "active",
           "turnAfterMove": 2
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 1,0",
           "statusAfterMove": "active",
           "turnAfterMove": 3
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 1,0",
           "statusAfterMove": "active",
           "turnAfterMove": 4
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 2,0",
           "statusAfterMove": "active",
           "turnAfterMove": 5
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 2,0",
           "statusAfterMove": "active",
           "turnAfterMove": 6
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 3,0",
           "statusAfterMove": "active",
           "turnAfterMove": 7
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 3,0",
           "statusAfterMove": "active",
           "turnAfterMove": 8
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 4,0",
           "statusAfterMove": "active",
           "turnAfterMove": 9
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 4,0",
           "statusAfterMove": "active",
           "turnAfterMove": 10
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 5,0",
           "statusAfterMove": "active",
           "turnAfterMove": 11
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 5,0",
           "statusAfterMove": "active",
           "turnAfterMove": 12
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 0,1",
           "statusAfterMove": "active",
           "turnAfterMove": 13
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 0,1",
           "statusAfterMove": "active",
           "turnAfterMove": 14
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 1,1",
           "statusAfterMove": "active",
           "turnAfterMove": 15
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 1,1",
           "statusAfterMove": "active",
           "turnAfterMove": 16
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 2,1",
           "statusAfterMove": "active",
           "turnAfterMove": 17
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 2,1",
           "statusAfterMove": "active",
           "turnAfterMove": 18
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 3,1",
           "statusAfterMove": "active",
           "turnAfterMove": 19
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 3,1",
           "statusAfterMove": "active",
           "turnAfterMove": 20
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 4,1",
           "statusAfterMove": "active",
           "turnAfterMove": 21
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 4,1",
           "statusAfterMove": "active",
           "turnAfterMove": 22
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 5,1",
           "statusAfterMove": "active",
           "turnAfterMove": 23
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 5,1",
           "statusAfterMove": "active",
           "turnAfterMove": 24
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 0,2",
           "statusAfterMove": "active",
           "turnAfterMove": 25
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 0,2",
           "statusAfterMove": "active",
           "turnAfterMove": 26
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 1,2",
           "statusAfterMove": "active",
           "turnAfterMove": 27
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 1,2",
           "statusAfterMove": "active",
           "turnAfterMove": 28
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 2,2",
           "statusAfterMove": "active",
           "turnAfterMove": 29
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 2,2",
           "statusAfterMove": "active",
           "turnAfterMove": 30
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 3,2",
           "statusAfterMove": "active",
           "turnAfterMove": 31
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 3,2",
           "statusAfterMove": "active",
           "turnAfterMove": 32
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 4,2",
           "statusAfterMove": "active",
           "turnAfterMove": 33
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 4,2",
           "statusAfterMove": "active",
           "turnAfterMove": 34
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 5,2",
           "statusAfterMove": "active",
           "turnAfterMove": 35
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 5,2",
           "statusAfterMove": "active",
           "turnAfterMove": 36
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 0,3",
           "statusAfterMove": "active",
           "turnAfterMove": 37
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 0,3",
           "statusAfterMove": "active",
           "turnAfterMove": 38
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 1,3",
           "statusAfterMove": "active",
           "turnAfterMove": 39
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 1,3",
           "statusAfterMove": "active",
           "turnAfterMove": 40
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 2,3",
           "statusAfterMove": "active",
           "turnAfterMove": 41
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 2,3",
           "statusAfterMove": "active",
           "turnAfterMove": 42
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 3,3",
           "statusAfterMove": "active",
           "turnAfterMove": 43
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 3,3",
           "statusAfterMove": "active",
           "turnAfterMove": 44
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 4,3",
           "statusAfterMove": "active",
           "turnAfterMove": 45
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 4,3",
           "statusAfterMove": "active",
           "turnAfterMove": 46
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 5,3",
           "statusAfterMove": "active",
           "turnAfterMove": 47
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 5,3",
           "statusAfterMove": "active",
           "turnAfterMove": 48
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 0,4",
           "statusAfterMove": "active",
           "turnAfterMove": 49
         },
         {
-          "playerId": "guest-816303",
+          "playerId": "guest-073753",
           "label": "Fire 0,4",
           "statusAfterMove": "active",
           "turnAfterMove": 50
         },
         {
-          "playerId": "guest-c051a4",
+          "playerId": "guest-214b5d",
           "label": "Fire 1,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 51
-        },
-        {
-          "playerId": "guest-816303",
-          "label": "Fire 1,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 52
-        },
-        {
-          "playerId": "guest-c051a4",
-          "label": "Fire 2,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 53
-        },
-        {
-          "playerId": "guest-816303",
-          "label": "Fire 2,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 54
-        },
-        {
-          "playerId": "guest-c051a4",
-          "label": "Fire 3,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 55
-        },
-        {
-          "playerId": "guest-816303",
-          "label": "Fire 3,4",
-          "statusAfterMove": "active",
-          "turnAfterMove": 56
-        },
-        {
-          "playerId": "guest-c051a4",
-          "label": "Fire 4,4",
           "statusAfterMove": "finished",
-          "turnAfterMove": 57
+          "turnAfterMove": 51
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xb75a4783",
-        "resultHash": "0x1d9ff5ba",
+        "replayHash": "0x099b348f",
+        "resultHash": "0x76fe8c22",
         "winnerIds": [
-          "guest-c051a4"
+          "guest-214b5d"
         ],
         "reason": "all opposing ships found"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-fl-xdhg",
+        "matchId": "match-fl-urj2",
         "gameId": "fleet-duel"
       },
       "screenshots": {
@@ -582,170 +546,170 @@
     },
     {
       "gameId": "tile-race",
-      "roomId": "ti-jo48",
-      "matchId": "match-ti-jo48",
-      "roomCode": "TI-JO48",
+      "roomId": "ti-01fd",
+      "matchId": "match-ti-01fd",
+      "roomCode": "TI-01FD",
       "hostGuest": {
-        "id": "guest-bed49b",
-        "displayName": "Guest BED49B"
+        "id": "guest-76abf1",
+        "displayName": "Guest 76ABF1"
       },
       "guestGuest": {
-        "id": "guest-9b5c2f",
-        "displayName": "Guest 9B5C2F"
+        "id": "guest-b6345b",
+        "displayName": "Guest B6345B"
       },
       "players": [
         {
-          "id": "guest-bed49b",
+          "id": "guest-76abf1",
           "kind": "human",
-          "displayName": "Guest BED49B"
+          "displayName": "Guest 76ABF1"
         },
         {
-          "id": "guest-9b5c2f",
+          "id": "guest-b6345b",
           "kind": "human",
-          "displayName": "Guest 9B5C2F"
+          "displayName": "Guest B6345B"
         }
       ],
       "clickedMoves": [
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 1
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 2
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 3
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 4
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 5
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 6
         },
         {
-          "playerId": "guest-bed49b",
-          "label": "up",
+          "playerId": "guest-76abf1",
+          "label": "down",
           "statusAfterMove": "active",
           "turnAfterMove": 7
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 8
         },
         {
-          "playerId": "guest-bed49b",
-          "label": "down",
+          "playerId": "guest-76abf1",
+          "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 9
         },
         {
-          "playerId": "guest-9b5c2f",
-          "label": "down",
+          "playerId": "guest-b6345b",
+          "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 10
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 11
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 12
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 13
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 14
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 15
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 16
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 17
         },
         {
-          "playerId": "guest-9b5c2f",
-          "label": "down",
+          "playerId": "guest-b6345b",
+          "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 18
         },
         {
-          "playerId": "guest-bed49b",
-          "label": "up",
+          "playerId": "guest-76abf1",
+          "label": "down",
           "statusAfterMove": "active",
           "turnAfterMove": 19
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 20
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 21
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 22
         },
         {
-          "playerId": "guest-bed49b",
+          "playerId": "guest-76abf1",
           "label": "up",
           "statusAfterMove": "active",
           "turnAfterMove": 23
         },
         {
-          "playerId": "guest-9b5c2f",
+          "playerId": "guest-b6345b",
           "label": "up",
           "statusAfterMove": "finished",
           "turnAfterMove": 24
@@ -753,16 +717,16 @@
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0x2c2e3ede",
-        "resultHash": "0x385d51c1",
+        "replayHash": "0x5f056f4b",
+        "resultHash": "0xed94efb3",
         "winnerIds": [
-          "guest-bed49b"
+          "guest-b6345b"
         ],
         "reason": "fixed move budget reached"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-ti-jo48",
+        "matchId": "match-ti-01fd",
         "gameId": "tile-race"
       },
       "screenshots": {
@@ -783,91 +747,91 @@
     },
     {
       "gameId": "world-cup-draft",
-      "roomId": "wo-g6zj",
-      "matchId": "match-wo-g6zj",
-      "roomCode": "WO-G6ZJ",
+      "roomId": "wo-4riq",
+      "matchId": "match-wo-4riq",
+      "roomCode": "WO-4RIQ",
       "hostGuest": {
-        "id": "guest-e9bfbd",
-        "displayName": "Guest E9BFBD"
+        "id": "guest-7f5959",
+        "displayName": "Guest 7F5959"
       },
       "guestGuest": {
-        "id": "guest-d95bb0",
-        "displayName": "Guest D95BB0"
+        "id": "guest-c25a47",
+        "displayName": "Guest C25A47"
       },
       "players": [
         {
-          "id": "guest-e9bfbd",
+          "id": "guest-7f5959",
           "kind": "human",
-          "displayName": "Guest E9BFBD"
+          "displayName": "Guest 7F5959"
         },
         {
-          "id": "guest-d95bb0",
+          "id": "guest-c25a47",
           "kind": "human",
-          "displayName": "Guest D95BB0"
+          "displayName": "Guest C25A47"
         }
       ],
       "clickedMoves": [
         {
-          "playerId": "guest-e9bfbd",
-          "label": "Draft arg-10",
+          "playerId": "guest-7f5959",
+          "label": "Draft fra-9",
           "statusAfterMove": "active",
           "turnAfterMove": 1
         },
         {
-          "playerId": "guest-d95bb0",
-          "label": "Draft bra-11",
+          "playerId": "guest-c25a47",
+          "label": "Draft eng-7",
           "statusAfterMove": "active",
           "turnAfterMove": 2
         },
         {
-          "playerId": "guest-e9bfbd",
-          "label": "Draft jpn-14",
+          "playerId": "guest-7f5959",
+          "label": "Draft esp-6",
           "statusAfterMove": "active",
           "turnAfterMove": 3
         },
         {
-          "playerId": "guest-d95bb0",
-          "label": "Draft kor-18",
+          "playerId": "guest-c25a47",
+          "label": "Draft ger-1",
           "statusAfterMove": "active",
           "turnAfterMove": 4
         },
         {
-          "playerId": "guest-e9bfbd",
-          "label": "Draft fra-9",
+          "playerId": "guest-7f5959",
+          "label": "Draft ita-3",
           "statusAfterMove": "active",
           "turnAfterMove": 5
         },
         {
-          "playerId": "guest-d95bb0",
-          "label": "Draft eng-7",
+          "playerId": "guest-c25a47",
+          "label": "Draft usa-8",
           "statusAfterMove": "active",
           "turnAfterMove": 6
         },
         {
-          "playerId": "guest-e9bfbd",
-          "label": "Draft esp-6",
+          "playerId": "guest-7f5959",
+          "label": "Draft gha-5",
           "statusAfterMove": "active",
           "turnAfterMove": 7
         },
         {
-          "playerId": "guest-d95bb0",
-          "label": "Draft ger-1",
+          "playerId": "guest-c25a47",
+          "label": "Draft mar-4",
           "statusAfterMove": "finished",
           "turnAfterMove": 8
         }
       ],
       "final": {
         "status": "finished",
-        "replayHash": "0xd271ae1f",
-        "resultHash": "0x9725960d",
+        "replayHash": "0x2efee13e",
+        "resultHash": "0x51eef232",
         "winnerIds": [
-          "guest-e9bfbd"
+          "guest-7f5959"
         ],
         "reason": "draft score resolved from ratings, role coverage, and seed tiebreaker"
       },
       "proof": {
         "status": 200,
-        "matchId": "match-wo-g6zj",
+        "matchId": "match-wo-4riq",
         "gameId": "world-cup-draft"
       },
       "screenshots": {

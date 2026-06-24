@@ -1,7 +1,7 @@
 {
   "mode": "local-home-product-flow-browser-ui",
   "status": "passed",
-  "checkedAt": "2026-06-24T13:33:29.784Z",
+  "checkedAt": "2026-06-24T17:56:01.789Z",
   "url": "http://localhost:3021",
   "screenshot": "/Users/gabrielantonyxaviour/Documents/hackathons/0g-zero-cup/0g-arcade-arena/evidence/live-proofs/home-product-flow-2026-06-24.png",
   "verified": {
@@ -37,7 +37,7 @@
       "Join with room code": true,
       "Join room": true
     },
-    "generatedRoomCode": "GR-YLLG",
+    "generatedRoomCode": "GR-1S1I",
     "wagerEnabled": true,
     "wagerAmount": "0.0001",
     "agentChecks": {
@@ -51,7 +51,7 @@
       "Proof artifact root": true,
       "Disperser": true
     },
-    "initialTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nFEATURED GAME\nGRID FOUR\n\nFast alignment battles for humans and agents. Choose a 0G agent or a human opponent, then start free or with a tiny testnet wager.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n130\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS3Z87T\nHOME WAGER AGENT MQS3Z6FX\nHOME START AGENT MQS3Z6FX\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS38SVE\nHOME START AGENT MQS38R6O\nHOME WAGER AGENT MQS38R6O\nAVATAR EXPLICIT\nAVATAR GENERATED\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2Z7JJ\nHOME START AGENT MQS2Z5T5\nHOME WAGER AGENT MQS2Z5T5\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2TK9W\nHOME START AGENT MQS2TGHS\nHOME WAGER AGENT MQS2TGHS\nDETAIL START GRID FOUR MQS2P3LG\nHOME START AGENT MQS2P1RT\nHOME WAGER AGENT MQS2P1RT\nDETAIL START GRID FOUR MQS2GMP9\nHOME START AGENT MQS2GJB6\nHOME WAGER AGENT MQS2GJB6\nDETAIL START GRID"
+    "initialTextPreview": "0G ARCADE ARENA\nGames\nAgents\nSubmit\nLeaderboard\nExplorer\nLOGIN\nFEATURED GAME\nGRID FOUR\n\nFast alignment battles for humans and agents. Choose a 0G agent or a human opponent, then start free or with a tiny testnet wager.\n\nSTART MATCH\nCHOOSE HOW YOU WANT TO PLAY\n\nThis is a multiplayer-first arcade. Pick an agent or human opponent, decide whether this is free or wagered, then start or share a room.\n\nPLAY WITH 0G AGENT\nPLAY WITH HUMANS\nWAGER\nFREE MATCH\nTESTNET WAGER\nWager amount in testnet 0G\nQUALIFIED AGENTS\n137\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQSDAIU6\nHOME START AGENT MQSDAHK1\nHOME WAGER AGENT MQSDAHK1\nHOME START AGENT MQS466CP\nHOME WAGER AGENT MQS466CP\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS3Z87T\nHOME WAGER AGENT MQS3Z6FX\nHOME START AGENT MQS3Z6FX\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS38SVE\nHOME START AGENT MQS38R6O\nHOME WAGER AGENT MQS38R6O\nAVATAR EXPLICIT\nAVATAR GENERATED\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2Z7JJ\nHOME START AGENT MQS2Z5T5\nHOME WAGER AGENT MQS2Z5T5\nAVATAR EXPLICIT\nAVATAR GENERATED\nDETAIL START GRID FOUR MQS2TK9W\nHOME START AGENT MQS2TGHS\nHOME WAGER AGENT MQS2TGHS\nDETAIL START GRI"
   },
   "conclusion": "The localhost home route renders as a product-first featured game surface with match setup controls, while technical 0G proof/contract details remain off the home CTA surface."
 }
