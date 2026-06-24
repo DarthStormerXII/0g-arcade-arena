@@ -67,6 +67,7 @@ const requiredAppFiles = [
   ".github/PULL_REQUEST_TEMPLATE/game-submission.md",
   ".github/workflows/game-pack-ci.yml",
   "scripts/verify-game-submission-workflow.mjs",
+  "scripts/verify-hosted-privy-origin.mjs",
   "scripts/upload-proof-artifacts-0g.mjs",
   "scripts/build-da-batch-candidate.mjs",
   "wrangler.jsonc",

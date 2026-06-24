@@ -35,6 +35,7 @@
     "agent:wager-match-check": "node scripts/verify-agent-wager-match-api.mjs",
     "agent:wager-policy-check": "node scripts/verify-agent-wager-policy.mjs",
     "human:automatch-check": "node scripts/verify-human-automatch-api.mjs",
+    "hosted:privy-check": "node scripts/verify-hosted-privy-origin.mjs",
     "room:multigame-check": "node scripts/verify-multigame-room-api.mjs",
     "game:submission-workflow-check": "node scripts/verify-game-submission-workflow.mjs",
     "wager:start-gate-check": "node scripts/verify-wager-start-gate-api.mjs",
