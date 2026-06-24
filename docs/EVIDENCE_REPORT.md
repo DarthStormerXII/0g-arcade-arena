@@ -139,6 +139,7 @@ Hosted production Privy attempt on 2026-06-24 is blocked, not proven. Evidence:
 `hosted-privy-origin-blocker-2026-06-24.png`. The Workers route loads and renders
 Login, but Privy blocks the auth iframe/API for the hosted origin, and the hosted
 bundle still shows older tournament-path copy rather than the current localhost build.
+Rerun with `pnpm hosted:privy-check` after the hosted origin and deployment are fixed.
 
 ## Latest Verified Commands
 
@@ -158,6 +159,7 @@ CI=true pnpm agent:wager-match-check # proves a tiny human-vs-agent wager match 
 pnpm 0g:upload-room-replay h2a-wager-mqr1xs1b # uploads completed H2A wager replay to 0G Storage
 CI=true pnpm chain:commit-actual-match h2a-wager-mqr1xs1b # commits completed H2A wager result/storage root to live Galileo MatchRegistry
 CI=true pnpm human:automatch-check # proves free and tiny-wager human auto-match queue behavior
+pnpm hosted:privy-check # records the current production Privy origin blocker or future success evidence
 CI=true pnpm wager:start-gate-check # proves unfunded wager rooms cannot start through /start or pre-start /move
 CI=true pnpm leaderboard:wager-check # proves tiny escrow-backed wager matches update separated wager leaderboards
 CI=true pnpm audit:check

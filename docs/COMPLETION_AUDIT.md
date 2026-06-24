@@ -43,7 +43,7 @@ This matrix records the current submission boundary for 0G Arcade Arena. It is p
 | 0G live readiness | Proven for Chain and Storage endpoint; Compute blocked by router balance | `evidence/live-proofs/0g-readiness-latest.json`, `pnpm 0g:readiness` currently returns `insufficient_balance` for Compute |
 | Responsive visual screenshots | Proven | `evidence/screenshots/2026-06-23-responsive/manifest.json`, `evidence/screenshots/2026-06-23-responsive/viewport/manifest.json`; refreshed after live chain panel addition. Focused in-app Browser proof is also saved under `evidence/live-proofs/browser-proof-*-2026-06-24.png` |
 | Cloudflare operational deployment | Proven live | `https://0g-arcade-arena.gabrielaxy.workers.dev`, Worker version `f0281444-1bf0-4f4f-9361-650946b8202e`, `wrangler.jsonc`, `worker/index.ts`, `cloudflare/schema.sql` |
-| Hosted production Privy attempt | Blocked with evidence | `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`; the hosted route loads and exposes Login, but Privy blocks the iframe/API for this origin and the hosted bundle still serves older tournament-path copy |
+| Hosted production Privy attempt | Blocked with repeatable evidence | `pnpm hosted:privy-check`, `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`; the hosted route loads and exposes Login, but Privy blocks the iframe/API for this origin and the hosted bundle still serves older tournament-path copy |
 | PR and contributor workflow | Proven | `.github/workflows/game-pack-ci.yml`, docs under `docs/`, `evidence/live-proofs/game-submission-workflow-2026-06-24.json` |
 | Aggregate non-browser gate | Proven | `CI=true pnpm submission:check`, including `pnpm audit:check` after pack/publish receipts regenerate |
 

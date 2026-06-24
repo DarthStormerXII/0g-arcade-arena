@@ -118,7 +118,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 ## Next Implementation Order
 
 1. Fund/fix the 0G Router balance and re-run `/agent-move` until proof rows show `computeMode=0g-compute`.
-2. Add production-origin Privy auth proof after the Workers URL is accepted by Privy and the hosted bundle is redeployed; current blocker evidence is `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`.
+2. Add production-origin Privy auth proof after the Workers URL is accepted by Privy and the hosted bundle is redeployed; rerun `pnpm hosted:privy-check`, current blocker evidence is `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`.
 3. Configure a real 0G DA client path if the hackathon reviewers require live DA publication instead of the current deterministic candidate hash.
 
 ## Completed During Current Execution
@@ -158,4 +158,4 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 - Wager negative cases are proven by `evidence/live-proofs/wager-negative-api-2026-06-24.json` and Foundry's zero-wager/double-settle tests.
 - The wager escrow gate now also covers the pre-start `/move` path; `evidence/live-proofs/wager-start-gate-api-2026-06-24.json` proves an unfunded wager room stays `ready` and cannot auto-start through a move request.
 - Local Wrangler now binds project-only 0G router env through ignored `.dev.vars`; `/agent-move` reaches the router and records the real `Insufficient balance` blocker in `evidence/live-proofs/agent-compute-router-bound-api-2026-06-24.json`.
-- Hosted production Privy auth attempt is now evidence-backed as blocked: `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json` shows the Workers route loads and Login is present, but Privy blocks the hosted origin and the deployed bundle is stale relative to localhost.
+- Hosted production Privy auth attempt is now evidence-backed and repeatable through `pnpm hosted:privy-check`: `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json` shows the Workers route loads and Login is present, but Privy blocks the hosted origin and the deployed bundle is stale relative to localhost.
