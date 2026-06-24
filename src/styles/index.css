@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  color: #f8fffb;
-  background: #080b0e;
+  color: #f8f1ff;
+  background: #08020d;
   font-family:
-    "Archivo", "Aptos", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    "Sora", "Aptos", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --arena-bg: #080b0e;
-  --arena-panel: rgba(12, 18, 22, 0.9);
-  --arena-panel-strong: rgba(19, 29, 34, 0.95);
-  --arena-line: rgba(155, 255, 211, 0.22);
-  --arena-green: #46ff9f;
-  --arena-cyan: #57e2ff;
-  --arena-yellow: #ffe66d;
-  --arena-red: #ff5c7a;
+  --arena-bg: #08020d;
+  --arena-ink: #f8f1ff;
+  --arena-panel: rgba(26, 12, 43, 0.78);
+  --arena-panel-strong: rgba(44, 20, 70, 0.9);
+  --arena-line: rgba(194, 123, 255, 0.28);
+  --arena-violet: #b56cff;
+  --arena-magenta: #f14dff;
+  --arena-cyan: #67e8ff;
+  --arena-gold: #ffd17a;
+  --arena-red: #ff6b9d;
+  --arena-chrome: rgba(244, 230, 255, 0.82);
 }
 
 * {
@@ -32,14 +35,11 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(rgba(70, 255, 159, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(87, 226, 255, 0.04) 1px, transparent 1px),
-    radial-gradient(circle at 15% 10%, rgba(70, 255, 159, 0.18), transparent 28rem),
-    radial-gradient(circle at 85% 8%, rgba(255, 230, 109, 0.12), transparent 24rem),
-    #080b0e;
+    radial-gradient(circle at 18% 6%, rgba(198, 87, 255, 0.36), transparent 28rem),
+    radial-gradient(circle at 86% 4%, rgba(103, 232, 255, 0.18), transparent 22rem),
+    radial-gradient(circle at 72% 82%, rgba(255, 94, 216, 0.16), transparent 26rem),
+    linear-gradient(135deg, #12051d 0%, #08020d 48%, #020106 100%);
   background-size:
-    42px 42px,
-    42px 42px,
     auto,
     auto,
     auto;
@@ -55,6 +55,17 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+.liquid-chrome {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(181, 108, 255, 0.28) 24%, rgba(8, 2, 13, 0.22) 48%, rgba(103, 232, 255, 0.22) 72%, rgba(255, 209, 122, 0.18)),
+    var(--arena-panel);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -18px 42px rgba(55, 18, 91, 0.24),
+    0 24px 80px rgba(0, 0, 0, 0.38),
+    0 0 48px rgba(181, 108, 255, 0.14);
 }
 
 .scanline {
@@ -74,4 +85,19 @@ select {
     transparent 5px
   );
   mix-blend-mode: overlay;
+}
+
+.chrome-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.chrome-sheen::before {
+  position: absolute;
+  inset: -45% -20%;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.42) 42%, transparent 58%);
+  opacity: 0.34;
+  transform: translateX(-28%) rotate(3deg);
 }
