@@ -11,6 +11,10 @@ const knownWallets = [
   "0x23761115c5f38ca51f0d425d00DE6E34029239EC",
   process.env.OG_ARCADE_PRIVY_WALLET_2,
 ].filter(Boolean);
+const routerNetworkEndpoints = {
+  mainnet: "https://router-api.0g.ai/v1",
+  testnet: "https://router-api-testnet.integratenetwork.work/v1",
+};
 
 function parseEnv(file) {
   const env = {};
@@ -97,6 +101,56 @@ async function computeProbe(env, model) {
   };
 }
 
+async function probeRouterEndpoint(env, router) {
+  const modelsStarted = Date.now();
+  const modelsResponse = await fetch(`${router}/models`, {
+    headers: { Authorization: `Bearer ${env.ZEROG_ROUTER_API_KEY}` },
+  }).catch((error) => ({
+    ok: false,
+    status: 0,
+    text: async () => error.message,
+    json: async () => null,
+  }));
+  const modelsJson = await modelsResponse.json().catch(() => null);
+  const chatStarted = Date.now();
+  const chatResponse = await fetch(`${router}/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${env.ZEROG_ROUTER_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: env.ZEROG_COMPUTE_MODEL,
+      messages: [{ role: "user", content: "Return only OK." }],
+      temperature: 0,
+      max_tokens: 4,
+      verify_tee: true,
+      chat_template_kwargs: { enable_thinking: false },
+    }),
+  }).catch((error) => ({
+    ok: false,
+    status: 0,
+    text: async () => error.message,
+  }));
+  const text = await chatResponse.text();
+  let json = null;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    // keep raw preview below
+  }
+  return {
+    routerHost: new URL(router).host,
+    modelsStatus: modelsResponse.status,
+    modelsElapsedMs: Date.now() - modelsStarted,
+    modelsCount: Array.isArray(modelsJson?.data) ? modelsJson.data.length : null,
+    chatStatus: chatResponse.status,
+    chatElapsedMs: Date.now() - chatStarted,
+    errorCode: chatResponse.ok ? null : json?.error?.code,
+    errorMessage: chatResponse.ok ? null : json?.error?.message ?? text.slice(0, 160),
+  };
+}
+
 if (!existsSync(envFile)) {
   console.error(`missing live env file: ${envFile}`);
   process.exit(1);
@@ -142,6 +196,8 @@ const modelIds = Array.isArray(modelsJson?.data) ? modelsJson.data.map((model) =
 const configuredModel = env.ZEROG_COMPUTE_MODEL;
 const configuredModelProbe = await computeProbe(env, configuredModel);
 const glm52Probe = configuredModel === "glm-5.2" ? configuredModelProbe : await computeProbe(env, "glm-5.2");
+const mainnetRouterProbe = await probeRouterEndpoint(env, routerNetworkEndpoints.mainnet);
+const testnetRouterProbe = await probeRouterEndpoint(env, routerNetworkEndpoints.testnet);
 const storageProbe = await fetch(env.ZEROG_INDEXER, { method: "GET" }).catch((error) => ({
   ok: false,
   status: 0,
@@ -169,6 +225,20 @@ const evidence = {
     configuredModel,
     configuredModelProbe,
     glm52Probe,
+    networkDiagnostic: {
+      configuredRouterHost: new URL(env.ZEROG_COMPUTE_ROUTER).host,
+      expectedTestnetRouterHost: new URL(routerNetworkEndpoints.testnet).host,
+      chainNetwork: chainId === 16602 ? "galileo-testnet" : "unknown",
+      storageNetwork: env.ZEROG_INDEXER.includes("testnet") ? "testnet" : "unknown",
+      configuredRouterLooksMainnet:
+        new URL(env.ZEROG_COMPUTE_ROUTER).host === new URL(routerNetworkEndpoints.mainnet).host,
+      mainnetRouterProbe,
+      testnetRouterProbe,
+      conclusion:
+        mainnetRouterProbe.errorCode === "insufficient_balance" && testnetRouterProbe.errorCode === "invalid_api_key"
+          ? "The project has a mainnet Router API key or mainnet Router balance issue while the rest of the app targets Galileo testnet. Fund the Router balance for the configured mainnet key, or replace it with a valid testnet Router key and endpoint."
+          : "Router diagnostics did not match the known mainnet-balance/testnet-key mismatch pattern; inspect the probe status codes.",
+    },
   },
   storage: {
     indexerHost: new URL(env.ZEROG_INDEXER).host,

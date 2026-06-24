@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-06-24T08:00:18.644Z",
+  "checkedAt": "2026-06-24T08:05:13.582Z",
   "envFile": "/Users/gabrielantonyxaviour/.codex/secrets/0g-arcade-arena/0g-live.env",
   "chain": {
     "rpcUrl": "https://evmrpc-testnet.0g.ai",
@@ -22,7 +22,7 @@
     "configuredModelProbe": {
       "ok": false,
       "status": 402,
-      "elapsedMs": 526,
+      "elapsedMs": 560,
       "responseKeyPresent": false,
       "responseSignaturePresent": false,
       "traceProviderPresent": false,
@@ -44,6 +44,34 @@
       "contentHash": null,
       "errorCode": "insufficient_balance",
       "errorMessage": "Insufficient balance"
+    },
+    "networkDiagnostic": {
+      "configuredRouterHost": "router-api.0g.ai",
+      "expectedTestnetRouterHost": "router-api-testnet.integratenetwork.work",
+      "chainNetwork": "galileo-testnet",
+      "storageNetwork": "testnet",
+      "configuredRouterLooksMainnet": true,
+      "mainnetRouterProbe": {
+        "routerHost": "router-api.0g.ai",
+        "modelsStatus": 200,
+        "modelsElapsedMs": 523,
+        "modelsCount": 15,
+        "chatStatus": 402,
+        "chatElapsedMs": 258,
+        "errorCode": "insufficient_balance",
+        "errorMessage": "Insufficient balance"
+      },
+      "testnetRouterProbe": {
+        "routerHost": "router-api-testnet.integratenetwork.work",
+        "modelsStatus": 200,
+        "modelsElapsedMs": 1618,
+        "modelsCount": 2,
+        "chatStatus": 401,
+        "chatElapsedMs": 1108,
+        "errorCode": "invalid_api_key",
+        "errorMessage": "Invalid API key or token"
+      },
+      "conclusion": "The project has a mainnet Router API key or mainnet Router balance issue while the rest of the app targets Galileo testnet. Fund the Router balance for the configured mainnet key, or replace it with a valid testnet Router key and endpoint."
     }
   },
   "storage": {

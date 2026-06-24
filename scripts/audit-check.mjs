@@ -70,6 +70,7 @@ const requiredAppFiles = [
   "scripts/verify-hosted-privy-origin.mjs",
   "scripts/upload-proof-artifacts-0g.mjs",
   "scripts/build-da-batch-candidate.mjs",
+  "scripts/diagnose-compute-broker.mjs",
   "wrangler.jsonc",
   "worker/index.ts",
   "cloudflare/schema.sql",
@@ -85,6 +86,7 @@ const requiredAppFiles = [
   "evidence/live-proofs/0g-storage-game-pack-world-cup-draft.json",
   "evidence/live-proofs/0g-storage-proof-artifacts-2026-06-24.json",
   "evidence/live-proofs/0g-da-batch-candidate-2026-06-24.json",
+  "evidence/live-proofs/0g-compute-broker-diagnostic-2026-06-24.json",
   "evidence/live-proofs/d1-proof-leaderboard-api-2026-06-23.json",
   "evidence/live-proofs/agent-registry-room-api-2026-06-23.json",
   "evidence/live-proofs/wager-negative-api-2026-06-24.json",
@@ -267,6 +269,23 @@ if (existsSync("evidence/live-proofs/0g-readiness-latest.json")) {
     }
     if (readiness.ready?.storageConfig !== true || readiness.ready?.storageEndpoint !== true) {
       errors.push("0G readiness evidence does not prove storage config and endpoint readiness");
+    }
+    if (readiness.compute?.networkDiagnostic) {
+      const diagnostic = readiness.compute.networkDiagnostic;
+      if (diagnostic.chainNetwork !== "galileo-testnet" || diagnostic.storageNetwork !== "testnet") {
+        errors.push("0G readiness network diagnostic must identify the app as testnet-targeted");
+      }
+      if (diagnostic.configuredRouterLooksMainnet !== true) {
+        errors.push("0G readiness network diagnostic must record the configured mainnet Router host");
+      }
+      if (diagnostic.mainnetRouterProbe?.errorCode !== "insufficient_balance") {
+        errors.push("0G readiness network diagnostic must record mainnet Router insufficient balance");
+      }
+      if (diagnostic.testnetRouterProbe?.errorCode !== "invalid_api_key") {
+        errors.push("0G readiness network diagnostic must record testnet Router invalid API key");
+      }
+    } else {
+      errors.push("0G readiness evidence missing compute network diagnostic");
     }
   }
 }

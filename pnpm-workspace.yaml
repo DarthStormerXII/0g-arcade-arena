@@ -1,5 +1,6 @@
 allowBuilds:
   '@reown/appkit': true
+  blake-hash: true
   bufferutil: true
   es5-ext: false
   esbuild: true

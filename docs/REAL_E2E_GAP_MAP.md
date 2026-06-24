@@ -11,7 +11,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | Area | Evidence | Status |
 | --- | --- | --- |
 | 0G Chain readiness | `pnpm 0g:readiness`, `evidence/live-proofs/0g-readiness-latest.json` | Chain ID `16602` verified |
-| 0G Compute readiness | `pnpm 0g:readiness` | Previously verified for `glm-5.1`; latest readiness run returned compute unavailable with router `insufficient_balance` while chain/storage remained reachable |
+| 0G Compute readiness | `pnpm 0g:readiness` | Latest readiness run proves the precise blocker: the app targets Galileo/testnet storage, the configured mainnet Router returns `insufficient_balance`, and the documented testnet Router rejects the same key as `invalid_api_key` |
 | 0G Storage readiness | `pnpm 0g:readiness` | Credentials and indexer endpoint verified |
 | Local H2H Grid Four API | `evidence/live-proofs/h2h-grid-four-local-api-2026-06-23.json` | Durable Object room create/join/start/move/result verified on `http://localhost:3021` |
 | Local non-Grid room APIs | `evidence/live-proofs/multigame-room-api-2026-06-24.json` | Fleet Duel, Tile Race, and World Cup Draft each finish human-vs-human and human-vs-agent rooms through `/api/rooms`, `/move`, `/agent-move`, `/api/proofs`, and D1 indexing |
@@ -76,7 +76,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 | Qualified agent list | Game detail fetches API-qualified agents for selected game/wager mode | Browser proof verifies qualified-agent picker and selected-agent CTA for all four games in `evidence/live-proofs/agent-picker-all-games-2026-06-24.json` |
 | Agent skill package | Project-level skill package now covers platform API, registration, all four v1 games, examples, and wager safety | `docs/agent-skills/0g-arcade-player/*`, `pnpm agent:skill-check`, `evidence/live-proofs/agent-skill-package-2026-06-24.json` |
 | Human-vs-agent wager | Proven with deterministic fallback Compute while router balance is blocked | `evidence/live-proofs/agent-wager-match-api-2026-06-24.json` proves qualified agent registration/listing, tiny escrow funding, `/agent-move`, fallback disclosure, proof indexing, live Galileo settlement, and wager leaderboard rows; `0g-storage-room-h2a-wager-mqr1xs1b.json` and `chain-actual-match-h2a-wager-mqr1xs1b.json` prove its replay root and result were committed to 0G Storage/Chain |
-| Live 0G Compute move | Worker `/api/rooms/:roomId/agent-move` now attempts 0G Router when `ZEROG_ROUTER_API_KEY` is bound, validates returned JSON against legal moves, and stores proof metadata; local binding and router-balance failure are proven | Fund router and rerun human-vs-agent free/wager matches with `computeMode=0g-compute` |
+| Live 0G Compute move | Worker `/api/rooms/:roomId/agent-move` now attempts 0G Router when `ZEROG_ROUTER_API_KEY` is bound, validates returned JSON against legal moves, and stores proof metadata; local binding and Router network/balance failure are proven | Fund the configured Router balance or replace it with a valid testnet Router key/endpoint, then rerun human-vs-agent free/wager matches with `computeMode=0g-compute` |
 | Illegal/malformed output defense | Unit-tested for malformed JSON and illegal mocked Compute moves | Timeout/network fallback remains covered by catch-all fallback behavior; live timeout evidence can be added after router funding |
 | Agent wager limits | Server-enforced in Worker join path | `pnpm agent:wager-policy-check` proves rejections for unregistered, pending, unsupported, mode-disabled, and over-cap agents, plus allowed free and capped-wager joins |
 
@@ -117,7 +117,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 
 ## Next Implementation Order
 
-1. Fund/fix the 0G Router balance and re-run `/agent-move` until proof rows show `computeMode=0g-compute`.
+1. Fund the configured mainnet Router balance or replace it with a valid testnet Router key/endpoint, then re-run `/agent-move` until proof rows show `computeMode=0g-compute`.
 2. Add production-origin Privy auth proof after the Workers URL is accepted by Privy and the hosted bundle is redeployed; rerun `pnpm hosted:privy-check`, current blocker evidence is `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`.
 3. Configure a real 0G DA client path if the hackathon reviewers require live DA publication instead of the current deterministic candidate hash.
 
@@ -125,7 +125,7 @@ human-vs-human free/wager, human-vs-agent free/wager, real 0G Chain, real 0G Sto
 
 - Arcade-only live 0G env copied from ScribeZero into `~/.codex/secrets/0g-arcade-arena/0g-live.env`.
 - Redacted readiness verifier added as `pnpm 0g:readiness`.
-- `evidence/live-proofs/0g-readiness-latest.json` proves Galileo chain readiness and storage endpoint/config readiness; the latest Compute probe reaches the router but returns `insufficient_balance`.
+- `evidence/live-proofs/0g-readiness-latest.json` proves Galileo chain readiness and storage endpoint/config readiness; the latest Compute diagnostic reaches the configured mainnet Router and gets `insufficient_balance`, then reaches the documented testnet Router and gets `invalid_api_key`.
 - `scripts/audit-check.mjs` now requires live 0G readiness evidence.
 - `/submit-game` now presents PR-based game submission instead of in-app upload/publish controls.
 - Tournament routes are removed from active app scope and v1 game packs now declare `supportsTournaments: false`; contracts/schema keep future tournament capability only.

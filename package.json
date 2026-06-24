@@ -31,6 +31,7 @@
     "0g:upload-game-pack": "node scripts/upload-game-pack-0g.mjs",
     "0g:upload-proof-artifacts": "node scripts/upload-proof-artifacts-0g.mjs",
     "0g:da-candidate": "node scripts/build-da-batch-candidate.mjs",
+    "0g:compute-broker-diagnostic": "node scripts/diagnose-compute-broker.mjs",
     "agent:skill-check": "node scripts/verify-agent-skill.mjs",
     "agent:wager-match-check": "node scripts/verify-agent-wager-match-api.mjs",
     "agent:wager-policy-check": "node scripts/verify-agent-wager-policy.mjs",
@@ -57,6 +58,7 @@
     "vitest": "^4.1.9"
   },
   "dependencies": {
+    "@0gfoundation/0g-compute-ts-sdk": "^0.8.4",
     "@0gfoundation/0g-storage-ts-sdk": "^1.2.10",
     "@privy-io/react-auth": "^3.32.1",
     "@tailwindcss/vite": "^4.3.1",
@@ -73,6 +75,7 @@
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
+      "blake-hash",
       "es5-ext"
     ]
   }
