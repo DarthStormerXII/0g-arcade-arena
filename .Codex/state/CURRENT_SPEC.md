@@ -40,7 +40,7 @@ Build the final 0G Zero Cup submission, 0G Arcade Arena, as an open arcade where
 - Proof/explorer UI ingests D1 proof rows and the live 0G Storage replay root; future match uploads should move from static evidence constants to automatic per-match uploads.
 - Real human-vs-agent 0G Compute move selection is wired but not yet live-proven in Arcade; Worker secret binding is proven locally, and router funding is needed before claiming `computeMode=0g-compute`.
 - Live 0G DA publication remains unconfigured; the current DA deliverable is a deterministic candidate payload/hash only.
-- Production Privy auth on the Workers URL may require adding `https://0g-arcade-arena.gabrielaxy.workers.dev` as an allowed origin in the Privy Testing app; localhost auth is verified.
+- Production Privy auth on the Workers URL is blocked in `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json`: the hosted route loads and shows Login, but Privy blocks the hosted origin and the deployed bundle is stale relative to localhost. Localhost auth is verified.
 
 ## Out Of Scope
 - Mainnet real-money wagering.

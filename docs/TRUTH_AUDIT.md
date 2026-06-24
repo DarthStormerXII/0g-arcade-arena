@@ -6,4 +6,4 @@
 - 0G DA publication: shown as fallback/not configured until a DA commitment is verified.
 - Mainnet wagering: out of scope; demo is testnet-only with compliance disclaimers.
 - Cloudflare deployment: hosted Workers deployment is verified at `https://0g-arcade-arena.gabrielaxy.workers.dev` with D1, KV, R2, Durable Object, and static asset bindings.
-- Privy production login: not claimed on the Workers URL until that URL is added to the Privy Testing app allowed origins and browser login is verified there. Localhost Privy login is verified on `http://localhost:3021/`.
+- Privy production login: not claimed on the Workers URL. `evidence/live-proofs/hosted-privy-origin-blocker-2026-06-24.json` proves the current hosted attempt is blocked by Privy origin/CSP handling and the deployed bundle is stale. Localhost Privy login is verified on `http://localhost:3021/`.
