@@ -1,78 +1,115 @@
-# 0G Arcade Arena Demo Video Plan
+# 0G Arcade Arena 4-Minute Demo Video Plan
 
-Current rendered scaffold: 66.048 seconds at `public/demo.mp4`.
-Final footage cut target: 88-98 seconds after replacing the placeholder segment with real app recordings.
+Target duration: 4:00.
 Audience: first-round judges.
-Video style: pitch-led arcade trailer with focused recordings of the live product. Do not use one continuous screen recording.
+Video style: arcade trailer plus proof-backed product walkthrough.
 Final public URL: `https://0g-arcade-arena.pages.dev/demo.mp4`.
 
-## Storyboard
+## Timing
 
-| Time | Screen | Voiceover |
-| --- | --- | --- |
-| 00:00-00:07 | Logo, animated arcade grid, `/pitch` hero. | "Agent games should not be one-off demos. They should be playable arenas." |
-| 00:07-00:20 | Grid of games, agents, proof badges. | "0G Arcade Arena is an open arcade where humans and AI agents can play multiple games under one proof standard." |
-| 00:20-00:44 | Demo clip 01: browse games, open a game, start human or agent match. | "Judges can pick a game pack, start a room, and see the same arena support human matches, agent matches, and wager-gated play." |
-| 00:44-01:04 | Demo clip 02: live match to result and proof page. | "After the match, the result is tied to replay data, receipts, and 0G readiness evidence so the outcome is not trapped inside the UI." |
-| 01:04-01:23 | Demo clip 03: submit-game/developer flow and explorer. | "The bigger idea is reuse. Builders can submit new games and agents into the same format, so Arcade Arena becomes infrastructure for agent gameplay." |
-| 01:23-01:34 | Closing title with live URL and three proof tags. | "0G Arcade Arena is the game lobby for ownable agents: multiplayer, extensible, and verifiable." |
+| Time | Scene | Visual direction | Audio file |
+| --- | --- | --- | --- |
+| 00:00-00:18 | Hook | Neon arcade grid, agent avatars, game cards pulsing into an arena. | `public/audio/final/arcade-01-hook.mp3` |
+| 00:18-00:45 | Problem | One-off agent demos breaking into reusable arena modules. | `public/audio/final/arcade-02-problem.mp3` |
+| 00:45-01:10 | Product thesis | Browse, play, prove, submit loop. | `public/audio/final/arcade-03-product-loop.mp3` |
+| 01:10-01:55 | Footage 01 | Insert `public/video/final/arcade-01-games-start-room.mp4`. | `public/audio/final/arcade-04-demo-games.mp3` |
+| 01:55-02:38 | Footage 02 | Insert `public/video/final/arcade-02-agents-match-result.mp4`. | `public/audio/final/arcade-05-demo-match.mp3` |
+| 02:38-03:16 | Proof | Insert `public/video/final/arcade-03-submit-explorer-proof.mp4`. | `public/audio/final/arcade-06-proof.mp3` |
+| 03:16-03:42 | Why it wins | Judge checklist: multiple games, agent support, builder submission, proof receipts. | `public/audio/final/arcade-07-judge-case.mp3` |
+| 03:42-04:00 | Close | URL, arcade cabinet, proof badges, final title. | `public/audio/final/arcade-08-close.mp3` |
 
-## Screen Recordings To Capture
+## ElevenLabs Script Chunks
 
-Record at 1920x1080, browser zoom 100 percent, cursor visible, no browser bookmarks bar.
+Record each chunk as its own MP3. Keep the filenames exactly as listed above.
 
-1. `arcade-clip-01-browse-start-match.mp4`
-   - URL: `https://0g-arcade-arena.pages.dev/games`
-   - Action: browse the game list, open one game detail page, start an agent or human match.
-   - Duration needed in edit: 22-25 seconds.
-   - Important framing: show that more than one game exists.
+### 01 Hook
 
-2. `arcade-clip-02-match-result-proof.mp4`
-   - URL: live room/match/result flow.
-   - Action: show the match screen, finish or open a completed match, then move to result/proof.
-   - Duration needed in edit: 18-22 seconds.
-   - Important framing: pause on proof and receipt labels.
+Agent games should not be one-off demos. They should be playable arenas.
 
-3. `arcade-clip-03-submit-and-explorer.mp4`
-   - URL: `https://0g-arcade-arena.pages.dev/submit-game`, then `/explorer`
-   - Action: show the game submission form or workflow, then switch to explorer/proof evidence.
-   - Duration needed in edit: 16-20 seconds.
+Right now, many AI game demos show one agent, one screen, and one hardcoded scenario. They are interesting for a minute, but they do not become a place people return to. 0G Arcade Arena starts from a different idea: if agents are going to compete, humans need a lobby, builders need a format, and judges need proof that the match actually happened.
 
-4. `arcade-clip-04-pitch-proof.mp4`
-   - URL: `https://0g-arcade-arena.pages.dev/pitch`
-   - Action: slow scroll from hero to "What judges can verify".
-   - Duration needed in edit: 8-10 seconds.
+That is what Arcade Arena is built to become.
 
-## Voice Recording For Gabriel
+### 02 Problem
 
-Record one clean file named `arcade-gabriel-voice.wav`.
-Pace: high-energy but precise, 145-155 words per minute.
+The problem is not that agent games are impossible. The problem is that they are fragmented.
 
-Full script:
+Each builder creates a separate game, separate agent logic, separate result format, and separate proof story. That makes every demo feel isolated. Players cannot move between games easily. Agents cannot build reputation across matches. Judges cannot compare outcomes under one standard.
 
-"Agent games should not be one-off demos. They should be playable arenas.
+For agent gaming to feel real, it needs shared infrastructure: game packs, rooms, match receipts, replay data, and proof explorers.
 
-0G Arcade Arena is an open arcade where humans and AI agents can play multiple games under one proof standard.
+### 03 Product Loop
 
-Judges can pick a game pack, start a room, and see the same arena support human matches, agent matches, and wager-gated play.
+0G Arcade Arena turns that into a simple product loop: browse games, start a room, let humans or agents play, then inspect the proof.
 
-After the match, the result is tied to replay data, receipts, and 0G readiness evidence so the outcome is not trapped inside the UI.
+The arena is designed for multiple games, not one showcase. It supports game discovery, agent surfaces, result views, submission flow, and an explorer for evidence. That means the product can grow as more builders add games and more agents enter the arena.
 
-The bigger idea is reuse. Builders can submit new games and agents into the same format, so Arcade Arena becomes infrastructure for agent gameplay.
+The experience starts like an arcade, but the architecture points toward a reusable agent-game network.
 
-0G Arcade Arena is the game lobby for ownable agents: multiplayer, extensible, and verifiable."
+### 04 Demo Games
+
+Here is the live game discovery flow.
+
+The user lands on a grid of available games, browses different formats, opens a game detail page, and starts moving toward a room. This is important because the product immediately communicates that Arcade Arena is not a single game. It is a container for many games.
+
+For judges, this is the first proof of extensibility. The arena can support different mechanics while keeping a consistent interface for starting, playing, and proving matches.
+
+The game layer is the invitation. The proof layer is what makes it credible.
+
+### 05 Demo Match
+
+Next, the demo moves into agents, matches, and results.
+
+Arcade Arena is built for humans and AI agents to share the same game space. The agent surfaces show who can participate. The match and result screens show how the arena can move from selection into outcome. And the leaderboard gives the product a reason to keep going after one match.
+
+This matters because agent competition needs repeatability. If a match cannot leave a result trail, it is just a moment. If it can leave a receipt, replay, and ranking, it starts becoming a real arena.
+
+### 06 Proof
+
+The proof and submission flow is where 0G Arcade Arena becomes infrastructure.
+
+A builder can submit a game pack. A match can produce replay data. The explorer can show receipts and evidence. Instead of hiding the outcome inside the UI, the product exposes the artifacts that judges and future players can inspect.
+
+0G fits because agent games need durable game packs, replay records, and verification around results. Storage and proof turn the arcade from a website into a shared layer for agent gameplay.
+
+### 07 Judge Case
+
+For judges, Arcade Arena is strong because it is both fun and expandable.
+
+It has a visible user experience: games, rooms, agents, matches, and leaderboards. It has a builder path through game submission. And it has a proof path through receipts, replay artifacts, and explorer surfaces.
+
+That combination matters. A single game can win attention, but a reusable arena can become a platform. Arcade Arena gives 0G a place where agents can compete in public and where the community can understand the result.
+
+### 08 Close
+
+0G Arcade Arena is the game lobby for ownable agents: multiplayer, extensible, and verifiable.
+
+Humans get games they can play. Builders get a format they can submit into. Agents get an arena where results can matter beyond one screen.
+
+Live demo: 0g-arcade-arena.pages.dev.
+
+## Footage To Record
+
+Record at 1920x1080, browser zoom 100 percent, cursor visible, no bookmarks bar, no audio.
+
+1. `arcade-01-games-start-room.mp4`
+   - URL sequence: `https://0g-arcade-arena.pages.dev/games`, game detail route, start room/action.
+   - Length to record: 60-75 seconds.
+   - Show: multiple game cards, one game detail, start/play CTA.
+   - Important: show that this is multi-game, not one isolated demo.
+
+2. `arcade-02-agents-match-result.mp4`
+   - URL sequence: `/agents`, live/completed match route, `/leaderboard`.
+   - Length to record: 55-70 seconds.
+   - Show: agent list/detail, match/result surface, leaderboard.
+   - Important: pause on result/receipt labels if visible.
+
+3. `arcade-03-submit-explorer-proof.mp4`
+   - URL sequence: `/submit-game`, `/explorer`, `/pitch`.
+   - Length to record: 40-50 seconds.
+   - Show: submission form/workflow, explorer/proof evidence, pitch proof section.
+   - Important: scroll slowly through explorer so judges can read proof claims.
 
 ## Remotion Assembly Notes
 
-Composition: `ArcadeArenaDemo`, 1280x720, 30 fps, 66.048 seconds.
-Source file: `video/remotion-demo.tsx`.
-Render command: `pnpm --package=@remotion/cli --package=remotion dlx remotion render video/remotion-demo.tsx ArcadeArenaDemo public/demo.mp4 --overwrite --codec=h264 --crf=26 --timeout=120000`.
-
-Assets:
-- `public/video/raw/arcade-clip-01-browse-start-match.mp4`
-- `public/video/raw/arcade-clip-02-match-result-proof.mp4`
-- `public/video/raw/arcade-clip-03-submit-and-explorer.mp4`
-- `public/video/raw/arcade-clip-04-pitch-proof.mp4`
-- `public/audio/arcade-gabriel-voice.wav`
-
-Use the live app palette: black, neon green, proof yellow, and hard-edged arcade panels. Motion can be punchier than the other projects, but proof text must stay readable for judges.
+Use sharper pacing than the other videos: punchy transitions, arcade panels, game-card wipes, and neon proof labels. Footage should occupy roughly 1:30-1:50. Keep proof sections readable; do not over-animate receipts or evidence text.
