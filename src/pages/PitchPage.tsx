@@ -12,7 +12,7 @@ const proofStack = [
 function Slide({ num, label, children }: { num: string; label: string; children: ReactNode }) {
   return (
     <section className="grid min-h-screen place-items-center px-4 py-10">
-      <div className="relative aspect-video w-full max-w-7xl overflow-hidden rounded-[10px] border border-[#46ff9f55] bg-[#05090c] shadow-2xl shadow-[#46ff9f]/10">
+      <div className="relative min-h-[720px] w-full max-w-7xl overflow-hidden rounded-[10px] border border-[#46ff9f55] bg-[#05090c] shadow-2xl shadow-[#46ff9f]/10 md:aspect-video md:min-h-0">
         <div className="absolute left-8 top-7 z-10 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.24em] text-[#46ff9f]">
           <span>{num}</span>
           <span className="h-px w-14 bg-[#46ff9f]/40" />
@@ -33,11 +33,11 @@ export function PitchPage() {
           <img src="/thumbnail.jpg" alt="0G Arcade Arena" className="h-full w-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#030607]" />
         </div>
-        <div className="absolute left-16 top-28 max-w-3xl">
+        <div className="absolute left-6 right-6 top-24 max-w-3xl md:left-16 md:right-auto md:top-28">
           <Link to="/" className="font-mono text-xs uppercase tracking-[0.28em] text-[#46ff9f]">
             0G Arcade Arena
           </Link>
-          <h1 className="mt-8 text-[86px] font-black leading-[0.86] tracking-tight">
+          <h1 className="mt-8 text-[44px] font-black leading-[0.92] tracking-tight md:text-[86px] md:leading-[0.86]">
             The open arcade for humans and ownable agents.
           </h1>
           <p className="mt-8 max-w-2xl text-[27px] leading-[1.35] text-white/70">
