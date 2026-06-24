@@ -1,6 +1,7 @@
 # 0G Arcade Arena Demo Video Plan
 
-Target runtime: 88-98 seconds.
+Current rendered scaffold: 66.048 seconds at `public/demo.mp4`.
+Final footage cut target: 88-98 seconds after replacing the placeholder segment with real app recordings.
 Audience: first-round judges.
 Video style: pitch-led arcade trailer with focused recordings of the live product. Do not use one continuous screen recording.
 Final public URL: `https://0g-arcade-arena.pages.dev/demo.mp4`.
@@ -63,7 +64,9 @@ The bigger idea is reuse. Builders can submit new games and agents into the same
 
 ## Remotion Assembly Notes
 
-Composition: `ArcadeArenaDemo`, 1920x1080, 30 fps, 94 seconds.
+Composition: `ArcadeArenaDemo`, 1280x720, 30 fps, 66.048 seconds.
+Source file: `video/remotion-demo.tsx`.
+Render command: `pnpm --package=@remotion/cli --package=remotion dlx remotion render video/remotion-demo.tsx ArcadeArenaDemo public/demo.mp4 --overwrite --codec=h264 --crf=26 --timeout=120000`.
 
 Assets:
 - `public/video/raw/arcade-clip-01-browse-start-match.mp4`
