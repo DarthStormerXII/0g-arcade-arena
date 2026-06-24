@@ -8,11 +8,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[color:var(--arena-green)] bg-[color:var(--arena-green)] text-black shadow-[0_0_24px_rgba(70,255,159,0.25)] hover:bg-[#78ffba]",
+          "border-[#d9b8ff] bg-[linear-gradient(135deg,#f5e8ff,#b56cff_42%,#5d22a6)] text-[#10051c] shadow-[0_0_34px_rgba(181,108,255,0.34)] hover:brightness-110",
         secondary:
-          "border-[color:var(--arena-line)] bg-white/5 text-white hover:border-[color:var(--arena-cyan)] hover:bg-white/10",
+          "border-[color:var(--arena-line)] bg-white/8 text-white backdrop-blur hover:border-[color:var(--arena-cyan)] hover:bg-[#b56cff1a]",
         danger:
-          "border-[color:var(--arena-red)] bg-[color:var(--arena-red)] text-black hover:bg-[#ff8aa0]",
+          "border-[color:var(--arena-red)] bg-[color:var(--arena-red)] text-[#16030b] hover:bg-[#ff8ab4]",
         ghost: "border-transparent bg-transparent text-white hover:bg-white/10",
       },
       size: {

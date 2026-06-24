@@ -75,10 +75,10 @@ const projects: Project[] = [
     id: 'ArcadeArenaDemo',
     name: '0G Arcade Arena',
     domain: '0g-arcade-arena.pages.dev',
-    logo: 'logo.jpg',
-    accent: '#46ff9f',
-    accent2: '#fff0a8',
-    bg: '#030607',
+    logo: 'brand/logo.jpg',
+    accent: '#b56cff',
+    accent2: '#67e8ff',
+    bg: '#08020d',
     fg: '#ffffff',
     scenes: [
       {seconds: 18, label: '01 / hook', title: 'Agent games should be playable arenas.', body: 'A lobby where humans and AI agents compete under one proof standard.', audio: 'audio/final/arcade-01-hook.mp3', points: ['Game lobby', 'Agents', 'Proof']},
@@ -117,9 +117,9 @@ function Background({project}: {project: Project}) {
   const frame = useCurrentFrame();
   const x = interpolate(frame, [0, totalSeconds * fps], [-30, 120]);
   return <AbsoluteFill style={{background: project.bg, overflow: 'hidden'}}>
-    <div style={{position: 'absolute', inset: 0, background: `linear-gradient(125deg, ${project.bg}, #020202 58%, ${project.accent}22)`}} />
-    <div style={{position: 'absolute', left: `${x}%`, top: -120, width: 310, height: 980, transform: 'skewX(-13deg)', background: `${project.accent}20`}} />
-    <div style={{position: 'absolute', inset: 0, opacity: 0.18, backgroundImage: 'linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)', backgroundSize: '58px 58px'}} />
+    <div style={{position: 'absolute', inset: 0, background: `radial-gradient(circle at 20% 10%, ${project.accent}55, transparent 420px), radial-gradient(circle at 82% 12%, ${project.accent2}24, transparent 360px), linear-gradient(125deg, ${project.bg}, #020106 58%, ${project.accent}24)`}} />
+    <div style={{position: 'absolute', left: `${x}%`, top: -120, width: 310, height: 980, transform: 'skewX(-13deg)', background: `linear-gradient(180deg, ${project.accent}08, ${project.accent}34, ${project.accent2}18)`}} />
+    <div style={{position: 'absolute', inset: 0, opacity: 0.14, backgroundImage: 'linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)', backgroundSize: '58px 58px'}} />
   </AbsoluteFill>;
 }
 
@@ -161,7 +161,7 @@ function FootageScene({project, scene}: {project: Project; scene: Scene}) {
   return <AbsoluteFill>
     <Background project={project} />
     <Header project={project} scene={scene} />
-    <div style={{position: 'absolute', left: 52, right: 52, top: 100, height: 442, borderRadius: 16, overflow: 'hidden', border: `2px solid ${project.accent}88`, background: '#000', boxShadow: `0 0 70px ${project.accent}24`}}>
+    <div style={{position: 'absolute', left: 52, right: 52, top: 100, height: 442, borderRadius: 16, overflow: 'hidden', border: `2px solid ${project.accent}88`, background: '#08020d', boxShadow: `0 0 70px ${project.accent}24`}}>
       <Video src={staticFile(scene.video ?? 'video/raw/demo-footage.mp4')} muted loop style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       <div style={{position: 'absolute', left: 20, top: 20, padding: '10px 13px', borderRadius: 8, background: 'rgba(0,0,0,.74)', color: project.accent, fontSize: 15, letterSpacing: 2, textTransform: 'uppercase', fontWeight: 950}}>Live app footage slot</div>
       <div style={{position: 'absolute', left: 20, right: 20, bottom: 18, padding: '14px 16px', borderRadius: 8, background: 'rgba(0,0,0,.76)', color: project.fg}}>

@@ -23,21 +23,21 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
             receipt is chain-only; Storage, Compute, and DA proof states are shown in the dedicated live proof panels.
           </p>
         </div>
-        <div className="rounded-sm border border-white/10 bg-black/35 p-3 text-xs">
+        <div className="rounded-sm border border-white/10 bg-[#140820]/70 p-3 text-xs">
           <div className="uppercase text-white/45">verified at</div>
           <div className="font-mono text-white">{liveChainProof.verifiedAt}</div>
           <div className="mt-2 uppercase text-white/45">operator balance</div>
-          <div className="font-mono text-[#98ffc9]">{liveChainProof.balances.operator} 0G</div>
+          <div className="font-mono text-[#e7c7ff]">{liveChainProof.balances.operator} 0G</div>
         </div>
       </div>
       <div className="mt-4 grid min-w-0 gap-3 lg:grid-cols-2">
-        <div className="min-w-0 rounded-sm border border-white/10 bg-black/35 p-3">
+        <div className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
           <h3 className="font-black uppercase">Contracts</h3>
           <div className="mt-3 grid gap-2">
             {liveChainProof.deployments.map((deployment) => (
               <a
                 key={deployment.address}
-                className="group min-w-0 rounded-sm border border-white/10 bg-black/35 p-2 hover:border-[#57e2ff66]"
+                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#67e8ff66]"
                 href={addressUrl(deployment.address)}
                 rel="noreferrer"
                 target="_blank"
@@ -52,13 +52,13 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
             ))}
           </div>
         </div>
-        <div className="min-w-0 rounded-sm border border-white/10 bg-black/35 p-3">
+        <div className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
           <h3 className="font-black uppercase">Write Transactions</h3>
           <div className="mt-3 grid gap-2">
             {txs.map((tx) => (
               <a
                 key={tx.txHash}
-                className="group min-w-0 rounded-sm border border-white/10 bg-black/35 p-2 hover:border-[#57e2ff66]"
+                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#67e8ff66]"
                 href={txUrl(tx.txHash)}
                 rel="noreferrer"
                 target="_blank"
@@ -67,7 +67,7 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
                   <span className="font-bold">{tx.name}</span>
                   <ExternalLink size={14} />
                 </div>
-                <div className="mt-1 font-mono text-xs text-[#98ffc9]">{shortHash(tx.txHash)}</div>
+                <div className="mt-1 font-mono text-xs text-[#e7c7ff]">{shortHash(tx.txHash)}</div>
                 <div className="mt-1 text-xs text-white/45">block {tx.blockNumber}</div>
               </a>
             ))}

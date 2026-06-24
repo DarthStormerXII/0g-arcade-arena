@@ -160,7 +160,7 @@ function LiveRoomMatch({ matchId, gameId, roomId }: { matchId: string; gameId: s
           {room?.result?.reason ??
             (isMyTurn ? "Your turn. Pick a legal move." : "Waiting for the other player to move.")}
         </p>
-        <div className="rounded-sm border border-white/10 bg-black/35 p-3 text-sm text-white/70">
+        <div className="rounded-sm border border-white/10 bg-[#140820]/70 p-3 text-sm text-white/70">
           Room: {roomId}<br />
           Game: {liveGameId}<br />
           Turn: {roomTurn(room)}<br />
@@ -217,13 +217,13 @@ function LiveRoomBoard({
           row.map((cell, colIndex) => (
             <button
               key={`${rowIndex}-${colIndex}`}
-              className="aspect-square rounded-full border border-white/15 bg-black/45 p-1 disabled:cursor-not-allowed disabled:opacity-70"
+              className="aspect-square rounded-full border border-white/15 bg-[#140820]/75 p-1 disabled:cursor-not-allowed disabled:opacity-70"
               disabled={busy || !isMyTurn || room?.status === "finished"}
               onClick={() => onMove({ column: colIndex })}
               aria-label={`Drop in column ${colIndex + 1}, row ${rowIndex + 1}`}
             >
               <span
-                className={`block h-full rounded-full ${cell === playerId ? "bg-[#46ff9f]" : cell ? "bg-[#ffe66d]" : "bg-white/8"}`}
+                className={`block h-full rounded-full ${cell === playerId ? "bg-[#b56cff]" : cell ? "bg-[#ffd17a]" : "bg-white/8"}`}
               />
             </button>
           )),
@@ -306,12 +306,12 @@ function GridFourMatch({ matchId }: { matchId: string }) {
           row.map((cell, colIndex) => (
             <button
               key={`${rowIndex}-${colIndex}`}
-              className="aspect-square rounded-full border border-white/15 bg-black/45 p-1"
+              className="aspect-square rounded-full border border-white/15 bg-[#140820]/75 p-1"
               onClick={() => playColumn(colIndex)}
               aria-label={`Drop in column ${colIndex + 1}`}
             >
               <span
-                className={`block h-full rounded-full ${cell === "human-1" ? "bg-[#46ff9f]" : cell ? "bg-[#ffe66d]" : "bg-white/8"}`}
+                className={`block h-full rounded-full ${cell === "human-1" ? "bg-[#b56cff]" : cell ? "bg-[#ffd17a]" : "bg-white/8"}`}
               />
             </button>
           )),
@@ -408,7 +408,7 @@ function GameStatePreview({ gameId, state }: { gameId: string; state: FleetState
         {Array.from({ length: 36 }, (_, index) => {
           const id = `${index % 6},${Math.floor(index / 6)}`;
           const fired = Object.values(fleet.shots).some((shots) => shots.includes(id));
-          return <div key={id} className={`aspect-square rounded-sm border border-white/15 ${fired ? "bg-[#57e2ff88]" : "bg-black/40"}`} />;
+          return <div key={id} className={`aspect-square rounded-sm border border-white/15 ${fired ? "bg-[#67e8ff88]" : "bg-[#140820]/70"}`} />;
         })}
       </div>
     );
@@ -419,7 +419,7 @@ function GameStatePreview({ gameId, state }: { gameId: string; state: FleetState
     return (
       <div className="grid grid-cols-4 gap-2">
         {board.flat().map((value, index) => (
-          <div key={index} className="grid aspect-square place-items-center rounded-sm border border-white/15 bg-black/40 text-xl font-black">
+          <div key={index} className="grid aspect-square place-items-center rounded-sm border border-white/15 bg-[#140820]/70 text-xl font-black">
             {value || ""}
           </div>
         ))}
@@ -430,7 +430,7 @@ function GameStatePreview({ gameId, state }: { gameId: string; state: FleetState
   return (
     <div className="grid gap-2">
       {Object.values(draft.teams).map((team) => (
-        <div key={team.playerId} className="rounded-sm border border-white/10 bg-black/35 p-3">
+        <div key={team.playerId} className="rounded-sm border border-white/10 bg-[#140820]/70 p-3">
           <strong>{team.playerId}</strong>
           <p className="text-sm text-white/65">{team.picks.map((pick) => pick.name).join(", ") || "Drafting..."}</p>
         </div>
@@ -461,7 +461,7 @@ function MatchSidecar({
       <StatusPill tone="yellow">0G Compute fallback disclosed</StatusPill>
       <h2 className="text-2xl font-black uppercase">Match in progress</h2>
       <p className="text-white/70">{result}</p>
-      <div className="rounded-sm border border-white/10 bg-black/35 p-3 text-sm text-white/70">
+      <div className="rounded-sm border border-white/10 bg-[#140820]/70 p-3 text-sm text-white/70">
         Game: {gameId}<br />
         Turn: {turn}<br />
         Replay receipt: local browser storage until 0G Storage is configured

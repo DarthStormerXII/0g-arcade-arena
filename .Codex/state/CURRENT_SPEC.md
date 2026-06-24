@@ -9,6 +9,7 @@ Build the final 0G Zero Cup submission, 0G Arcade Arena, as an open arcade where
 - Stack: Vite + React + TypeScript, Cloudflare-first operational posture, 0G as proof infrastructure.
 - Information architecture: home stays product-facing; 0G-specific contracts, transactions, proof modes, game/result receipts, and agent ownership records belong in `/explorer`.
 - Design direction: home and game detail pages are multiplayer-first product screens, with the featured game/cover as the dominant hero-left content, match setup controls on the right, and technical manifest/proof details below the primary CTA area or in `/explorer`.
+- Rebrand direction: app, share cards, and pitch/demo materials use the Downloads Arcade Arena assets as source of truth: liquid amethyst chrome, near-black glass, violet/magenta dominance, cyan/gold proof glints, Sora typography, and `public/brand/logo.jpg`, `public/brand/thumbnail.jpg`, `public/brand/hero.mp4`.
 - Match setup: users choose `Play with 0G agent` or `Play with humans`, then free/testnet wager mode; human play supports auto-match and private room-code flow.
 - Evidence naming: exported static proof artifacts use `match-<game>-receipt` naming; `fixtures/demo-replay.json` remains only as the required Game Pack fixture file name.
 - Localhost-first real E2E execution is now the active lane: human-vs-human free/wager first, then human-vs-agent free/wager with live 0G Compute.

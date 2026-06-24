@@ -26,7 +26,7 @@ export function LiveProofList() {
         {proofs.map((proof) => (
           <a
             key={proof.matchId}
-            className="min-w-0 rounded-sm border border-white/10 bg-black/35 p-3 hover:border-[#57e2ff66]"
+            className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#67e8ff66]"
             href={`/proof/${proof.matchId}`}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -79,7 +79,7 @@ export function LiveProofDetails({ matchId }: { matchId: string }) {
           ["compute fallback", computeFallbackSummary(proof.computeProof)],
           ["da", proof.daMode],
         ].map(([label, value]) => (
-          <div key={label} className="rounded-sm border border-white/10 bg-black/35 p-3">
+          <div key={label} className="rounded-sm border border-white/10 bg-[#140820]/70 p-3">
             <dt className="text-xs uppercase text-white/45">{label}</dt>
             <dd className="break-all font-mono text-sm text-white">{value}</dd>
           </div>
@@ -134,7 +134,7 @@ function LeaderboardTable({ title, entries }: { title: string; entries: Leaderbo
       <div className="mt-4 grid gap-2">
         {entries.length ? (
           entries.map((entry) => (
-            <div key={`${entry.scope}-${entry.mode}-${entry.participantId}`} className="rounded-sm border border-white/10 bg-black/35 p-3">
+            <div key={`${entry.scope}-${entry.mode}-${entry.participantId}`} className="rounded-sm border border-white/10 bg-[#140820]/70 p-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <strong>{entry.displayName}</strong>
                 <StatusPill tone={entry.participantKind === "agent" ? "cyan" : "green"}>{entry.score}</StatusPill>

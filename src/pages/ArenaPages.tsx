@@ -32,16 +32,26 @@ export function Lobby() {
   return (
     <div className="grid gap-6">
       <section className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,.9fr)]">
-        <Panel className="scanline min-h-[560px] overflow-hidden p-0">
-          <img className="h-[360px] w-full object-cover" src={visuals.cover} alt="" />
+        <Panel className="chrome-sheen scanline min-h-[560px] overflow-hidden p-0">
+          <div className="relative min-h-[360px] overflow-hidden">
+            <img className="absolute inset-0 h-full w-full object-cover" src="/brand/thumbnail.jpg" alt="" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,.18),transparent_18rem),linear-gradient(180deg,rgba(8,2,13,.08),rgba(8,2,13,.72))]" />
+            <img
+              className="absolute bottom-5 left-5 h-28 w-28 rounded-full border border-white/20 object-cover shadow-[0_0_60px_rgba(181,108,255,.42)]"
+              src="/brand/logo.jpg"
+              alt=""
+            />
+          </div>
           <div className="grid gap-4 p-5 sm:grid-cols-[88px_1fr]">
-            <img className="h-20 w-20 rounded-md object-cover" src={visuals.logo} alt="" />
+            <img className="h-20 w-20 rounded-full border border-white/15 object-cover" src={visuals.logo} alt="" />
             <div>
               <StatusPill tone="green">Featured game</StatusPill>
-              <h1 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">{featuredGame.manifest.name}</h1>
+              <h1 className="mt-4 max-w-3xl text-4xl font-black uppercase leading-none md:text-6xl">
+                Liquid arcade for ownable agents
+              </h1>
               <p className="mt-3 max-w-3xl text-white/68">
-                {gameDescriptions[featuredGame.id]} Choose a 0G agent or a human opponent, then start free or with a tiny
-                testnet wager.
+                {featuredGame.manifest.name} is the first room in a purple chrome arena where humans and 0G agents play,
+                wager, replay, and prove every result without hiding fallback boundaries.
               </p>
             </div>
           </div>
@@ -63,7 +73,7 @@ function GameStrip() {
     <section className="grid gap-3 md:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
       {gameAdapters.map((game) => (
         <Link key={game.id} to={`/games/${game.id}`}>
-          <Panel className="h-full overflow-hidden p-0 hover:border-[#46ff9f88]">
+          <Panel className="h-full overflow-hidden p-0 hover:border-[#d9b8ff88]">
             <img className="h-40 w-full object-cover" src={gameVisuals[game.id].cover} alt="" />
             <div className="p-4">
               <div className="flex items-start gap-3">
@@ -121,7 +131,7 @@ export function Result() {
           <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText(payload))}`}><Button variant="secondary">X Intent</Button></a>
           <Link to={`/proof/${matchId}`}><Button><ShieldCheck size={18} /> Proof Link</Button></Link>
         </div>
-        <div className="mt-5 rounded-sm border border-white/10 bg-black/35 p-3">
+        <div className="mt-5 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
           <div className="text-xs uppercase text-white/45">agent badges</div>
           <div className="mt-2 flex flex-wrap gap-2">
             <StatusPill tone="green">0G proof badge</StatusPill>
@@ -209,17 +219,17 @@ export function SubmitGame() {
         </div>
         <div className="grid min-w-0 gap-2">
           <div className="flex items-center gap-3">
-            <Terminal className="text-[#46ff9f]" />
+            <Terminal className="text-[#b56cff]" />
             <h2 className="text-2xl font-black uppercase">Validation commands</h2>
           </div>
           {rows.map((row) => (
-            <div key={row.id} className="rounded-sm border border-white/10 bg-black/35 p-3">
+            <div key={row.id} className="rounded-sm border border-white/10 bg-[#140820]/70 p-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <strong>{row.name}</strong>
                 <StatusPill tone="green">{row.status}</StatusPill>
               </div>
               <p className="mt-2 text-xs text-white/55">{row.checks} checks covered by current validator and tests.</p>
-              <pre className="mt-2 max-w-full whitespace-pre-wrap break-all text-xs text-[#98ffc9]">{row.command}</pre>
+              <pre className="mt-2 max-w-full whitespace-pre-wrap break-all text-xs text-[#e7c7ff]">{row.command}</pre>
             </div>
           ))}
           <div className="mt-3 flex flex-wrap gap-2">
@@ -232,7 +242,7 @@ export function SubmitGame() {
 }
 
 export function Developers() {
-  return <Page title="Developer Docs" icon={<Code2 />}><Panel><pre className="overflow-auto text-sm text-[#98ffc9]">games/&lt;slug&gt;/manifest.json rules.ts schema.ts agent.md ui/GameView.tsx tests/rules.test.ts fixtures/demo-replay.json assets/cover.svg assets/logo.svg README.md LICENSE.md</pre></Panel></Page>;
+  return <Page title="Developer Docs" icon={<Code2 />}><Panel><pre className="overflow-auto text-sm text-[#e7c7ff]">games/&lt;slug&gt;/manifest.json rules.ts schema.ts agent.md ui/GameView.tsx tests/rules.test.ts fixtures/demo-replay.json assets/cover.svg assets/logo.svg README.md LICENSE.md</pre></Panel></Page>;
 }
 
 export function Leaderboard() {

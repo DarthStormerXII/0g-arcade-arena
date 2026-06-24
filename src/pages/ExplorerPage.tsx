@@ -24,7 +24,7 @@ export function Explorer() {
               identities, replay receipts, and agent ownership records in one place.
             </p>
           </div>
-          <div className="grid gap-2 rounded-sm border border-white/10 bg-black/35 p-3 text-sm">
+          <div className="grid gap-2 rounded-sm border border-white/10 bg-[#140820]/70 p-3 text-sm">
             {integrationStatus.map((item) => (
               <div key={item.name} className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-2 last:border-0 last:pb-0">
                 <span className="font-bold uppercase">{item.name}</span>
@@ -41,12 +41,12 @@ export function Explorer() {
 
         <Panel>
           <div className="flex items-center gap-3">
-            <Boxes className="text-[#46ff9f]" />
+            <Boxes className="text-[#b56cff]" />
             <h2 className="text-2xl font-black uppercase">Game Pack Storage</h2>
           </div>
           <div className="mt-4 grid gap-3">
             {liveGamePackProofs.map((proof) => (
-              <div key={proof.gameId} className="rounded-sm border border-white/10 bg-black/35 p-3">
+              <div key={proof.gameId} className="rounded-sm border border-white/10 bg-[#140820]/70 p-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <strong className="uppercase">{proof.gameId}</strong>
                   <StatusPill tone={proof.reachable ? "green" : "yellow"}>
@@ -66,10 +66,10 @@ export function Explorer() {
 
         <Panel>
           <div className="flex items-center gap-3">
-            <ShieldCheck className="text-[#57e2ff]" />
+            <ShieldCheck className="text-[#67e8ff]" />
             <h2 className="text-2xl font-black uppercase">Proof Artifact Storage</h2>
           </div>
-          <div className="mt-4 rounded-sm border border-white/10 bg-black/35 p-3">
+          <div className="mt-4 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <strong>{liveProofArtifactStorage.schema}</strong>
               <StatusPill tone={liveProofArtifactStorage.reachable ? "green" : "yellow"}>
@@ -87,10 +87,10 @@ export function Explorer() {
 
         <Panel>
           <div className="flex items-center gap-3">
-            <Boxes className="text-[#ffe66d]" />
+            <Boxes className="text-[#ffd17a]" />
             <h2 className="text-2xl font-black uppercase">DA Batch Candidate</h2>
           </div>
-          <div className="mt-4 rounded-sm border border-white/10 bg-black/35 p-3">
+          <div className="mt-4 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <strong>{liveDaBatchCandidate.schema}</strong>
               <StatusPill tone="yellow">{liveDaBatchCandidate.daMode}</StatusPill>
@@ -107,7 +107,7 @@ export function Explorer() {
         <section className="grid gap-4 lg:grid-cols-2">
           <Panel>
             <div className="flex items-center gap-3">
-              <Gamepad2 className="text-[#46ff9f]" />
+              <Gamepad2 className="text-[#b56cff]" />
               <h2 className="text-2xl font-black uppercase">Game Explorer</h2>
             </div>
             <div className="mt-4 grid gap-3">
@@ -117,7 +117,7 @@ export function Explorer() {
                   <Link
                     key={game.id}
                     to={`/games/${game.id}`}
-                    className="grid min-w-0 gap-3 rounded-sm border border-white/10 bg-black/35 p-3 hover:border-[#46ff9f66] sm:grid-cols-[72px_1fr]"
+                    className="grid min-w-0 gap-3 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#b56cff66] sm:grid-cols-[72px_1fr]"
                   >
                     <img className="h-16 w-16 rounded-md object-cover" src={visuals.logo} alt="" />
                     <div className="min-w-0">
@@ -138,7 +138,7 @@ export function Explorer() {
 
           <Panel>
             <div className="flex items-center gap-3">
-              <ShieldCheck className="text-[#57e2ff]" />
+              <ShieldCheck className="text-[#67e8ff]" />
               <h2 className="text-2xl font-black uppercase">Result Explorer</h2>
             </div>
             <div className="mt-4 grid gap-3">
@@ -149,7 +149,7 @@ export function Explorer() {
                   <Link
                     key={game.id}
                     to={`/proof/${matchId}`}
-                    className="min-w-0 rounded-sm border border-white/10 bg-black/35 p-3 hover:border-[#57e2ff66]"
+                    className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#67e8ff66]"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <strong>{game.manifest.name} replay receipt</strong>
@@ -172,7 +172,7 @@ export function Explorer() {
         <section className="grid gap-4 lg:grid-cols-[.8fr_1.2fr]">
           <Panel>
             <div className="flex items-center gap-3">
-              <Bot className="text-[#ffe66d]" />
+              <Bot className="text-[#ffd17a]" />
               <h2 className="text-2xl font-black uppercase">Agent Explorer</h2>
             </div>
             <div className="mt-4 grid gap-3">
@@ -180,7 +180,7 @@ export function Explorer() {
                 <Link
                   key={agent.agentId}
                   to={`/agents/${agent.agentId}`}
-                  className="grid gap-3 rounded-sm border border-white/10 bg-black/35 p-3 hover:border-[#ffe66d66] sm:grid-cols-[72px_1fr]"
+                  className="grid gap-3 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#ffd17a66] sm:grid-cols-[72px_1fr]"
                 >
                   <img className="h-16 w-16 rounded-md object-cover" src={agent.avatarUrl} alt="" />
                   <div className="min-w-0">
@@ -195,14 +195,14 @@ export function Explorer() {
 
           <Panel>
             <div className="flex items-center gap-3">
-              <Boxes className="text-[#46ff9f]" />
+              <Boxes className="text-[#b56cff]" />
               <h2 className="text-2xl font-black uppercase">Contract Index</h2>
             </div>
             <div className="mt-4 grid gap-2">
               {liveChainProof.deployments.map((deployment) => (
                 <a
                   key={deployment.address}
-                  className="grid min-w-0 gap-2 rounded-sm border border-white/10 bg-black/35 p-3 hover:border-[#46ff9f66] md:grid-cols-[180px_1fr_auto]"
+                  className="grid min-w-0 gap-2 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#b56cff66] md:grid-cols-[180px_1fr_auto]"
                   href={`${liveChainProof.explorer}/address/${deployment.address}`}
                   rel="noreferrer"
                   target="_blank"

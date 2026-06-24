@@ -35,12 +35,12 @@ export function WalletStatus() {
 
   return (
     <div className="flex flex-wrap items-center gap-2 text-xs">
-      <div className="rounded-md border border-[#46ff9f55] bg-[#46ff9f12] px-3 py-2">
+      <div className="rounded-md border border-[#b56cff55] bg-[#b56cff12] px-3 py-2">
         <div className="uppercase text-white/45">signed in</div>
-        <div className="max-w-[14rem] truncate font-bold text-[#46ff9f]">{email}</div>
+        <div className="max-w-[14rem] truncate font-bold text-[#b56cff]">{email}</div>
       </div>
       {walletsReady && activeWallet ? (
-        <div className="rounded-md border border-white/10 bg-black/35 px-3 py-2">
+        <div className="rounded-md border border-white/10 bg-[#140820]/70 px-3 py-2">
           <div className="uppercase text-white/45">wallet</div>
           <div
             className="font-mono font-bold text-white"

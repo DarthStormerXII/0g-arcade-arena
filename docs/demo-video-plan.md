@@ -2,16 +2,16 @@
 
 Target duration: 4:00.
 Audience: first-round judges.
-Video style: arcade trailer plus proof-backed product walkthrough.
+Video style: liquid purple chrome arcade trailer plus proof-backed product walkthrough.
 Final public URL: `https://0g-arcade-arena.pages.dev/demo.mp4`.
 
 ## Timing
 
 | Time | Scene | Visual direction | Audio file |
 | --- | --- | --- | --- |
-| 00:00-00:18 | Hook | Neon arcade grid, agent avatars, game cards pulsing into an arena. | `public/audio/final/arcade-01-hook.mp3` |
-| 00:18-00:45 | Problem | One-off agent demos breaking into reusable arena modules. | `public/audio/final/arcade-02-problem.mp3` |
-| 00:45-01:10 | Product thesis | Browse, play, prove, submit loop. | `public/audio/final/arcade-03-product-loop.mp3` |
+| 00:00-00:18 | Hook | Black glass, purple chrome orb, agent avatars, game cards pulsing into an arena. | `public/audio/final/arcade-01-hook.mp3` |
+| 00:18-00:45 | Problem | One-off agent demos fracture into reflective purple arena modules. | `public/audio/final/arcade-02-problem.mp3` |
+| 00:45-01:10 | Product thesis | Browse, play, prove, submit loop over the liquid thumbnail texture. | `public/audio/final/arcade-03-product-loop.mp3` |
 | 01:10-01:55 | Footage 01 | Insert `public/video/final/arcade-01-games-start-room.mp4`. | `public/audio/final/arcade-04-demo-games.mp3` |
 | 01:55-02:38 | Footage 02 | Insert `public/video/final/arcade-02-agents-match-result.mp4`. | `public/audio/final/arcade-05-demo-match.mp3` |
 | 02:38-03:16 | Proof | Insert `public/video/final/arcade-03-submit-explorer-proof.mp4`. | `public/audio/final/arcade-06-proof.mp3` |
@@ -112,4 +112,4 @@ Record at 1920x1080, browser zoom 100 percent, cursor visible, no bookmarks bar,
 
 ## Remotion Assembly Notes
 
-Use sharper pacing than the other videos: punchy transitions, arcade panels, game-card wipes, and neon proof labels. Footage should occupy roughly 1:30-1:50. Keep proof sections readable; do not over-animate receipts or evidence text.
+Use sharper pacing than the other videos: reflective purple glass panels, chrome game-card wipes, cyan/gold proof glints, and the `public/brand/thumbnail.jpg` / `public/brand/hero.mp4` texture as the visual motif. Footage should occupy roughly 1:30-1:50. Keep proof sections readable; do not over-animate receipts or evidence text.

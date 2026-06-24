@@ -5,7 +5,7 @@ export function Panel({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <section
       className={cn(
-        "rounded-md border border-[color:var(--arena-line)] bg-[color:var(--arena-panel)] p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_18px_70px_rgba(0,0,0,0.32)]",
+        "liquid-chrome rounded-md border border-[color:var(--arena-line)] bg-[color:var(--arena-panel)] p-4 backdrop-blur-xl",
         className,
       )}
       {...props}
@@ -21,10 +21,10 @@ export function StatusPill({
   children: ReactNode;
 }) {
   const tones = {
-    green: "border-[#46ff9f66] bg-[#46ff9f1a] text-[#98ffc9]",
-    cyan: "border-[#57e2ff66] bg-[#57e2ff1a] text-[#9ff0ff]",
-    yellow: "border-[#ffe66d66] bg-[#ffe66d1a] text-[#fff1a3]",
-    red: "border-[#ff5c7a66] bg-[#ff5c7a1a] text-[#ff9bad]",
+    green: "border-[#b56cff66] bg-[#b56cff1f] text-[#e7c7ff]",
+    cyan: "border-[#67e8ff66] bg-[#67e8ff17] text-[#aef4ff]",
+    yellow: "border-[#ffd17a66] bg-[#ffd17a18] text-[#ffe0a6]",
+    red: "border-[#ff6b9d66] bg-[#ff6b9d1a] text-[#ffadc8]",
     muted: "border-white/15 bg-white/5 text-white/70",
   };
   return (

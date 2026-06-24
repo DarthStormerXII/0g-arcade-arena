@@ -11,21 +11,21 @@ export const gameVisuals: Record<string, { cover: string; logo: string; accent: 
   "grid-four": {
     cover: new URL("../../games/grid-four/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/grid-four/assets/logo.svg", import.meta.url).href,
-    accent: "#46ff9f",
+    accent: "#b56cff",
   },
   "fleet-duel": {
     cover: new URL("../../games/fleet-duel/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/fleet-duel/assets/logo.svg", import.meta.url).href,
-    accent: "#57e2ff",
+    accent: "#67e8ff",
   },
   "tile-race": {
     cover: new URL("../../games/tile-race/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/tile-race/assets/logo.svg", import.meta.url).href,
-    accent: "#ffe66d",
+    accent: "#ffd17a",
   },
   "world-cup-draft": {
     cover: new URL("../../games/world-cup-draft/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/world-cup-draft/assets/logo.svg", import.meta.url).href,
-    accent: "#46ff9f",
+    accent: "#b56cff",
   },
 };

@@ -37,10 +37,14 @@ export function GameDetail() {
     <Page title={game.manifest.name} icon={<Gamepad2 />}>
       <div className="grid gap-6">
         <section className="grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(360px,.85fr)]">
-          <Panel className="overflow-hidden p-0">
-            <img className="h-[360px] w-full object-cover" src={visuals.cover} alt="" />
+          <Panel className="chrome-sheen overflow-hidden p-0">
+            <div className="relative h-[360px] overflow-hidden">
+              <img className="absolute inset-0 h-full w-full object-cover" src={visuals.cover} alt="" />
+              <img className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-screen" src="/brand/thumbnail.jpg" alt="" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,2,13,.08),rgba(8,2,13,.72))]" />
+            </div>
             <div className="grid gap-4 p-5 sm:grid-cols-[88px_1fr]">
-              <img className="h-20 w-20 rounded-md object-cover" src={visuals.logo} alt="" />
+              <img className="h-20 w-20 rounded-full border border-white/15 object-cover shadow-[0_0_34px_rgba(181,108,255,.32)]" src={visuals.logo} alt="" />
               <div>
                 <div className="flex flex-wrap gap-2">
                   <StatusPill tone={game.manifest.supportsWagers ? "green" : "muted"}>
@@ -207,7 +211,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
         </SegmentButton>
       </div>
 
-      <div className="mt-5 grid gap-3 rounded-sm border border-white/10 bg-black/35 p-3">
+      <div className="mt-5 grid gap-3 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
         <div className="text-sm font-black uppercase">Wager</div>
         <div className="grid gap-2 sm:grid-cols-2">
           <SegmentButton active={wager === "free"} onClick={() => setWager("free")}>
@@ -221,7 +225,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
           <label className="grid gap-2 text-sm">
             <span className="text-white/58">Wager amount in testnet 0G</span>
             <input
-              className="min-h-11 rounded-md border border-white/15 bg-black/40 px-3 text-white outline-none focus:border-[#46ff9f]"
+              className="min-h-11 rounded-md border border-[#d9b8ff33] bg-[#140820]/70 px-3 text-white outline-none focus:border-[#b56cff]"
               disabled={wager !== "wager"}
               inputMode="decimal"
               value={amount}
@@ -235,7 +239,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
 
       {opponent === "agent" ? (
         <div className="mt-5 grid gap-3">
-          <div className="grid gap-2 rounded-sm border border-white/10 bg-black/35 p-3">
+          <div className="grid gap-2 rounded-sm border border-white/10 bg-[#140820]/70 p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="text-sm font-black uppercase">Qualified agents</div>
               <StatusPill tone={agents.length ? "green" : "yellow"}>{agents.length || "none"}</StatusPill>
@@ -257,7 +261,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
           <Button className="w-full" size="lg" disabled={busy || !selectedAgent} onClick={startAgentRoom}>
             <Swords size={18} /> Play selected 0G agent
           </Button>
-          {error ? <p className="text-sm text-[#ff8a8a]">{error}</p> : null}
+          {error ? <p className="text-sm text-[#ffadc8]">{error}</p> : null}
         </div>
       ) : (
         <div className="mt-5 grid gap-3">
@@ -274,11 +278,11 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
               <UserRound size={18} /> Find human match
             </Button>
           ) : (
-            <div className="grid gap-3 rounded-sm border border-white/10 bg-black/35 p-3">
+            <div className="grid gap-3 rounded-sm border border-[#d9b8ff22] bg-[#140820]/70 p-3">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <div className="text-xs uppercase text-white/45">Your room code</div>
-                  <div className="font-mono text-xl font-black text-[#98ffc9]">{code}</div>
+                  <div className="font-mono text-xl font-black text-[#e7c7ff]">{code}</div>
                 </div>
                 <Button variant="secondary" type="button" disabled={busy} onClick={() => setCode(roomCode(gameId))}>
                   <Copy size={16} /> New code
@@ -290,7 +294,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
               <label className="grid gap-2 text-sm">
                 <span className="text-white/58">Join with room code</span>
                 <input
-                  className="min-h-11 rounded-md border border-white/15 bg-black/40 px-3 uppercase text-white outline-none focus:border-[#46ff9f]"
+                  className="min-h-11 rounded-md border border-[#d9b8ff33] bg-[#140820]/70 px-3 uppercase text-white outline-none focus:border-[#b56cff]"
                   placeholder="GF-9A2K"
                   value={joinCode}
                   onChange={(event) => setJoinCode(event.target.value)}
@@ -301,7 +305,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
               </Button>
             </div>
           )}
-          {error ? <p className="text-sm text-[#ff8a8a]">{error}</p> : null}
+          {error ? <p className="text-sm text-[#ffadc8]">{error}</p> : null}
         </div>
       )}
     </Panel>
@@ -317,7 +321,9 @@ function SegmentButton({
     <button
       className={cn(
         "inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-3 text-sm font-bold uppercase transition disabled:cursor-not-allowed disabled:opacity-45",
-        active ? "border-[#46ff9f] bg-[#46ff9f] text-black" : "border-white/15 bg-white/5 text-white hover:border-[#57e2ff]",
+        active
+          ? "border-[#d9b8ff] bg-[linear-gradient(135deg,#f5e8ff,#b56cff_46%,#5d22a6)] text-[#10051c]"
+          : "border-[#d9b8ff2e] bg-white/6 text-white hover:border-[#67e8ff]",
         className,
       )}
       type="button"
@@ -457,23 +463,23 @@ export function Room() {
             Share this code with a friend. When both players join, the match starts from the same deterministic game rules
             and the result can be inspected from the proof route.
           </p>
-          <div className="mt-4 rounded-sm border border-white/10 bg-black/35 p-3 text-sm text-white/70">
+          <div className="mt-4 rounded-sm border border-white/10 bg-[#140820]/70 p-3 text-sm text-white/70">
             Game: {gameId}<br />
             Wager: {room?.wagerWei && room.wagerWei !== "0" ? `${wager} testnet 0G` : "Free match"}<br />
             Players: {room?.players.map((item) => item.displayName).join(", ") || "Waiting for room state"}
           </div>
           {room?.wagerWei && room.wagerWei !== "0" ? (
-            <div className="mt-3 rounded-sm border border-[#46ff9f33] bg-[#46ff9f0d] p-3 text-sm text-white/70">
-              <div className="font-black uppercase text-[#98ffc9]">Wager escrow</div>
+          <div className="mt-3 rounded-sm border border-[#b56cff33] bg-[#b56cff0d] p-3 text-sm text-white/70">
+              <div className="font-black uppercase text-[#e7c7ff]">Wager escrow</div>
               <div className="mt-1">Each player funds {wager} testnet 0G before start.</div>
               {wagerTxs.length ? (
-                <ul className="mt-2 grid gap-1 font-mono text-xs text-[#98ffc9]">
+                <ul className="mt-2 grid gap-1 font-mono text-xs text-[#e7c7ff]">
                   {wagerTxs.map((tx) => <li key={tx}>{tx.slice(0, 10)}...{tx.slice(-6)}</li>)}
                 </ul>
               ) : null}
             </div>
           ) : null}
-          {error ? <p className="mt-3 text-sm text-[#ff8a8a]">{error}</p> : null}
+          {error ? <p className="mt-3 text-sm text-[#ffadc8]">{error}</p> : null}
         </div>
         <div className="grid content-start gap-3">
           {!room ? (

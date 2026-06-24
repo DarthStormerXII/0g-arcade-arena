@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       appId={privyAppId}
       config={{
         appearance: {
-          accentColor: "#46ff9f",
+          accentColor: "#b56cff",
           showWalletLoginFirst: false,
           theme: "dark",
         },
