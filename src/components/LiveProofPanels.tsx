@@ -26,7 +26,7 @@ export function LiveProofList() {
         {proofs.map((proof) => (
           <a
             key={proof.matchId}
-            className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#67e8ff66]"
+            className="min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-3 hover:border-[#c084fc66]"
             href={`/proof/${proof.matchId}`}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">

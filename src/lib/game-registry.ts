@@ -16,12 +16,12 @@ export const gameVisuals: Record<string, { cover: string; logo: string; accent: 
   "fleet-duel": {
     cover: new URL("../../games/fleet-duel/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/fleet-duel/assets/logo.svg", import.meta.url).href,
-    accent: "#67e8ff",
+    accent: "#c084fc",
   },
   "tile-race": {
     cover: new URL("../../games/tile-race/assets/cover.svg", import.meta.url).href,
     logo: new URL("../../games/tile-race/assets/logo.svg", import.meta.url).href,
-    accent: "#ffd17a",
+    accent: "#d8b4fe",
   },
   "world-cup-draft": {
     cover: new URL("../../games/world-cup-draft/assets/cover.svg", import.meta.url).href,

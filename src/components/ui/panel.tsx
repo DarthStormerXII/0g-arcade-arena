@@ -22,9 +22,9 @@ export function StatusPill({
 }) {
   const tones = {
     green: "border-[#b56cff66] bg-[#b56cff1f] text-[#e7c7ff]",
-    cyan: "border-[#67e8ff66] bg-[#67e8ff17] text-[#aef4ff]",
-    yellow: "border-[#ffd17a66] bg-[#ffd17a18] text-[#ffe0a6]",
-    red: "border-[#ff6b9d66] bg-[#ff6b9d1a] text-[#ffadc8]",
+    cyan: "border-[#c084fc66] bg-[#c084fc17] text-[#eadcff]",
+    yellow: "border-[#d8b4fe66] bg-[#d8b4fe18] text-[#f3e8ff]",
+    red: "border-[#e879f966] bg-[#e879f91a] text-[#f5d0fe]",
     muted: "border-white/15 bg-white/5 text-white/70",
   };
   return (

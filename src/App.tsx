@@ -45,7 +45,7 @@ export function App() {
             <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-[#d9b8ff66] bg-[#d9b8ff1a] shadow-[0_0_28px_rgba(181,108,255,.32)]">
               <img className="h-full w-full object-cover transition duration-500 group-hover:scale-110" src="/brand/logo.jpg" alt="" />
             </span>
-            <span className="bg-gradient-to-r from-white via-[#e7c7ff] to-[#67e8ff] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-[#e7c7ff] to-[#c084fc] bg-clip-text text-transparent">
               0G Arcade Arena
             </span>
           </Link>

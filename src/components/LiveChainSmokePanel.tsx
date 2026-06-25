@@ -37,7 +37,7 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
             {liveChainProof.deployments.map((deployment) => (
               <a
                 key={deployment.address}
-                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#67e8ff66]"
+                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#c084fc66]"
                 href={addressUrl(deployment.address)}
                 rel="noreferrer"
                 target="_blank"
@@ -58,7 +58,7 @@ export function LiveChainSmokePanel({ compact = false }: { compact?: boolean }) 
             {txs.map((tx) => (
               <a
                 key={tx.txHash}
-                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#67e8ff66]"
+                className="group min-w-0 rounded-sm border border-white/10 bg-[#140820]/70 p-2 hover:border-[#c084fc66]"
                 href={txUrl(tx.txHash)}
                 rel="noreferrer"
                 target="_blank"

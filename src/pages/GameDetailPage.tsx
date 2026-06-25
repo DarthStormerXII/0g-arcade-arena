@@ -261,7 +261,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
           <Button className="w-full" size="lg" disabled={busy || !selectedAgent} onClick={startAgentRoom}>
             <Swords size={18} /> Play selected 0G agent
           </Button>
-          {error ? <p className="text-sm text-[#ffadc8]">{error}</p> : null}
+          {error ? <p className="text-sm text-[#f5d0fe]">{error}</p> : null}
         </div>
       ) : (
         <div className="mt-5 grid gap-3">
@@ -305,7 +305,7 @@ export function PlaySetup({ gameId, supportsWagers }: { gameId: string; supports
               </Button>
             </div>
           )}
-          {error ? <p className="text-sm text-[#ffadc8]">{error}</p> : null}
+          {error ? <p className="text-sm text-[#f5d0fe]">{error}</p> : null}
         </div>
       )}
     </Panel>
@@ -323,7 +323,7 @@ function SegmentButton({
         "inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-3 text-sm font-bold uppercase transition disabled:cursor-not-allowed disabled:opacity-45",
         active
           ? "border-[#d9b8ff] bg-[linear-gradient(135deg,#f5e8ff,#b56cff_46%,#5d22a6)] text-[#10051c]"
-          : "border-[#d9b8ff2e] bg-white/6 text-white hover:border-[#67e8ff]",
+          : "border-[#d9b8ff2e] bg-white/6 text-white hover:border-[#c084fc]",
         className,
       )}
       type="button"
@@ -479,7 +479,7 @@ export function Room() {
               ) : null}
             </div>
           ) : null}
-          {error ? <p className="mt-3 text-sm text-[#ffadc8]">{error}</p> : null}
+          {error ? <p className="mt-3 text-sm text-[#f5d0fe]">{error}</p> : null}
         </div>
         <div className="grid content-start gap-3">
           {!room ? (

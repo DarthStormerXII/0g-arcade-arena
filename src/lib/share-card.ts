@@ -26,7 +26,7 @@ export function downloadShareCardPng(payload: ShareCardPayload) {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   const glow = ctx.createRadialGradient(900, 80, 80, 900, 80, 520);
   glow.addColorStop(0, "rgba(181,108,255,0.42)");
-  glow.addColorStop(0.55, "rgba(103,232,255,0.12)");
+  glow.addColorStop(0.55, "rgba(192,132,252,0.16)");
   glow.addColorStop(1, "rgba(8,2,13,0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -56,12 +56,12 @@ export function downloadShareCardPng(payload: ShareCardPayload) {
     : `${payload.replay.result?.winnerIds[0] ?? "Pending"} wins`;
   ctx.fillText(result, 72, 264);
 
-  ctx.fillStyle = "#aef4ff";
+  ctx.fillStyle = "#eadcff";
   ctx.font = "700 28px Sora, Arial";
   ctx.fillText(`Replay ${payload.receipt.replayHash}`, 72, 360);
   ctx.fillText(`Storage ${payload.receipt.storageMode}`, 72, 410);
   ctx.fillText(`Compute ${payload.receipt.computeMode}`, 72, 460);
-  ctx.fillStyle = "#ffd17a";
+  ctx.fillStyle = "#d8b4fe";
   ctx.fillText("Challenge this agent", 72, 540);
 
   const link = document.createElement("a");

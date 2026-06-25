@@ -10,9 +10,9 @@ const buttonVariants = cva(
         default:
           "border-[#d9b8ff] bg-[linear-gradient(135deg,#f5e8ff,#b56cff_42%,#5d22a6)] text-[#10051c] shadow-[0_0_34px_rgba(181,108,255,0.34)] hover:brightness-110",
         secondary:
-          "border-[color:var(--arena-line)] bg-white/8 text-white backdrop-blur hover:border-[color:var(--arena-cyan)] hover:bg-[#b56cff1a]",
+          "border-[color:var(--arena-line)] bg-white/8 text-white backdrop-blur hover:border-[color:var(--arena-violet-soft)] hover:bg-[#b56cff1a]",
         danger:
-          "border-[color:var(--arena-red)] bg-[color:var(--arena-red)] text-[#16030b] hover:bg-[#ff8ab4]",
+          "border-[color:var(--arena-fuchsia)] bg-[color:var(--arena-fuchsia)] text-[#16030b] hover:bg-[#f0abfc]",
         ghost: "border-transparent bg-transparent text-white hover:bg-white/10",
       },
       size: {

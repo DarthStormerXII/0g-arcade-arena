@@ -223,7 +223,7 @@ function LiveRoomBoard({
               aria-label={`Drop in column ${colIndex + 1}, row ${rowIndex + 1}`}
             >
               <span
-                className={`block h-full rounded-full ${cell === playerId ? "bg-[#b56cff]" : cell ? "bg-[#ffd17a]" : "bg-white/8"}`}
+                className={`block h-full rounded-full ${cell === playerId ? "bg-[#b56cff]" : cell ? "bg-[#d8b4fe]" : "bg-white/8"}`}
               />
             </button>
           )),
@@ -311,7 +311,7 @@ function GridFourMatch({ matchId }: { matchId: string }) {
               aria-label={`Drop in column ${colIndex + 1}`}
             >
               <span
-                className={`block h-full rounded-full ${cell === "human-1" ? "bg-[#b56cff]" : cell ? "bg-[#ffd17a]" : "bg-white/8"}`}
+                className={`block h-full rounded-full ${cell === "human-1" ? "bg-[#b56cff]" : cell ? "bg-[#d8b4fe]" : "bg-white/8"}`}
               />
             </button>
           )),
@@ -408,7 +408,7 @@ function GameStatePreview({ gameId, state }: { gameId: string; state: FleetState
         {Array.from({ length: 36 }, (_, index) => {
           const id = `${index % 6},${Math.floor(index / 6)}`;
           const fired = Object.values(fleet.shots).some((shots) => shots.includes(id));
-          return <div key={id} className={`aspect-square rounded-sm border border-white/15 ${fired ? "bg-[#67e8ff88]" : "bg-[#140820]/70"}`} />;
+          return <div key={id} className={`aspect-square rounded-sm border border-white/15 ${fired ? "bg-[#c084fc88]" : "bg-[#140820]/70"}`} />;
         })}
       </div>
     );
